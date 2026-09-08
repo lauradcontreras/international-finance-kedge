@@ -1,0 +1,22 @@
+# Quarto
+/_site/
+/.quarto/
+*_files/
+*_cache/
+
+# rendered output — the GitHub Action builds these, no need to commit them
+/*.html
+/*.pdf
+/*.tex
+
+# FRED data, refetched on every build
+/cache/
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Rapp.history
+
+# macOS
+.DS_Store

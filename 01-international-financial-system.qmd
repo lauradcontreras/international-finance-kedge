@@ -1,0 +1,1216 @@
+---
+title: "International Finance"
+subtitle: "Session 1 — The International Financial System"
+author: "Laura Contreras-Portela"
+institute: "KEDGE Business School"
+date: today
+date-format: "MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, theme.scss]
+    width: 1600
+    height: 900
+    slide-number: c/t
+    show-slide-number: all
+    progress: true
+    history: true
+    hash: true
+    controls: true
+    navigation-mode: linear      # right arrow always goes to the next slide
+    preview-links: auto
+    highlight-style: github
+    code-line-numbers: true
+    html-math-method: katex
+    chalkboard:                     # C = draw on the slide, B = blank board
+      buttons: true
+      theme: whiteboard
+      chalk-effect: 0
+    footer: "International Finance · Session 1 · KEDGE"
+    embed-resources: false          # true -> one portable file, no wifi needed
+  beamer:                           # same source -> a real LaTeX PDF handout
+    aspectratio: 169
+    theme: metropolis
+    incremental: false
+    header-includes: |
+      \definecolor{ifteal}{HTML}{0E5250}
+      \definecolor{ifclay}{HTML}{B4573C}
+      \setbeamercolor{frametitle}{bg=ifteal}
+      \setbeamercolor{progress bar}{fg=ifteal}
+      \setbeamercolor{title separator}{fg=ifteal}
+      \setbeamercolor{structure}{fg=ifteal}
+      \setbeamercolor{alerted text}{fg=ifclay}
+execute:
+  echo: false
+  warning: false
+  message: false
+  fig-align: center
+  fig-width: 8
+  fig-height: 4.2
+knitr:
+  opts_chunk:
+    dev: png
+    dpi: 300
+---
+
+```{r setup}
+source("R/setup.R")
+```
+
+# 👋  Welcome {.divider .center}
+
+## What this course is actually about
+
+We are going to build a set of **operational models** of how international financial markets work. Then we are going to spend most of our time on where they break.
+
+::: incremental
+-   Informational efficiency, financial crises, regulation, behavioural finance — mostly **through papers**, not through me talking.
+-   The 2008–2010 crisis put risk diversification, informational efficiency and valuation efficiency in serious question. We are still living in the rewrite.
+-   Second objective, and I mean it: what a more **responsible** practice of finance would look like.
+:::
+
+. . .
+
+::: keyidea
+**No textbook.** Reference: Mishkin, F.S. & Eakins, S.G. (2008), *Financial Markets and Institutions*, 7th ed., Pearson.\
+Course description on LEARN: <http://learn.kedgebs.com>
+:::
+
+## Course content
+
+| Session | Topic | Preliminary reading / assignment |
+|:--:|:---|:---|
+| 1–2 | International financial system | Monasterolo (2020), *Climate Change and the Financial System*, Ann. Rev. Resource Econ. 12 |
+| 3–4 | Securities markets | Sartzetakis (2021), *Green bonds as an instrument to finance low carbon transition*, Econ. Change & Restructuring 54 |
+| 5–6 | Financial institutions and firms | Muñoz (2020), *Board of trustees, financial and sustainable performance of SRI mutual funds*, CSR & Env. Mgmt 27(4) |
+| 7 | Regulation | **Individual assignment** |
+| 8 | Security analysis | **Group presentation** (5 students) |
+| 9 | Regulation | |
+| 10 | **Final examination** | |
+
+::: {.source}
+Read the preliminary paper **before** the session it is attached to. The schedule is indicative.
+:::
+
+## Evaluation
+
+:::: columns
+::: {.column width="46%"}
+**Group work** — analysis of a security, groups of 5, 12-minute presentation.
+
+**Final exam** — individual, written. Documents allowed.
+
+::: ask
+A **calculator is required** for most sessions.
+:::
+:::
+
+::: {.column width="54%"}
+| | Assignment | Group work | Final exam |
+|:---|:--:|:--:|:--:|
+| Weight | 20% | 40% | 40% |
+| When | Session 7 (20 min) | Session 8 | Session 10 |
+| Documents | Not allowed | Security analysis | Allowed |
+:::
+::::
+
+## Group work: security analysis
+
+Maximum 5 students per group · 12-minute presentation.
+
+::: incremental
+1.  What are the **characteristics** of the security studied?
+2.  What are the **actual and expected situations** for that security market?
+3.  What is the **international dimension** of this market?
+4.  What are the **risks and opportunities** in it?
+:::
+
+::: notes
+Push them to pick a security they can get real data on. Groups that choose an
+exotic derivative spend the whole presentation explaining the instrument and
+never get to questions 2–4.
+:::
+
+## Session 1 — where we are going
+
+Four prices and one accounting identity. That is the whole session.
+
+1.  🏦 The **financial system** — who saves, who borrows, and what sits in between
+2.  🌍 The **balance of payments** — every euro that crosses the border, written down twice
+3.  📈 The **interest rate** — the price of money
+4.  💱 The **exchange rate** — the price of a currency, and who pays to defend it
+5.  🌡️ Discussion: **Monasterolo (2020)** — what climate does to all four
+
+::: {.content-visible when-format="revealjs"}
+::: ask
+Before we start: **is the economy you know best market-based or bank-based?**\
+Poll: <https://app.sli.do/event/REPLACE-ME>
+:::
+:::
+
+# 🏦  1 · The financial system {.divider .center}
+
+## Where does your salary sleep at night? {.hook}
+
+You are paid on the 28th. Part of it sits in a current account until the rent leaves. That balance does not sit still.
+
+::: incremental
+-   Right now it is being lent to a firm buying a machine, or to a government rolling over a bond.
+-   You will never meet the borrower. You did not choose them.
+-   **Somebody chose for you — a market, or a bank. That choice is section 1.**
+:::
+
+::: {.imgslot}
+photo idea: a high-street bank branch, or the ECB tower in Frankfurt — search "bank branch facade" or "ECB Frankfurt"
+:::
+
+## 1 · The financial system and the real economy
+
+```{r}
+#| fig-width: 9
+#| fig-height: 4.6
+box <- function(x, y, w, h, label, fill, col = "white", size = 4) {
+  list(
+    annotate("rect", xmin = x - w/2, xmax = x + w/2, ymin = y - h/2, ymax = y + h/2,
+             fill = fill, colour = NA),
+    annotate("text", x = x, y = y, label = label, colour = col,
+             size = size, fontface = "bold", lineheight = .95)
+  )
+}
+arw <- grid::arrow(length = unit(.02, "npc"), type = "closed")
+
+ggplot() +
+  # containers
+  annotate("rect", xmin = .3, xmax = 6.7, ymin = 5.15, ymax = 9.7,
+           fill = NA, colour = IF_COL$teal300, linewidth = .5) +
+  annotate("rect", xmin = .3, xmax = 6.7, ymin = .3, ymax = 4.15,
+           fill = NA, colour = IF_COL$teal300, linewidth = .5) +
+  annotate("text", x = 3.5, y = 9.35, label = "FINANCIAL SYSTEM",
+           colour = IF_COL$teal700, size = 4.4, fontface = "bold") +
+  annotate("text", x = 3.5, y = 3.8, label = "REAL ECONOMY",
+           colour = IF_COL$teal700, size = 4.4, fontface = "bold") +
+  # financial system
+  box(3.5, 8.2, 2.5, .95, "Capital markets", IF_COL$teal700) +
+  box(3.5, 6.0, 2.5, .95, "Financial\nintermediary", IF_COL$teal500) +
+  box(1.2, 7.1, 1.6, .95, "Savings\ndeficit", IF_COL$clay) +
+  box(5.8, 7.1, 1.6, .95, "Savings\nsurplus", IF_COL$teal300, col = IF_COL$teal900) +
+  annotate("text", x = 3.5, y = 8.85, label = "direct finance",
+           colour = IF_COL$muted, size = 3.4, fontface = "italic") +
+  annotate("text", x = 3.5, y = 5.35, label = "indirect finance",
+           colour = IF_COL$muted, size = 3.4, fontface = "italic") +
+  # arrows inside the financial system
+  annotate("segment", x = 2.1, xend = 2.9, y = 7.5, yend = 8.0, colour = IF_COL$ink,
+           linewidth = .4, arrow = arw) +
+  annotate("segment", x = 4.9, xend = 4.2, y = 7.6, yend = 8.1, colour = IF_COL$ink,
+           linewidth = .4, arrow = arw) +
+  annotate("segment", x = 2.9, xend = 2.1, y = 6.2, yend = 6.7, colour = IF_COL$ink,
+           linewidth = .4, arrow = arw) +
+  annotate("segment", x = 4.9, xend = 4.2, y = 6.6, yend = 6.1, colour = IF_COL$ink,
+           linewidth = .4, arrow = arw) +
+  # real economy
+  box(1.6, 2.4, 2.2, .8, "Businesses", IF_COL$teal700, size = 3.6) +
+  box(3.9, 2.4, 2.2, .8, "Households", IF_COL$teal700, size = 3.6) +
+  box(6.2 - .3, 2.4, 2.2, .8, "Government", IF_COL$teal700, size = 3.6) +
+  annotate("text", x = 3.5, y = 1.35,
+           label = "domestic and foreign agents:  sales / wages / taxes - expenses - taxes = net income",
+           colour = IF_COL$muted, size = 3.3) +
+  # the big loop
+  annotate("curve", x = 1.0, xend = 1.0, y = 6.4, yend = 3.0, curvature = .35,
+           colour = IF_COL$clay, linewidth = 1, arrow = arw) +
+  annotate("curve", x = 6.0, xend = 6.0, y = 3.0, yend = 6.4, curvature = .35,
+           colour = IF_COL$teal500, linewidth = 1, arrow = arw) +
+  annotate("text", x = .2, y = 4.7, label = "financial\nresources", hjust = 0,
+           colour = IF_COL$clay, size = 3.5) +
+  annotate("text", x = 6.8, y = 4.7, label = "financing\nneeds", hjust = 1,
+           colour = IF_COL$teal500, size = 3.5) +
+  xlim(0, 7) + ylim(0, 10) + theme_void()
+```
+
+## 1 · Two ways of channelling savings
+
+:::: columns
+::: {.column width="50%"}
+### Market-based
+
+Financial **markets** do the allocation of loanable funds. Savers hold securities directly; the price does the screening.
+:::
+
+::: {.column width="50%"}
+### Bank-based
+
+**Intermediaries** allocate the funds. Banks screen, monitor and transform maturity between savers and borrowers.
+:::
+::::
+
+. . .
+
+::: ask
+Germany and Japan built one; the U.S. and the U.K. built the other. What actually differs? Think **competences, decision tools and information** — not just who ends up holding the paper.
+:::
+
+. . .
+
+::: keyidea
+$$\text{savings} \geq \text{investment} \Rightarrow \text{savings surplus} \qquad
+  \text{savings} \leq \text{investment} \Rightarrow \text{savings deficit}$$
+:::
+
+## 1 · Problem 1.1 — savings by institutional sector, France
+
+::: panel-tabset
+### Data
+
+```{r}
+#| results: asis
+d <- read.csv("data/france-savings.csv", check.names = FALSE)
+names(d)[1] <- "France (EUR bn)"
+knitr::kable(d, align = c("l", rep("r", 7)))
+```
+
+::: {.source}
+Net lending (+) / net borrowing (−) by institutional sector. NPISH = non-profit institutions serving households.
+:::
+
+### Questions
+
+::: ask
+**(a)** Which institutional sectors usually run a savings **surplus**, and which run a **deficit**?
+
+**(b)** Why can France be analysed as an **open** economy?
+:::
+
+::: {.content-visible when-format="revealjs"}
+Press **`C`** and annotate the table while they answer.
+:::
+
+### Where to look
+
+::: incremental
+-   Households are the structural **surplus** sector; public administrations the structural **deficit** sector.
+-   Non-financial corporations swing with the cycle — look at 2020 against 2024.
+-   The **total economy** line is the country's net lending to the rest of the world. It is not zero: what closes the gap is the rest of the world.
+:::
+:::
+
+## 1 · An organised architecture
+
+```{r}
+#| fig-width: 9
+#| fig-height: 4.4
+lane <- function(y, label, fill, col = "white") {
+  list(
+    annotate("rect", xmin = .4, xmax = 9.6, ymin = y - .38, ymax = y + .38,
+             fill = fill, colour = NA),
+    annotate("text", x = 5, y = y, label = label, colour = col,
+             size = 4, fontface = "bold")
+  )
+}
+arw <- grid::arrow(length = unit(.022, "npc"), type = "closed")
+
+ggplot() +
+  lane(7.4, "Market's firm / trading system", IF_COL$teal700) +
+  lane(1.9, "Clearinghouse",       IF_COL$teal500) +
+  lane(1.0, "Settlement / delivery", IF_COL$teal500) +
+  lane(0.1, "Regulator",            IF_COL$teal900) +
+  # issuers
+  annotate("rect", xmin = .4, xmax = 2.6, ymin = 4.0, ymax = 6.2,
+           fill = IF_COL$clay, colour = NA) +
+  annotate("text", x = 1.5, y = 5.1, label = "Firms\nGovernment",
+           colour = "white", size = 4, fontface = "bold") +
+  # investors
+  annotate("rect", xmin = 7.4, xmax = 9.6, ymin = 4.0, ymax = 6.2,
+           fill = IF_COL$teal300, colour = NA) +
+  annotate("text", x = 8.5, y = 5.1, label = "Firms, institutionals,\nhouseholds,\nnon-domestic",
+           colour = IF_COL$teal900, size = 3.4, fontface = "bold", lineheight = .95) +
+  # the market
+  annotate("point", x = 5, y = 5.1, size = 44, colour = IF_COL$teal700, shape = 16) +
+  annotate("point", x = 5, y = 5.1, size = 34, colour = "white", shape = 16) +
+  annotate("text", x = 5, y = 5.35, label = "Financial\nmarkets",
+           colour = IF_COL$teal700, size = 4.2, fontface = "bold") +
+  annotate("text", x = 5, y = 4.6, label = "intermediaries",
+           colour = IF_COL$muted, size = 3.2, fontface = "italic") +
+  # flows
+  annotate("segment", x = 2.7, xend = 4.0, y = 5.6, yend = 5.6,
+           colour = IF_COL$clay, linewidth = 1.1, arrow = arw) +
+  annotate("text", x = 3.35, y = 6.05, label = "securities\n(primary market)",
+           colour = IF_COL$muted, size = 3.2) +
+  annotate("segment", x = 7.3, xend = 6.0, y = 5.6, yend = 5.6,
+           colour = IF_COL$teal500, linewidth = 1.1, arrow = arw) +
+  annotate("text", x = 6.65, y = 6.05, label = "savings surplus",
+           colour = IF_COL$muted, size = 3.2) +
+  annotate("segment", x = 6.0, xend = 7.3, y = 4.35, yend = 4.35,
+           colour = IF_COL$teal900, linewidth = 1.1, arrow = arw) +
+  annotate("text", x = 6.65, y = 3.75, label = "reallocation of existing\nsecurities (secondary)",
+           colour = IF_COL$muted, size = 3.0, lineheight = .95) +
+  annotate("text", x = 3.0, y = 3.3, label = "front office / middle office / back office",
+           colour = IF_COL$muted, size = 3.0, fontface = "italic") +
+  xlim(0, 10) + ylim(-.5, 8) + theme_void()
+```
+
+## 1 · The three dimensions for firms
+
+::: incremental
+-   **Foreign exchange and political risk.** Cross-border transactions expose firms to currency risk, and to political risk running from a change in tax rules to outright expropriation.
+
+-   **Market imperfections.** Legal restrictions, transaction and transport costs, information asymmetry and discriminatory taxation are what motivate MNCs to locate production overseas in the first place.
+
+-   **Expanded opportunity set.** Firms can produce anywhere and raise funds in any capital market; investors can diversify internationally.
+:::
+
+## 1 · International trade
+
+:::: columns
+::: {.column width="48%"}
+### The approach
+
+-   Firms **export** to penetrate markets
+-   Firms **import** to obtain supplies at low cost
+
+### The firms
+
+-   Large MNCs generate a large share of sales from exporting
+-   Small businesses account for more than 20% of the value of all U.S. exports
+:::
+
+::: {.column width="52%"}
+### Why trade rather than invest
+
+-   The firm places **none of its capital** at risk
+-   It can stay away from high-risk countries
+-   It can reduce or discontinue flows easily
+
+::: keyidea
+Trade is the low-commitment way of being international. FDI is the high-commitment one — that is the choice behind most of this course.
+:::
+:::
+::::
+
+## 1 · The consequences of free trade
+
+:::: columns
+::: {.column width="45%"}
+The U.S. has no comparative advantage in shrimp. At the world price of \$3 rather than the autarky price of \$7:
+
+::: incremental
+-   domestic production falls to 100
+-   domestic consumption rises to 900
+-   imports fill the gap of 800
+:::
+
+. . .
+
+::: ask
+Who gains, who loses, and by how much? Careful — "the country gains" is not an answer.
+:::
+:::
+
+::: {.column width="55%"}
+```{r}
+#| fig-width: 6.2
+#| fig-height: 4.6
+q  <- seq(0, 1000, length.out = 200)
+dem <- data.frame(q = q, p = 9 - 0.0066 * q)
+sup <- data.frame(q = q, p = 1 + 0.015 * q)
+
+ggplot() +
+  geom_line(data = dem, aes(q, p), colour = IF_COL$slate,  linewidth = 1) +
+  geom_line(data = sup, aes(q, p), colour = IF_COL$teal700, linewidth = 1) +
+  geom_hline(yintercept = 3, colour = IF_COL$clay, linewidth = .7, linetype = "22") +
+  annotate("segment", x = 100, xend = 900, y = 3, yend = 3,
+           colour = IF_COL$clay, linewidth = 1.2,
+           arrow = grid::arrow(length = unit(.02, "npc"), ends = "both", type = "closed")) +
+  annotate("text", x = 500, y = 3.45, label = "imports = 800",
+           colour = IF_COL$clay, size = 3.8, fontface = "bold") +
+  annotate("point", x = 400, y = 6.36, size = 2.4, colour = IF_COL$ink) +
+  annotate("text", x = 400, y = 6.9, label = "A: autarky, $7", size = 3.6, colour = IF_COL$ink) +
+  annotate("text", x = 960, y = 2.5, label = "D", size = 4.4, fontface = "italic",
+           colour = IF_COL$slate) +
+  annotate("text", x = 560, y = 9.3, label = "S", size = 4.4, fontface = "italic",
+           colour = IF_COL$teal700) +
+  scale_x_continuous(breaks = c(100, 400, 900)) +
+  scale_y_continuous(breaks = c(3, 7), labels = c("$3", "$7")) +
+  labs(x = "Quantity of shrimp (millions of pounds per year)",
+       y = "Price ($ per pound)") +
+  coord_cartesian(xlim = c(0, 1000), ylim = c(0, 10)) +
+  theme_if() + theme(panel.grid.major.x = element_blank())
+```
+:::
+::::
+
+## 1 · The policy bias
+
+::: incremental
+-   Domestic producers want the cheap import restricted; domestic consumers would oppose it, but **no individual consumer has a strong incentive to lobby**.
+-   The benefit of protection is **concentrated** on those who work in or own firms in the industry. The cost is diffuse.
+-   Since a country has the power to restrict imports, the lobbying often succeeds.
+:::
+
+. . .
+
+The mirror image runs against exports: foreign producers who compete with U.S. goods complain loudest, foreign consumers who gain stay silent, and U.S. exporters are not constituents of that foreign government.
+
+::: ask
+So: a bias against imports **at home**, and a bias against your exports **abroad**. Every country does this to every other country. Where does that leave a small open economy?
+:::
+
+## 1 · The antidotes to the policy bias
+
+::: panel-tabset
+### All-or-nothing agreements
+
+In a bilateral or multilateral agreement, two or more countries agree to trade freely in many goods — or all goods — **simultaneously**. Bundling defeats the concentrated lobby, because every protected group faces every exporting group at once.
+
+### The WTO
+
+By setting standards for acceptable and unacceptable trade restrictions, and ruling in specific cases, the WTO has some power over national trade policy.
+
+### Industries as consumers
+
+"Consumers" includes any buyer of a product — a firm using it as an **input**. When the good is a large part of their costs, those firms lobby *for* free trade.
+
+> In late 2004 the U.S. textile industry lobbied the Bush administration to slow the rise of clothing imports from China. U.S. clothing retailers and importers, for whom clothing is an input, lobbied hard against any barrier.
+:::
+
+# 🌍  2 · The balance of payments {.divider .center}
+
+## Ireland exports more than it makes {.hook}
+
+In 2024 Ireland ran a goods surplus of **€177 bn** and a primary income deficit of **€129 bn**. Money arrives for the goods and leaves again for the shareholders, most of whom live somewhere else.
+
+::: incremental
+-   Nothing is broken. The accounts are doing exactly what they were built to do.
+-   A balance of payments **always balances**. No country has ever run out of balance — they run out of *reserves*, which is a different thing entirely.
+-   Section 2 is learning to read the table well enough to see the story inside it.
+:::
+
+## 2 · The basics
+
+A country's transactions with the rest of the world, recorded over a period, in order to
+
+::: incremental
+-   give information on the **demand for and supply of** a country's currency
+-   signal the country's potential as a **business partner**
+-   evaluate its performance in international economic competition
+:::
+
+. . .
+
+::: keyidea
+**Every credit is matched by a debit.** A receipt from foreigners is a credit (+) and creates demand for your home currency. A payment to foreigners is a debit (−) and creates demand for the foreign currency, i.e. supply of yours.
+:::
+
+::: {.content-visible when-format="revealjs"}
+::: {style="text-align:center"}
+<iframe width="620" height="300" src="https://www.youtube-nocookie.com/embed/qgmTZJIk7VE" title="Balance of payments" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen data-external="1">
+
+</iframe>
+:::
+:::
+
+## 2 · The current account, BCA
+
+::: incremental
+-   **Merchandise trade** — exports and imports of tangible goods. Its balance is the *trade balance*.
+-   **Services** — legal, consulting and engineering services, royalties for patents and IP, insurance premiums, shipping fees, tourist expenditure. Trade in intangibles: *invisible trade*.
+-   **Factor income** — interest, dividends and other income on foreign investments previously made.
+-   **Unilateral transfers** — foreign aid, reparations, official and private grants, gifts. Unlike the rest, these flows are **one-directional**.
+:::
+
+## 2 · The J-curve
+
+:::: columns
+::: {.column width="46%"}
+Following a depreciation the trade balance may **first deteriorate** and only then improve.
+
+::: incremental
+-   Import prices rise immediately; volumes adjust slowly, because consumption habits are sticky.
+-   The shape depends on the **elasticities** of imports and exports.
+-   Marshall–Lerner: the balance improves only once $|\varepsilon_x| + |\varepsilon_m| > 1$.
+:::
+:::
+
+::: {.column width="54%"}
+```{r}
+#| fig-width: 6
+#| fig-height: 4.2
+t <- seq(0, 10, length.out = 300)
+j <- data.frame(t = t, y = -1.6 * exp(-((t - 2.2)^2) / 3.2) + 0.30 * (t - 1.2))
+j <- j[j$t >= 0.6, ]
+
+ggplot(j, aes(t, y)) +
+  geom_hline(yintercept = 0, colour = IF_COL$ink, linewidth = .5) +
+  geom_line(colour = IF_COL$clay, linewidth = 1.4) +
+  annotate("text", x = 2.4, y = -1.55, label = "prices adjust first",
+           colour = IF_COL$muted, size = 3.6) +
+  annotate("text", x = 8.2, y = 1.9, label = "volumes follow",
+           colour = IF_COL$muted, size = 3.6) +
+  labs(x = "Time since depreciation", y = "Change in the trade balance") +
+  coord_cartesian(ylim = c(-2.2, 2.8)) +
+  theme_schematic()
+```
+:::
+::::
+
+## 2 · The financial and capital account, BKA
+
+::: incremental
+-   **Capital account** — transactions in non-financial, non-produced assets.
+-   **Foreign direct investment** — firms exploiting market imperfections such as under-priced labour and protected markets. In the U.S. accounts, acquiring **10% or more** of the voting shares counts as direct investment.
+-   **Portfolio investment** — sale and purchase of financial assets **without transfer of control**; boomed with the relaxation of capital controls and the desire to diversify risk.
+-   **Financial derivatives** — options, futures and swaps used for hedging.
+-   **Other investment** — currency, bank deposits, trade credits.
+-   **Statistical discrepancy** — omitted and misrecorded transactions.
+:::
+
+## 2 · The official reserve account, BRA, and the identity
+
+The overall balance indicates the international payment gap that must be compensated by official reserve transactions.
+
+:::: columns
+::: {.column width="50%"}
+**Deficit** — the central bank runs down official reserve assets (gold, foreign exchange) or borrows from foreign central banks.
+
+**Surplus** — it retires foreign debt or acquires reserve assets from foreigners.
+:::
+
+::: {.column width="50%"}
+::: keyidea
+$$BCA + BKA + BRA = 0$$
+
+Pure float, no intervention: $BCA = -BKA$
+
+Fixed regime, $BCA+BKA \neq 0$: $BCA + BKA = -BRA$
+:::
+:::
+::::
+
+## 2 · Problem 1.2 — the balance of payments of France
+
+::: panel-tabset
+### Data
+
+```{r}
+#| results: asis
+b <- read.csv("data/france-bop.csv", check.names = FALSE)
+out <- data.frame(
+  `Balance of payments (EUR m)` = b$item,
+  `2021 credits` = fmt_eur(b$credits_2021),
+  `2021 debits`  = fmt_eur(b$debits_2021),
+  `2021 balance` = fmt_eur(b$balance_2021),
+  `2022 credits` = fmt_eur(b$credits_2022),
+  `2022 debits`  = fmt_eur(b$debits_2022),
+  `2022 balance` = fmt_eur(b$balance_2022),
+  check.names = FALSE
+)
+knitr::kable(out, align = c("l", rep("r", 6)))
+```
+
+### Questions
+
+::: ask
+**(a)** What is your analysis of the French balance of payments?
+
+**(b)** Does the balance of payments **identity** hold for France?
+:::
+
+-   Assets: residents' transactions in securities issued by non-residents
+-   Liabilities: non-residents' transactions in securities issued by residents
+
+### Where to look
+
+::: incremental
+-   The current account turns from **+9.9 bn in 2021 to −56.7 bn in 2022** — and goods alone go from −79 to −144 bn. Energy prices.
+-   Services and income are the two structural surpluses. They fund part, not all, of the goods deficit.
+-   Add the accounts including net errors and omissions and reserve assets before deciding whether the identity holds.
+:::
+:::
+
+## 2 · Europe in 2024 — current and capital account
+
+```{r}
+#| results: asis
+eu <- data.frame(
+  Country = c("EU", "Euro area", "Germany", "France", "Italy", "Spain",
+              "Netherlands", "Ireland", "Poland"),
+  `Current account` = c(493.5, 425.9, 246.7, 11.6, 24.8, 48.1, 112.7, 91.5, 1.7),
+  Goods             = c(384.1, 371.9, 235.5, -58.1, 64.0, -32.3, 99.0, 176.6, -6.4),
+  Services          = c(191.1, 169.0, -74.0, 55.1, -7.0, 100.4, 38.2, 48.5, 40.2),
+  `Primary income`  = c(28.4, 53.6, 149.0, 61.8, -15.8, -8.1, -15.8, -129.0, -28.5),
+  `Secondary income`= c(-110.4, -168.5, -63.8, -47.2, -16.4, -11.8, -8.6, -4.6, -3.7),
+  `Capital account` = c(-34.9, 6.3, -20.4, 5.9, -0.6, 18.5, -3.4, -18.2, 2.3),
+  check.names = FALSE
+)
+knitr::kable(eu, align = c("l", rep("r", 6)))
+```
+
+::: ask
+Ireland's primary income is −129 bn against a goods surplus of +177 bn. What kind of firm produces that pattern?
+:::
+
+::: {.source}
+€ billion. Selected economies. Source: Eurostat, *Main components of the current account balance and the capital account balance, 2024* — [full table for all reporting countries](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Balance_of_payment_statistics)
+:::
+
+## 2 · Europe in 2024 — the financial account
+
+```{r}
+#| results: asis
+fa <- data.frame(
+  Country = c("EU", "Euro area", "Germany", "France", "Italy", "Spain",
+              "Netherlands", "Ireland", "Poland"),
+  `Financial account, net` = c(591.6, 491.8, 239.4, -21.9, 51.0, 69.8, 105.8, 83.1, -6.3),
+  `Direct inv., assets`    = c(190.4, 196.5, 73.8, 43.5, 31.5, 48.4, 11.2, 62.7, 7.2),
+  `Direct inv., liab.`     = c(-117.9, -49.1, 43.4, 51.6, 20.1, 29.8, -13.0, 3.7, 17.0),
+  `Portfolio inv., assets` = c(641.9, 734.0, 219.8, 240.9, 93.2, 90.7, 64.3, 443.6, 13.4),
+  `Portfolio inv., liab.`  = c(769.6, 848.4, 188.4, 259.9, 166.9, 87.8, 4.9, 391.5, 23.7),
+  `Reserve assets`         = c(45.5, 4.6, -1.4, 1.4, 2.1, 1.3, -0.7, -0.1, 27.2),
+  check.names = FALSE
+)
+knitr::kable(fa, align = c("l", rep("r", 6)))
+```
+
+::: {.source}
+€ billion. Selected economies. Source: Eurostat, *Main components of the financial account balance with the rest of the world, 2024*.
+:::
+
+# 📈  3 · The interest rate {.divider .center}
+
+## The week a number moved a pension fund {.hook}
+
+September 2022, the UK. Gilt yields jumped after the mini-budget. Pension funds running leveraged liability-driven strategies got collateral calls, sold gilts to meet them, and pushed yields higher still. The Bank of England had to step in and buy.
+
+::: incremental
+-   Nobody's view of the British economy changed that fast. The **price of money** did.
+-   An interest rate is not a number on a screen. It is the price that reprices everything you own.
+:::
+
+## 3 · Supply and demand for loanable funds
+
+:::: columns
+::: {.column width="42%"}
+The interest rate is the price that clears the market for **loanable funds**.
+
+::: keyidea
+Everything in the next two slides is a shift of one of these two curves. Ask yourself which one, and in which direction.
+:::
+:::
+
+::: {.column width="58%"}
+```{r}
+#| fig-width: 6.4
+#| fig-height: 4.4
+q <- seq(1, 10, length.out = 200)
+lf <- rbind(
+  data.frame(q = q, r = 9 / q,            curve = "Demand"),
+  data.frame(q = q, r = 0.9 + 0.09 * q^2, curve = "Supply")
+)
+ggplot(lf, aes(q, r, colour = curve)) +
+  geom_line(linewidth = 1.2) +
+  scale_colour_manual(values = c(Demand = IF_COL$slate, Supply = IF_COL$teal700)) +
+  annotate("text", x = 2.0, y = 8.2, label = "Demand", colour = IF_COL$slate,
+           size = 4.4, fontface = "bold") +
+  annotate("text", x = 8.4, y = 8.2, label = "Supply", colour = IF_COL$teal700,
+           size = 4.4, fontface = "bold") +
+  labs(x = "Loanable funds", y = "Interest rate") +
+  coord_cartesian(xlim = c(0, 11), ylim = c(0, 10)) +
+  theme_schematic() + theme(legend.position = "none")
+```
+:::
+::::
+
+## 3 · What shifts the supply of funds
+
+::: incremental
+-   **Wealth of fund suppliers** rises (households, businesses) → more available for investment
+-   **Risk of the security falls** — lower probability of issuer default → securities more attractive to suppliers
+-   **Near-term spending needs fall** → more available for investment
+-   **Monetary expansion** by the central bank → more funds available
+-   **Economic conditions improve** (inflation, unemployment, growth) → the flow of funds to the country increases
+:::
+
+## 3 · What shifts the demand for funds
+
+::: incremental
+-   **Utility from assets bought with borrowed funds rises** → market participants borrow more
+-   **Non-price conditions on borrowing become less restrictive** → borrowing increases
+-   **Economic conditions improve** — a period of growth → borrowing increases
+:::
+
+. . .
+
+::: ask
+The ECB's 2022–2023 hiking cycle: which curve moved, which way, and did the **quantity** of loanable funds rise or fall? (The rate going up does not settle it.)
+:::
+
+## 3 · The interest rate over the business cycle
+
+```{r}
+#| fig-width: 10
+#| fig-height: 4.0
+tb <- fred("TB3MS")
+if (is.null(tb)) {
+  no_data_note("TB3MS")
+} else {
+  ggplot(tb, aes(date, value)) +
+    recession_bands() +
+    geom_line(colour = IF_COL$teal700, linewidth = .5) +
+    labs(x = NULL, y = "Percent",
+         title = "3-month Treasury bill, United States",
+         caption = "Shaded: NBER recessions. Source: Board of Governors of the Federal Reserve System via FRED.") +
+    theme_if()
+}
+```
+
+::: ask
+What is the relationship between the business cycle and interest rates — and which way does the causality run?
+:::
+
+## 3 · The interest rate and the CPI
+
+```{r}
+#| fig-width: 10
+#| fig-height: 4.0
+tb  <- fred("TB3MS")
+cpi <- fred("CPIAUCSL")
+if (is.null(tb) || is.null(cpi)) {
+  no_data_note("TB3MS / CPIAUCSL")
+} else {
+  cpi$infl <- c(rep(NA, 12), diff(log(cpi$value), lag = 12) * 100)
+  both <- rbind(
+    data.frame(date = tb$date,  value = tb$value,  series = "Interest rate (3-m T-bill)"),
+    data.frame(date = cpi$date, value = cpi$infl,  series = "Inflation (CPI, yoy)")
+  )
+  both <- both[!is.na(both$value) & both$date >= as.Date("1964-01-01"), ]
+  ggplot(both, aes(date, value, colour = series)) +
+    recession_bands(as.Date("1964-01-01")) +
+    geom_hline(yintercept = 0, colour = IF_COL$ink, linewidth = .4) +
+    geom_line(linewidth = .55) +
+    scale_colour_manual(values = c(IF_COL$clay, IF_COL$teal700)) +
+    labs(x = NULL, y = "Percent",
+         caption = "Source: Board of Governors of the Federal Reserve System; BLS via FRED.") +
+    theme_if()
+}
+```
+
+::: ask
+What is the relationship between the interest rate and the CPI?
+:::
+
+## 3 · Real and nominal
+
+::: keyidea
+$$i_r = i - \pi^e$$ The real rate is the nominal rate adjusted for **expected** changes in the price level. It reflects the true cost of borrowing.
+:::
+
+```{r}
+#| fig-width: 10
+#| fig-height: 3.4
+tb  <- fred("TB3MS")
+cpi <- fred("CPIAUCSL")
+if (is.null(tb) || is.null(cpi)) {
+  no_data_note("TB3MS / CPIAUCSL")
+} else {
+  cpi$infl <- c(rep(NA, 12), diff(log(cpi$value), lag = 12) * 100)
+  m <- merge(tb, cpi[, c("date", "infl")], by = "date")
+  m <- m[!is.na(m$infl) & m$date >= as.Date("1960-01-01"), ]
+  s <- rbind(
+    data.frame(date = m$date, value = m$value,          series = "Nominal rate"),
+    data.frame(date = m$date, value = m$value - m$infl, series = "Real rate")
+  )
+  ggplot(s, aes(date, value, colour = series)) +
+    recession_bands(as.Date("1960-01-01")) +
+    geom_hline(yintercept = 0, colour = IF_COL$ink, linewidth = .4) +
+    geom_line(linewidth = .55) +
+    scale_colour_manual(values = c(IF_COL$slate, IF_COL$teal700)) +
+    labs(x = NULL, y = "Percent") +
+    theme_if()
+}
+```
+
+::: ask
+When the real rate is low, borrowing looks clever and lending looks foolish. Find the stretches where it was **negative** — someone was quietly transferring wealth to someone else. Who, and to whom?
+:::
+
+## 3 · Risk and term structure
+
+::: panel-tabset
+### Default risk
+
+The risk that the issuer is unable or unwilling to make interest payments as promised. Bonds with no default risk — U.S. Treasuries, which can raise taxes or print money — are the benchmark. The **risk premium** is the spread between a bond with default risk and a default-free bond.
+
+### Liquidity
+
+A liquid asset is quickly and cheaply converted into cash. Demand is higher for more liquid assets, so the premium reflects **both** default risk and liquidity.
+
+### Taxation
+
+Tax exemption acts like an increase in expected return. U.S. municipal bonds are exempt from federal income tax; Treasuries are exempt from state and local income tax.
+
+### Maturity
+
+Rates at different maturities move together. When short rates are low, yield curves tend to slope steeply upward; when short rates are high, the curve tends to slope gently downward. Most of the time it slopes **upward**.
+:::
+
+## 3 · Yield curves
+
+:::: columns
+::: {.column width="52%"}
+```{r}
+#| fig-width: 6
+#| fig-height: 4.2
+m  <- c(0.25, 0.5, 1, 2, 3, 5, 7, 10, 20, 30)
+yc <- rbind(
+  data.frame(m = m, y = 1.0 + 2.0 * (1 - exp(-m / 6)),            shape = "Normal (upward)"),
+  data.frame(m = m, y = 4.9 + 0.02 * m,                            shape = "Flat"),
+  data.frame(m = m, y = 5.1 - 0.9 * (1 - exp(-m / 4)) + 0.01 * m,  shape = "Inverted")
+)
+ggplot(yc, aes(m, y, colour = shape)) +
+  geom_line(linewidth = 1.1) + geom_point(size = 1.6) +
+  scale_colour_manual(values = c("Normal (upward)" = IF_COL$teal700,
+                                 "Flat"            = IF_COL$slate,
+                                 "Inverted"        = IF_COL$clay)) +
+  scale_x_continuous(breaks = c(1, 5, 10, 20, 30)) +
+  labs(x = "Maturity (years)", y = "Interest rate (%)",
+       title = "Three shapes of the yield curve (schematic)") +
+  theme_if()
+```
+:::
+
+::: {.column width="48%"}
+Most of the time the curve slopes upward. The two other shapes are the interesting ones.
+
+::: ask
+An **inverted** curve has preceded most U.S. recessions. Does that make it a forecast, or a symptom?
+:::
+
+::: {.source}
+Live curve: [U.S. Treasury daily yield curve rates](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve). Pull the current one before class — the shape today is the best slide you have.
+:::
+:::
+::::
+
+# 💱  4 · The exchange rate {.divider .center}
+
+## 15 January 2015 {.hook}
+
+For three years the Swiss National Bank had promised it would not let the franc strengthen past 1.20 per euro. That morning, it stopped. The franc jumped by roughly a fifth against the euro within the day, and several retail FX brokers did not survive the week.
+
+::: incremental
+-   A fixed exchange rate is a **promise**, and a promise is worth exactly the reserves standing behind it.
+-   Section 4: who makes the promise, what it costs to keep, and what happens on the day it breaks.
+:::
+
+::: {.imgslot}
+photo idea: the EUR/CHF chart of 15 Jan 2015, or a Swiss franc note — search "EURCHF january 2015 chart"
+:::
+
+## 4 · Exchange rate regimes
+
+| Regime | Definition | In favour | Against |
+|:---|:---|:---|:---|
+| **Fixed** | Rates held constant or fluctuating within very narrow boundaries | MNCs operate more easily | Government may alter the value of a currency |
+| **Free float** | Rates determined by market forces, no intervention | Problems in one country spread less easily; no intervention policy needed; market efficiency enhanced | MNCs must manage the exposure; countries with severe problems may struggle |
+| **Managed float** | Market forces **with** government intervention | | Governments manipulate the rate for their own benefit |
+| **Pegged** | Home currency pegged to a foreign currency or unit of account | | Hard to defend against speculators in a crisis |
+| **No national currency** | The country uses another currency, e.g. the U.S. dollar | | |
+
+## 4 · Exchange rate policy
+
+::: incremental
+-   The **spot market** is the immediate purchase or sale of foreign exchange. $S(j/k)$ is the price of one unit of currency $k$ in terms of currency $j$.
+-   The exchange rate is the result of national currency supply and demand: the price of a currency in terms of another.
+-   Exchange rate policy is a **component of economic policy**. Authorities can defend the rate by
+    -   fixing short-term interest rates to prevent capital flight,
+    -   buying and selling on the foreign exchange market,
+    -   controlling exchanges through quantitative restrictions on capital movements.
+:::
+
+::: {.content-visible when-format="revealjs"}
+::: {style="text-align:center"}
+<iframe width="560" height="270" src="https://www.youtube-nocookie.com/embed/geoe-6NBy10" title="Exchange rate policy" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen data-external="1">
+
+</iframe>
+:::
+:::
+
+## 4 · Fixed versus flexible: the pound market
+
+:::: columns
+::: {.column width="42%"}
+The rate starts at 1.60 \$/£ and the U.S. runs a trade deficit.
+
+::: incremental
+-   **Flexible**: the dollar depreciates to 1.80 \$/£ and the deficit disappears.
+-   **Fixed**: the rate stays at 1.60 and the Fed supplies pounds out of reserves — or runs contractionary policies to shift demand back.
+:::
+:::
+
+::: {.column width="58%"}
+```{r}
+#| fig-width: 6.4
+#| fig-height: 4.4
+q <- seq(1, 10, length.out = 200)
+mk <- rbind(
+  data.frame(q = q, p = 1.05 + .10 * q,   curve = "Supply (S)"),
+  data.frame(q = q, p = 2.55 - .13 * q,   curve = "Demand (D)"),
+  data.frame(q = q, p = 2.15 - .13 * q,   curve = "Demand (D*)")
+)
+ggplot(mk, aes(q, p, colour = curve, linetype = curve)) +
+  geom_line(linewidth = 1) +
+  geom_hline(yintercept = c(1.60, 1.80), colour = IF_COL$muted,
+             linetype = "22", linewidth = .4) +
+  scale_colour_manual(values = c("Supply (S)" = IF_COL$teal700,
+                                 "Demand (D)" = IF_COL$slate,
+                                 "Demand (D*)" = IF_COL$clay)) +
+  scale_linetype_manual(values = c("Supply (S)" = 1, "Demand (D)" = 1,
+                                   "Demand (D*)" = 5)) +
+  scale_y_continuous(breaks = c(1.60, 1.80), labels = c("$1.60", "$1.80")) +
+  annotate("text", x = 5.5, y = 1.35, label = "trade deficit at the fixed rate",
+           colour = IF_COL$muted, size = 3.4) +
+  labs(x = "Quantity of British pounds", y = "Dollar price per pound") +
+  coord_cartesian(ylim = c(1.1, 2.3)) +
+  theme_if() + theme(panel.grid.major.x = element_blank())
+```
+:::
+::::
+
+## 4 · The Mundell–Fleming model
+
+:::: columns
+::: {.column width="52%"}
+A **small open economy with perfect capital mobility**, so $i = i^{*}$.
+
+IS — goods market, for a given $i^{*}$:
+
+$$Y = C(Y-T) + I(i^{*}) + G + NX(e)$$
+
+LM — money market, for a given $i^{*}$:
+
+$$M/P = L(i^{*}, Y)$$
+
+::: keyidea
+LM is **vertical**: given $i^{*}$ only one $Y$ clears the money market, whatever $e$. That single fact drives every result on the next slide.
+:::
+:::
+
+::: {.column width="48%"}
+```{r}
+#| fig-width: 5.6
+#| fig-height: 4.2
+yy <- seq(0, 10, length.out = 100)
+ggplot() +
+  geom_line(data = data.frame(y = yy, e = 8.4 - .62 * yy),
+            aes(y, e), colour = IF_COL$slate, linewidth = 1.1) +
+  annotate("segment", x = 5.6, xend = 5.6, y = 0, yend = 9,
+           colour = IF_COL$teal700, linewidth = 1.1) +
+  annotate("segment", x = 0, xend = 5.6, y = 4.93, yend = 4.93,
+           colour = IF_COL$muted, linetype = "22", linewidth = .4) +
+  annotate("text", x = 6.1, y = 8.6, label = "LM", colour = IF_COL$teal700,
+           size = 4.6, fontface = "italic") +
+  annotate("text", x = 9.2, y = 2.9, label = "IS", colour = IF_COL$slate,
+           size = 4.6, fontface = "italic") +
+  labs(x = expression(Y), y = expression(e)) +
+  coord_cartesian(xlim = c(0, 10), ylim = c(0, 9)) +
+  theme_schematic()
+```
+
+$e$ = nominal exchange rate, foreign currency per unit of domestic currency.
+:::
+::::
+
+## 4 · Problem 1.3 — policies in the Mundell–Fleming model
+
+::: ask
+What is the consequence of a **fiscal expansion**, a **monetary expansion** and a **trade restriction** on the exchange rate and on output — under floating and under fixed rates?
+:::
+
+| Policy | Floating: $e$ | Floating: $Y$ | Fixed: $e$ | Fixed: $Y$ |
+|:---|:--:|:--:|:--:|:--:|
+| Fiscal expansion | | | | |
+| Monetary expansion | | | | |
+| Import restriction | | | | |
+
+::: {.content-visible when-format="revealjs"}
+Fill the table with them — press **`C`** and draw the IS and LM shifts for each row before writing the sign.
+:::
+
+::: notes
+Floating: fiscal expansion appreciates e, Y unchanged; monetary expansion
+depreciates e, raises Y; trade restriction appreciates e, Y unchanged.
+Fixed: fiscal expansion raises Y, e fixed; monetary expansion is powerless
+(reserves drain, M endogenous); trade restriction raises Y.
+The whole point is the reversal of fiscal and monetary potency.
+:::
+
+## 4 · Currency supply and demand
+
+| | **Domestic currency supply** | **Domestic currency demand** |
+|:---|:---|:---|
+| **Private sector** | Purchase of foreign goods and services (imports) | Purchase of domestic goods and services (exports) |
+| | Income paid on non-residents' investments here | Income received on residents' investments abroad |
+| | Unilateral transfers out | Unilateral transfers in |
+| | Net purchase of foreign assets by residents (capital outflow) | Net purchase of domestic assets by non-residents (capital inflow) |
+| | Foreign debt repayment (cash outflow) | Settlement of foreign credit (cash inflow) |
+| **Central bank** | Foreign currency purchased (reserves increase) | Foreign currency sold (reserves decrease) |
+
+## 4 · Central bank intervention
+
+::: ask
+What is the ECB's intervention in the foreign exchange market in each of these two situations?
+:::
+
+```{r}
+#| fig-width: 10
+#| fig-height: 3.8
+q  <- seq(1, 9, length.out = 150)
+p1 <- rbind(
+  data.frame(q = q, v = 1 + .38 * q, curve = "S",  panel = "Demand for euro shifts out"),
+  data.frame(q = q, v = 5.2 - .28 * q, curve = "D1", panel = "Demand for euro shifts out"),
+  data.frame(q = q, v = 6.1 - .28 * q, curve = "D2", panel = "Demand for euro shifts out"),
+  data.frame(q = q, v = 1 + .38 * q, curve = "S1", panel = "Supply of euro shifts out"),
+  data.frame(q = q, v = 0.1 + .38 * q, curve = "S2", panel = "Supply of euro shifts out"),
+  data.frame(q = q, v = 5.2 - .28 * q, curve = "D",  panel = "Supply of euro shifts out")
+)
+ggplot(p1, aes(q, v, colour = curve)) +
+  geom_line(linewidth = 1) +
+  facet_wrap(~panel) +
+  scale_colour_manual(values = c(S = IF_COL$teal700, S1 = IF_COL$teal700,
+                                 S2 = IF_COL$clay, D = IF_COL$slate,
+                                 D1 = IF_COL$slate,   D2 = IF_COL$clay)) +
+  labs(x = "Quantity of euro", y = "Value of the euro") +
+  theme_schematic() +
+  theme(legend.position = "none",
+        strip.text = element_text(colour = IF_COL$teal700, face = "bold", size = rel(.9)))
+```
+
+## 4 · The euro against the dollar
+
+```{r}
+#| fig-width: 10
+#| fig-height: 4.2
+fx <- fred("DEXUSEU")
+if (is.null(fx)) {
+  no_data_note("DEXUSEU")
+} else {
+  ggplot(fx, aes(date, value)) +
+    geom_line(colour = IF_COL$teal700, linewidth = .4) +
+    geom_hline(yintercept = 1, colour = IF_COL$clay, linetype = "22", linewidth = .4) +
+    labs(x = NULL, y = "U.S. dollars per euro",
+         title = "The euro since January 1999",
+         caption = "Source: Board of Governors of the Federal Reserve System via FRED (DEXUSEU).") +
+    theme_if()
+}
+```
+
+## 4 · The Asian crisis (1)
+
+::: incremental
+-   In 1997–98 Thailand was at the centre of a financial crisis.
+-   It began with a **loss of confidence** in the Thai financial system: the supply and demand curves for baht shifted, the equilibrium rate fell, but Thailand kept the actual rate fixed at \$0.04 — above equilibrium.
+-   The central bank depleted its dollar reserves defending it, which led traders to **anticipate a devaluation** and shift the curves further.
+-   In July 1997 it ran out of reserves and let the baht float. It fell immediately from \$0.04 to \$0.02.
+-   Thai banks, counting on the fixed rate, had borrowed heavily in dollars and yen and lent in baht. **That currency mismatch is the crisis.**
+:::
+
+::: ask
+How did the Thai central bank maintain the fixed rate — and why did it try?
+:::
+
+## 4 · The Asian crisis (2)
+
+:::: columns
+::: {.column width="45%"}
+At the fixed rate of \$0.04, once the equilibrium has fallen to \$0.02, the central bank must **buy 300 million baht a month** with dollars.
+
+::: incremental
+-   Once reserves are gone there are two choices: float (immediate depreciation) or declare a new, lower fixed rate — a devaluation.
+-   Speculators anticipate the drop, which lowers the equilibrium value further and increases the excess supply of baht.
+-   Defending the rate gets **harder the longer you defend it**.
+:::
+:::
+
+::: {.column width="55%"}
+```{r}
+#| fig-width: 6.2
+#| fig-height: 4.4
+q <- seq(50, 500, length.out = 200)
+bt <- rbind(
+  data.frame(q = q, p = 0.010 + 0.00008 * q, curve = "S1 (baht supply)"),
+  data.frame(q = q, p = 0.001 + 0.00008 * q, curve = "S2 (after the shift)"),
+  data.frame(q = q, p = 0.062 - 0.00008 * q, curve = "D1 (baht demand)"),
+  data.frame(q = q, p = 0.050 - 0.00008 * q, curve = "D2 (after the shift)")
+)
+ggplot(bt, aes(q, p, colour = curve, linetype = curve)) +
+  geom_line(linewidth = .95) +
+  geom_hline(yintercept = c(0.02, 0.04), colour = IF_COL$muted,
+             linetype = "22", linewidth = .4) +
+  annotate("segment", x = 100, xend = 400, y = 0.0415, yend = 0.0415,
+           colour = IF_COL$clay, linewidth = 1,
+           arrow = grid::arrow(length = unit(.018, "npc"), ends = "both", type = "closed")) +
+  annotate("text", x = 250, y = 0.0445, label = "central bank buys 300",
+           colour = IF_COL$clay, size = 3.5, fontface = "bold") +
+  scale_colour_manual(values = c(IF_COL$slate, IF_COL$clay,
+                                 IF_COL$teal700, IF_COL$teal300)) +
+  scale_linetype_manual(values = c(1, 5, 1, 5)) +
+  scale_x_continuous(breaks = c(100, 400)) +
+  scale_y_continuous(breaks = c(0.02, 0.04), labels = c("$0.02", "$0.04")) +
+  labs(x = "Millions of baht per month", y = "Dollars per baht") +
+  theme_if() +
+  theme(panel.grid.major.x = element_blank(),
+        legend.text = element_text(size = rel(.7)))
+```
+:::
+::::
+
+# 🌡️  5 · Reading discussion {.divider .center}
+
+## The tragedy of the horizon {.hook}
+
+Mark Carney, at Lloyd's of London in 2015: the costs of climate change fall **beyond the horizon** of the business cycle, the political cycle and the investment cycle.
+
+By the time it is unambiguously a financial risk, it is too late to treat it as one.
+
+::: {.imgslot}
+photo idea: flooded street, or a stranded coal plant — search "flooded street climate" or "abandoned coal power plant"
+:::
+
+## 5 · Monasterolo (2020), *Climate Change and the Financial System*
+
+::: panel-tabset
+### The questions
+
+::: ask
+**(a)** Why is there a misalignment between climate impacts and investors' decisions?
+
+**(b)** What are the various climate **physical** risks?
+
+**(c)** What are the potential risks arising from **policy and regulatory** shocks?
+
+**(d)** Why is assessing climate risks challenging?
+:::
+
+### How to answer
+
+::: incremental
+-   Answer (a) with the **horizons**: the tragedy of the horizon — climate damages fall outside the investment and electoral cycle, so they are not priced.
+-   For (c), separate an orderly transition from a **disorderly** one. The risk to a portfolio is the disorderly path, not the transition itself.
+-   For (d), the honest answer is that the historical distribution does not contain the events we are pricing. That is a problem for every risk model in this course.
+:::
+
+### For the discussion
+
+::: ask
+If climate risk is not priced because horizons are misaligned, **which of the four sections of today's session does the correction have to come through** — markets, the balance of payments, the interest rate, or the exchange rate?
+:::
+:::
+
+## Next session {.center}
+
+Session 2 finishes the international financial system.
+
+::: keyidea
+Two things to bring: **Monasterolo (2020)**, read — and one security you might actually want to analyse for the group work. Not "a stock". A specific one, with a ticker.
+:::
+
+::: {.source}
+Press **`O`** for the slide overview · **`C`** to draw · **`S`** for speaker notes · **`F`** for fullscreen · **`E`** then print for a PDF of the slides.
+:::

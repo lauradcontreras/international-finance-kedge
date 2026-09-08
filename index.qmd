@@ -1,0 +1,43 @@
+---
+title: "International Finance"
+subtitle: "KEDGE Business School"
+---
+
+Slides for the *International Finance* course. Each session is a set of
+reveal.js slides you can open in a browser, plus a PDF handout of the same
+material.
+
+**In the slides:** `→` `←` move, `O` gives the overview, `F` is fullscreen,
+`E` then print makes a PDF of the slides as they look on screen.
+
+## Sessions
+
+| | Session | Slides | Handout |
+|:--:|:---|:--|:--|
+| 1 | The international financial system | [open](01-international-financial-system.html) | [PDF](01-international-financial-system.pdf) |
+| 2 | The international financial system (continued) | *to come* | |
+| 3–4 | Securities markets | *to come* | |
+| 5–6 | Financial institutions and firms | *to come* | |
+| 7 | Regulation · individual assignment | *to come* | |
+| 8 | Security analysis · group presentations | *to come* | |
+| 9 | Regulation | *to come* | |
+| 10 | Final examination | | |
+
+## Readings
+
+- Session 1–2 — Monasterolo, I. (2020), *Climate Change and the Financial System*, **Annual Review of Resource Economics** 12
+- Session 3–4 — Sartzetakis, E.S. (2021), *Green bonds as an instrument to finance low carbon transition*, **Economic Change and Restructuring** 54
+- Session 5–6 — Muñoz, F. (2020), *How do the size and independence of the board of trustees affect the financial and sustainable performance of socially responsible mutual funds?*, **Corporate Social Responsibility and Environmental Management** 27(4)
+
+Read the paper **before** the session it belongs to. Course description and
+announcements are on [LEARN](http://learn.kedgebs.com).
+
+## Assessment
+
+| | Weight | When |
+|:---|:--:|:---|
+| Individual assignment | 20% | Session 7 |
+| Group work — security analysis | 40% | Session 8 |
+| Final exam | 40% | Session 10 |
+
+A calculator is required for most sessions.

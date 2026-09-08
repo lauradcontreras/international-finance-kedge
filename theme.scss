@@ -1,0 +1,214 @@
+/*-- scss:defaults --*/
+// International Finance — dark teal, warm edition
+// Change $teal-700 and the whole deck follows.
+
+$teal-900: #06302F;   // deepest — section dividers
+$teal-800: #0B3F3D;
+$teal-700: #0E5250;   // PRIMARY — headings, rules, table headers
+$teal-500: #1C7F79;   // links, emphasis
+$teal-300: #63ADA6;   // light accents
+$teal-100: #C8E0DD;
+$teal-050: #EDF5F4;   // tint fills
+
+$clay:     #B4573C;   // questions / "your turn" prompts
+$clay-050: #FBF1ED;
+$slate:    #40607D;   // secondary series in charts
+$sand:     #FAF7F2;   // warm page tint
+$ink:      #1B2321;
+$muted:    #64726F;
+
+$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", -apple-system, Arial, sans-serif !default;
+$presentation-font-size-root: 34px;
+
+$body-bg:    #FFFFFF;
+$body-color: $ink;
+$link-color: $teal-500;
+
+$presentation-heading-color: $teal-700;
+$presentation-heading-font-weight: 700;
+$presentation-h1-font-size: 1.9em;
+$presentation-h2-font-size: 1.22em;
+$presentation-h3-font-size: 0.95em;
+
+$code-block-font-size: 0.55em;
+$code-block-bg: #F5F8F8;
+
+/*-- scss:rules --*/
+
+.reveal { -webkit-font-smoothing: antialiased; }
+.reveal .slides section { padding-top: .2em; }
+
+/* ---- headings: a short accent rule, not a full-width bar ---- */
+.reveal h2 {
+  margin-bottom: .85em;
+  line-height: 1.18;
+  position: relative;
+  padding-bottom: .3em;
+}
+.reveal h2::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 2.4em; height: 4px;
+  background: $teal-300;
+  border-radius: 2px;
+}
+.reveal h3 { color: $teal-800; margin-bottom: .35em; }
+
+.reveal p, .reveal li { line-height: 1.45; }
+.reveal ul { margin-bottom: .5em; }
+.reveal ul li { margin-bottom: .28em; }
+.reveal ul ul { font-size: .88em; color: $muted; }
+
+/* ---- section dividers ---- */
+.reveal .divider,
+.reveal section.divider {
+  background: linear-gradient(140deg, $teal-800 0%, $teal-900 55%, #04211F 100%);
+}
+.reveal .divider h1 {
+  color: #FFFFFF !important;
+  text-align: left;
+  font-size: 1.7em;
+  border: none;
+  padding-left: .9em;
+  position: relative;
+}
+.reveal .divider h1::after { content: none; }
+.reveal .divider h1::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: .5em; height: 2.4em;
+  border-left: 6px solid $teal-300;
+  border-radius: 3px;
+}
+.reveal .divider p, .reveal .divider li { color: #DCEBE9 !important; }
+
+/* ---- the hook slide that opens each section ---- */
+.reveal .hook { background: $sand; }
+.reveal .hook h2 { color: $teal-800; }
+.reveal .hook > p:first-of-type,
+.reveal .hook .lead {
+  font-size: 1.06em;
+  color: $teal-800;
+  max-width: 26em;
+}
+
+/* ---- title slide ---- */
+#title-slide { background: $sand; }
+#title-slide .title    { color: $teal-700; font-weight: 800; letter-spacing: -.01em; }
+#title-slide .subtitle { color: $muted; font-weight: 400; }
+
+/* ---- callouts: rounded cards, with a marker ---- */
+.ask, .keyidea, .card {
+  border-radius: 12px;
+  padding: .6em 1em .6em 2.5em;
+  margin: .6em 0;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(6, 48, 47, .07);
+}
+
+.ask {
+  background: $clay-050;
+  border: 1px solid #EBD5CC;
+  color: darken($clay, 10%);
+  font-style: italic;
+}
+.ask::before {
+  content: "💬";
+  position: absolute; left: .75em; top: .55em;
+  font-style: normal; font-size: .95em;
+}
+.ask strong { font-style: normal; color: darken($clay, 14%); }
+
+.keyidea {
+  background: $teal-050;
+  border: 1px solid $teal-100;
+}
+.keyidea::before {
+  content: "💡";
+  position: absolute; left: .75em; top: .55em;
+  font-size: .95em;
+}
+
+.card {
+  background: #FFFFFF;
+  border: 1px solid #E3EAE9;
+  padding: .7em 1em;
+}
+
+.reveal blockquote {
+  border: none;
+  border-left: 5px solid $teal-300;
+  background: $sand;
+  border-radius: 0 10px 10px 0;
+  padding: .55em 1.1em;
+  font-style: normal;
+  box-shadow: none;
+  width: 100%;
+}
+
+/* ---- image slots: drop a picture in and delete the div ---- */
+.imgslot {
+  border: 2px dashed $teal-300;
+  border-radius: 12px;
+  background: repeating-linear-gradient(45deg, $teal-050, $teal-050 12px, #FFF 12px, #FFF 24px);
+  color: $teal-700;
+  padding: 1.1em 1em;
+  margin: .7em 0;
+  text-align: center;
+  font-size: .72em;
+  font-style: italic;
+}
+.imgslot::before { content: "📷  "; font-style: normal; }
+
+/* ---- tables ---- */
+.reveal table {
+  font-size: .56em;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: .3em auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(6, 48, 47, .08);
+}
+.reveal table th {
+  background: $teal-700;
+  color: #FFFFFF;
+  font-weight: 600;
+  border: none;
+  padding: .45em .7em;
+  text-align: right;
+}
+.reveal table th:first-child { text-align: left; }
+.reveal table td {
+  border: none;
+  border-bottom: 1px solid #EAEFEE;
+  padding: .34em .7em;
+  text-align: right;
+}
+.reveal table td:first-child { text-align: left; }
+.reveal table tbody tr:nth-child(even) { background: $teal-050; }
+.reveal table tbody tr:last-child td { border-bottom: none; }
+
+/* ---- tabsets ---- */
+.reveal .panel-tabset [role="tab"] {
+  color: $muted;
+  border-radius: 8px 8px 0 0;
+}
+.reveal .panel-tabset [role="tab"][aria-selected="true"] {
+  color: $teal-700;
+  border-bottom-color: $teal-700;
+  background: $teal-050;
+  font-weight: 600;
+}
+
+/* ---- chrome ---- */
+.reveal .footer  { color: $muted; font-size: .48em; }
+.reveal .slide-number { color: $muted; }
+.reveal iframe { border: none; border-radius: 10px; background: #FFF;
+                 box-shadow: 0 2px 8px rgba(6, 48, 47, .12); }
+.reveal .smaller { font-size: .8em; }
+.reveal .source  { font-size: .48em; color: $muted; margin-top: .6em; }
+.reveal .center h2::after { content: none; }
