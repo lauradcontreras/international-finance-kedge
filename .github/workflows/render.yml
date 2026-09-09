@@ -37,7 +37,7 @@ jobs:
             any::ggplot2
 
       - name: Fetch the FRED series
-        run: Rscript R/make-cache.R
+        run: Rscript slides/R/make-cache.R
 
       - name: Render every session
         run: quarto render

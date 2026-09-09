@@ -54,12 +54,27 @@ theme_schematic <- function(base_size = 15) {
     )
 }
 
+# ---- where the repo root is, whatever folder we are rendering from --------
+# Slides live in slides/<session>/, this file in slides/R/, the FRED cache at
+# the repo root. Walk up until we find _quarto.yml so every session shares one
+# cache instead of downloading its own copy.
+if_root <- function(start = getwd()) {
+  d <- normalizePath(start, mustWork = FALSE)
+  for (i in 1:6) {
+    if (file.exists(file.path(d, "_quarto.yml"))) return(d)
+    parent <- dirname(d)
+    if (parent == d) break
+    d <- parent
+  }
+  start
+}
+
 # ---- FRED without an API key ----------------------------------------------
 # First render WITH internet writes cache/<id>.csv; every later render — and
 # every laptop in a classroom with no wifi — reads the cache. Returns NULL if
 # the series has never been cached, so the slide degrades to a note instead of
 # breaking the render.
-fred <- function(id, dir = "cache") {
+fred <- function(id, dir = file.path(if_root(), "cache")) {
   dir.create(dir, showWarnings = FALSE, recursive = TRUE)
   f <- file.path(dir, paste0(id, ".csv"))
   if (!file.exists(f)) {

@@ -3,7 +3,7 @@ project:
   output-dir: _site
   render:
     - index.qmd
-    - "*.qmd"
+    - slides/**/*.qmd
 
 website:
   title: "International Finance"
@@ -17,4 +17,4 @@ website:
       - text: "Home"
         href: index.qmd
       - text: "Session 1"
-        href: 01-international-financial-system.html
+        href: slides/01-international-financial-system/01-international-financial-system.html
