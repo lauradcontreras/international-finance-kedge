@@ -18,7 +18,7 @@ Hi! Welcome to the International Finance course website :wave:
 
 :clipboard: **Slides below:**
 
-- [Session 1: The international financial system](https://lauradcontreras.github.io/international-finance-kedge/slides/01-international-financial-system/01-international-financial-system.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/slides/01-international-financial-system/01-international-financial-system.pdf)]
+- [Session 1: The international financial system](https://lauradcontreras.github.io/international-finance-kedge/01-international-financial-system/01-international-financial-system.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/01-international-financial-system/01-international-financial-system.pdf)]
 
 - Session 2: The international financial system, continued *(to come)*
 
@@ -64,8 +64,8 @@ Written in [Quarto](https://quarto.org), rendered to reveal.js and beamer from o
 Quick version:
 
 ```bash
-quarto preview slides/01-international-financial-system/01-international-financial-system.qmd                  # write with live reload
-quarto render slides/01-international-financial-system/01-international-financial-system.qmd --to revealjs     # build the slides
+quarto preview 01-international-financial-system/01-international-financial-system.qmd                  # write with live reload
+quarto render 01-international-financial-system/01-international-financial-system.qmd --to revealjs     # build the slides
 git add -A && git commit -m "..." && git push                         # publish
 ```
 

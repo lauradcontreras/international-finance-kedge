@@ -6,7 +6,7 @@
 #
 # Delete cache/*.csv and run it again whenever you want fresh data.
 
-source("slides/R/setup.R")   # run from the repo root
+source("_R/setup.R")   # run from the repo root
 
 series <- c(
   TB3MS    = "3-month Treasury bill, secondary market rate",

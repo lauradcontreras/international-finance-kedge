@@ -14,7 +14,7 @@ material.
 
 | | Session | Slides | Handout |
 |:--:|:---|:--|:--|
-| 1 | The international financial system | [open](slides/01-international-financial-system/01-international-financial-system.html) | [PDF](slides/01-international-financial-system/01-international-financial-system.pdf) |
+| 1 | The international financial system | [open](01-international-financial-system/01-international-financial-system.html) | [PDF](01-international-financial-system/01-international-financial-system.pdf) |
 | 2 | The international financial system (continued) | *to come* | |
 | 3–4 | Securities markets | *to come* | |
 | 5–6 | Financial institutions and firms | *to come* | |
