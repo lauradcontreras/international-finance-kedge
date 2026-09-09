@@ -199,6 +199,36 @@ Question 1 tells you which examples land with this cohort; question 2 tells you
 which of the four sections to slow down on.
 :::
 
+## What the room said {.hook}
+
+```{r}
+#| results: asis
+# ---------------------------------------------------------------
+# The public summary of your form. In the Form: Settings -> Responses ->
+# "See summary charts and text responses" ON, then Send -> link, and swap
+# /viewform for /viewanalytics.
+results_url <- "https://docs.google.com/forms/d/e/REPLACE-ME/viewanalytics"
+# ---------------------------------------------------------------
+if (grepl("REPLACE-ME", results_url)) {
+  cat("*Put the form's `/viewanalytics` link in `results_url` to activate this slide.*\n")
+} else {
+  cat(sprintf(
+    "::: {style=\"text-align:center;font-size:1.3em;margin-top:1.2em\"}\n[Open the live results](%s){preview-link=\"false\" target=\"_blank\"}\n:::\n",
+    results_url))
+}
+```
+
+::: {.smaller style="text-align:center"}
+Charts redraw on every refresh — reload once the last hand goes down.
+:::
+
+::: notes
+Open this in a second browser tab BEFORE class and just switch to it, rather
+than clicking through from the deck. Two minutes on question 1 (who is in the
+room), then one on question 2 (what we are skipping and what we are slowing
+down for). Naming the empty boxes out loud buys a lot of goodwill.
+:::
+
 # 1 · The financial system {.divider .center}
 
 ## Where does your salary sleep at night? {.hook}

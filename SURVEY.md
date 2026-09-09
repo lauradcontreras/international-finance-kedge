@@ -71,6 +71,29 @@ install.packages("qrcode")
 The GitHub Action already has it in its package list, so the published deck
 builds the QR too.
 
+## Showing the results in the room, immediately
+
+Google Forms will draw the charts for you and you can project them.
+
+1. In the Form: **Settings → Responses → "See summary charts and text responses" ON**
+2. **Send → link**, copy it, and swap `/viewform` for `/viewanalytics`
+3. Put that link in `results_url` on the "What the room said" slide
+
+That `/viewanalytics` URL is public once the setting is on — no Google login on
+the classroom machine, which is the part that usually goes wrong at 8am.
+
+**Open it in a second browser tab before class** and switch tabs rather than
+clicking from the deck. Reveal's link preview tries to open external links in an
+overlay and Google refuses to be framed, so the slide's link is marked to open in
+a real tab — but a tab you opened beforehand is still faster and never surprises
+you.
+
+Charts redraw on refresh, not by themselves. Reload once the last hand goes down.
+
+If you ever want the results to appear *on the slide itself*, updating as they
+answer, that is Slido or Mentimeter — but their free tiers cap you at roughly
+your two questions, which is why the Form is the better trade here.
+
 ## Reading the answers
 
 **Question 1** tells you which examples land. A room that is mostly consulting
