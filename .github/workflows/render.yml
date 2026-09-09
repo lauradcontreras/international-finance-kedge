@@ -35,6 +35,7 @@ jobs:
             any::knitr
             any::rmarkdown
             any::ggplot2
+            any::qrcode
 
       - name: Fetch the FRED series
         run: Rscript _R/make-cache.R

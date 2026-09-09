@@ -142,9 +142,61 @@ Four prices and one accounting identity. That is the whole session.
 
 ::: {.content-visible when-format="revealjs"}
 ::: ask
-Before we start: **is the economy you know best market-based or bank-based?**\
-Poll: <https://app.sli.do/event/REPLACE-ME>
+Before any of that, two questions for you — the slide after this one.
 :::
+:::
+
+## Two questions before we start {.hook}
+
+:::: columns
+::: {.column width="56%"}
+**1 · Where do you want to work after this?**
+
+Finance or audit · Marketing · Business development · Consulting · Management · Logistics · Something else
+
+::: {.smaller}
+*Tick as many as apply.*
+:::
+
+**2 · Which of these have you already met?**
+
+Exchange rates · Balance of payments · Interest rates and yield curves · Financial crises · Derivatives and hedging · Central banks · None of them yet
+
+::: {.smaller}
+*Also tick as many as apply. No wrong answer — this tells me where to slow down.*
+:::
+:::
+
+::: {.column width="44%"}
+```{r}
+#| fig-width: 3.6
+#| fig-height: 3.6
+# ---------------------------------------------------------------
+# Paste your Google Form link here, then re-render.
+survey_url <- "https://forms.gle/REPLACE-ME"
+# ---------------------------------------------------------------
+if (requireNamespace("qrcode", quietly = TRUE) && !grepl("REPLACE-ME", survey_url)) {
+  plot(qrcode::qr_code(survey_url))
+} else {
+  ggplot() +
+    annotate("text", 0, .25, label = "QR appears here", colour = IF_COL$teal700,
+             size = 6, fontface = "bold") +
+    annotate("text", 0, -.15, label = "put your form link in survey_url",
+             colour = IF_COL$muted, size = 4) +
+    xlim(-1, 1) + ylim(-1, 1) + theme_void()
+}
+```
+
+::: {.smaller style="text-align:center"}
+`r if (exists("survey_url") && !grepl("REPLACE-ME", survey_url)) survey_url else "your form link"`
+:::
+:::
+::::
+
+::: notes
+Give them ninety seconds and actually wait. Answers land in the linked Sheet.
+Question 1 tells you which examples land with this cohort; question 2 tells you
+which of the four sections to slow down on.
 :::
 
 # 1 · The financial system {.divider .center}
