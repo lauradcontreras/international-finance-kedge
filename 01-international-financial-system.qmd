@@ -56,7 +56,7 @@ knitr:
 source("R/setup.R")
 ```
 
-# 👋  Welcome {.divider .center}
+# Welcome {.divider .center}
 
 ## What this course is actually about
 
@@ -134,11 +134,11 @@ never get to questions 2–4.
 
 Four prices and one accounting identity. That is the whole session.
 
-1.  🏦 The **financial system** — who saves, who borrows, and what sits in between
-2.  🌍 The **balance of payments** — every euro that crosses the border, written down twice
-3.  📈 The **interest rate** — the price of money
-4.  💱 The **exchange rate** — the price of a currency, and who pays to defend it
-5.  🌡️ Discussion: **Monasterolo (2020)** — what climate does to all four
+1. The **financial system** — who saves, who borrows, and what sits in between
+2. The **balance of payments** — every euro that crosses the border, written down twice
+3. The **interest rate** — the price of money
+4. The **exchange rate** — the price of a currency, and who pays to defend it
+5. Discussion: **Monasterolo (2020)** — what climate does to all four
 
 ::: {.content-visible when-format="revealjs"}
 ::: ask
@@ -147,7 +147,7 @@ Poll: <https://app.sli.do/event/REPLACE-ME>
 :::
 :::
 
-# 🏦  1 · The financial system {.divider .center}
+# 1 · The financial system {.divider .center}
 
 ## Where does your salary sleep at night? {.hook}
 
@@ -470,7 +470,7 @@ By setting standards for acceptable and unacceptable trade restrictions, and rul
 > In late 2004 the U.S. textile industry lobbied the Bush administration to slow the rise of clothing imports from China. U.S. clothing retailers and importers, for whom clothing is an input, lobbied hard against any barrier.
 :::
 
-# 🌍  2 · The balance of payments {.divider .center}
+# 2 · The balance of payments {.divider .center}
 
 ## Ireland exports more than it makes {.hook}
 
@@ -672,7 +672,7 @@ knitr::kable(fa, align = c("l", rep("r", 6)))
 € billion. Selected economies. Source: Eurostat, *Main components of the financial account balance with the rest of the world, 2024*.
 :::
 
-# 📈  3 · The interest rate {.divider .center}
+# 3 · The interest rate {.divider .center}
 
 ## The week a number moved a pension fund {.hook}
 
@@ -888,7 +888,7 @@ Live curve: [U.S. Treasury daily yield curve rates](https://home.treasury.gov/re
 :::
 ::::
 
-# 💱  4 · The exchange rate {.divider .center}
+# 4 · The exchange rate {.divider .center}
 
 ## 15 January 2015 {.hook}
 
@@ -1161,7 +1161,7 @@ ggplot(bt, aes(q, p, colour = curve, linetype = curve)) +
 :::
 ::::
 
-# 🌡️  5 · Reading discussion {.divider .center}
+# 5 · Reading discussion {.divider .center}
 
 ## The tragedy of the horizon {.hook}
 

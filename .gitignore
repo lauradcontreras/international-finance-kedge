@@ -20,3 +20,9 @@
 
 # macOS
 .DS_Store
+
+**/*.quarto_ipynb
+
+# render logs
+render-log.txt
+*.log
