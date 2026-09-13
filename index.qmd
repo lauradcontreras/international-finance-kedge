@@ -25,13 +25,13 @@ Course description and announcements are also on [LEARN](http://learn.kedgebs.co
 ## Sessions
 
 ::: {.small}
-Open the slides in your browser and use → / ← to navigate, or O for an
-overview. A PDF version is available next to each session.
+**Slides:** Open the slides in your browser and use → / ← to navigate or O
+for an overview. A PDF version is available next to each session.
 :::
 
 ::: {.session}
 [1 · The international financial system]{.title}
-[[Slides](01-international-financial-system/01-international-financial-system.html) · [PDF handout](01-international-financial-system/01-international-financial-system.pdf)]{.links}
+[[Slides](01-international-financial-system/01-international-financial-system.html) · [PDF](01-international-financial-system/01-international-financial-system.pdf)]{.links}
 :::
 
 ::: {.session}
@@ -51,7 +51,7 @@ overview. A PDF version is available next to each session.
 
 ::: {.session}
 [7 · Regulation]{.title}
-[Individual assignment, in class]{.soon}
+[Individual assignment]{.soon}
 :::
 
 ::: {.session}
