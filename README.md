@@ -2,7 +2,7 @@
 
 Hi! Welcome to the International Finance course website :wave:
 
-:closed_book: This is a course for [KEDGE Business School](https://kedge.edu/). We build a set of operational models of how international financial markets work — and then spend most of our time on where they break.
+:closed_book: This course is for [KEDGE Business School](https://kedge.edu/). We build operational models of how international financial markets work—and then spend most of our time on where they break.
 
 :link: **[Course website](https://lauradcontreras.github.io/international-finance-kedge/)** — slides, handouts and readings in one place.
 
@@ -52,7 +52,7 @@ Hi! Welcome to the International Finance course website :wave:
 
 ---
 
-You can reach me at **your.email [at] kedgebs.com**
+You can reach me at **laura.contrerasportela [at] kedgebs.com**
 
 ---
 
