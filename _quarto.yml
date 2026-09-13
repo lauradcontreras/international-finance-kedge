@@ -4,17 +4,32 @@ project:
   render:
     - index.qmd
     - "[0-9][0-9]-*/*.qmd"
+  resources:
+    - "_theme/fonts/**"
 
 website:
   title: "International Finance"
-  description: "KEDGE Business School — course slides"
-  page-footer:
-    left: "Laura Contreras-Portela · KEDGE Business School"
-    right: "Built with [Quarto](https://quarto.org)"
+  description: "Kedge Business School — course site"
+  favicon: _theme/favicon.ico
+  site-url: "https://lauradcontreras.github.io/international-finance-kedge"
+  page-navigation: false
   navbar:
-    background: "#0E5250"
+    background: "#005f63"
     left:
-      - text: "Home"
+      - text: "Course"
         href: index.qmd
       - text: "Session 1"
         href: 01-international-financial-system/01-international-financial-system.html
+    right:
+      - text: "Laura Contreras-Portela"
+        href: "https://lauradcontreras.github.io"
+  page-footer:
+    left: "Laura Contreras-Portela · Kedge Business School"
+    right: "[Slides source](https://github.com/lauradcontreras/international-finance-kedge)"
+
+format:
+  html:
+    theme: _theme/site.scss
+    toc: false
+    anchor-sections: false
+    link-external-newwindow: false

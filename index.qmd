@@ -1,43 +1,116 @@
 ---
 title: "International Finance"
-subtitle: "KEDGE Business School"
+subtitle: "Kedge Business School · IBBA · 2026"
 ---
 
-Slides for the *International Finance* course. Each session is a set of
-reveal.js slides you can open in a browser, plus a PDF handout of the same
-material.
+This course builds a set of operational models of how international financial
+markets work — and then spends most of its time on where they break.
+Informational efficiency, financial crises, regulation, behavioural finance,
+mostly through papers rather than through me talking. A second objective, and I
+mean it: what a more responsible practice of finance would look like after 2008.
 
-**In the slides:** `→` `←` move, `O` gives the overview, `F` is fullscreen,
-`E` then print makes a PDF of the slides as they look on screen.
+::: {.note}
+**No textbook.** Reference: Mishkin, F.S. & Eakins, S.G. (2008), *Financial
+Markets and Institutions*, 7th ed., Pearson.
+Course description and grades are on [LEARN](http://learn.kedgebs.com).
+:::
 
 ## Sessions
 
-| | Session | Slides | Handout |
-|:--:|:---|:--|:--|
-| 1 | The international financial system | [open](01-international-financial-system/01-international-financial-system.html) | [PDF](01-international-financial-system/01-international-financial-system.pdf) |
-| 2 | The international financial system (continued) | *to come* | |
-| 3–4 | Securities markets | *to come* | |
-| 5–6 | Financial institutions and firms | *to come* | |
-| 7 | Regulation · individual assignment | *to come* | |
-| 8 | Security analysis · group presentations | *to come* | |
-| 9 | Regulation | *to come* | |
-| 10 | Final examination | | |
+::: {.small}
+Slides open in any browser. `→` and `←` move between them, `O` gives you the
+overview, `F` is fullscreen, `E` then print produces a PDF. Each session also has
+a PDF handout of the same material.
+:::
+
+::: {.session}
+[1 · The international financial system]{.title}
+[[Slides](01-international-financial-system/01-international-financial-system.html) · [PDF handout](01-international-financial-system/01-international-financial-system.pdf)]{.links}
+:::
+
+::: {.session}
+[2 · The international financial system, continued]{.title}
+[To come]{.soon}
+:::
+
+::: {.session}
+[3–4 · Securities markets]{.title}
+[To come]{.soon}
+:::
+
+::: {.session}
+[5–6 · Financial institutions and firms]{.title}
+[To come]{.soon}
+:::
+
+::: {.session}
+[7 · Regulation]{.title}
+[Individual assignment, in class]{.soon}
+:::
+
+::: {.session}
+[8 · Security analysis]{.title}
+[Group presentations, in groups of five]{.soon}
+:::
+
+::: {.session}
+[9 · Regulation]{.title}
+[To come]{.soon}
+:::
+
+::: {.session}
+[10 · Final examination]{.title}
+:::
 
 ## Readings
 
-- Session 1–2 — Monasterolo, I. (2020), *Climate Change and the Financial System*, **Annual Review of Resource Economics** 12
-- Session 3–4 — Sartzetakis, E.S. (2021), *Green bonds as an instrument to finance low carbon transition*, **Economic Change and Restructuring** 54
-- Session 5–6 — Muñoz, F. (2020), *How do the size and independence of the board of trustees affect the financial and sustainable performance of socially responsible mutual funds?*, **Corporate Social Responsibility and Environmental Management** 27(4)
+Read the paper **before** the session it belongs to. We discuss it; I do not
+summarise it for you.
 
-Read the paper **before** the session it belongs to. Course description and
-announcements are on [LEARN](http://learn.kedgebs.com).
+| Sessions | Reading |
+|:--|:---|
+| 1–2 | Monasterolo, I. (2020), *Climate Change and the Financial System*, **Annual Review of Resource Economics** 12 |
+| 3–4 | Sartzetakis, E.S. (2021), *Green bonds as an instrument to finance low carbon transition*, **Economic Change and Restructuring** 54 |
+| 5–6 | Muñoz, F. (2020), *How do the size and independence of the board of trustees affect the financial and sustainable performance of socially responsible mutual funds?*, **Corporate Social Responsibility and Environmental Management** 27(4) |
 
 ## Assessment
 
-| | Weight | When |
-|:---|:--:|:---|
-| Individual assignment | 20% | Session 7 |
-| Group work — security analysis | 40% | Session 8 |
-| Final exam | 40% | Session 10 |
+| | Weight | When | Conditions |
+|:---|:--:|:---|:---|
+| Individual assignment | 20% | Session 7 | 20 minutes, no documents |
+| Group work — security analysis | 40% | Session 8 | Groups of five, 12-minute presentation |
+| Final examination | 40% | Session 10 | Individual, written, documents allowed |
 
-A calculator is required for most sessions.
+**A calculator is required for most sessions.** Not your phone.
+
+### The group work
+
+Five students per group, twelve minutes. Pick one security and answer four
+questions about it:
+
+1. What are the **characteristics** of the security?
+2. What are the **actual and expected situations** in that market?
+3. What is the **international dimension** of it?
+4. What are the **risks and opportunities**?
+
+Choose something you can find real data on. Groups that pick an exotic
+derivative spend the whole presentation explaining the instrument and never
+reach questions 2 to 4.
+
+## Announcements
+
+::: {.session}
+[Before session 1]{.title}[9 Sept]{.term}
+[Read Monasterolo (2020). Bring a calculator. Start thinking about a security for the group work — a specific one, with a ticker.]{.soon}
+:::
+
+## Contact
+
+Laura Contreras-Portela — questions by email, or catch me after the session.
+More about my research on [my site](https://lauradcontreras.github.io).
+
+::: {.footnote}
+Slides built with [Quarto](https://quarto.org). Source on
+[GitHub](https://github.com/lauradcontreras/international-finance-kedge).
+Material licensed CC BY-NC-SA 4.0.
+:::
