@@ -42,7 +42,7 @@ Hi! Welcome to the International Finance course website :wave:
 
 :books: **Readings.** Read the paper *before* the session it belongs to.
 
-- Sessions 1–2 — Monasterolo, I. (2020), *Climate Change and the Financial System*, **Annual Review of Resource Economics** 12
+- Session 2 — Monasterolo, I. (2020), *Climate Change and the Financial System*, **Annual Review of Resource Economics** 12
 - Sessions 3–4 — Sartzetakis, E.S. (2021), *Green bonds as an instrument to finance low carbon transition*, **Economic Change and Restructuring** 54
 - Sessions 5–6 — Muñoz, F. (2020), *How do the size and independence of the board of trustees affect the financial and sustainable performance of socially responsible mutual funds?*, **Corporate Social Responsibility and Environmental Management** 27(4)
 
