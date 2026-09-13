@@ -46,20 +46,42 @@ $code-block-bg: #F5F8F8;
 
 .reveal { -webkit-font-smoothing: antialiased; }
 
-/* ---- vertical centring ----
-   Done here rather than with reveal's own `center: true`, which sets
-   r-stretch figures to height 0 and makes every chart disappear.
-   The slide box is full height and its children are centred inside it. */
+/* ---- layout: fixed title band, body centred below it ----
+   Like a beamer frametitle: the slide title always starts at the same
+   place, whatever the slide holds, and everything below it is centred in
+   the space that is left. Done here rather than with reveal's own
+   `center: true`, which sets r-stretch figures to height 0 and makes
+   every chart disappear.
+   Coordinates are in the deck's own 1600x900 space, so px are exact. */
+$title-top:    46px;   // top of the title, identical on every slide
+$title-band:  150px;   // title zone: body starts here
+$body-bottom:  56px;   // keeps the body clear of the footer
+
 .reveal .slides > section:not(.stack),
 .reveal .slides > section > section {
   height: 100%;
-  padding-top: 0;
+  box-sizing: border-box;
+  padding: $title-band 0 $body-bottom 0;
   display: flex !important;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
 }
+.reveal .slides section > h2:first-child {
+  position: absolute;
+  top: $title-top;
+  left: 0;
+  right: 0;
+  margin: 0;
+}
 .reveal .slides section > *:first-child { margin-top: 0; }
+
+/* Divider and title slides have no body: centre the whole thing instead. */
+.reveal .slides > section.divider,
+.reveal .slides > section#title-slide {
+  padding: 0;
+}
+.reveal .slides section.divider > h2:first-child { position: static; }
 
 /* ---- headings: a short accent rule, not a full-width bar ---- */
 .reveal h2 {
