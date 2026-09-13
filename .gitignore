@@ -28,3 +28,7 @@ render-log.txt
 *.log
 
 **/*.quarto_ipynb
+
+# Quarto scratch file left behind while compiling the SCSS theme
+_quarto_internal_scss_error.scss
+**/_quarto_internal_scss_error.scss
