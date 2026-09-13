@@ -10,6 +10,8 @@ format:
     theme: [default, ../_theme/theme.scss]
     width: 1600
     height: 900
+    title-slide-attributes:
+      data-background-color: "#FAF7F2"
     slide-number: c/t
     show-slide-number: all
     progress: true
@@ -56,7 +58,7 @@ knitr:
 source("../_R/setup.R")
 ```
 
-# Welcome {.divider .center}
+# Welcome {.divider .center background-color="#06302F"}
 
 ## What this course is actually about
 
@@ -146,7 +148,7 @@ Before any of that, two questions for you — the slide after this one.
 :::
 :::
 
-## Two questions before we start {.hook}
+## Two questions before we start {.hook background-color="#FAF7F2"}
 
 :::: columns
 ::: {.column width="56%"}
@@ -199,7 +201,7 @@ Question 1 tells you which examples land with this cohort; question 2 tells you
 which of the four sections to slow down on.
 :::
 
-## What the room said {.hook}
+## What the room said {.hook background-color="#FAF7F2"}
 
 ```{r}
 #| results: asis
@@ -229,9 +231,9 @@ room), then one on question 2 (what we are skipping and what we are slowing
 down for). Naming the empty boxes out loud buys a lot of goodwill.
 :::
 
-# 1 · The financial system {.divider .center}
+# 1 · The financial system {.divider .center background-color="#06302F"}
 
-## Where does your salary sleep at night? {.hook}
+## Where does your salary sleep at night? {.hook background-color="#FAF7F2"}
 
 You are paid on the 28th. Part of it sits in a current account until the rent leaves. That balance does not sit still.
 
@@ -552,9 +554,9 @@ By setting standards for acceptable and unacceptable trade restrictions, and rul
 > In late 2004 the U.S. textile industry lobbied the Bush administration to slow the rise of clothing imports from China. U.S. clothing retailers and importers, for whom clothing is an input, lobbied hard against any barrier.
 :::
 
-# 2 · The balance of payments {.divider .center}
+# 2 · The balance of payments {.divider .center background-color="#06302F"}
 
-## Ireland exports more than it makes {.hook}
+## Ireland exports more than it makes {.hook background-color="#FAF7F2"}
 
 In 2024 Ireland ran a goods surplus of **€177 bn** and a primary income deficit of **€129 bn**. Money arrives for the goods and leaves again for the shareholders, most of whom live somewhere else.
 
@@ -582,7 +584,7 @@ A country's transactions with the rest of the world, recorded over a period, in 
 
 ::: {.content-visible when-format="revealjs"}
 ::: {style="text-align:center"}
-<iframe width="620" height="300" src="https://www.youtube-nocookie.com/embed/qgmTZJIk7VE" title="Balance of payments" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen data-external="1">
+<iframe width="540" height="250" src="https://www.youtube-nocookie.com/embed/qgmTZJIk7VE" title="Balance of payments" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen data-external="1">
 
 </iframe>
 :::
@@ -754,9 +756,9 @@ knitr::kable(fa, align = c("l", rep("r", 6)))
 € billion. Selected economies. Source: Eurostat, *Main components of the financial account balance with the rest of the world, 2024*.
 :::
 
-# 3 · The interest rate {.divider .center}
+# 3 · The interest rate {.divider .center background-color="#06302F"}
 
-## The week a number moved a pension fund {.hook}
+## The week a number moved a pension fund {.hook background-color="#FAF7F2"}
 
 September 2022, the UK. Gilt yields jumped after the mini-budget. Pension funds running leveraged liability-driven strategies got collateral calls, sold gilts to meet them, and pushed yields higher still. The Bank of England had to step in and buy.
 
@@ -970,9 +972,9 @@ Live curve: [U.S. Treasury daily yield curve rates](https://home.treasury.gov/re
 :::
 ::::
 
-# 4 · The exchange rate {.divider .center}
+# 4 · The exchange rate {.divider .center background-color="#06302F"}
 
-## 15 January 2015 {.hook}
+## 15 January 2015 {.hook background-color="#FAF7F2"}
 
 For three years the Swiss National Bank had promised it would not let the franc strengthen past 1.20 per euro. That morning, it stopped. The franc jumped by roughly a fifth against the euro within the day, and several retail FX brokers did not survive the week.
 
@@ -1243,9 +1245,9 @@ ggplot(bt, aes(q, p, colour = curve, linetype = curve)) +
 :::
 ::::
 
-# 5 · Reading discussion {.divider .center}
+# 5 · Reading discussion {.divider .center background-color="#06302F"}
 
-## The tragedy of the horizon {.hook}
+## The tragedy of the horizon {.hook background-color="#FAF7F2"}
 
 Mark Carney, at Lloyd's of London in 2015: the costs of climate change fall **beyond the horizon** of the business cycle, the political cycle and the investment cycle.
 
