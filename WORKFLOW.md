@@ -37,8 +37,8 @@ cd ~/Documents/GitHub/international-finance
 | You write | You get |
 |:---|:---|
 | `## Title` | A new slide |
-| `## Title {.hook}` | A sand-coloured section-opening slide |
-| `# Title {.divider .center}` | A full-bleed dark teal section divider |
+| `## Title {.hook background-color="#FAF7F2"}` | A sand-coloured section-opening slide. The `background-color` is what fills the whole slide — without it you get a sand block on white. |
+| `# Title {.divider .center background-color="#06302F"}` | A full-bleed dark teal section divider. Same rule: the `background-color` is what makes it edge to edge. |
 | `::: ask` … `:::` | Clay question box with a 💬 marker |
 | `::: keyidea` … `:::` | Teal box with a 💡 marker |
 | `::: incremental` … `:::` | Bullets revealed one at a time |
