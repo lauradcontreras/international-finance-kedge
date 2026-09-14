@@ -108,17 +108,17 @@ $body-bottom:  56px;   // keeps the body clear of the footer
 .reveal h3 { color: $teal-800; margin-bottom: .35em; }
 
 /* Pagella sets a little looser than the old sans, so the leading comes down. */
-.reveal p, .reveal li { line-height: 1.32; }
-.reveal p { margin-bottom: .5em; }
-.reveal ul, .reveal ol { margin-bottom: .45em; }
+.reveal p, .reveal li { line-height: 1.22; }
+.reveal p { margin-bottom: .32em; }
+.reveal ul, .reveal ol { margin-bottom: .28em; }
 /* Quarto ships `.reveal .slide ul li { margin: 0.4em 0 0.2em }` and its
    stylesheet is appended after this one, so matching its specificity is not
    enough — this has to outrank it. */
 .reveal .slides .slide ul li,
-.reveal .slides .slide ol li { margin-top: .1em; margin-bottom: .1em; }
+.reveal .slides .slide ol li { margin-top: .02em; margin-bottom: .02em; }
 .reveal .slides .slide ul ul,
 .reveal .slides .slide ol ol { margin-top: .1em; margin-bottom: 0; }
-.reveal .slides .slide li > p { margin-top: 0; margin-bottom: .15em; }
+.reveal .slides .slide li > p { margin-top: 0; margin-bottom: .06em; }
 /* first paragraph inside a callout should not add its own top margin */
 .reveal .slides .ask > p:first-child,
 .reveal .slides .keyidea > p:first-child,
@@ -177,8 +177,8 @@ $body-bottom:  56px;   // keeps the body clear of the footer
 /* ---- callouts: rounded cards, with a marker ---- */
 .ask, .keyidea, .card {
   border-radius: 12px;
-  padding: .5em 1em .5em 2.4em;
-  margin: .45em 0;
+  padding: .42em 1em .42em 2.3em;
+  margin: .3em 0;
   position: relative;
   box-shadow: 0 1px 2px rgba(6, 48, 47, .07);
 }
