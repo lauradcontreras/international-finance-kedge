@@ -74,7 +74,14 @@ $body-bottom:  56px;   // keeps the body clear of the footer
   right: 0;
   margin: 0;
 }
-.reveal .slides section > *:first-child { margin-top: 0; }
+/* Flex children do not collapse their margins the way block children do, so
+   a paragraph's bottom margin and the next block's top margin would stack and
+   every gap on the slide would come out roughly double. Zeroing the top
+   margins puts the spacing back under the control of one value per block. */
+/* The second selector is not redundant: a `##` slide that follows a `#`
+   divider is a nested <section>, so its blocks are grandchildren of .slides. */
+.reveal .slides > section > *,
+.reveal .slides > section > section > * { margin-top: 0; }
 
 /* Divider and title slides have no body: centre the whole thing instead. */
 .reveal .slides > section.divider,
@@ -100,9 +107,23 @@ $body-bottom:  56px;   // keeps the body clear of the footer
 }
 .reveal h3 { color: $teal-800; margin-bottom: .35em; }
 
-.reveal p, .reveal li { line-height: 1.45; }
-.reveal ul { margin-bottom: .5em; }
-.reveal ul li { margin-bottom: .28em; }
+/* Pagella sets a little looser than the old sans, so the leading comes down. */
+.reveal p, .reveal li { line-height: 1.32; }
+.reveal p { margin-bottom: .5em; }
+.reveal ul, .reveal ol { margin-bottom: .45em; }
+/* Quarto ships `.reveal .slide ul li { margin: 0.4em 0 0.2em }` and its
+   stylesheet is appended after this one, so matching its specificity is not
+   enough — this has to outrank it. */
+.reveal .slides .slide ul li,
+.reveal .slides .slide ol li { margin-top: .1em; margin-bottom: .1em; }
+.reveal .slides .slide ul ul,
+.reveal .slides .slide ol ol { margin-top: .1em; margin-bottom: 0; }
+.reveal .slides .slide li > p { margin-top: 0; margin-bottom: .15em; }
+/* first paragraph inside a callout should not add its own top margin */
+.reveal .slides .ask > p:first-child,
+.reveal .slides .keyidea > p:first-child,
+.reveal .slides .card > p:first-child,
+.reveal .slides blockquote > p:first-child { margin-top: 0; }
 .reveal ul ul { font-size: .88em; color: $muted; }
 
 /* ---- section dividers ---- */
@@ -156,8 +177,8 @@ $body-bottom:  56px;   // keeps the body clear of the footer
 /* ---- callouts: rounded cards, with a marker ---- */
 .ask, .keyidea, .card {
   border-radius: 12px;
-  padding: .6em 1em .6em 2.5em;
-  margin: .6em 0;
+  padding: .5em 1em .5em 2.4em;
+  margin: .45em 0;
   position: relative;
   box-shadow: 0 1px 2px rgba(6, 48, 47, .07);
 }
