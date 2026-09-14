@@ -121,5 +121,117 @@ recession_bands <- function(from = as.Date("1954-01-01")) {
             fill = IF_COL$muted, alpha = .13)
 }
 
+# ---- the in-class survey ---------------------------------------------------
+# The Google Form writes into a Sheet. The Sheet is read as CSV at render time
+# and cached, exactly like FRED: refresh before class, and the deck still
+# builds later on a train. No API key and no login — this works only because
+# the Sheet is shared as "Anyone with the link -> Viewer". If you ever set it
+# back to restricted, this returns NULL and the slides show a note instead.
+
+IF_SHEET <- "1dxAmDONqRF-6cTS9HgQKucEKZCKV5eCObg1CtYdOA0c"
+
+survey <- function(sheet = IF_SHEET, dir = file.path(if_root(), "cache"),
+                   refresh = TRUE) {
+  dir.create(dir, showWarnings = FALSE, recursive = TRUE)
+  dest <- file.path(dir, "survey.csv")
+  url  <- sprintf("https://docs.google.com/spreadsheets/d/%s/export?format=csv",
+                  sheet)
+
+  if (isTRUE(refresh)) {
+    tmp <- tempfile(fileext = ".csv")
+    ok <- tryCatch({
+      utils::download.file(url, tmp, quiet = TRUE, mode = "wb")
+      file.exists(tmp) && file.size(tmp) > 0 &&
+        !grepl("<HTML|<html", readLines(tmp, n = 1, warn = FALSE)[1])
+    }, error = function(e) FALSE, warning = function(w) FALSE)
+    if (ok) {
+      file.copy(tmp, dest, overwrite = TRUE)
+    } else {
+      message("survey(): could not read the sheet. Either there is no internet, ",
+              "or its sharing is not 'Anyone with the link'. Falling back to ",
+              "cache/survey.csv.")
+    }
+  }
+
+  if (!file.exists(dest)) return(NULL)
+  x <- utils::read.csv(dest, check.names = FALSE, stringsAsFactors = FALSE)
+  if (nrow(x) == 0) return(NULL)
+  x
+}
+
+# Google Forms joins the ticked boxes of one answer with ", " — and several of
+# the option labels contain a comma themselves ("Finance, banking or audit"),
+# so splitting on the comma would shred them. Instead: pull out every known
+# label first, longest first, and only then split whatever is left over. An
+# option missing from IF_OPTIONS therefore shows up as its own odd-looking
+# bar rather than being silently dropped — that is the signal to add it here.
+IF_OPTIONS <- list(
+  work = c(
+    "Finance, banking or audit",
+    "International trade, logistics or supply chains",
+    "Public sector / international organizations",
+    "Management"
+  ),
+  topics = c(
+    "Exchange rates",
+    "Balance of payments",
+    "Interest rates and yield curves",
+    "Financial crises",
+    "Derivatives and hedging",
+    "Central banks and monetary policy",
+    "None of them yet"
+  )
+)
+
+split_multi <- function(x, options = character()) {
+  options <- options[order(nchar(options), decreasing = TRUE)]
+  out <- character()
+  for (cell in x[!is.na(x) & nzchar(trimws(x))]) {
+    rest <- cell
+    for (o in options) {
+      while (grepl(o, rest, fixed = TRUE)) {
+        out  <- c(out, o)
+        rest <- sub(o, "", rest, fixed = TRUE)
+      }
+    }
+    left <- trimws(unlist(strsplit(rest, ",", fixed = TRUE)))
+    out  <- c(out, left[nzchar(left)])
+  }
+  out
+}
+
+# Counts, ordered smallest to largest so the bars read top-down when flipped.
+count_multi <- function(x, options = character()) {
+  v <- split_multi(x, options)
+  if (!length(v)) return(NULL)
+  tb <- sort(table(v))
+  data.frame(answer = factor(names(tb), levels = names(tb)),
+             n = as.integer(tb), row.names = NULL)
+}
+
+bar_answers <- function(d, n_respondents = NA, fill = IF_COL$teal700,
+                        title = NULL, subtitle = NULL) {
+  ggplot(d, aes(answer, n)) +
+    geom_col(fill = fill, width = .68) +
+    geom_text(aes(label = n), hjust = -0.35, colour = IF_COL$muted, size = 4.4) +
+    coord_flip(clip = "off") +
+    scale_y_continuous(expand = expansion(mult = c(0, .12))) +
+    labs(x = NULL, y = NULL, title = title, subtitle = subtitle) +
+    theme_if() +
+    theme(panel.grid.major.y = element_blank(),
+          axis.text.x = element_blank(),
+          axis.text.y = element_text(colour = IF_COL$ink, size = rel(.95)))
+}
+
+no_survey_note <- function(
+    msg = "No responses yet",
+    sub = "The charts appear once the form has answers and the deck is re-rendered") {
+  ggplot() +
+    annotate("text", 0, 0.15, label = msg,
+             colour = IF_COL$teal700, size = 5.2, fontface = "bold") +
+    annotate("text", 0, -0.15, label = sub, colour = IF_COL$muted, size = 4) +
+    xlim(-1, 1) + ylim(-1, 1) + theme_void()
+}
+
 # ---- small table helper ----------------------------------------------------
 fmt_eur <- function(x) ifelse(is.na(x), "", formatC(x, big.mark = " ", format = "d"))
