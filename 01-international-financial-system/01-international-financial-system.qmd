@@ -58,27 +58,49 @@ knitr:
 source("../_R/setup.R")
 ```
 
-# Welcome {.divider .center background-color="#06302F"}
-
-## What this course is actually about
-
-We are going to build a set of **operational models** of how international financial markets work. Then we are going to spend most of our time on where they break.
+## Welcome!
 
 ::: incremental
--   Informational efficiency, financial crises, regulation, behavioural finance — mostly **through papers**, not through me talking.
--   The 2008–2010 crisis put risk diversification, informational efficiency and valuation efficiency in serious question. We are still living in the rewrite.
--   Second objective, and I mean it: what a more **responsible** practice of finance would look like.
+- **Laura Contreras-Portela**
+- 🇨🇴  Economist
+- PhD in Economics at **Aix-Marseille School of Economics**
+- My research: **international trade, innovation & AI**
+- Experience working with **international organizations and policy-oriented research**
+- Any questions? **Just ask/email me!**
+  - 📩 Contact me: [laura.contrerasportela@kedgebs.com](mailto:laura.contrerasportela@kedgebs.com (if urgent: [laura.contreras-portela@univ-amu.fr](mailto:laura.contreras-portela@univ-amu.fr)
+:::
+
+## Ground rules
+
+::: incremental
+- **Every question is a good question**
+- **No phones** (try at least)
+- **Be kind and respectful** 
+- **AI is not prohibited — but use it wisely**
+:::
+
+## Main goals of this course
+
+Build a set of **operational models** of how international financial markets work and understand **where they break down**: the limitations of theory and the issues they raise.
+
+::: incremental
+- Informational efficiency, financial crises, regulation, and behavioural finance — **through the analysis of academic papers**, connected to **real-world cases and applications** that have challenged the theoretical foundations of financial economics
+- The **2008–2010 financial crisis** put key ideas — risk diversification, informational efficiency, and valuation efficiency — into serious question and **reshaped the way we think about financial markets** 
+- A second objective — **and I mean it** — is to think about what a more **responsible practice of finance** could look like
 :::
 
 . . .
 
 ::: keyidea
-**No textbook.** Reference: Mishkin, F.S. & Eakins, S.G. (2008), *Financial Markets and Institutions*, 7th ed., Pearson.\
+**No textbook.** Reference: Mishkin, F.S. & Eakins, S.G. (2008), *Financial Markets and Institutions*, 7th ed., Pearson.  
 Course description on LEARN: <http://learn.kedgebs.com>
 :::
 
 ## Course content
 
+*All the course materials can be found here: <https://lauradcontreras.github.io/international-finance-kedge/>*
+
+::: {style="font-size: 1.2em;"}
 | Session | Topic | Preliminary reading / assignment |
 |:--:|:---|:---|
 | 1–2 | International financial system | Monasterolo (2020), *Climate Change and the Financial System*, Ann. Rev. Resource Econ. 12 |
@@ -88,32 +110,28 @@ Course description on LEARN: <http://learn.kedgebs.com>
 | 8 | Security analysis | **Group presentation** (5 students) |
 | 9 | Regulation | |
 | 10 | **Final examination** | |
+:::
 
-::: {.source}
-Read the preliminary paper **before** the session it is attached to. The schedule is indicative.
+::: ask
+Read the paper **before** the session and bring a calculator! 
 :::
 
 ## Evaluation
 
-:::: columns
-::: {.column width="46%"}
-**Group work** — analysis of a security, groups of 5, 12-minute presentation.
+- **Assignment**: 20-min quiz, written 
 
-**Final exam** — individual, written. Documents allowed.
+- **Group work**: analysis of a security, groups of 5, 12-minute presentation
 
-::: ask
-A **calculator is required** for most sessions.
-:::
-:::
+- **Final exam**: individual, written
 
-::: {.column width="54%"}
+::: {style="font-size: 1.2em;"}
 | | Assignment | Group work | Final exam |
 |:---|:--:|:--:|:--:|
-| Weight | 20% | 40% | 40% |
-| When | Session 7 (20 min) | Session 8 | Session 10 |
-| Documents | Not allowed | Security analysis | Allowed |
+| **Weight** | **20%** | **40%** | **40%** |
+| **When** | Session 7 (20 min) | Session 8 | Session 10 |
+| **Documents** | Not allowed | Presentation | Allowed |
+
 :::
-::::
 
 ## Group work: security analysis
 
@@ -132,7 +150,66 @@ exotic derivative spend the whole presentation explaining the instrument and
 never get to questions 2–4.
 :::
 
-## Session 1 — where we are going
+## Three questions before we start {.hook background-color="#FAF7F2"}
+
+
+:::: columns
+
+::: {.column style="width:58%;padding-top:1.2em;"}
+
+### 1 · Where do you see yourself working?
+
+### 2 · What have you seen before?
+
+### 3 · How comfortable do you feel with finance and quantitave concepts?
+
+::: {.smaller}
+*No wrong answers — this helps me choose relevant examples and know where to slow down.*
+:::
+:::
+
+::: {.column width="42%"}
+
+```{r}
+#| fig-width: 3
+#| fig-height: 3
+#| echo: false
+
+survey_url <- "https://forms.gle/26oZpd2VvTVxp2FZ9"
+
+if (requireNamespace("qrcode", quietly = TRUE)) {
+  plot(qrcode::qr_code(survey_url))
+}
+```
+
+::: {style="text-align: center;"}
+
+**Scan to answer**
+
+[See live results →](https://docs.google.com/forms/d/e/1FAIpQLSfwDPNHfXPZM0pjFuBi2AlZ1a3dMt_J3ZXNvuH5IePBHsp4yw/viewanalytics){.btn .btn-primary target="_blank"}
+
+:::
+
+:::
+
+::::
+
+::: notes
+Give them around ninety seconds and actually wait.
+
+Question 1 tells you which examples are most relevant for this cohort.
+
+Question 2 tells you which topics are already familiar and where you may need to slow down.
+
+Question 3 gives you a sense of how much quantitative scaffolding they may need.
+
+Click "See live results" once students have answered.
+:::
+
+
+# 1 · The International Financial System {.divider .center background-color="#06302F"}
+
+## OUTLINE
 
 Four prices and one accounting identity. That is the whole session.
 
@@ -142,206 +219,486 @@ Four prices and one accounting identity. That is the whole session.
 4. The **exchange rate** — the price of a currency, and who pays to defend it
 5. Discussion: **Monasterolo (2020)** — what climate does to all four
 
-::: {.content-visible when-format="revealjs"}
-::: ask
-Before any of that, two questions for you — the slide after this one.
+
+## Motivation: Where does your money sleep at night? {.hook background-color="#FAF7F2"}
+
+::: {.fragment}
+You are paid on the **28th**. Some of that money stays in your bank account.  
+**But it doesn't just sit there.**
 :::
-:::
-
-## Two questions before we start {.hook background-color="#FAF7F2"}
-
-:::: columns
-::: {.column width="56%"}
-**1 · Where do you want to work after this?**
-
-Finance or audit · Marketing · Business development · Consulting · Management · Logistics · Something else
-
-::: {.smaller}
-*Tick as many as apply.*
-:::
-
-**2 · Which of these have you already met?**
-
-Exchange rates · Balance of payments · Interest rates and yield curves · Financial crises · Derivatives and hedging · Central banks · None of them yet
-
-::: {.smaller}
-*Also tick as many as apply. No wrong answer — this tells me where to slow down.*
-:::
-:::
-
-::: {.column width="44%"}
-```{r}
-#| fig-width: 3.6
-#| fig-height: 3.6
-# ---------------------------------------------------------------
-# Paste your Google Form link here, then re-render.
-survey_url <- "https://forms.gle/REPLACE-ME"
-# ---------------------------------------------------------------
-if (requireNamespace("qrcode", quietly = TRUE) && !grepl("REPLACE-ME", survey_url)) {
-  plot(qrcode::qr_code(survey_url))
-} else {
-  ggplot() +
-    annotate("text", 0, .25, label = "QR appears here", colour = IF_COL$teal700,
-             size = 6, fontface = "bold") +
-    annotate("text", 0, -.15, label = "put your form link in survey_url",
-             colour = IF_COL$muted, size = 4) +
-    xlim(-1, 1) + ylim(-1, 1) + theme_void()
-}
-```
-
-::: {.smaller style="text-align:center"}
-`r if (exists("survey_url") && !grepl("REPLACE-ME", survey_url)) survey_url else "your form link"`
-:::
-:::
-::::
-
-::: notes
-Give them ninety seconds and actually wait. Answers land in the linked Sheet.
-Question 1 tells you which examples land with this cohort; question 2 tells you
-which of the four sections to slow down on.
-:::
-
-## What the room said {.hook background-color="#FAF7F2"}
-
-```{r}
-#| results: asis
-# ---------------------------------------------------------------
-# The public summary of your form. In the Form: Settings -> Responses ->
-# "See summary charts and text responses" ON, then Send -> link, and swap
-# /viewform for /viewanalytics.
-results_url <- "https://docs.google.com/forms/d/e/REPLACE-ME/viewanalytics"
-# ---------------------------------------------------------------
-if (grepl("REPLACE-ME", results_url)) {
-  cat("*Put the form's `/viewanalytics` link in `results_url` to activate this slide.*\n")
-} else {
-  cat(sprintf(
-    "::: {style=\"text-align:center;font-size:1.3em;margin-top:1.2em\"}\n[Open the live results](%s){preview-link=\"false\" target=\"_blank\"}\n:::\n",
-    results_url))
-}
-```
-
-::: {.smaller style="text-align:center"}
-Charts redraw on every refresh — reload once the last hand goes down.
-:::
-
-::: notes
-Open this in a second browser tab BEFORE class and just switch to it, rather
-than clicking through from the deck. Two minutes on question 1 (who is in the
-room), then one on question 2 (what we are skipping and what we are slowing
-down for). Naming the empty boxes out loud buys a lot of goodwill.
-:::
-
-# 1 · The financial system {.divider .center background-color="#06302F"}
-
-## Where does your salary sleep at night? {.hook background-color="#FAF7F2"}
-
-You are paid on the 28th. Part of it sits in a current account until the rent leaves. That balance does not sit still.
 
 ::: incremental
--   Right now it is being lent to a firm buying a machine, or to a government rolling over a bond.
--   You will never meet the borrower. You did not choose them.
--   **Somebody chose for you — a market, or a bank. That choice is section 1.**
+- Your money enters the **financial system**.
+- Someone else needs funds: a **firm, government, or household**.
 :::
 
-::: {.imgslot}
-photo idea: a high-street bank branch, or the ECB tower in Frankfurt — search "bank branch facade" or "ECB Frankfurt"
+::: {.fragment}
+**Who connects the two?**
 :::
+
+::: {.fragment}
+
+:::: columns
+
+::: {.column width="45%"}
+
+::: {style="text-align: center;"}
+European Central **Bank**
+:::
+
+![](https://corporateeurope.org/sites/default/files/styles/image_l/public/european-central-bank_1.jpg?itok=zjgfh56x){width="60%" fig-align="center" fig-alt="European Central Bank headquarters"}
+
+::: {.source style="text-align: center;"}
+Source: [Corporate Europe Observatory](https://corporateeurope.org/)
+:::
+
+:::
+
+::: {.column width="45%"}
+
+::: {style="text-align: center;"}
+New York **Stock Market**
+:::
+
+![](https://images.nationalgeographic.org/image/upload/t_edhub_resource_key_image/v1638892577/EducationHub/photos/new-york-stock-exchange.jpg){width="60%" fig-align="center" fig-alt="New York Stock Exchange"}
+
+::: {.source style="text-align: center;"}
+Source: [National Geographic](https://education.nationalgeographic.org/)
+:::
+
+:::
+
+::::
+
+:::
+
+::: notes
+Reveal the slide progressively.
+
+Start with the salary and bank account.
+
+Then make the point that funds do not simply sit idle: the financial system channels funds toward borrowers.
+
+Pause on "Who connects the two?" and ask the class before revealing the images.
+
+The two images introduce the two broad channels:
+1. Financial intermediaries / banks.
+2. Financial markets.
+
+This leads directly into Section 1.
+:::
+
 
 ## 1 · The financial system and the real economy
 
 ```{r}
-#| fig-width: 9
-#| fig-height: 4.6
-box <- function(x, y, w, h, label, fill, col = "white", size = 4) {
-  list(
-    annotate("rect", xmin = x - w/2, xmax = x + w/2, ymin = y - h/2, ymax = y + h/2,
-             fill = fill, colour = NA),
-    annotate("text", x = x, y = y, label = label, colour = col,
-             size = size, fontface = "bold", lineheight = .95)
+#| fig-width: 12
+#| fig-height: 9.2
+#| fig-align: center
+#| out-width: "100%"
+#| echo: false
+
+library(ggplot2)
+library(grid)
+
+arw <- grid::arrow(
+  length = unit(.018, "npc"),
+  type = "closed"
+)
+
+card <- function(x, y, label, fill, colour = "white",
+                 size = 3.6, padding = .35) {
+  annotate(
+    "label",
+    x = x, y = y,
+    label = label,
+    fill = fill,
+    colour = colour,
+    size = size,
+    fontface = "bold",
+    label.padding = unit(padding, "lines"),
+    label.r = unit(.22, "lines"),
+    linewidth = 0
   )
 }
-arw <- grid::arrow(length = unit(.02, "npc"), type = "closed")
 
 ggplot() +
-  # containers
-  annotate("rect", xmin = .3, xmax = 6.7, ymin = 5.15, ymax = 9.7,
-           fill = NA, colour = IF_COL$teal300, linewidth = .5) +
-  annotate("rect", xmin = .3, xmax = 6.7, ymin = .3, ymax = 4.15,
-           fill = NA, colour = IF_COL$teal300, linewidth = .5) +
-  annotate("text", x = 3.5, y = 9.35, label = "FINANCIAL SYSTEM",
-           colour = IF_COL$teal700, size = 4.4, fontface = "bold") +
-  annotate("text", x = 3.5, y = 3.8, label = "REAL ECONOMY",
-           colour = IF_COL$teal700, size = 4.4, fontface = "bold") +
-  # financial system
-  box(3.5, 8.2, 2.5, .95, "Capital markets", IF_COL$teal700) +
-  box(3.5, 6.0, 2.5, .95, "Financial\nintermediary", IF_COL$teal500) +
-  box(1.2, 7.1, 1.6, .95, "Savings\ndeficit", IF_COL$clay) +
-  box(5.8, 7.1, 1.6, .95, "Savings\nsurplus", IF_COL$teal300, col = IF_COL$teal900) +
-  annotate("text", x = 3.5, y = 8.85, label = "direct finance",
-           colour = IF_COL$muted, size = 3.4, fontface = "italic") +
-  annotate("text", x = 3.5, y = 5.35, label = "indirect finance",
-           colour = IF_COL$muted, size = 3.4, fontface = "italic") +
-  # arrows inside the financial system
-  annotate("segment", x = 2.1, xend = 2.9, y = 7.5, yend = 8.0, colour = IF_COL$ink,
-           linewidth = .4, arrow = arw) +
-  annotate("segment", x = 4.9, xend = 4.2, y = 7.6, yend = 8.1, colour = IF_COL$ink,
-           linewidth = .4, arrow = arw) +
-  annotate("segment", x = 2.9, xend = 2.1, y = 6.2, yend = 6.7, colour = IF_COL$ink,
-           linewidth = .4, arrow = arw) +
-  annotate("segment", x = 4.9, xend = 4.2, y = 6.6, yend = 6.1, colour = IF_COL$ink,
-           linewidth = .4, arrow = arw) +
-  # real economy
-  box(1.6, 2.4, 2.2, .8, "Businesses", IF_COL$teal700, size = 3.6) +
-  box(3.9, 2.4, 2.2, .8, "Households", IF_COL$teal700, size = 3.6) +
-  box(6.2 - .3, 2.4, 2.2, .8, "Government", IF_COL$teal700, size = 3.6) +
-  annotate("text", x = 3.5, y = 1.35,
-           label = "domestic and foreign agents:  sales / wages / taxes - expenses - taxes = net income",
-           colour = IF_COL$muted, size = 3.3) +
-  # the big loop
-  annotate("curve", x = 1.0, xend = 1.0, y = 6.4, yend = 3.0, curvature = .35,
-           colour = IF_COL$clay, linewidth = 1, arrow = arw) +
-  annotate("curve", x = 6.0, xend = 6.0, y = 3.0, yend = 6.4, curvature = .35,
-           colour = IF_COL$teal500, linewidth = 1, arrow = arw) +
-  annotate("text", x = .2, y = 4.7, label = "financial\nresources", hjust = 0,
-           colour = IF_COL$clay, size = 3.5) +
-  annotate("text", x = 6.8, y = 4.7, label = "financing\nneeds", hjust = 1,
-           colour = IF_COL$teal500, size = 3.5) +
-  xlim(0, 7) + ylim(0, 10) + theme_void()
+
+  # ============================================================
+  # REAL ECONOMY
+  # ============================================================
+
+  annotate(
+    "text",
+    x = 5, y = 9.65,
+    label = "REAL ECONOMY",
+    colour = IF_COL$teal700,
+    size = 5,
+    fontface = "bold"
+  ) +
+
+  annotate(
+    "text",
+    x = 5, y = 9.22,
+    label = "Where income is earned, goods and services are produced,\nand spending takes place",
+    colour = IF_COL$muted,
+    size = 3.05,
+    lineheight = 1
+  ) +
+
+  # Domestic agents
+  annotate(
+    "text",
+    x = 1.05, y = 8.25,
+    label = "DOMESTIC",
+    colour = IF_COL$muted,
+    size = 2.7,
+    fontface = "bold",
+    hjust = 0
+  ) +
+
+  card(
+    3.0, 8.25, "Businesses",
+    "#F2F7F6", IF_COL$teal900, 3.3
+  ) +
+
+  card(
+    5.0, 8.25, "Households",
+    "#F2F7F6", IF_COL$teal900, 3.3
+  ) +
+
+  card(
+    7.0, 8.25, "Government",
+    "#F2F7F6", IF_COL$teal900, 3.3
+  ) +
+
+  # Foreign agents
+  annotate(
+    "text",
+    x = 1.05, y = 7.42,
+    label = "FOREIGN",
+    colour = IF_COL$muted,
+    size = 2.7,
+    fontface = "bold",
+    hjust = 0
+  ) +
+
+  card(
+    3.0, 7.42, "Businesses",
+    "#FAF7F2", IF_COL$ink, 3.3
+  ) +
+
+  card(
+    5.0, 7.42, "Households",
+    "#FAF7F2", IF_COL$ink, 3.3
+  ) +
+
+  card(
+    7.0, 7.42, "Government",
+    "#FAF7F2", IF_COL$ink, 3.3
+  ) +
+
+  # ============================================================
+  # RESOURCES VS EXPENDITURES
+  # ============================================================
+
+  annotate(
+    "segment",
+    x = 5, xend = 5,
+    y = 7.0, yend = 6.62,
+    colour = IF_COL$muted,
+    linewidth = .65,
+    arrow = arw
+  ) +
+
+  annotate(
+    "text",
+    x = 5, y = 6.34,
+    label = "Resources − expenditures",
+    colour = IF_COL$ink,
+    size = 3.8,
+    fontface = "bold"
+  ) +
+
+  # Branch toward funds available
+  annotate(
+    "segment",
+    x = 4.75, xend = 3.1,
+    y = 6.08, yend = 5.58,
+    colour = IF_COL$teal500,
+    linewidth = .8,
+    arrow = arw
+  ) +
+
+  # Branch toward financing need
+  annotate(
+    "segment",
+    x = 5.25, xend = 6.9,
+    y = 6.08, yend = 5.58,
+    colour = IF_COL$clay,
+    linewidth = .8,
+    arrow = arw
+  ) +
+
+  # ============================================================
+  # FINANCIAL POSITION
+  # ============================================================
+
+  card(
+    3.0, 5.28,
+    "FUNDS AVAILABLE\nSaving surplus",
+    IF_COL$teal300,
+    IF_COL$teal900,
+    3.35,
+    .45
+  ) +
+
+  card(
+    7.0, 5.28,
+    "FINANCING NEED\nSaving deficit",
+    IF_COL$clay,
+    "white",
+    3.35,
+    .45
+  ) +
+
+  annotate(
+    "text",
+    x = 3.0, y = 4.62,
+    label = "can provide funds",
+    colour = IF_COL$muted,
+    size = 2.8,
+    fontface = "italic"
+  ) +
+
+  annotate(
+    "text",
+    x = 7.0, y = 4.62,
+    label = "needs external funds",
+    colour = IF_COL$muted,
+    size = 2.8,
+    fontface = "italic"
+  ) +
+
+  # ============================================================
+  # FINANCIAL SYSTEM
+  # ============================================================
+
+  annotate(
+    "segment",
+    x = 1.0, xend = 9.0,
+    y = 4.18, yend = 4.18,
+    colour = IF_COL$teal300,
+    linewidth = .8
+  ) +
+
+  annotate(
+    "text",
+    x = 5, y = 3.82,
+    label = "FINANCIAL SYSTEM",
+    colour = IF_COL$teal700,
+    size = 5,
+    fontface = "bold"
+  ) +
+
+  annotate(
+    "text",
+    x = 5, y = 3.45,
+    label = "Channels funds from saving surplus to financing needs",
+    colour = IF_COL$muted,
+    size = 3
+  ) +
+
+  # ============================================================
+  # FLOW ARROWS
+  # Drawn BEFORE market/intermediary cards
+  # ============================================================
+
+  # Surplus -> direct finance
+  annotate(
+    "curve",
+    x = 2.75, y = 4.90,
+    xend = 2.75, yend = 2.05,
+    curvature = .12,
+    colour = IF_COL$teal500,
+    linewidth = .7,
+    arrow = arw
+  ) +
+
+  # Surplus -> indirect finance
+  annotate(
+    "curve",
+    x = 3.35, y = 4.90,
+    xend = 6.65, yend = 2.05,
+    curvature = -.22,
+    colour = IF_COL$teal500,
+    linewidth = .7,
+    arrow = arw
+  ) +
+
+  # Direct finance -> financing need
+  annotate(
+    "curve",
+    x = 3.35, y = 2.05,
+    xend = 6.65, yend = 4.90,
+    curvature = -.22,
+    colour = IF_COL$clay,
+    linewidth = .7,
+    arrow = arw
+  ) +
+
+  # Indirect finance -> financing need
+  annotate(
+    "curve",
+    x = 7.25, y = 2.05,
+    xend = 7.25, yend = 4.90,
+    curvature = .12,
+    colour = IF_COL$clay,
+    linewidth = .7,
+    arrow = arw
+  ) +
+
+  # ============================================================
+  # DIRECT FINANCE
+  # Added AFTER arrows
+  # ============================================================
+
+  annotate(
+    "text",
+    x = 3.0, y = 2.85,
+    label = "DIRECT FINANCE",
+    colour = IF_COL$teal700,
+    size = 2.9,
+    fontface = "bold"
+  ) +
+
+  card(
+    3.0, 2.30,
+    "Financial markets",
+    IF_COL$teal700,
+    "white",
+    3.45,
+    .45
+  ) +
+
+  annotate(
+    "text",
+    x = 3.0, y = 1.73,
+    label = "Securities",
+    colour = IF_COL$ink,
+    size = 3,
+    fontface = "bold"
+  ) +
+
+  annotate(
+    "text",
+    x = 3.0, y = 1.40,
+    label = "bonds · shares · other claims",
+    colour = IF_COL$muted,
+    size = 2.6
+  ) +
+
+  # ============================================================
+  # INDIRECT FINANCE
+  # Added AFTER arrows
+  # ============================================================
+
+  annotate(
+    "text",
+    x = 7.0, y = 2.85,
+    label = "INDIRECT FINANCE",
+    colour = IF_COL$teal500,
+    size = 2.9,
+    fontface = "bold"
+  ) +
+
+  card(
+    7.0, 2.30,
+    "Financial intermediaries",
+    IF_COL$teal500,
+    "white",
+    3.3,
+    .45
+  ) +
+
+  annotate(
+    "text",
+    x = 7.0, y = 1.73,
+    label = "Deposits → loans",
+    colour = IF_COL$ink,
+    size = 3,
+    fontface = "bold"
+  ) +
+
+  annotate(
+    "text",
+    x = 7.0, y = 1.40,
+    label = "e.g. banks",
+    colour = IF_COL$muted,
+    size = 2.6
+  ) +
+
+  # ============================================================
+  # BOTTOM MESSAGE
+  # ============================================================
+
+  annotate(
+    "text",
+    x = 5, y = .72,
+    label = "Funds flow toward financing needs\nFinancial claims and future payments flow back",
+    colour = IF_COL$muted,
+    size = 2.8,
+    fontface = "italic",
+    lineheight = 1
+  ) +
+
+  coord_cartesian(
+    xlim = c(.5, 9.5),
+    ylim = c(.35, 10),
+    clip = "off"
+  ) +
+
+  theme_void() +
+
+  theme(
+    plot.margin = margin(5, 5, 5, 5)
+  )
 ```
 
-## 1 · Two ways of channelling savings
+
+
+## 1 · Two ways of channelling savings/funds
 
 :::: columns
 ::: {.column width="50%"}
+
 ### Market-based
 
-Financial **markets** do the allocation of loanable funds. Savers hold securities directly; the price does the screening.
+Financial **markets** do the allocation of loanable funds. Savers hold securities **directly. 
+**Prices and investors' decisions** determine who gets financed and at what price.
+
 :::
 
 ::: {.column width="50%"}
 ### Bank-based
 
-**Intermediaries** allocate the funds. Banks screen, monitor and transform maturity between savers and borrowers.
+**Intermediaries** allocate the funds. Banks screen, monitor and transform maturity from lenders and savers to borrowers and spenders. 
 :::
 ::::
 
-. . .
-
 ::: ask
-Germany and Japan built one; the U.S. and the U.K. built the other. What actually differs? Think **competences, decision tools and information** — not just who ends up holding the paper.
+The **U.S. and U.K.** have traditionally relied more on markets; **France and Japan** more on banks.
+Why might this matter?
+**Information, tools, expertise, screening and decision-making**.
 :::
 
-. . .
 
-::: keyidea
-$$\text{savings} \geq \text{investment} \Rightarrow \text{savings surplus} \qquad
-  \text{savings} \leq \text{investment} \Rightarrow \text{savings deficit}$$
-:::
-
-## 1 · Problem 1.1 — savings by institutional sector, France
+## 1. Financial System: Problem 1.1 
 
 ::: panel-tabset
 ### Data
+
+::: {style="font-size: 1.3em;"}
 
 ```{r}
 #| results: asis
@@ -350,11 +707,11 @@ names(d)[1] <- "France (EUR bn)"
 knitr::kable(d, align = c("l", rep("r", 7)))
 ```
 
+:::
+
 ::: {.source}
 Net lending (+) / net borrowing (−) by institutional sector. NPISH = non-profit institutions serving households.
 :::
-
-### Questions
 
 ::: ask
 **(a)** Which institutional sectors usually run a savings **surplus**, and which run a **deficit**?
@@ -362,11 +719,8 @@ Net lending (+) / net borrowing (−) by institutional sector. NPISH = non-profi
 **(b)** Why can France be analysed as an **open** economy?
 :::
 
-::: {.content-visible when-format="revealjs"}
-Press **`C`** and annotate the table while they answer.
-:::
 
-### Where to look
+### Answer:
 
 ::: incremental
 -   Households are the structural **surplus** sector; public administrations the structural **deficit** sector.
@@ -375,104 +729,349 @@ Press **`C`** and annotate the table while they answer.
 :::
 :::
 
-## 1 · An organised architecture
 
+## 1 · Inside financial markets: an organised architecture
+::: {style="font-size: 1.3em;"}
 ```{r}
 #| fig-width: 9
-#| fig-height: 4.4
+#| fig-height: 4.8
+#| echo: false
+#| fig-align: center
+#| out-width: "60%"
+
 lane <- function(y, label, fill, col = "white") {
   list(
-    annotate("rect", xmin = .4, xmax = 9.6, ymin = y - .38, ymax = y + .38,
-             fill = fill, colour = NA),
-    annotate("text", x = 5, y = y, label = label, colour = col,
-             size = 4, fontface = "bold")
+    annotate(
+      "rect",
+      xmin = .4, xmax = 9.6,
+      ymin = y - .38, ymax = y + .38,
+      fill = fill, colour = NA
+    ),
+    annotate(
+      "text",
+      x = 5, y = y,
+      label = label,
+      colour = col,
+      size = 4,
+      fontface = "bold"
+    )
   )
 }
-arw <- grid::arrow(length = unit(.022, "npc"), type = "closed")
+
+arw <- grid::arrow(
+  length = unit(.022, "npc"),
+  type = "closed"
+)
 
 ggplot() +
-  lane(7.4, "Market's firm / trading system", IF_COL$teal700) +
-  lane(1.9, "Clearinghouse",       IF_COL$teal500) +
-  lane(1.0, "Settlement / delivery", IF_COL$teal500) +
-  lane(0.1, "Regulator",            IF_COL$teal900) +
-  # issuers
-  annotate("rect", xmin = .4, xmax = 2.6, ymin = 4.0, ymax = 6.2,
-           fill = IF_COL$clay, colour = NA) +
-  annotate("text", x = 1.5, y = 5.1, label = "Firms\nGovernment",
-           colour = "white", size = 4, fontface = "bold") +
-  # investors
-  annotate("rect", xmin = 7.4, xmax = 9.6, ymin = 4.0, ymax = 6.2,
-           fill = IF_COL$teal300, colour = NA) +
-  annotate("text", x = 8.5, y = 5.1, label = "Firms, institutionals,\nhouseholds,\nnon-domestic",
-           colour = IF_COL$teal900, size = 3.4, fontface = "bold", lineheight = .95) +
-  # the market
-  annotate("point", x = 5, y = 5.1, size = 44, colour = IF_COL$teal700, shape = 16) +
-  annotate("point", x = 5, y = 5.1, size = 34, colour = "white", shape = 16) +
-  annotate("text", x = 5, y = 5.35, label = "Financial\nmarkets",
-           colour = IF_COL$teal700, size = 4.2, fontface = "bold") +
-  annotate("text", x = 5, y = 4.6, label = "intermediaries",
-           colour = IF_COL$muted, size = 3.2, fontface = "italic") +
-  # flows
-  annotate("segment", x = 2.7, xend = 4.0, y = 5.6, yend = 5.6,
-           colour = IF_COL$clay, linewidth = 1.1, arrow = arw) +
-  annotate("text", x = 3.35, y = 6.05, label = "securities\n(primary market)",
-           colour = IF_COL$muted, size = 3.2) +
-  annotate("segment", x = 7.3, xend = 6.0, y = 5.6, yend = 5.6,
-           colour = IF_COL$teal500, linewidth = 1.1, arrow = arw) +
-  annotate("text", x = 6.65, y = 6.05, label = "savings surplus",
-           colour = IF_COL$muted, size = 3.2) +
-  annotate("segment", x = 6.0, xend = 7.3, y = 4.35, yend = 4.35,
-           colour = IF_COL$teal900, linewidth = 1.1, arrow = arw) +
-  annotate("text", x = 6.65, y = 3.75, label = "reallocation of existing\nsecurities (secondary)",
-           colour = IF_COL$muted, size = 3.0, lineheight = .95) +
-  annotate("text", x = 3.0, y = 3.3, label = "front office / middle office / back office",
-           colour = IF_COL$muted, size = 3.0, fontface = "italic") +
-  xlim(0, 10) + ylim(-.5, 8) + theme_void()
-```
 
-## 1 · The three dimensions for firms
+  # ============================================================
+  # MARKET INFRASTRUCTURE
+  # ============================================================
+
+  lane(
+    7.4,
+    "Trading venue / exchange",
+    IF_COL$teal700
+  ) +
+
+  lane(
+    1.9,
+    "Clearing",
+    IF_COL$teal500
+  ) +
+
+  lane(
+    1.0,
+    "Settlement / delivery",
+    IF_COL$teal500
+  ) +
+
+  lane(
+    0.1,
+    "Regulation",
+    IF_COL$teal900
+  ) +
+
+  # ============================================================
+  # ISSUERS
+  # ============================================================
+
+  annotate(
+    "rect",
+    xmin = .4, xmax = 2.6,
+    ymin = 4.0, ymax = 6.2,
+    fill = IF_COL$clay,
+    colour = NA
+  ) +
+
+  annotate(
+    "text",
+    x = 1.5, y = 5.35,
+    label = "ISSUERS",
+    colour = "white",
+    size = 3.3,
+    fontface = "bold"
+  ) +
+
+  annotate(
+    "text",
+    x = 1.5, y = 4.85,
+    label = "Firms\nGovernment",
+    colour = "white",
+    size = 3.8,
+    fontface = "bold",
+    lineheight = .95
+  ) +
+
+  # ============================================================
+  # INVESTORS
+  # ============================================================
+
+  annotate(
+    "rect",
+    xmin = 7.4, xmax = 9.6,
+    ymin = 4.0, ymax = 6.2,
+    fill = IF_COL$teal300,
+    colour = NA
+  ) +
+
+  annotate(
+    "text",
+    x = 8.5, y = 5.45,
+    label = "INVESTORS",
+    colour = IF_COL$teal900,
+    size = 3.3,
+    fontface = "bold"
+  ) +
+
+  annotate(
+    "text",
+    x = 8.5, y = 4.85,
+    label = "Households · Funds\nFirms · Foreign",
+    colour = IF_COL$teal900,
+    size = 3.3,
+    fontface = "bold",
+    lineheight = .95
+  ) +
+
+  # ============================================================
+  # FINANCIAL MARKET
+  # ============================================================
+
+  annotate(
+    "point",
+    x = 5, y = 5.1,
+    size = 44,
+    colour = IF_COL$teal700,
+    shape = 16
+  ) +
+
+  annotate(
+    "point",
+    x = 5, y = 5.1,
+    size = 34,
+    colour = "white",
+    shape = 16
+  ) +
+
+  annotate(
+    "text",
+    x = 5, y = 5.28,
+    label = "Financial\nmarket",
+    colour = IF_COL$teal700,
+    size = 4.2,
+    fontface = "bold",
+    lineheight = .9
+  ) +
+
+  annotate(
+    "text",
+    x = 5, y = 4.55,
+    label = "prices · orders · information",
+    colour = IF_COL$muted,
+    size = 2.9,
+    fontface = "italic"
+  ) +
+
+  # ============================================================
+  # PRIMARY MARKET
+  # ============================================================
+
+  annotate(
+    "segment",
+    x = 2.7, xend = 4.0,
+    y = 5.65, yend = 5.65,
+    colour = IF_COL$clay,
+    linewidth = 1.1,
+    arrow = arw
+  ) +
+
+  annotate(
+    "text",
+    x = 3.35, y = 6.15,
+    label = "new securities",
+    colour = IF_COL$muted,
+    size = 3.0
+  ) +
+
+  annotate(
+    "segment",
+    x = 7.3, xend = 6.0,
+    y = 5.65, yend = 5.65,
+    colour = IF_COL$teal500,
+    linewidth = 1.1,
+    arrow = arw
+  ) +
+
+  annotate(
+    "text",
+    x = 6.65, y = 6.15,
+    label = "funds",
+    colour = IF_COL$muted,
+    size = 3.0
+  ) +
+
+  annotate(
+    "text",
+    x = 5, y = 6.65,
+    label = "PRIMARY MARKET",
+    colour = IF_COL$teal700,
+    size = 3.0,
+    fontface = "bold"
+  ) +
+
+  # ============================================================
+  # SECONDARY MARKET
+  # ============================================================
+
+  annotate(
+    "segment",
+    x = 6.0, xend = 7.3,
+    y = 4.35, yend = 4.35,
+    colour = IF_COL$teal900,
+    linewidth = 1.1,
+    arrow = arw
+  ) +
+
+  annotate(
+    "text",
+    x = 6.65, y = 3.75,
+    label = "existing securities\nchange hands",
+    colour = IF_COL$muted,
+    size = 3.0,
+    lineheight = .95
+  ) +
+
+  annotate(
+    "text",
+    x = 5, y = 3.35,
+    label = "SECONDARY MARKET",
+    colour = IF_COL$teal700,
+    size = 3.0,
+    fontface = "bold"
+  ) +
+
+  # ============================================================
+  # TRADE PROCESS
+  # ============================================================
+
+  annotate(
+    "text",
+    x = 3.0, y = 2.65,
+    label = "front office",
+    colour = IF_COL$muted,
+    size = 3.0,
+    fontface = "italic"
+  ) +
+
+  annotate(
+    "text",
+    x = 5.0, y = 2.65,
+    label = "middle office",
+    colour = IF_COL$muted,
+    size = 3.0,
+    fontface = "italic"
+  ) +
+
+  annotate(
+    "text",
+    x = 7.0, y = 2.65,
+    label = "back office",
+    colour = IF_COL$muted,
+    size = 3.0,
+    fontface = "italic"
+  ) +
+
+  xlim(0, 10) +
+  ylim(-.5, 8) +
+  theme_void()
+```
+:::
 
 ::: incremental
--   **Foreign exchange and political risk.** Cross-border transactions expose firms to currency risk, and to political risk running from a change in tax rules to outright expropriation.
+- **Issuers** raise funds by creating securities in the **primary market**
+- **Investors** provide funds and can later trade existing securities in the **secondary market**
+- A trade is not complete at execution: it still has to go through **clearing and settlement**
+- The whole process operates within a framework of **market regulation**
+:::
 
--   **Market imperfections.** Legal restrictions, transaction and transport costs, information asymmetry and discriminatory taxation are what motivate MNCs to locate production overseas in the first place.
+## 1 · What changes when we cross borders?
 
--   **Expanded opportunity set.** Firms can produce anywhere and raise funds in any capital market; investors can diversify internationally.
+::: incremental
+
+- **Foreign exchange and political risk.** Cross-border transactions expose firms to **currency risk**, as well as political risk — from changes in tax or regulatory rules to restrictions on capital flows or expropriation.
+
+- **Market imperfections.** Crossing borders introduces **legal restrictions, transaction and transport costs, information asymmetries and differences in taxation**. International markets are therefore not perfectly integrated.
+
+- **Expanded opportunity set.** At the same time, firms can **sell, produce, invest and raise funds across countries and capital markets**, while investors can diversify internationally.
+
+:::
+
+
+::: keyidea
+The basic financial problem has not changed. What changes is the environment:
+
+$$
+\text{More opportunities}
+\qquad \longleftrightarrow \qquad
+\text{More risks and frictions}
+$$
+
+This is what makes **international finance** different from purely domestic finance.
 :::
 
 ## 1 · International trade
 
 :::: columns
-::: {.column width="48%"}
-### The approach
-
+::: {.column width="40%"}
+#### The approach
 -   Firms **export** to penetrate markets
 -   Firms **import** to obtain supplies at low cost
 
-### The firms
-
--   Large MNCs generate a large share of sales from exporting
+#### The firms
 -   Small businesses account for more than 20% of the value of all U.S. exports
+-   Large MNCs generate a large share of sales from exporting
+  - Only a subset of firms are able to export: the largest!
 :::
 
-::: {.column width="52%"}
-### Why trade rather than invest
-
+::: {.column width="40%"}
+#### Why trade rather than invest
 -   The firm places **none of its capital** at risk
 -   It can stay away from high-risk countries
 -   It can reduce or discontinue flows easily
-
-::: keyidea
-Trade is the low-commitment way of being international. FDI is the high-commitment one — that is the choice behind most of this course.
-:::
 :::
 ::::
+
+::: keyidea
+Trade is the low-commitment way of being international. The alternative is to move capital — and potentially production — abroad: **foreign direct investment (FDI)**
+:::
 
 ## 1 · The consequences of free trade
 
 :::: columns
 ::: {.column width="45%"}
-The U.S. has no comparative advantage in shrimp. At the world price of \$3 rather than the autarky price of \$7:
+The U.S. has no *comparative advantage* in shrimp. At the world price of \$3 rather than the autarky price of \$7:
 
 ::: incremental
 -   domestic production falls to 100
@@ -483,198 +1082,1479 @@ The U.S. has no comparative advantage in shrimp. At the world price of \$3 rathe
 . . .
 
 ::: ask
+**What happens to the producers and consumers?**
 Who gains, who loses, and by how much? Careful — "the country gains" is not an answer.
 :::
 :::
 
-::: {.column width="55%"}
-```{r}
-#| fig-width: 6.2
-#| fig-height: 4.6
-q  <- seq(0, 1000, length.out = 200)
-dem <- data.frame(q = q, p = 9 - 0.0066 * q)
-sup <- data.frame(q = q, p = 1 + 0.015 * q)
+::: {.column width="50%"}
 
-ggplot() +
-  geom_line(data = dem, aes(q, p), colour = IF_COL$slate,  linewidth = 1) +
-  geom_line(data = sup, aes(q, p), colour = IF_COL$teal700, linewidth = 1) +
-  geom_hline(yintercept = 3, colour = IF_COL$clay, linewidth = .7, linetype = "22") +
-  annotate("segment", x = 100, xend = 900, y = 3, yend = 3,
-           colour = IF_COL$clay, linewidth = 1.2,
-           arrow = grid::arrow(length = unit(.02, "npc"), ends = "both", type = "closed")) +
-  annotate("text", x = 500, y = 3.45, label = "imports = 800",
-           colour = IF_COL$clay, size = 3.8, fontface = "bold") +
-  annotate("point", x = 400, y = 6.36, size = 2.4, colour = IF_COL$ink) +
-  annotate("text", x = 400, y = 6.9, label = "A: autarky, $7", size = 3.6, colour = IF_COL$ink) +
-  annotate("text", x = 960, y = 2.5, label = "D", size = 4.4, fontface = "italic",
-           colour = IF_COL$slate) +
-  annotate("text", x = 560, y = 9.3, label = "S", size = 4.4, fontface = "italic",
-           colour = IF_COL$teal700) +
-  scale_x_continuous(breaks = c(100, 400, 900)) +
-  scale_y_continuous(breaks = c(3, 7), labels = c("$3", "$7")) +
-  labs(x = "Quantity of shrimp (millions of pounds per year)",
-       y = "Price ($ per pound)") +
-  coord_cartesian(xlim = c(0, 1000), ylim = c(0, 10)) +
-  theme_if() + theme(panel.grid.major.x = element_blank())
+
+```{=html}
+<div id="trade-demo" style="max-width: 950px; margin: 0 auto;">
+
+  <div style="
+    display:flex;
+    gap:1.2rem;
+    align-items:center;
+    margin-bottom:0.8rem;
+    flex-wrap:wrap;
+  ">
+
+    <button
+      id="trade-play"
+      type="button"
+      style="
+        padding:0.35em 0.8em;
+        border:1px solid #176B68;
+        border-radius:7px;
+        background:#176B68;
+        color:white;
+        font-weight:600;
+        cursor:pointer;
+      ">
+      ▶ Play
+    </button>
+
+    <label for="pw-slider" style="font-weight:600;">
+      World price:
+      <span id="pw-value">$3.0</span>
+    </label>
+
+    <input
+      id="pw-slider"
+      type="range"
+      min="2"
+      max="9"
+      step="0.1"
+      value="3"
+      style="flex:1; min-width:260px;"
+    >
+
+    <div
+      id="trade-status"
+      style="
+        font-weight:700;
+        min-width:160px;
+        text-align:right;
+      ">
+    </div>
+
+  </div>
+
+  <svg
+    id="trade-chart"
+    viewBox="0 0 900 520"
+    style="width:100%; height:auto;"
+    aria-label="Interactive supply and demand graph">
+  </svg>
+
+</div>
+
+<script>
+(() => {
+
+  const root = document.getElementById("trade-demo");
+  if (!root || root.dataset.initialized === "true") return;
+  root.dataset.initialized = "true";
+
+  const svg = document.getElementById("trade-chart");
+  const slider = document.getElementById("pw-slider");
+  const pwValue = document.getElementById("pw-value");
+  const status = document.getElementById("trade-status");
+  const playButton = document.getElementById("trade-play");
+
+
+  // =========================================================
+  // 1. SUPPLY AND DEMAND
+  // =========================================================
+  //
+  // Demand: P = a - bQ
+  // Supply: P = c + dQ
+  //
+  // These values imply:
+  // Autarky: P = 7, Q = 400
+  // At Pw = 3: Qs = 100, Qd = 900
+  //
+
+  const a = 10.2;
+  const b = 0.008;
+
+  const c = 1.6666666667;
+  const d = 4 / 300;
+
+
+  // =========================================================
+  // 2. AUTARKY EQUILIBRIUM
+  // =========================================================
+
+  const Qa = (a - c) / (b + d);
+  const Pa = a - b * Qa;
+
+
+  // =========================================================
+  // 3. CHART DIMENSIONS
+  // =========================================================
+
+  const W = 900;
+  const H = 520;
+
+  const margin = {
+    top: 30,
+    right: 50,
+    bottom: 70,
+    left: 80
+  };
+
+  const plotW = W - margin.left - margin.right;
+  const plotH = H - margin.top - margin.bottom;
+
+  const qMin = 0;
+  const qMax = 1000;
+
+  const pMin = 0;
+  const pMax = 10;
+
+  const x = q =>
+    margin.left +
+    ((q - qMin) / (qMax - qMin)) * plotW;
+
+  const y = p =>
+    margin.top +
+    plotH -
+    ((p - pMin) / (pMax - pMin)) * plotH;
+
+
+  // =========================================================
+  // 4. SVG HELPERS
+  // =========================================================
+
+  function el(name, attrs = {}) {
+    const node = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      name
+    );
+
+    for (const [key, value] of Object.entries(attrs)) {
+      node.setAttribute(key, value);
+    }
+
+    return node;
+  }
+
+  function line(x1, y1, x2, y2, attrs = {}) {
+    const node = el("line", {
+      x1, y1, x2, y2,
+      ...attrs
+    });
+
+    svg.appendChild(node);
+    return node;
+  }
+
+  function text(txt, tx, ty, attrs = {}) {
+    const node = el("text", {
+      x: tx,
+      y: ty,
+      ...attrs
+    });
+
+    node.textContent = txt;
+    svg.appendChild(node);
+    return node;
+  }
+
+  function circle(cx, cy, r, attrs = {}) {
+    const node = el("circle", {
+      cx, cy, r,
+      ...attrs
+    });
+
+    svg.appendChild(node);
+    return node;
+  }
+
+
+  // =========================================================
+  // 5. ARROW MARKER
+  // =========================================================
+
+  const defs = el("defs");
+
+  const marker = el("marker", {
+    id: "trade-arrow",
+    markerWidth: 8,
+    markerHeight: 8,
+    refX: 4,
+    refY: 4,
+    orient: "auto-start-reverse"
+  });
+
+  const arrowPath = el("path", {
+    d: "M0,0 L8,4 L0,8 Z",
+    fill: "#B66A50"
+  });
+
+  marker.appendChild(arrowPath);
+  defs.appendChild(marker);
+  svg.appendChild(defs);
+
+
+  // =========================================================
+  // 6. AXES
+  // =========================================================
+
+  line(
+    x(0), y(0),
+    x(1000), y(0),
+    {
+      stroke: "#333",
+      "stroke-width": 1.5
+    }
+  );
+
+  line(
+    x(0), y(0),
+    x(0), y(10),
+    {
+      stroke: "#333",
+      "stroke-width": 1.5
+    }
+  );
+
+  text(
+    "Quantity of shrimp (millions of pounds per year)",
+    x(500),
+    H - 18,
+    {
+      "text-anchor": "middle",
+      "font-size": 17,
+      fill: "#333"
+    }
+  );
+
+  text(
+    "Price ($ per pound)",
+    20,
+    y(5),
+    {
+      transform: `rotate(-90 20 ${y(5)})`,
+      "text-anchor": "middle",
+      "font-size": 17,
+      fill: "#333"
+    }
+  );
+
+
+  // =========================================================
+  // 7. TICKS
+  // =========================================================
+
+  [100, 400, 900].forEach(q => {
+
+    line(
+      x(q), y(0),
+      x(q), y(0) + 7,
+      {
+        stroke: "#333",
+        "stroke-width": 1
+      }
+    );
+
+    text(
+      q,
+      x(q),
+      y(0) + 28,
+      {
+        "text-anchor": "middle",
+        "font-size": 15,
+        fill: "#555"
+      }
+    );
+
+  });
+
+  [3, 7].forEach(p => {
+
+    line(
+      x(0) - 7, y(p),
+      x(0), y(p),
+      {
+        stroke: "#333",
+        "stroke-width": 1
+      }
+    );
+
+    text(
+      `$${p}`,
+      x(0) - 14,
+      y(p) + 5,
+      {
+        "text-anchor": "end",
+        "font-size": 15,
+        fill: "#555"
+      }
+    );
+
+  });
+
+
+  // =========================================================
+  // 8. DEMAND CURVE
+  // =========================================================
+
+  const demandPath = el("path", {
+    d: `
+      M ${x(25)} ${y(a - b * 25)}
+      L ${x(1000)} ${y(a - b * 1000)}
+    `,
+    fill: "none",
+    stroke: "#5C6670",
+    "stroke-width": 4
+  });
+
+  svg.appendChild(demandPath);
+
+
+  // =========================================================
+  // 9. SUPPLY CURVE
+  // =========================================================
+
+  const supplyPath = el("path", {
+    d: `
+      M ${x(0)} ${y(c)}
+      L ${x(625)} ${y(c + d * 625)}
+    `,
+    fill: "none",
+    stroke: "#176B68",
+    "stroke-width": 4
+  });
+
+  svg.appendChild(supplyPath);
+
+
+  // Curve labels
+
+  text(
+    "D",
+    x(960),
+    y(a - b * 960) - 10,
+    {
+      "font-size": 24,
+      "font-style": "italic",
+      fill: "#5C6670"
+    }
+  );
+
+  text(
+    "S",
+    x(590),
+    y(c + d * 590) - 12,
+    {
+      "font-size": 24,
+      "font-style": "italic",
+      fill: "#176B68"
+    }
+  );
+
+
+  // =========================================================
+  // 10. AUTARKY EQUILIBRIUM
+  // =========================================================
+
+  const autoPoint = circle(
+    x(Qa),
+    y(Pa),
+    6,
+    {
+      fill: "#222"
+    }
+  );
+
+  text(
+    "Autarky",
+    x(Qa),
+    y(Pa) - 16,
+    {
+      "text-anchor": "middle",
+      "font-size": 16,
+      "font-weight": 700,
+      fill: "#222"
+    }
+  );
+
+  const autoTitle = el("title");
+
+  autoTitle.textContent =
+    `Autarky equilibrium: P = $${Pa.toFixed(2)}, Q = ${Qa.toFixed(0)}`;
+
+  autoPoint.appendChild(autoTitle);
+
+
+  // =========================================================
+  // 11. DYNAMIC ELEMENTS
+  // =========================================================
+
+  const pwLine = line(
+    0, 0, 0, 0,
+    {
+      stroke: "#B66A50",
+      "stroke-width": 3,
+      "stroke-dasharray": "8 7"
+    }
+  );
+
+  const supplyPoint = circle(
+    0, 0, 6,
+    {
+      fill: "#176B68"
+    }
+  );
+
+  const demandPoint = circle(
+    0, 0, 6,
+    {
+      fill: "#5C6670"
+    }
+  );
+
+  const qSupplyLine = line(
+    0, 0, 0, 0,
+    {
+      stroke: "#176B68",
+      "stroke-width": 1.5,
+      "stroke-dasharray": "5 5"
+    }
+  );
+
+  const qDemandLine = line(
+    0, 0, 0, 0,
+    {
+      stroke: "#5C6670",
+      "stroke-width": 1.5,
+      "stroke-dasharray": "5 5"
+    }
+  );
+
+  const tradeGap = line(
+    0, 0, 0, 0,
+    {
+      stroke: "#B66A50",
+      "stroke-width": 5,
+      "marker-start": "url(#trade-arrow)",
+      "marker-end": "url(#trade-arrow)"
+    }
+  );
+
+  const tradeLabel = text(
+    "",
+    0,
+    0,
+    {
+      "text-anchor": "middle",
+      "font-size": 18,
+      "font-weight": 700,
+      fill: "#B66A50"
+    }
+  );
+
+  const qsLabel = text(
+    "",
+    0,
+    0,
+    {
+      "text-anchor": "middle",
+      "font-size": 15,
+      "font-weight": 700,
+      fill: "#176B68"
+    }
+  );
+
+  const qdLabel = text(
+    "",
+    0,
+    0,
+    {
+      "text-anchor": "middle",
+      "font-size": 15,
+      "font-weight": 700,
+      fill: "#5C6670"
+    }
+  );
+
+  const worldPriceLabel = text(
+    "",
+    0,
+    0,
+    {
+      "font-size": 15,
+      "font-weight": 600,
+      fill: "#B66A50"
+    }
+  );
+
+
+  // =========================================================
+  // 12. UPDATE GRAPH
+  // =========================================================
+
+  function update() {
+
+    const Pw = Number(slider.value);
+
+    const Qd = Math.max(0, (a - Pw) / b);
+    const Qs = Math.max(0, (Pw - c) / d);
+
+    const gap = Math.abs(Qd - Qs);
+
+    let tradeType;
+
+    if (Math.abs(Pw - Pa) < 0.08) {
+      tradeType = "NO TRADE";
+    } else if (Pw < Pa) {
+      tradeType = "IMPORTS";
+    } else {
+      tradeType = "EXPORTS";
+    }
+
+
+    // Top controls
+
+    pwValue.textContent = `$${Pw.toFixed(1)}`;
+
+    if (tradeType === "NO TRADE") {
+      status.textContent = "NO TRADE";
+    } else {
+      status.textContent =
+        `${tradeType} · ${gap.toFixed(0)}`;
+    }
+
+
+    // World price line
+
+    pwLine.setAttribute("x1", x(0));
+    pwLine.setAttribute("x2", x(1000));
+    pwLine.setAttribute("y1", y(Pw));
+    pwLine.setAttribute("y2", y(Pw));
+
+    worldPriceLabel.setAttribute("x", x(25));
+    worldPriceLabel.setAttribute("y", y(Pw) - 8);
+    worldPriceLabel.textContent =
+      `Pw = $${Pw.toFixed(1)}`;
+
+
+    // Supply intersection
+
+    supplyPoint.setAttribute("cx", x(Qs));
+    supplyPoint.setAttribute("cy", y(Pw));
+
+
+    // Demand intersection
+
+    demandPoint.setAttribute("cx", x(Qd));
+    demandPoint.setAttribute("cy", y(Pw));
+
+
+    // Vertical guides
+
+    qSupplyLine.setAttribute("x1", x(Qs));
+    qSupplyLine.setAttribute("x2", x(Qs));
+    qSupplyLine.setAttribute("y1", y(0));
+    qSupplyLine.setAttribute("y2", y(Pw));
+
+    qDemandLine.setAttribute("x1", x(Qd));
+    qDemandLine.setAttribute("x2", x(Qd));
+    qDemandLine.setAttribute("y1", y(0));
+    qDemandLine.setAttribute("y2", y(Pw));
+
+
+    // Trade gap
+
+    if (tradeType === "NO TRADE") {
+
+      tradeGap.setAttribute("visibility", "hidden");
+
+      tradeLabel.setAttribute(
+        "x",
+        x(Qa)
+      );
+
+      tradeLabel.setAttribute(
+        "y",
+        y(Pw) + 45
+      );
+
+      tradeLabel.textContent = "NO TRADE";
+
+    } else {
+
+      tradeGap.setAttribute("visibility", "visible");
+
+      tradeGap.setAttribute(
+        "x1",
+        x(Math.min(Qs, Qd))
+      );
+
+      tradeGap.setAttribute(
+        "x2",
+        x(Math.max(Qs, Qd))
+      );
+
+      tradeGap.setAttribute(
+        "y1",
+        y(Pw) + 24
+      );
+
+      tradeGap.setAttribute(
+        "y2",
+        y(Pw) + 24
+      );
+
+      tradeLabel.setAttribute(
+        "x",
+        x((Qs + Qd) / 2)
+      );
+
+      tradeLabel.setAttribute(
+        "y",
+        y(Pw) + 53
+      );
+
+      tradeLabel.textContent =
+        `${tradeType} = ${gap.toFixed(0)}`;
+    }
+
+
+    // Qs label
+
+    qsLabel.setAttribute(
+      "x",
+      x(Qs)
+    );
+
+    qsLabel.setAttribute(
+      "y",
+      y(0) - 10
+    );
+
+    qsLabel.textContent =
+      `Qs = ${Qs.toFixed(0)}`;
+
+
+    // Qd label
+
+    qdLabel.setAttribute(
+      "x",
+      x(Qd)
+    );
+
+    qdLabel.setAttribute(
+      "y",
+      y(0) - 10
+    );
+
+    qdLabel.textContent =
+      `Qd = ${Qd.toFixed(0)}`;
+
+
+    // Tooltips
+
+    supplyPoint.innerHTML =
+      `<title>Domestic production: Qs = ${Qs.toFixed(0)}</title>`;
+
+    demandPoint.innerHTML =
+      `<title>Domestic consumption: Qd = ${Qd.toFixed(0)}</title>`;
+  }
+
+
+  // =========================================================
+  // 13. MANUAL SLIDER
+  // =========================================================
+
+  slider.addEventListener("input", update);
+
+
+  // =========================================================
+  // 14. PLAY / PAUSE
+  // =========================================================
+
+  let playing = false;
+  let timer = null;
+  let direction = 1;
+
+  function startAnimation() {
+
+    playing = true;
+
+    playButton.textContent = "⏸ Pause";
+
+    timer = setInterval(() => {
+
+      let value = Number(slider.value);
+
+      value += 0.1 * direction;
+
+
+      if (value >= 9) {
+        value = 9;
+        direction = -1;
+      }
+
+
+      if (value <= 2) {
+        value = 2;
+        direction = 1;
+      }
+
+
+      slider.value = value.toFixed(1);
+
+      update();
+
+    }, 90);
+  }
+
+
+  function stopAnimation() {
+
+    playing = false;
+
+    playButton.textContent = "▶ Play";
+
+    clearInterval(timer);
+
+    timer = null;
+  }
+
+
+  playButton.addEventListener("click", () => {
+
+    if (playing) {
+      stopAnimation();
+    } else {
+      startAnimation();
+    }
+
+  });
+
+
+  slider.addEventListener("pointerdown", () => {
+
+    if (playing) {
+      stopAnimation();
+    }
+
+  });
+
+
+  // =========================================================
+  // 15. INITIAL DRAW
+  // =========================================================
+
+  update();
+
+})();
+</script>
 ```
+
 :::
 ::::
 
-## 1 · The policy bias
+## 1 · From trade gains to policy bias
 
-::: incremental
--   Domestic producers want the cheap import restricted; domestic consumers would oppose it, but **no individual consumer has a strong incentive to lobby**.
--   The benefit of protection is **concentrated** on those who work in or own firms in the industry. The cost is diffuse.
--   Since a country has the power to restrict imports, the lobbying often succeeds.
+:::: columns
+
+::: {.column width="50%"}
+
+### The economic result
+
+With a lower world price:
+
+- **Consumers gain**
+- **Domestic producers lose**
+- The country can still experience a **net welfare gain**
+
+But those gains and losses are not distributed equally.
+
 :::
 
-. . .
+::: {.column width="50%"}
 
-The mirror image runs against exports: foreign producers who compete with U.S. goods complain loudest, foreign consumers who gain stay silent, and U.S. exporters are not constituents of that foreign government.
+### The political-economy problem
 
-::: ask
-So: a bias against imports **at home**, and a bias against your exports **abroad**. Every country does this to every other country. Where does that leave a small open economy?
+Trade losses are often:
+
+- **concentrated** in particular firms, workers, or regions
+- **large and visible** for those affected
+- easier to organize around politically
+
+Trade gains are often:
+
+- **diffuse** across many consumers
+- individually relatively small
+- less politically salient, less incentive to loby
+
 :::
+::::
+
+::: {.keyidea}
+**Policy bias**
+
+Even when free trade increases aggregate welfare,
+
+$$
+\text{political pressure for protection}
+\;>\;
+\text{political pressure for free trade}
+$$
+because **those who lose have stronger incentives to organize than those who gain**.
+
+This creates an ***international policy bias problem***: French producers against US-imports and US producers against French-imports.
+:::
+
 
 ## 1 · The antidotes to the policy bias
 
 ::: panel-tabset
 ### All-or-nothing agreements
 
-In a bilateral or multilateral agreement, two or more countries agree to trade freely in many goods — or all goods — **simultaneously**. Bundling defeats the concentrated lobby, because every protected group faces every exporting group at once.
+In a bilateral or multilateral agreement, two or more countries agree to liberalize trade in **many sectors simultaneously**.
+
+Bundling can help overcome the **protectionist policy bias**: import-competing industries seeking protection are counterbalanced by exporters that gain from access to foreign markets.
+
+::: incremental
+
+- 🇪🇺 🇮🇳 **EU–India Free Trade Agreement** — negotiations concluded in **January 2026**; proposed for signature in **September 2026**.
+
+- 🇪🇺 🇦🇷🇧🇷🇵🇾🇺🇾 **EU–Mercosur Agreement** — signed in **January 2026**; the interim trade agreement has applied provisionally since **1 May 2026**.
+
+:::
+
+::: fragment 
+::: {.keyidea}
+Instead of asking:
+
+**“Should we protect this industry?”**
+
+the political bargain becomes:
+
+**“What do we gain abroad in exchange for opening our market at home?”**
+:::
+:::
 
 ### The WTO
 
-By setting standards for acceptable and unacceptable trade restrictions, and ruling in specific cases, the WTO has some power over national trade policy.
+By setting standards for **acceptable and unacceptable trade restrictions**, and ruling in specific disputes, the WTO constrains national trade policy.
+
+::: {.ask}
+A government wants to protect a domestic industry from foreign competition. **What can it legally do — and what might the WTO prevent it from doing?**
+:::
+
+::: incremental
+
+- **Tariffs:** countries generally cannot raise tariffs above the maximum rates they have committed to at the WTO.
+
+- **Import quotas:** quantitative restrictions on imports are generally prohibited, with specific exceptions.
+
+- **Domestic protection:** once a foreign product has entered the market, governments generally cannot tax or regulate it less favourably simply because it is imported (**National Treatment**).
+
+:::
 
 ### Industries as consumers
 
-"Consumers" includes any buyer of a product — a firm using it as an **input**. When the good is a large part of their costs, those firms lobby *for* free trade.
+"Consumers" are not only households. A firm that buys a product as an **input** is also a consumer.
 
-> In late 2004 the U.S. textile industry lobbied the Bush administration to slow the rise of clothing imports from China. U.S. clothing retailers and importers, for whom clothing is an input, lobbied hard against any barrier.
-:::
-
-# 2 · The balance of payments {.divider .center background-color="#06302F"}
-
-## Ireland exports more than it makes {.hook background-color="#FAF7F2"}
-
-In 2024 Ireland ran a goods surplus of **€177 bn** and a primary income deficit of **€129 bn**. Money arrives for the goods and leaves again for the shareholders, most of whom live somewhere else.
+When imported inputs are an important part of production costs, downstream firms may lobby **for free trade** — and against protection for upstream industries.
 
 ::: incremental
--   Nothing is broken. The accounts are doing exactly what they were built to do.
--   A balance of payments **always balances**. No country has ever run out of balance — they run out of *reserves*, which is a different thing entirely.
--   Section 2 is learning to read the table well enough to see the story inside it.
+
+- **Upstream producers** compete with imports → may lobby **for protection**.
+
+- **Downstream firms** use those goods as inputs → may lobby **against protection**.
+
+- The larger the input's share in their costs, the stronger their incentive to oppose tariffs or other trade barriers.
+
+:::
+
+::: fragment
+::: {.keyidea}
+**Example — U.S.–China textiles, 2004**
+
+The U.S. textile industry pushed the Bush administration to restrict rapidly growing imports from China.
+
+But **clothing retailers and importers opposed new barriers** because cheaper imported clothing benefited their businesses.
+
+**Same trade policy → competing interests across industries.**
+:::
+:::
+
+:::
+
+# 2 · The Balance of Payments {.divider .center background-color="#06302F"}
+
+## Motivation: Ireland exports a lot — but who receives the income? {.hook background-color="#FAF7F2"}
+
+In 2024, Ireland recorded a goods trade surplus of about **€177 bn** and a **primary income deficit of about €129 bn**.
+
+::: fragment
+
+**What does that mean?**
+
+::: incremental
+
+- Many multinational firms **produce and export from Ireland**
+
+- But much of the capital behind those firms is **owned by foreign investors**
+
+- The profits generated in Ireland therefore do not necessarily belong to Irish residents
+
+- Part of the income generated by those exports ultimately flows **back to foreign owners**
+
+:::
+:::
+
+::: fragment
+::: {.ask}
+So if **€177 bn comes in through trade**, while large amounts of income **flow back out to foreign owners**...
+
+**How do we keep track of all these flows?**
+:::
+:::
+
+::: fragment
+::: {.keyidea}
+That is what the **Balance of Payments** does:
+
+it records the economic transactions between a country's **residents** and the **rest of the world**.
+:::
 :::
 
 ## 2 · The basics
 
-A country's transactions with the rest of the world, recorded over a period, in order to
+The **Balance of Payments (BoP)** records a country's transactions with the rest of the world over a given period. It helps us understand:
 
 ::: incremental
--   give information on the **demand for and supply of** a country's currency
--   signal the country's potential as a **business partner**
--   evaluate its performance in international economic competition
+
+- the **demand for and supply of a country's currency**: *e.g. a U.S. buyer paying for French wine creates demand for euros*
+
+- the country's relationship with **foreign investors and trading partners**: *e.g. how much foreign investment is flowing into France?*
+
+- how the country is performing in the **international economy**: *e.g. is it exporting more than it imports?*
+
 :::
 
 . . .
 
-::: keyidea
-**Every credit is matched by a debit.** A receipt from foreigners is a credit (+) and creates demand for your home currency. A payment to foreigners is a debit (−) and creates demand for the foreign currency, i.e. supply of yours.
+**Every international transaction has two sides: a credit and a debit.**
+
+::: incremental
+
+- **Credit (+)** → a receipt from foreigners  
+
+- **Debit (−)** → a payment to foreigners  
+
 :::
 
-::: {.content-visible when-format="revealjs"}
-::: {style="text-align:center"}
-<iframe width="540" height="250" src="https://www.youtube-nocookie.com/embed/qgmTZJIk7VE" title="Balance of payments" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen data-external="1">
+. . .
 
-</iframe>
-:::
+There are three broad types of international transactions:
+
+::: incremental
+
+- **Current account** → goods, services and income: *exports and imports*
+
+- **Financial flows** → purchases and sales of assets: *a foreign investor buys French shares*
+
+- **Official reserves** → transactions by the central bank: *buying or selling foreign-currency reserves*
+
 :::
 
 ## 2 · The current account, BCA
 
+The **current account** records transactions in goods, services, and income between residents of a country and the rest of the world.
+
 ::: incremental
--   **Merchandise trade** — exports and imports of tangible goods. Its balance is the *trade balance*.
--   **Services** — legal, consulting and engineering services, royalties for patents and IP, insurance premiums, shipping fees, tourist expenditure. Trade in intangibles: *invisible trade*.
--   **Factor income** — interest, dividends and other income on foreign investments previously made.
--   **Unilateral transfers** — foreign aid, reparations, official and private grants, gifts. Unlike the rest, these flows are **one-directional**.
+
+- **Trade in goods and services** — exports and imports of goods and services, including transport, travel, finance, consulting and insurance. Their balance is the **trade balance**
+ 
+- **Primary income (factor income)** — compensation of employees and income associated with cross-border ownership of financial assets.  
+
+- **Secondary income (unilateral transfers)** — transfers between residents and non-residents for which no good, service or asset is provided in return.  
+  *Example: workers' remittances, international aid, grants and gifts.*
+
 :::
+
+. . .
+
+::: {.keyidea}
+The current-account balance can be summarized as
+
+$$
+BCA =
+\text{Trade balance}
++
+\text{Net primary income}
++
+\text{Net secondary income}
+$$
+
+where the **trade balance includes both goods and services**.
+:::
+
+## 2 · What can change the current account?
+
+The current-account balance is **not fixed**. It responds to changes in the domestic and international economy.
+
+::: incremental
+
+- **Domestic and foreign income** affect demand for imports and exports.
+- **Relative prices** affect the competitiveness of domestic and foreign goods.
+- The **exchange rate** can change those relative prices.
+
+:::
+
+. . .
+
+::: {.ask}
+Suppose the domestic currency **depreciates**.
+
+Exports become relatively cheaper abroad and imports become more expensive at home.
+
+**Should the trade balance improve?**
+:::
+
 
 ## 2 · The J-curve
 
 :::: columns
+
 ::: {.column width="46%"}
-Following a depreciation the trade balance may **first deteriorate** and only then improve.
+
+Following a currency depreciation, the trade balance may **initially deteriorate** before improving over time.
 
 ::: incremental
--   Import prices rise immediately; volumes adjust slowly, because consumption habits are sticky.
--   The shape depends on the **elasticities** of imports and exports.
--   Marshall–Lerner: the balance improves only once $|\varepsilon_x| + |\varepsilon_m| > 1$.
+
+- **Prices adjust faster than quantities.** Imports become more expensive immediately, while trade volumes respond only gradually.
+
+- Existing **contracts, orders and consumption patterns** slow the adjustment of import and export quantities.
+
+- Over time, import demand falls and export demand rises.
+
+- The magnitude of the adjustment depends on the **price elasticities of exports and imports**.
+
 :::
+
+
 :::
 
 ::: {.column width="54%"}
-```{r}
-#| fig-width: 6
-#| fig-height: 4.2
-t <- seq(0, 10, length.out = 300)
-j <- data.frame(t = t, y = -1.6 * exp(-((t - 2.2)^2) / 3.2) + 0.30 * (t - 1.2))
-j <- j[j$t >= 0.6, ]
 
-ggplot(j, aes(t, y)) +
-  geom_hline(yintercept = 0, colour = IF_COL$ink, linewidth = .5) +
-  geom_line(colour = IF_COL$clay, linewidth = 1.4) +
-  annotate("text", x = 2.4, y = -1.55, label = "prices adjust first",
-           colour = IF_COL$muted, size = 3.6) +
-  annotate("text", x = 8.2, y = 1.9, label = "volumes follow",
-           colour = IF_COL$muted, size = 3.6) +
-  labs(x = "Time since depreciation", y = "Change in the trade balance") +
-  coord_cartesian(ylim = c(-2.2, 2.8)) +
-  theme_schematic()
+```{=html}
+<div style="width:100%; max-width:700px; margin:0 auto;">
+
+<svg
+  viewBox="0 0 700 470"
+  style="width:100%; height:auto;"
+  role="img"
+  aria-label="J-curve showing the effect of a currency depreciation on the trade balance over time"
+>
+
+  <!-- AXES -->
+
+  <line
+    x1="75" y1="390"
+    x2="660" y2="390"
+    stroke="#333"
+    stroke-width="1.5"
+  />
+
+  <line
+    x1="75" y1="40"
+    x2="75" y2="420"
+    stroke="#333"
+    stroke-width="1.5"
+  />
+
+
+  <!-- ZERO LINE -->
+
+  <line
+    x1="75" y1="225"
+    x2="660" y2="225"
+    stroke="#777"
+    stroke-width="1.2"
+    stroke-dasharray="6 6"
+  />
+
+
+  <!-- Y AXIS LABEL -->
+
+  <text
+    x="22"
+    y="225"
+    transform="rotate(-90 22 225)"
+    text-anchor="middle"
+    font-size="17"
+    fill="#333"
+  >
+    Change in trade balance
+  </text>
+
+
+  <!-- X AXIS LABEL -->
+
+  <text
+    x="370"
+    y="450"
+    text-anchor="middle"
+    font-size="17"
+    fill="#333"
+  >
+    Time since depreciation
+  </text>
+
+
+  <!-- ZERO LABEL -->
+
+  <text
+    x="63"
+    y="230"
+    text-anchor="end"
+    font-size="14"
+    fill="#777"
+  >
+    0
+  </text>
+
+
+  <!-- DEPRECIATION MARKER -->
+
+  <line
+    x1="115" y1="390"
+    x2="115" y2="55"
+    stroke="#999"
+    stroke-width="1"
+    stroke-dasharray="4 5"
+  />
+
+  <text
+    x="115"
+    y="415"
+    text-anchor="middle"
+    font-size="14"
+    fill="#555"
+  >
+    Depreciation
+  </text>
+
+
+  <!-- J CURVE -->
+
+  <path
+    d="
+      M 115 225
+      C 145 245,
+        170 310,
+        215 335
+
+      C 265 360,
+        315 325,
+        360 275
+
+      C 410 220,
+        470 170,
+        535 135
+
+      C 575 112,
+        615 92,
+        650 78
+    "
+    fill="none"
+    stroke="#B66A50"
+    stroke-width="5"
+    stroke-linecap="round"
+  />
+
+
+  <!-- INITIAL POINT -->
+
+  <circle
+    cx="115"
+    cy="225"
+    r="5"
+    fill="#B66A50"
+  />
+
+
+  <!-- TROUGH -->
+
+  <circle
+    cx="225"
+    cy="338"
+    r="6"
+    fill="#B66A50"
+  />
+
+  <text
+    x="225"
+    y="370"
+    text-anchor="middle"
+    font-size="15"
+    fill="#666"
+  >
+    Trade balance deteriorates
+  </text>
+
+
+  <!-- CROSSING -->
+
+  <circle
+    cx="405"
+    cy="225"
+    r="5"
+    fill="#B66A50"
+  />
+
+
+  <!-- PRICE EFFECT -->
+
+  <text
+    x="190"
+    y="285"
+    text-anchor="middle"
+    font-size="15"
+    font-weight="600"
+    fill="#666"
+  >
+    Price effect dominates
+  </text>
+
+  <text
+    x="190"
+    y="305"
+    text-anchor="middle"
+    font-size="13"
+    fill="#888"
+  >
+    import bill rises
+  </text>
+
+
+  <!-- QUANTITY EFFECT -->
+
+  <text
+    x="525"
+    y="165"
+    text-anchor="middle"
+    font-size="15"
+    font-weight="600"
+    fill="#666"
+  >
+    Quantity effect dominates
+  </text>
+
+  <text
+    x="525"
+    y="185"
+    text-anchor="middle"
+    font-size="13"
+    fill="#888"
+  >
+    exports ↑ · imports ↓
+  </text>
+
+
+  <!-- SHORT / LONG RUN -->
+
+  <text
+    x="220"
+    y="65"
+    text-anchor="middle"
+    font-size="14"
+    fill="#888"
+  >
+    SHORT RUN
+  </text>
+
+  <text
+    x="530"
+    y="65"
+    text-anchor="middle"
+    font-size="14"
+    fill="#888"
+  >
+    LONGER RUN
+  </text>
+
+
+  <!-- DIRECTION ARROW -->
+
+  <defs>
+    <marker
+      id="j-arrow"
+      markerWidth="8"
+      markerHeight="8"
+      refX="7"
+      refY="4"
+      orient="auto"
+    >
+      <path
+        d="M0,0 L8,4 L0,8 Z"
+        fill="#999"
+      />
+    </marker>
+  </defs>
+
+  <line
+    x1="310"
+    y1="90"
+    x2="445"
+    y2="90"
+    stroke="#999"
+    stroke-width="1.5"
+    marker-end="url(#j-arrow)"
+  />
+
+</svg>
+
+</div>
 ```
+
 :::
+
 ::::
 
-## 2 · The financial and capital account, BKA
+
+## 2 · The capital and financial accounts, BKA
+
+While the **current account** records flows of goods, services and income, these accounts record transactions involving **assets and liabilities**.
 
 ::: incremental
--   **Capital account** — transactions in non-financial, non-produced assets.
--   **Foreign direct investment** — firms exploiting market imperfections such as under-priced labour and protected markets. In the U.S. accounts, acquiring **10% or more** of the voting shares counts as direct investment.
--   **Portfolio investment** — sale and purchase of financial assets **without transfer of control**; boomed with the relaxation of capital controls and the desire to diversify risk.
--   **Financial derivatives** — options, futures and swaps used for hedging.
--   **Other investment** — currency, bank deposits, trade credits.
--   **Statistical discrepancy** — omitted and misrecorded transactions.
+
+- **Capital account** — transactions involving **non-produced, non-financial assets** and capital transfers.  
+  *Examples: rights to natural resources, licenses, trademarks, or debt forgiveness.*
+
+- **Foreign direct investment (FDI)** — cross-border investment involving a **lasting interest or significant influence** in a firm.  
+  *A common statistical threshold is ownership of at least **10% of voting power**.*
+
+- **Portfolio investment** — cross-border purchases and sales of **equity and debt securities** that do not qualify as direct investment.  
+  *Examples: foreign shares and government or corporate bonds.*
+
+- **Financial derivatives** — cross-border positions in instruments such as **options, futures and swaps**.
+
+- **Other investment** — financial transactions not included above.  
+  *Examples: bank deposits, loans and trade credit.*
+
 :::
 
-## 2 · The official reserve account, BRA, and the identity
+. . .
 
-The overall balance indicates the international payment gap that must be compensated by official reserve transactions.
+::: {.keyidea}
+The distinction is simple:
+
+**Current account** → flows of goods, services and income  
+**Capital & financial accounts** → flows associated with assets and liabilities
+:::
+
+## 2 · The official reserve account, BRA
+
+**Official reserves** are foreign assets held by a country's central bank or monetary authority.
+
+::: incremental
+
+- They include **foreign currencies, foreign securities, gold and other reserve assets**.
+
+- When a country faces an international payments **deficit**, the central bank can sell reserve assets to provide foreign currency.
+
+- When it faces an international payments **surplus**, the central bank can accumulate reserve assets.
+
+:::
+
+. . .
+
+::: {.keyidea}
+Official reserves can absorb imbalances in international payments:
+
+$$
+\text{Deficit}
+\rightarrow
+\text{reserves fall}
+\qquad\qquad
+\text{Surplus}
+\rightarrow
+\text{reserves rise}
+$$
+:::
+
+
+## 2 · The Balance of Payments identity
+
+We now have the three components needed to account for a country's transactions with the rest of the world.
+
+::: incremental
+
+- **BCA** — current-account balance
+- **BKA** — capital and financial-account balance
+- **BRA** — official reserve balance
+
+:::
+
+. . .
+
+::: {.keyidea}
+Because international transactions are recorded using **double-entry accounting**,
+
+$$
+\boxed{BCA + BKA + BRA = 0}
+$$
+
+The Balance of Payments therefore **always balances as an accounting identity**.
+:::
+
+. . .
 
 :::: columns
-::: {.column width="50%"}
-**Deficit** — the central bank runs down official reserve assets (gold, foreign exchange) or borrows from foreign central banks.
-
-**Surplus** — it retires foreign debt or acquires reserve assets from foreigners.
-:::
 
 ::: {.column width="50%"}
-::: keyidea
-$$BCA + BKA + BRA = 0$$
+**Without reserve intervention**
 
-Pure float, no intervention: $BCA = -BKA$
+$$
+BRA = 0
+\quad\Rightarrow\quad
+BCA = -BKA
+$$
+:::
 
-Fixed regime, $BCA+BKA \neq 0$: $BCA + BKA = -BRA$
+::: {.column width="50%"}
+**With reserve intervention**
+
+$$
+BRA \neq 0
+$$
+
+Reserve transactions help offset the remaining balance.
 :::
-:::
+
 ::::
 
-## 2 · Problem 1.2 — the balance of payments of France
+. . .
+
+::: {.ask}
+So when we say that a country has a **current-account deficit**, does that mean its Balance of Payments is "in deficit"?
+:::
+
+
+## 2 · Problem 1.2 — the Balance of Payments of France
 
 ::: panel-tabset
+
 ### Data
 
 ```{r}
 #| results: asis
+
 b <- read.csv("data/france-bop.csv", check.names = FALSE)
+
 out <- data.frame(
   `Balance of payments (EUR m)` = b$item,
   `2021 credits` = fmt_eur(b$credits_2021),
@@ -685,59 +2565,95 @@ out <- data.frame(
   `2022 balance` = fmt_eur(b$balance_2022),
   check.names = FALSE
 )
+
 knitr::kable(out, align = c("l", rep("r", 6)))
 ```
 
 ### Questions
 
-::: ask
-**(a)** What is your analysis of the French balance of payments?
+::: {.ask}
 
-**(b)** Does the balance of payments **identity** hold for France?
+**(a)** How did France's external position change between **2021 and 2022**?
+
+Which components of the current account explain the change?
+
+**(b)** How was France's **2022 current-account deficit financed**?
+
+Look at the financial account and reserve transactions.
+
+**(c)** Does the **Balance of Payments identity** hold?
+
+$$
+BCA + BKA + BRA = 0 \; ?
+$$
+
+If not exactly, what accounts for the difference?
+
 :::
 
--   Assets: residents' transactions in securities issued by non-residents
--   Liabilities: non-residents' transactions in securities issued by residents
+::: {.smaller}
+**Remember**
 
-### Where to look
-
-::: incremental
--   The current account turns from **+9.9 bn in 2021 to −56.7 bn in 2022** — and goods alone go from −79 to −144 bn. Energy prices.
--   Services and income are the two structural surpluses. They fund part, not all, of the goods deficit.
--   Add the accounts including net errors and omissions and reserve assets before deciding whether the identity holds.
-:::
+- **Assets** → residents' transactions in securities issued by non-residents
+- **Liabilities** → non-residents' transactions in securities issued by residents
 :::
 
-## 2 · Europe in 2024 — current and capital account
+:::
+
+## 2 · Ireland in the European context — current account
+
+::: {.subtitle}
+Ireland stands out because of the scale of its exports — and the income that subsequently flows abroad.
+:::
 
 ```{r}
 #| results: asis
+
 eu <- data.frame(
   Country = c("EU", "Euro area", "Germany", "France", "Italy", "Spain",
               "Netherlands", "Ireland", "Poland"),
   `Current account` = c(493.5, 425.9, 246.7, 11.6, 24.8, 48.1, 112.7, 91.5, 1.7),
-  Goods             = c(384.1, 371.9, 235.5, -58.1, 64.0, -32.3, 99.0, 176.6, -6.4),
-  Services          = c(191.1, 169.0, -74.0, 55.1, -7.0, 100.4, 38.2, 48.5, 40.2),
-  `Primary income`  = c(28.4, 53.6, 149.0, 61.8, -15.8, -8.1, -15.8, -129.0, -28.5),
-  `Secondary income`= c(-110.4, -168.5, -63.8, -47.2, -16.4, -11.8, -8.6, -4.6, -3.7),
-  `Capital account` = c(-34.9, 6.3, -20.4, 5.9, -0.6, 18.5, -3.4, -18.2, 2.3),
+  Goods              = c(384.1, 371.9, 235.5, -58.1, 64.0, -32.3, 99.0, 176.6, -6.4),
+  Services           = c(191.1, 169.0, -74.0, 55.1, -7.0, 100.4, 38.2, 48.5, 40.2),
+  `Primary income`   = c(28.4, 53.6, 149.0, 61.8, -15.8, -8.1, -15.8, -129.0, -28.5),
+  `Secondary income` = c(-110.4, -168.5, -63.8, -47.2, -16.4, -11.8, -8.6, -4.6, -3.7),
+  `Capital account`  = c(-34.9, 6.3, -20.4, 5.9, -0.6, 18.5, -3.4, -18.2, 2.3),
   check.names = FALSE
 )
+
 knitr::kable(eu, align = c("l", rep("r", 6)))
 ```
 
-::: ask
-Ireland's primary income is −129 bn against a goods surplus of +177 bn. What kind of firm produces that pattern?
+. . .
+
+::: {.ask}
+**Focus on Ireland**
+
+In 2024, Ireland recorded:
+
+$$
+\text{Goods balance: } +€176.6\text{ bn}
+\qquad
+\text{Primary income: } -€129.0\text{ bn}
+$$
+
+**How can a country export so much while simultaneously sending so much income abroad?**
 :::
 
 ::: {.source}
-€ billion. Selected economies. Source: Eurostat, *Main components of the current account balance and the capital account balance, 2024* — [full table for all reporting countries](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Balance_of_payment_statistics)
+€ billion. Selected economies. Source: Eurostat, *Main components of the current account balance and the capital account balance, 2024*.
 :::
 
-## 2 · Europe in 2024 — the financial account
+
+## 2 · Ireland in the European context — financial account
+
+::: {.subtitle}
+Ireland's current account reflects its role in global production. Its financial account reveals another dimension of the same international integration.
+:::
 
 ```{r}
 #| results: asis
+
 fa <- data.frame(
   Country = c("EU", "Euro area", "Germany", "France", "Italy", "Spain",
               "Netherlands", "Ireland", "Poland"),
@@ -749,14 +2665,78 @@ fa <- data.frame(
   `Reserve assets`         = c(45.5, 4.6, -1.4, 1.4, 2.1, 1.3, -0.7, -0.1, 27.2),
   check.names = FALSE
 )
+
 knitr::kable(fa, align = c("l", rep("r", 6)))
 ```
+
+. . .
+
+::: {.ask}
+**Focus on Ireland**
+
+Ireland also records exceptionally large cross-border **portfolio investment assets and liabilities**.
+
+**What does this tell us about Ireland's role in the international financial system?**
+:::
 
 ::: {.source}
 € billion. Selected economies. Source: Eurostat, *Main components of the financial account balance with the rest of the world, 2024*.
 :::
 
-# 3 · The interest rate {.divider .center background-color="#06302F"}
+## Next class {.hook background-color="#FAF7F2"}
+
+:::: columns
+
+::: {.column width="43%"}
+
+**First hour · Finishing the foundations**
+
+If you want to **read ahead**, you can go through the remaining slides from today's lecture.
+
+Next class, we will spend the **first hour** on:
+
+- **Interest rates**
+- **Exchange rates**
+- Their role in international financial markets
+
+:::
+
+::: {.column width="57%"}
+
+**Second part · Climate change and finance**
+
+We will discuss:
+
+**Monasterolo, I. (2020)**  
+[*Climate Change and the Financial System*](https://www.annualreviews.org/doi/10.1146/annurev-resource-110119-031134),  
+*Annual Review of Resource Economics*, **12**.
+
+**Please start reading the paper before class.**
+
+:::
+
+::::
+
+. . .
+
+::: {.ask}
+
+**As you read, think about...**
+
+- Why might **investors' decisions be misaligned with climate risks**?
+- What are the main **climate-related financial risks**?
+- How can **climate policy and regulation** create risks for financial assets?
+- Why is **assessing and pricing climate risk** particularly challenging?
+- What would **good practices** for investors, financial institutions and regulators look like?
+
+**Come prepared to discuss — I will ask questions!**
+
+:::
+
+
+<!--
+
+# 3 · The Interest Rate {.divider .center background-color="#06302F"}
 
 ## The week a number moved a pension fund {.hook background-color="#FAF7F2"}
 
@@ -1298,3 +3278,5 @@ Two things to bring: **Monasterolo (2020)**, read — and one security you might
 ::: {.source}
 Press **`O`** for the slide overview · **`C`** to draw · **`S`** for speaker notes · **`F`** for fullscreen · **`E`** then print for a PDF of the slides.
 :::
+
+-->
