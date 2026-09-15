@@ -219,6 +219,24 @@ Four prices and one accounting identity. That is the whole session.
 4. The **exchange rate** — the price of a currency, and who pays to defend it
 5. Discussion: **Monasterolo (2020)** — what climate does to all four
 
+::: {.notes}
+
+**Main idea:** follow the money.
+
+→ Start with the **financial system**: who has funds, who needs them, and how they are connected.
+
+→ Then **cross borders**: how do we keep track of international transactions? → Balance of Payments.
+
+→ Funds also have a **price** → interest rates.
+
+→ Across countries, we also need the **price of currencies** → exchange rates.
+
+→ Finally: bring everything together with **Monasterolo (2020)**. What changes when climate risk enters the financial system?
+
+**Transition:** Let's start with the most basic question: *why do we need a financial system in the first place?*
+
+:::
+
 
 ## Motivation: Where does your money sleep at night? {.hook background-color="#FAF7F2"}
 
@@ -273,29 +291,39 @@ Source: [National Geographic](https://education.nationalgeographic.org/)
 :::
 
 ::: notes
-Reveal the slide progressively.
 
-Start with the salary and bank account.
+"Let's start with something very simple: what happens to your money after you get paid?"
 
-Then make the point that funds do not simply sit idle: the financial system channels funds toward borrowers.
+"Imagine you're paid on the 28th. You spend some of it, but some stays in your bank account."
 
-Pause on "Who connects the two?" and ask the class before revealing the images.
+→ Reveal: **But it doesn't just sit there.**
 
-The two images introduce the two broad channels:
-1. Financial intermediaries / banks.
-2. Financial markets.
+"Your bank balance is part of a much larger financial system. At the same time, somewhere else, a firm, a government, or another household needs money."
 
-This leads directly into Section 1.
+→ Ask: **Who connects the two?**
+
+[Pause — let them answer.]
+
+→ Reveal images.
+
+"Broadly, there are two ways of connecting those who have funds with those who need them: through **financial intermediaries, such as banks**, or through **financial markets**."
+
+→ Transition:
+
+"So let's start by understanding this basic function: **how does the financial system move funds from those who have them to those who need them?**"
+
 :::
 
 
 ## 1 · The financial system and the real economy
 
+::: {style="font-size: 1em;"}
+
 ```{r}
-#| fig-width: 12
-#| fig-height: 9.2
+#| fig-width: 10
+#| fig-height: 7.2
 #| fig-align: center
-#| out-width: "100%"
+#| out-width: "60%"
 #| echo: false
 
 library(ggplot2)
@@ -664,7 +692,45 @@ ggplot() +
     plot.margin = margin(5, 5, 5, 5)
   )
 ```
+:::
 
+::: notes
+
+"Now let's put the whole picture together."
+
+→ Start at the top: **real economy** — households, firms and governments, domestic or foreign.
+
+"All of them receive resources and make expenditures."
+
+→ Point to **Resources − expenditures**.
+
+"If resources exceed expenditures, there are funds available. If expenditures exceed resources, there is a financing need."
+
+→ Point left/right.
+
+"These are not fixed types of agents. A household, firm or government can be on either side."
+
+→ Move down to **financial system**.
+
+"The financial system connects these two positions."
+
+→ Direct finance:
+
+"With direct finance, funds move through financial markets. Those needing finance issue securities such as bonds or shares."
+
+→ Indirect finance:
+
+"With indirect finance, an intermediary — typically a bank — stands in between: it collects funds and transforms them into loans."
+
+→ Final message:
+
+"So the basic function is simple: **move funds from those who have them to those who need them.**"
+
+→ Transition:
+
+"The next question is: what is actually different between these two channels?"
+
+:::
 
 
 ## 1 · Two ways of channelling savings/funds
@@ -686,10 +752,46 @@ Financial **markets** do the allocation of loanable funds. Savers hold securitie
 :::
 ::::
 
+. . .
+
 ::: ask
 The **U.S. and U.K.** have traditionally relied more on markets; **France and Japan** more on banks.
 Why might this matter?
 **Information, tools, expertise, screening and decision-making**.
+:::
+
+::: notes
+
+"We've just seen that there are two main ways to move funds from savers to borrowers. Now let's look at what actually distinguishes them."
+
+→ **Market-based**
+
+"In a market-based system, investors decide more directly where their money goes."
+
+"They buy securities issued by firms or governments, and **prices aggregate information and help allocate funds**."
+
+→ **Bank-based**
+
+"With banks, there is another layer of decision-making."
+
+"The bank collects funds, but then it **screens borrowers, evaluates risk, monitors them, and decides who receives financing**."
+
+→ Ask:
+
+"So why might it matter whether an economy relies more on markets or on banks?"
+
+[Let them answer.]
+
+→ Key point:
+
+"The difference is largely about **who produces the information and who makes the allocation decision**."
+
+"Markets rely more on prices and dispersed investors. Banks rely more on internal information, expertise, screening and monitoring."
+
+→ Transition:
+
+"But if funds are allocated through markets, what actually happens inside a financial market? Let's open that box."
+
 :::
 
 
@@ -727,6 +829,42 @@ Net lending (+) / net borrowing (−) by institutional sector. NPISH = non-profi
 -   Non-financial corporations swing with the cycle — look at 2020 against 2024.
 -   The **total economy** line is the country's net lending to the rest of the world. It is not zero: what closes the gap is the rest of the world.
 :::
+:::
+
+::: notes
+
+"Let's see whether we can identify these surplus and deficit positions in actual data."
+
+→ Give them a moment to look at the table.
+
+"Positive means the sector has **funds available** — it is a net lender. Negative means it has a **financing need** — it is a net borrower."
+
+→ Ask (a):
+
+"Don't focus on one particular year. Look for the **general pattern across years**."
+
+[Households → usually surplus. Government → usually deficit.]
+
+→ Firms:
+
+"Are firms always borrowers? No. Their position can change quite substantially — compare 2020 and 2024."
+
+→ Ask (b):
+
+"Now look at the **total economy**. If France were completely closed, what would you expect?"
+
+"The domestic sectors would have to balance each other. But the total is not zero."
+
+→ Key point:
+
+"The missing counterpart is the **rest of the world**."
+
+"So surplus funds and financing needs do not have to be matched within the same country."
+
+→ Transition:
+
+"And once funds can cross borders, we are no longer talking only about finance — we are talking about **international finance**."
+
 :::
 
 
@@ -1016,6 +1154,46 @@ ggplot() +
 - The whole process operates within a framework of **market regulation**
 :::
 
+::: notes
+
+"Now let's open the financial-market box."
+
+→ Start with **issuers**:
+
+"Firms and governments that need financing can issue new securities."
+
+"That happens in the **primary market** — this is where new financing is actually raised."
+
+→ Move to **investors**:
+
+"Investors provide the funds in exchange for those securities."
+
+→ Secondary market:
+
+"After that, those securities can be traded between investors."
+
+"That is the **secondary market**. The issuer is no longer raising new money — the security is simply changing hands."
+
+→ Move down:
+
+"But execution is not the end of the transaction."
+
+"First, **clearing** determines who owes what to whom."
+
+"Then **settlement** is the actual transfer of cash and securities."
+
+→ Regulation:
+
+"And all of this happens within a regulatory framework."
+
+→ Transition:
+
+"So a financial market is not just buyers and sellers. It is an entire infrastructure that makes issuance and trading possible."
+
+"Now let's see what changes once these transactions cross national borders."
+
+:::
+
 ## 1 · What changes when we cross borders?
 
 ::: incremental
@@ -1028,6 +1206,7 @@ ggplot() +
 
 :::
 
+. . .
 
 ::: keyidea
 The basic financial problem has not changed. What changes is the environment:
@@ -1040,6 +1219,41 @@ $$
 
 This is what makes **international finance** different from purely domestic finance.
 :::
+
+::: notes
+
+"So far, nothing required the saver and the borrower to be in the same country."
+
+"Now suppose the investor is in France and the firm is in the U.S. What changes?"
+
+→ **First: new risks.**
+
+"Now the transaction may involve different currencies, so the exchange rate matters."
+
+"And countries have different governments, regulations and political risks."
+
+→ **Second: more frictions.**
+
+"Moving across borders is not frictionless — laws, taxes, information and transaction costs differ across countries."
+
+→ **But there is also an upside.**
+
+"Firms are no longer limited to their domestic market. They can sell, produce, invest and raise funds abroad."
+
+"And investors have many more places to invest and diversify."
+
+→ Key idea:
+
+"So the fundamental problem hasn't changed: we still connect funds available with financing needs."
+
+"But internationally, we have **more opportunities — and also more risks and frictions**."
+
+→ Transition:
+
+"Let's start with one of the simplest ways a firm can go international: **trade**."
+
+:::
+
 
 ## 1 · International trade
 
@@ -1062,10 +1276,46 @@ This is what makes **international finance** different from purely domestic fina
 -   It can reduce or discontinue flows easily
 :::
 ::::
+. . .
 
 ::: keyidea
 Trade is the low-commitment way of being international. The alternative is to move capital — and potentially production — abroad: **foreign direct investment (FDI)**
 :::
+
+::: notes
+
+"So how can a firm take advantage of these international opportunities?"
+
+"The simplest way is **trade**."
+
+→ Exports / imports:
+
+"A firm can sell abroad through exports, or buy inputs and supplies from abroad through imports."
+
+→ Firms:
+
+"But not every firm trades internationally."
+
+"Exporting has costs — finding customers, complying with regulations, transportation, distribution — so exporters tend to be **larger and more productive firms**."
+
+→ Why trade?
+
+"Trade is relatively low commitment. The firm can access a foreign market without moving its production there."
+
+"And if conditions change, it is much easier to reduce exports than to close a factory abroad."
+
+→ Key idea:
+
+"So trade allows firms to become international while keeping most of their capital at home."
+
+→ Transition:
+
+"But what if exporting is not enough? What if the firm actually wants to **produce abroad**?"
+
+"Then we move from trade to **foreign direct investment — FDI**."
+
+:::
+
 
 ## 1 · The consequences of free trade
 
@@ -1860,6 +2110,48 @@ Who gains, who loses, and by how much? Careful — "the country gains" is not an
 :::
 ::::
 
+::: notes
+
+"Now let's see what happens when we actually open an economy to trade."
+
+→ Start at **autarky**:
+
+"Without trade, the domestic market determines the equilibrium: price is $7 and quantity is 400."
+
+→ Move the world price to **$3**:
+
+"Now suppose the U.S. can buy shrimp on the world market for only $3."
+
+"At this lower price, U.S. consumers want to buy more — but U.S. producers want to produce less."
+
+→ Point to quantities:
+
+"Domestic production falls to 100, while consumption rises to 900."
+
+"So where do the remaining 800 come from?"
+
+[Pause.]
+
+"**Imports.**"
+
+→ Play / move slider:
+
+"And this is the general logic. When the world price is below the domestic autarky price, the country imports."
+
+"If the world price were above the autarky price, the opposite happens: domestic production exceeds domestic consumption, and the country exports."
+
+→ Ask:
+
+"So free trade clearly changes prices and quantities. But now comes the more interesting question: **who gains and who loses?**"
+
+"Consumers pay less. That sounds good. But domestic producers receive a lower price."
+
+→ Transition:
+
+"To know whether the country as a whole gains, we need to measure both sides — **consumer and producer surplus**."
+
+:::
+
 ## 1 · From trade gains to policy bias
 
 :::: columns
@@ -1910,6 +2202,48 @@ $$
 because **those who lose have stronger incentives to organize than those who gain**.
 
 This creates an ***international policy bias problem***: French producers against US-imports and US producers against French-imports.
+:::
+
+::: notes
+
+"So trade can generate an overall welfare gain. But that doesn't mean **everyone gains**."
+
+→ Consumers:
+
+"Consumers gain from the lower price — but that gain is spread across millions of people."
+
+"For each individual consumer, the gain may be relatively small."
+
+→ Producers:
+
+"For domestic producers, the loss can be much larger and much more concentrated."
+
+"A firm might lose a substantial share of its market. Workers or even entire regions can be affected."
+
+→ Political economy:
+
+"So who has the stronger incentive to organize, lobby, and put pressure on the government?"
+
+[Pause.]
+
+"Usually, the group facing the **concentrated loss**."
+
+→ Policy bias:
+
+"This creates a bias toward protection, even when free trade increases aggregate welfare."
+
+→ International dimension:
+
+"And the same thing happens on both sides of the border."
+
+"French producers may ask for protection from U.S. imports, while U.S. producers ask for protection from French imports."
+
+→ Transition:
+
+"So how can countries escape this political pressure for protection?"
+
+"One solution is to negotiate trade policy **together** — through international trade agreements."
+
 :::
 
 
@@ -1990,6 +2324,55 @@ But **clothing retailers and importers opposed new barriers** because cheaper im
 
 :::
 
+::: notes
+
+"We've seen why governments can face pressure to protect domestic producers. So what can reduce this policy bias?"
+
+→ **All-or-nothing agreements**
+
+"One solution is to negotiate many sectors at the same time."
+
+"Now the government doesn't only hear from firms threatened by imports. It also hears from exporters that want access to the other country's market."
+
+"So we create a political constituency **for** trade."
+
+→ Examples:
+
+"Think about the EU–India or EU–Mercosur agreements: many sectors and interests are negotiated together."
+
+"The question changes from 'should I protect my industry?' to **'what do we get in exchange for opening our market?'**"
+
+→ **WTO**
+
+"A second mechanism is to constrain what governments can do."
+
+"Countries make commitments: for example, they cannot simply raise tariffs or introduce quotas whenever domestic political pressure increases."
+
+"So the WTO makes protection politically and legally more difficult."
+
+→ **Industries as consumers**
+
+"And there is a third force that can work against protection: firms themselves can be consumers."
+
+"If I produce cars, steel is one of my inputs. A tariff protecting domestic steel producers can make **my production more expensive**."
+
+→ Example:
+
+"This is why industries can lobby on opposite sides of exactly the same trade policy."
+
+→ Key takeaway:
+
+"So there are several counterweights to the protectionist bias: **exporters, international commitments, and downstream firms that benefit from cheaper imports**."
+
+→ Transition:
+
+"So far we've focused mainly on firms crossing borders through **trade**. But firms can go further: instead of exporting from home, they can move capital and production abroad."
+
+"That brings us to **foreign direct investment**."
+
+:::
+
+
 # 2 · The Balance of Payments {.divider .center background-color="#06302F"}
 
 ## Motivation: Ireland exports a lot — but who receives the income? {.hook background-color="#FAF7F2"}
@@ -2027,6 +2410,46 @@ That is what the **Balance of Payments** does:
 
 it records the economic transactions between a country's **residents** and the **rest of the world**.
 :::
+:::
+
+::: notes
+
+"Now we move from **why transactions cross borders** to **how we record them**."
+
+→ Start with Ireland:
+
+"Ireland is a really interesting example because it exports an enormous amount relative to the size of its economy."
+
+"In 2024, its goods surplus was around €177 billion."
+
+→ Reveal primary income:
+
+"But at the same time, Ireland had a primary income deficit of around €129 billion."
+
+"So how can both things be true?"
+
+→ Multinationals:
+
+"Many multinational firms produce in Ireland and export from there."
+
+"But producing in Ireland doesn't necessarily mean that the firm is **Irish-owned**."
+
+"If the owners are abroad, part of the income generated in Ireland ultimately accrues to those foreign owners."
+
+→ Ask:
+
+"So we have goods crossing borders, payments coming in, and income flowing back out."
+
+"How do we keep track of all of this?"
+
+→ Reveal:
+
+"That's exactly the purpose of the **Balance of Payments**."
+
+→ Transition:
+
+"Let's start with the basic rules of this accounting system."
+
 :::
 
 ## 2 · The basics
@@ -2069,6 +2492,43 @@ There are three broad types of international transactions:
 
 :::
 
+::: notes
+
+"So the Balance of Payments is basically a **record of everything that happens economically between residents and the rest of the world**."
+
+→ Why do we care?
+
+"It tells us about trade, international investment, and also the demand and supply of currencies."
+
+→ Credit / debit:
+
+"The basic rule is that every international transaction has **two sides**."
+
+"A **credit** is a receipt from abroad. A **debit** is a payment abroad."
+
+→ Give a quick example:
+
+"If France exports wine to the U.S., France receives a payment from abroad — that's a credit."
+
+"But remember: that transaction must have another side. We'll come back to that."
+
+→ Three types:
+
+"For now, I just want you to keep three big categories in mind."
+
+"First, the **current account**: goods, services and income."
+
+"Second, **financial flows**: buying and selling assets across borders."
+
+"And third, **official reserves**: transactions involving the central bank."
+
+→ Transition:
+
+"Let's start with the part that is probably the most intuitive: the **current account**."
+
+:::
+
+
 ## 2 · The current account, BCA
 
 The **current account** records transactions in goods, services, and income between residents of a country and the rest of the world.
@@ -2101,6 +2561,41 @@ $$
 where the **trade balance includes both goods and services**.
 :::
 
+::: notes
+
+"The current account is the part of the Balance of Payments that records **trade and income flows**."
+
+→ **Trade:**
+
+"First, goods and services. If France exports something, that's a credit; if France imports something, that's a debit."
+
+"The difference between exports and imports gives us the trade balance."
+
+→ **Primary income:**
+
+"Then we have income earned because you **work or own assets across borders**."
+
+"Think about dividends, interest, profits, or wages."
+
+→ Connect to Ireland:
+
+"This is exactly what we saw with Ireland: huge exports, but also large income payments to foreign owners."
+
+→ **Secondary income:**
+
+"Finally, transfers where nothing is received directly in exchange — remittances, aid, gifts."
+
+→ Formula:
+
+"So the current account puts these three pieces together: **trade + primary income + secondary income**."
+
+→ Transition:
+
+"But the current account is not fixed. Trade flows in particular respond to prices, income — and importantly, to the **exchange rate**."
+
+:::
+
+
 ## 2 · What can change the current account?
 
 The current-account balance is **not fixed**. It responds to changes in the domestic and international economy.
@@ -2122,6 +2617,46 @@ Exports become relatively cheaper abroad and imports become more expensive at ho
 
 **Should the trade balance improve?**
 :::
+
+
+::: notes
+
+"So what determines whether the current account moves into surplus or deficit?"
+
+→ **Income:**
+
+"If domestic income rises, people and firms tend to buy more — including more imports."
+
+"And if income rises abroad, foreigners may demand more of our exports."
+
+→ **Relative prices:**
+
+"Trade also depends on how expensive our goods are relative to foreign goods."
+
+→ **Exchange rate:**
+
+"And one thing that can change those relative prices is the exchange rate."
+
+→ Ask:
+
+"Suppose our currency depreciates — what would you expect?"
+
+"Exports become cheaper for foreigners, while imports become more expensive for us."
+
+"So our first intuition is: **exports up, imports down, trade balance improves.**"
+
+[Pause.]
+
+"But does that happen immediately?"
+
+→ Transition:
+
+"Not necessarily — because **prices can change immediately, while quantities take time to adjust**."
+
+"That brings us to the **J-curve**."
+
+:::
+
 
 
 ## 2 · The J-curve
@@ -2424,6 +2959,43 @@ Following a currency depreciation, the trade balance may **initially deteriorate
 
 ::::
 
+::: notes
+
+"Now we can answer the question from the previous slide: **does a depreciation immediately improve the trade balance?**"
+
+"Not necessarily."
+
+→ Short run:
+
+"Import prices rise quickly, but firms and consumers cannot instantly change what they buy."
+
+"Contracts, existing orders, and habits mean quantities adjust slowly."
+
+"So initially, the **price effect** can dominate — the import bill rises and the trade balance can actually get worse."
+
+→ Longer run:
+
+"Over time, people substitute away from expensive imports and foreign demand for our exports increases."
+
+"Then the **quantity effect** becomes stronger."
+
+→ Point to the J-shape:
+
+"That is why we can get this J-shaped path: first deterioration, then improvement."
+
+→ Elasticities:
+
+"How strong the recovery is depends on how responsive exports and imports are to price changes."
+
+→ Transition:
+
+"So the current account can react to exchange-rate movements — but the Balance of Payments records much more than trade."
+
+"Next, we move to **cross-border asset transactions**."
+
+:::
+
+
 
 ## 2 · The capital and financial accounts, BKA
 
@@ -2456,6 +3028,50 @@ The distinction is simple:
 **Capital & financial accounts** → flows associated with assets and liabilities
 :::
 
+::: notes
+
+"We've looked at goods, services and income. But countries also exchange **assets**."
+
+→ Capital account:
+
+"The capital account is actually quite small in most countries."
+
+"It includes things like transfers of ownership of certain non-financial assets or debt forgiveness."
+
+→ Financial account:
+
+"The big part is the **financial account**."
+
+→ FDI:
+
+"FDI means more than simply buying shares — it implies a **lasting interest or significant influence** in the firm."
+
+"Statistically, 10% of voting power is the usual threshold."
+
+→ Portfolio investment:
+
+"Below that, investments in shares and bonds are generally classified as **portfolio investment**."
+
+"So the key distinction is **influence or control versus financial investment**."
+
+→ Other flows:
+
+"And then we have derivatives, bank loans, deposits, trade credit, and other financial transactions."
+
+→ Key idea:
+
+"So keep the distinction simple: the **current account is about goods, services and income; the capital and financial accounts are about assets and liabilities**."
+
+→ Transition:
+
+"But there is one important player we haven't discussed yet: the **central bank**."
+
+"It can also transact with the rest of the world through its official reserves."
+
+:::
+
+
+
 ## 2 · The official reserve account, BRA
 
 **Official reserves** are foreign assets held by a country's central bank or monetary authority.
@@ -2486,6 +3102,39 @@ $$
 $$
 :::
 
+::: notes
+
+"Finally, the central bank can also interact with the rest of the world."
+
+→ Reserves:
+
+"Central banks hold foreign assets — foreign currencies, securities, and gold."
+
+"Think of reserves as a **buffer** that can be used when international payments don't match."
+
+→ Deficit:
+
+"If more foreign currency is needed than is coming in, the central bank can sell some of its reserves."
+
+"So **reserves fall**."
+
+→ Surplus:
+
+"If there is excess foreign currency coming in, the central bank can buy it and accumulate reserves."
+
+"So **reserves rise**."
+
+→ Key idea:
+
+"The important intuition is that reserves can help **absorb an imbalance** between international payments."
+
+→ Transition:
+
+"Now we have all the pieces: the **current account**, the **capital and financial accounts**, and **official reserves**."
+
+"So how do they all fit together?"
+
+:::
 
 ## 2 · The Balance of Payments identity
 
@@ -2541,6 +3190,40 @@ Reserve transactions help offset the remaining balance.
 
 ::: {.ask}
 So when we say that a country has a **current-account deficit**, does that mean its Balance of Payments is "in deficit"?
+:::
+
+::: notes
+
+"Now we can put all the pieces together."
+
+→ Identity:
+
+"The key idea is **double-entry accounting**: every international transaction has a counterpart."
+
+"So when we add all the accounts together, the Balance of Payments must balance."
+
+→ No reserve intervention:
+
+"If the central bank does not intervene, a current-account deficit has to be matched by the corresponding financial flows."
+
+"In simple terms: if a country spends more abroad than it receives through the current account, that difference has to be financed."
+
+→ With reserves:
+
+"The central bank can also use its reserves, so reserves can absorb part of the imbalance."
+
+→ Ask:
+
+"So if France has a current-account deficit, can we say that its **Balance of Payments is in deficit**?"
+
+[Pause.]
+
+"No. The **current account** can be in deficit, but the Balance of Payments as a whole balances by construction."
+
+→ Transition:
+
+"Let's now look at actual data and see whether we can identify these relationships in practice."
+
 :::
 
 
@@ -2600,6 +3283,51 @@ If not exactly, what accounts for the difference?
 
 :::
 
+::: notes
+
+"Now let's apply this to France."
+
+→ Give them a few minutes to work through the questions.
+
+"For part (a), start with the **current account**. Don't look at every number — first compare 2021 and 2022."
+
+"What changed? And then ask: **which component is driving that change?**"
+
+→ If needed:
+
+"Look particularly at the balance in **goods, services, and income**."
+
+→ Part (b):
+
+"Then ask how the 2022 current-account deficit was financed."
+
+"If the current account is negative, there must be a counterpart somewhere else in the Balance of Payments."
+
+"Look at the **financial account and reserve transactions**."
+
+→ Part (c):
+
+"Finally, test the accounting identity."
+
+"Do the numbers add exactly to zero?"
+
+"If they don't, that doesn't mean the theory is wrong."
+
+"In real data, we can have **errors and omissions** because international transactions are measured from different sources and are not recorded perfectly."
+
+→ Reminder:
+
+"And be careful with assets and liabilities."
+
+"Assets are French residents' positions abroad; liabilities are foreigners' positions in France."
+
+→ Transition:
+
+"Once we've worked through France, we'll compare it with other European economies and see how different their external positions can look."
+
+:::
+
+
 ## 2 · Ireland in the European context — current account
 
 ::: {.subtitle}
@@ -2644,6 +3372,46 @@ $$
 € billion. Selected economies. Source: Eurostat, *Main components of the current account balance and the capital account balance, 2024*.
 :::
 
+::: notes
+
+"Let's come back to Ireland, now that we understand the current account."
+
+→ Compare countries:
+
+"First, notice how unusual Ireland is."
+
+"It has a goods surplus of almost **€177 billion** — larger than Germany's relative to the size of the economy, and very different from France."
+
+→ But primary income:
+
+"Now look at primary income: **minus €129 billion**."
+
+"This is the other side of the story we started with."
+
+→ Ask:
+
+"How can Ireland export so much and, at the same time, send so much income abroad?"
+
+[Pause.]
+
+→ Explanation:
+
+"Because **where production takes place and who owns the capital are two different things**."
+
+"Many multinational firms produce and export from Ireland, but their owners and investors can be located abroad."
+
+"So Ireland records the exports, while part of the income generated by that production accrues to foreign owners."
+
+→ Key point:
+
+"This is why looking only at the trade balance can give us a very incomplete picture of a country's external position."
+
+→ Transition:
+
+"And Ireland is not only deeply integrated through trade. It is also deeply integrated through **international financial flows**."
+
+:::
+
 
 ## 2 · Ireland in the European context — financial account
 
@@ -2681,6 +3449,46 @@ Ireland also records exceptionally large cross-border **portfolio investment ass
 
 ::: {.source}
 € billion. Selected economies. Source: Eurostat, *Main components of the financial account balance with the rest of the world, 2024*.
+:::
+
+::: notes
+
+"Now let's look at the other side of Ireland's international integration: **financial flows**."
+
+→ Focus on portfolio investment:
+
+"Look at the scale of Ireland's portfolio assets and liabilities."
+
+"Irish residents hold more than **€440 billion** in additional foreign portfolio assets, while foreign investors hold almost **€392 billion** in additional Irish portfolio liabilities."
+
+→ Interpretation:
+
+"So Ireland is not simply exporting goods. It is also a major location through which **international capital moves**."
+
+→ Connect assets and liabilities:
+
+"Large assets mean residents and institutions in Ireland are investing heavily abroad."
+
+"Large liabilities mean foreign investors are also investing heavily in assets issued by residents in Ireland."
+
+→ Key point:
+
+"So we see very large financial flows in **both directions**."
+
+"This tells us that Ireland is exceptionally integrated into global financial markets."
+
+→ Connect both slides:
+
+"And this helps us understand the bigger picture: Ireland is deeply integrated internationally through **production, trade, ownership, and finance**."
+
+→ Transition:
+
+"So far we've been looking at the quantities that move across borders."
+
+"But financial decisions also depend on a crucial **price**: the price of borrowing money."
+
+"That brings us to **interest rates**."
+
 :::
 
 ## Next class {.hook background-color="#FAF7F2"}
