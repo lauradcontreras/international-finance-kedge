@@ -20,7 +20,7 @@ Hi! Welcome to the International Finance course website :wave:
 
 - [Session 1: The international financial system](https://lauradcontreras.github.io/international-finance-kedge/01-international-financial-system/01-international-financial-system.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/01-international-financial-system/01-international-financial-system.pdf)]
 
-- Session 2: The international financial system, continued *(to come)*
+- [Session 2: Interest rates, exchange rates and the climate reading](https://lauradcontreras.github.io/international-finance-kedge/02-interest-and-exchange-rates/02-interest-and-exchange-rates.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/02-interest-and-exchange-rates/02-interest-and-exchange-rates.pdf)]
 
 - Session 3: Securities markets *(to come)*
 
@@ -64,10 +64,19 @@ Written in [Quarto](https://quarto.org), rendered to reveal.js and beamer from o
 Quick version:
 
 ```bash
-quarto preview 01-international-financial-system/01-international-financial-system.qmd                  # write with live reload
-quarto render 01-international-financial-system/01-international-financial-system.qmd --to revealjs     # build the slides
-git add -A && git commit -m "..." && git push                         # publish
+S=02-interest-and-exchange-rates                 # the session you are working on
+
+quarto preview $S/$S.qmd                         # write with live reload
+quarto render  $S/$S.qmd --to revealjs           # build the slides
+quarto render  $S/$S.qmd --to beamer             # build the PDF handout
+quarto render                                    # build the whole site
+
+git add -A && git commit -m "..." && git push    # publish
 ```
+
+Each session is a folder named `NN-slug/` holding one `NN-slug.qmd`. The theme
+lives in `_theme/`, the shared R helpers in `_R/setup.R`, and the FRED series are
+cached once in `cache/` and reused by every session.
 
 Pushing to `main` triggers the GitHub Action, which renders everything and republishes the site.
 
