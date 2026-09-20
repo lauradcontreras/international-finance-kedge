@@ -1,0 +1,602 @@
+---
+title: "International Finance"
+subtitle: "Session 2 — Interest Rates, Exchange Rates and the Climate Reading"
+author: "Laura Contreras-Portela"
+institute: "KEDGE Business School"
+date: today
+date-format: "MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_theme/theme.scss]
+    width: 1600
+    height: 900
+    title-slide-attributes:
+      data-background-color: "#FAF7F2"
+    slide-number: c/t
+    show-slide-number: all
+    progress: true
+    history: true
+    hash: true
+    controls: true
+    navigation-mode: linear      # right arrow always goes to the next slide
+    preview-links: auto
+    highlight-style: github
+    code-line-numbers: true
+    html-math-method: katex
+    chalkboard:                     # C = draw on the slide, B = blank board
+      buttons: true
+      theme: whiteboard
+      chalk-effect: 0
+    footer: "International Finance · Session 2 · KEDGE"
+    embed-resources: false          # true -> one portable file, no wifi needed
+  beamer:                           # same source -> a real LaTeX PDF handout
+    aspectratio: 169
+    theme: metropolis
+    incremental: false
+    header-includes: |
+      \definecolor{ifteal}{HTML}{0E5250}
+      \definecolor{ifclay}{HTML}{B4573C}
+      \setbeamercolor{frametitle}{bg=ifteal}
+      \setbeamercolor{progress bar}{fg=ifteal}
+      \setbeamercolor{title separator}{fg=ifteal}
+      \setbeamercolor{structure}{fg=ifteal}
+      \setbeamercolor{alerted text}{fg=ifclay}
+execute:
+  echo: false
+  warning: false
+  message: false
+  fig-align: center
+  fig-width: 8
+  fig-height: 4.2
+knitr:
+  opts_chunk:
+    dev: png
+    dpi: 300
+---
+
+```{r setup}
+source("../_R/setup.R")
+```
+
+# 3 · The Interest Rate {.divider .center background-color="#06302F"}
+
+## The week a number moved a pension fund {.hook background-color="#FAF7F2"}
+
+September 2022, the UK. Gilt yields jumped after the mini-budget. Pension funds running leveraged liability-driven strategies got collateral calls, sold gilts to meet them, and pushed yields higher still. The Bank of England had to step in and buy.
+
+::: incremental
+-   Nobody's view of the British economy changed that fast. The **price of money** did.
+-   An interest rate is not a number on a screen. It is the price that reprices everything you own.
+:::
+
+## 3 · Supply and demand for loanable funds
+
+:::: columns
+::: {.column width="42%"}
+The interest rate is the price that clears the market for **loanable funds**.
+
+::: keyidea
+Everything in the next two slides is a shift of one of these two curves. Ask yourself which one, and in which direction.
+:::
+:::
+
+::: {.column width="58%"}
+```{r}
+#| fig-width: 6.4
+#| fig-height: 4.4
+q <- seq(1, 10, length.out = 200)
+lf <- rbind(
+  data.frame(q = q, r = 9 / q,            curve = "Demand"),
+  data.frame(q = q, r = 0.9 + 0.09 * q^2, curve = "Supply")
+)
+ggplot(lf, aes(q, r, colour = curve)) +
+  geom_line(linewidth = 1.2) +
+  scale_colour_manual(values = c(Demand = IF_COL$slate, Supply = IF_COL$teal700)) +
+  annotate("text", x = 2.0, y = 8.2, label = "Demand", colour = IF_COL$slate,
+           size = 4.4, fontface = "bold") +
+  annotate("text", x = 8.4, y = 8.2, label = "Supply", colour = IF_COL$teal700,
+           size = 4.4, fontface = "bold") +
+  labs(x = "Loanable funds", y = "Interest rate") +
+  coord_cartesian(xlim = c(0, 11), ylim = c(0, 10)) +
+  theme_schematic() + theme(legend.position = "none")
+```
+:::
+::::
+
+## 3 · What shifts the supply of funds
+
+::: incremental
+-   **Wealth of fund suppliers** rises (households, businesses) → more available for investment
+-   **Risk of the security falls** — lower probability of issuer default → securities more attractive to suppliers
+-   **Near-term spending needs fall** → more available for investment
+-   **Monetary expansion** by the central bank → more funds available
+-   **Economic conditions improve** (inflation, unemployment, growth) → the flow of funds to the country increases
+:::
+
+## 3 · What shifts the demand for funds
+
+::: incremental
+-   **Utility from assets bought with borrowed funds rises** → market participants borrow more
+-   **Non-price conditions on borrowing become less restrictive** → borrowing increases
+-   **Economic conditions improve** — a period of growth → borrowing increases
+:::
+
+. . .
+
+::: ask
+The ECB's 2022–2023 hiking cycle: which curve moved, which way, and did the **quantity** of loanable funds rise or fall? (The rate going up does not settle it.)
+:::
+
+## 3 · The interest rate over the business cycle
+
+```{r}
+#| fig-width: 10
+#| fig-height: 4.0
+tb <- fred("TB3MS")
+if (is.null(tb)) {
+  no_data_note("TB3MS")
+} else {
+  ggplot(tb, aes(date, value)) +
+    recession_bands() +
+    geom_line(colour = IF_COL$teal700, linewidth = .5) +
+    labs(x = NULL, y = "Percent",
+         title = "3-month Treasury bill, United States",
+         caption = "Shaded: NBER recessions. Source: Board of Governors of the Federal Reserve System via FRED.") +
+    theme_if()
+}
+```
+
+::: ask
+What is the relationship between the business cycle and interest rates — and which way does the causality run?
+:::
+
+## 3 · The interest rate and the CPI
+
+```{r}
+#| fig-width: 10
+#| fig-height: 4.0
+tb  <- fred("TB3MS")
+cpi <- fred("CPIAUCSL")
+if (is.null(tb) || is.null(cpi)) {
+  no_data_note("TB3MS / CPIAUCSL")
+} else {
+  cpi$infl <- c(rep(NA, 12), diff(log(cpi$value), lag = 12) * 100)
+  both <- rbind(
+    data.frame(date = tb$date,  value = tb$value,  series = "Interest rate (3-m T-bill)"),
+    data.frame(date = cpi$date, value = cpi$infl,  series = "Inflation (CPI, yoy)")
+  )
+  both <- both[!is.na(both$value) & both$date >= as.Date("1964-01-01"), ]
+  ggplot(both, aes(date, value, colour = series)) +
+    recession_bands(as.Date("1964-01-01")) +
+    geom_hline(yintercept = 0, colour = IF_COL$ink, linewidth = .4) +
+    geom_line(linewidth = .55) +
+    scale_colour_manual(values = c(IF_COL$clay, IF_COL$teal700)) +
+    labs(x = NULL, y = "Percent",
+         caption = "Source: Board of Governors of the Federal Reserve System; BLS via FRED.") +
+    theme_if()
+}
+```
+
+::: ask
+What is the relationship between the interest rate and the CPI?
+:::
+
+## 3 · Real and nominal
+
+::: keyidea
+$$i_r = i - \pi^e$$ The real rate is the nominal rate adjusted for **expected** changes in the price level. It reflects the true cost of borrowing.
+:::
+
+```{r}
+#| fig-width: 10
+#| fig-height: 3.4
+tb  <- fred("TB3MS")
+cpi <- fred("CPIAUCSL")
+if (is.null(tb) || is.null(cpi)) {
+  no_data_note("TB3MS / CPIAUCSL")
+} else {
+  cpi$infl <- c(rep(NA, 12), diff(log(cpi$value), lag = 12) * 100)
+  m <- merge(tb, cpi[, c("date", "infl")], by = "date")
+  m <- m[!is.na(m$infl) & m$date >= as.Date("1960-01-01"), ]
+  s <- rbind(
+    data.frame(date = m$date, value = m$value,          series = "Nominal rate"),
+    data.frame(date = m$date, value = m$value - m$infl, series = "Real rate")
+  )
+  ggplot(s, aes(date, value, colour = series)) +
+    recession_bands(as.Date("1960-01-01")) +
+    geom_hline(yintercept = 0, colour = IF_COL$ink, linewidth = .4) +
+    geom_line(linewidth = .55) +
+    scale_colour_manual(values = c(IF_COL$slate, IF_COL$teal700)) +
+    labs(x = NULL, y = "Percent") +
+    theme_if()
+}
+```
+
+::: ask
+When the real rate is low, borrowing looks clever and lending looks foolish. Find the stretches where it was **negative** — someone was quietly transferring wealth to someone else. Who, and to whom?
+:::
+
+## 3 · Risk and term structure
+
+::: panel-tabset
+### Default risk
+
+The risk that the issuer is unable or unwilling to make interest payments as promised. Bonds with no default risk — U.S. Treasuries, which can raise taxes or print money — are the benchmark. The **risk premium** is the spread between a bond with default risk and a default-free bond.
+
+### Liquidity
+
+A liquid asset is quickly and cheaply converted into cash. Demand is higher for more liquid assets, so the premium reflects **both** default risk and liquidity.
+
+### Taxation
+
+Tax exemption acts like an increase in expected return. U.S. municipal bonds are exempt from federal income tax; Treasuries are exempt from state and local income tax.
+
+### Maturity
+
+Rates at different maturities move together. When short rates are low, yield curves tend to slope steeply upward; when short rates are high, the curve tends to slope gently downward. Most of the time it slopes **upward**.
+:::
+
+## 3 · Yield curves
+
+:::: columns
+::: {.column width="52%"}
+```{r}
+#| fig-width: 6
+#| fig-height: 4.2
+m  <- c(0.25, 0.5, 1, 2, 3, 5, 7, 10, 20, 30)
+yc <- rbind(
+  data.frame(m = m, y = 1.0 + 2.0 * (1 - exp(-m / 6)),            shape = "Normal (upward)"),
+  data.frame(m = m, y = 4.9 + 0.02 * m,                            shape = "Flat"),
+  data.frame(m = m, y = 5.1 - 0.9 * (1 - exp(-m / 4)) + 0.01 * m,  shape = "Inverted")
+)
+ggplot(yc, aes(m, y, colour = shape)) +
+  geom_line(linewidth = 1.1) + geom_point(size = 1.6) +
+  scale_colour_manual(values = c("Normal (upward)" = IF_COL$teal700,
+                                 "Flat"            = IF_COL$slate,
+                                 "Inverted"        = IF_COL$clay)) +
+  scale_x_continuous(breaks = c(1, 5, 10, 20, 30)) +
+  labs(x = "Maturity (years)", y = "Interest rate (%)",
+       title = "Three shapes of the yield curve (schematic)") +
+  theme_if()
+```
+:::
+
+::: {.column width="48%"}
+Most of the time the curve slopes upward. The two other shapes are the interesting ones.
+
+::: ask
+An **inverted** curve has preceded most U.S. recessions. Does that make it a forecast, or a symptom?
+:::
+
+::: {.source}
+Live curve: [U.S. Treasury daily yield curve rates](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve). Pull the current one before class — the shape today is the best slide you have.
+:::
+:::
+::::
+
+# 4 · The exchange rate {.divider .center background-color="#06302F"}
+
+## 15 January 2015 {.hook background-color="#FAF7F2"}
+
+For three years the Swiss National Bank had promised it would not let the franc strengthen past 1.20 per euro. That morning, it stopped. The franc jumped by roughly a fifth against the euro within the day, and several retail FX brokers did not survive the week.
+
+::: incremental
+-   A fixed exchange rate is a **promise**, and a promise is worth exactly the reserves standing behind it.
+-   Section 4: who makes the promise, what it costs to keep, and what happens on the day it breaks.
+:::
+
+::: {.imgslot}
+photo idea: the EUR/CHF chart of 15 Jan 2015, or a Swiss franc note — search "EURCHF january 2015 chart"
+:::
+
+## 4 · Exchange rate regimes
+
+| Regime | Definition | In favour | Against |
+|:---|:---|:---|:---|
+| **Fixed** | Rates held constant or fluctuating within very narrow boundaries | MNCs operate more easily | Government may alter the value of a currency |
+| **Free float** | Rates determined by market forces, no intervention | Problems in one country spread less easily; no intervention policy needed; market efficiency enhanced | MNCs must manage the exposure; countries with severe problems may struggle |
+| **Managed float** | Market forces **with** government intervention | | Governments manipulate the rate for their own benefit |
+| **Pegged** | Home currency pegged to a foreign currency or unit of account | | Hard to defend against speculators in a crisis |
+| **No national currency** | The country uses another currency, e.g. the U.S. dollar | | |
+
+## 4 · Exchange rate policy
+
+::: incremental
+-   The **spot market** is the immediate purchase or sale of foreign exchange. $S(j/k)$ is the price of one unit of currency $k$ in terms of currency $j$.
+-   The exchange rate is the result of national currency supply and demand: the price of a currency in terms of another.
+-   Exchange rate policy is a **component of economic policy**. Authorities can defend the rate by
+    -   fixing short-term interest rates to prevent capital flight,
+    -   buying and selling on the foreign exchange market,
+    -   controlling exchanges through quantitative restrictions on capital movements.
+:::
+
+::: {.content-visible when-format="revealjs"}
+::: {style="text-align:center"}
+<iframe width="560" height="270" src="https://www.youtube-nocookie.com/embed/geoe-6NBy10" title="Exchange rate policy" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen data-external="1">
+
+</iframe>
+:::
+:::
+
+## 4 · Fixed versus flexible: the pound market
+
+:::: columns
+::: {.column width="42%"}
+The rate starts at 1.60 \$/£ and the U.S. runs a trade deficit.
+
+::: incremental
+-   **Flexible**: the dollar depreciates to 1.80 \$/£ and the deficit disappears.
+-   **Fixed**: the rate stays at 1.60 and the Fed supplies pounds out of reserves — or runs contractionary policies to shift demand back.
+:::
+:::
+
+::: {.column width="58%"}
+```{r}
+#| fig-width: 6.4
+#| fig-height: 4.4
+q <- seq(1, 10, length.out = 200)
+mk <- rbind(
+  data.frame(q = q, p = 1.05 + .10 * q,   curve = "Supply (S)"),
+  data.frame(q = q, p = 2.55 - .13 * q,   curve = "Demand (D)"),
+  data.frame(q = q, p = 2.15 - .13 * q,   curve = "Demand (D*)")
+)
+ggplot(mk, aes(q, p, colour = curve, linetype = curve)) +
+  geom_line(linewidth = 1) +
+  geom_hline(yintercept = c(1.60, 1.80), colour = IF_COL$muted,
+             linetype = "22", linewidth = .4) +
+  scale_colour_manual(values = c("Supply (S)" = IF_COL$teal700,
+                                 "Demand (D)" = IF_COL$slate,
+                                 "Demand (D*)" = IF_COL$clay)) +
+  scale_linetype_manual(values = c("Supply (S)" = 1, "Demand (D)" = 1,
+                                   "Demand (D*)" = 5)) +
+  scale_y_continuous(breaks = c(1.60, 1.80), labels = c("$1.60", "$1.80")) +
+  annotate("text", x = 5.5, y = 1.35, label = "trade deficit at the fixed rate",
+           colour = IF_COL$muted, size = 3.4) +
+  labs(x = "Quantity of British pounds", y = "Dollar price per pound") +
+  coord_cartesian(ylim = c(1.1, 2.3)) +
+  theme_if() + theme(panel.grid.major.x = element_blank())
+```
+:::
+::::
+
+## 4 · The Mundell–Fleming model
+
+:::: columns
+::: {.column width="52%"}
+A **small open economy with perfect capital mobility**, so $i = i^{*}$.
+
+IS — goods market, for a given $i^{*}$:
+
+$$Y = C(Y-T) + I(i^{*}) + G + NX(e)$$
+
+LM — money market, for a given $i^{*}$:
+
+$$M/P = L(i^{*}, Y)$$
+
+::: keyidea
+LM is **vertical**: given $i^{*}$ only one $Y$ clears the money market, whatever $e$. That single fact drives every result on the next slide.
+:::
+:::
+
+::: {.column width="48%"}
+```{r}
+#| fig-width: 5.6
+#| fig-height: 4.2
+yy <- seq(0, 10, length.out = 100)
+ggplot() +
+  geom_line(data = data.frame(y = yy, e = 8.4 - .62 * yy),
+            aes(y, e), colour = IF_COL$slate, linewidth = 1.1) +
+  annotate("segment", x = 5.6, xend = 5.6, y = 0, yend = 9,
+           colour = IF_COL$teal700, linewidth = 1.1) +
+  annotate("segment", x = 0, xend = 5.6, y = 4.93, yend = 4.93,
+           colour = IF_COL$muted, linetype = "22", linewidth = .4) +
+  annotate("text", x = 6.1, y = 8.6, label = "LM", colour = IF_COL$teal700,
+           size = 4.6, fontface = "italic") +
+  annotate("text", x = 9.2, y = 2.9, label = "IS", colour = IF_COL$slate,
+           size = 4.6, fontface = "italic") +
+  labs(x = expression(Y), y = expression(e)) +
+  coord_cartesian(xlim = c(0, 10), ylim = c(0, 9)) +
+  theme_schematic()
+```
+
+$e$ = nominal exchange rate, foreign currency per unit of domestic currency.
+:::
+::::
+
+## 4 · Problem 1.3 — policies in the Mundell–Fleming model
+
+::: ask
+What is the consequence of a **fiscal expansion**, a **monetary expansion** and a **trade restriction** on the exchange rate and on output — under floating and under fixed rates?
+:::
+
+| Policy | Floating: $e$ | Floating: $Y$ | Fixed: $e$ | Fixed: $Y$ |
+|:---|:--:|:--:|:--:|:--:|
+| Fiscal expansion | | | | |
+| Monetary expansion | | | | |
+| Import restriction | | | | |
+
+::: {.content-visible when-format="revealjs"}
+Fill the table with them — press **`C`** and draw the IS and LM shifts for each row before writing the sign.
+:::
+
+::: notes
+Floating: fiscal expansion appreciates e, Y unchanged; monetary expansion
+depreciates e, raises Y; trade restriction appreciates e, Y unchanged.
+Fixed: fiscal expansion raises Y, e fixed; monetary expansion is powerless
+(reserves drain, M endogenous); trade restriction raises Y.
+The whole point is the reversal of fiscal and monetary potency.
+:::
+
+## 4 · Currency supply and demand
+
+| | **Domestic currency supply** | **Domestic currency demand** |
+|:---|:---|:---|
+| **Private sector** | Purchase of foreign goods and services (imports) | Purchase of domestic goods and services (exports) |
+| | Income paid on non-residents' investments here | Income received on residents' investments abroad |
+| | Unilateral transfers out | Unilateral transfers in |
+| | Net purchase of foreign assets by residents (capital outflow) | Net purchase of domestic assets by non-residents (capital inflow) |
+| | Foreign debt repayment (cash outflow) | Settlement of foreign credit (cash inflow) |
+| **Central bank** | Foreign currency purchased (reserves increase) | Foreign currency sold (reserves decrease) |
+
+## 4 · Central bank intervention
+
+::: ask
+What is the ECB's intervention in the foreign exchange market in each of these two situations?
+:::
+
+```{r}
+#| fig-width: 10
+#| fig-height: 3.8
+q  <- seq(1, 9, length.out = 150)
+p1 <- rbind(
+  data.frame(q = q, v = 1 + .38 * q, curve = "S",  panel = "Demand for euro shifts out"),
+  data.frame(q = q, v = 5.2 - .28 * q, curve = "D1", panel = "Demand for euro shifts out"),
+  data.frame(q = q, v = 6.1 - .28 * q, curve = "D2", panel = "Demand for euro shifts out"),
+  data.frame(q = q, v = 1 + .38 * q, curve = "S1", panel = "Supply of euro shifts out"),
+  data.frame(q = q, v = 0.1 + .38 * q, curve = "S2", panel = "Supply of euro shifts out"),
+  data.frame(q = q, v = 5.2 - .28 * q, curve = "D",  panel = "Supply of euro shifts out")
+)
+ggplot(p1, aes(q, v, colour = curve)) +
+  geom_line(linewidth = 1) +
+  facet_wrap(~panel) +
+  scale_colour_manual(values = c(S = IF_COL$teal700, S1 = IF_COL$teal700,
+                                 S2 = IF_COL$clay, D = IF_COL$slate,
+                                 D1 = IF_COL$slate,   D2 = IF_COL$clay)) +
+  labs(x = "Quantity of euro", y = "Value of the euro") +
+  theme_schematic() +
+  theme(legend.position = "none",
+        strip.text = element_text(colour = IF_COL$teal700, face = "bold", size = rel(.9)))
+```
+
+## 4 · The euro against the dollar
+
+```{r}
+#| fig-width: 10
+#| fig-height: 4.2
+fx <- fred("DEXUSEU")
+if (is.null(fx)) {
+  no_data_note("DEXUSEU")
+} else {
+  ggplot(fx, aes(date, value)) +
+    geom_line(colour = IF_COL$teal700, linewidth = .4) +
+    geom_hline(yintercept = 1, colour = IF_COL$clay, linetype = "22", linewidth = .4) +
+    labs(x = NULL, y = "U.S. dollars per euro",
+         title = "The euro since January 1999",
+         caption = "Source: Board of Governors of the Federal Reserve System via FRED (DEXUSEU).") +
+    theme_if()
+}
+```
+
+## 4 · The Asian crisis (1)
+
+::: incremental
+-   In 1997–98 Thailand was at the centre of a financial crisis.
+-   It began with a **loss of confidence** in the Thai financial system: the supply and demand curves for baht shifted, the equilibrium rate fell, but Thailand kept the actual rate fixed at \$0.04 — above equilibrium.
+-   The central bank depleted its dollar reserves defending it, which led traders to **anticipate a devaluation** and shift the curves further.
+-   In July 1997 it ran out of reserves and let the baht float. It fell immediately from \$0.04 to \$0.02.
+-   Thai banks, counting on the fixed rate, had borrowed heavily in dollars and yen and lent in baht. **That currency mismatch is the crisis.**
+:::
+
+::: ask
+How did the Thai central bank maintain the fixed rate — and why did it try?
+:::
+
+## 4 · The Asian crisis (2)
+
+:::: columns
+::: {.column width="45%"}
+At the fixed rate of \$0.04, once the equilibrium has fallen to \$0.02, the central bank must **buy 300 million baht a month** with dollars.
+
+::: incremental
+-   Once reserves are gone there are two choices: float (immediate depreciation) or declare a new, lower fixed rate — a devaluation.
+-   Speculators anticipate the drop, which lowers the equilibrium value further and increases the excess supply of baht.
+-   Defending the rate gets **harder the longer you defend it**.
+:::
+:::
+
+::: {.column width="55%"}
+```{r}
+#| fig-width: 6.2
+#| fig-height: 4.4
+q <- seq(50, 500, length.out = 200)
+bt <- rbind(
+  data.frame(q = q, p = 0.010 + 0.00008 * q, curve = "S1 (baht supply)"),
+  data.frame(q = q, p = 0.001 + 0.00008 * q, curve = "S2 (after the shift)"),
+  data.frame(q = q, p = 0.062 - 0.00008 * q, curve = "D1 (baht demand)"),
+  data.frame(q = q, p = 0.050 - 0.00008 * q, curve = "D2 (after the shift)")
+)
+ggplot(bt, aes(q, p, colour = curve, linetype = curve)) +
+  geom_line(linewidth = .95) +
+  geom_hline(yintercept = c(0.02, 0.04), colour = IF_COL$muted,
+             linetype = "22", linewidth = .4) +
+  annotate("segment", x = 100, xend = 400, y = 0.0415, yend = 0.0415,
+           colour = IF_COL$clay, linewidth = 1,
+           arrow = grid::arrow(length = unit(.018, "npc"), ends = "both", type = "closed")) +
+  annotate("text", x = 250, y = 0.0445, label = "central bank buys 300",
+           colour = IF_COL$clay, size = 3.5, fontface = "bold") +
+  scale_colour_manual(values = c(IF_COL$slate, IF_COL$clay,
+                                 IF_COL$teal700, IF_COL$teal300)) +
+  scale_linetype_manual(values = c(1, 5, 1, 5)) +
+  scale_x_continuous(breaks = c(100, 400)) +
+  scale_y_continuous(breaks = c(0.02, 0.04), labels = c("$0.02", "$0.04")) +
+  labs(x = "Millions of baht per month", y = "Dollars per baht") +
+  theme_if() +
+  theme(panel.grid.major.x = element_blank(),
+        legend.text = element_text(size = rel(.7)))
+```
+:::
+::::
+
+# 5 · Reading discussion {.divider .center background-color="#06302F"}
+
+## The tragedy of the horizon {.hook background-color="#FAF7F2"}
+
+Mark Carney, at Lloyd's of London in 2015: the costs of climate change fall **beyond the horizon** of the business cycle, the political cycle and the investment cycle.
+
+By the time it is unambiguously a financial risk, it is too late to treat it as one.
+
+::: {.imgslot}
+photo idea: flooded street, or a stranded coal plant — search "flooded street climate" or "abandoned coal power plant"
+:::
+
+## 5 · Monasterolo (2020), *Climate Change and the Financial System*
+
+::: panel-tabset
+### The questions
+
+::: ask
+**(a)** Why is there a misalignment between climate impacts and investors' decisions?
+
+**(b)** What are the various climate **physical** risks?
+
+**(c)** What are the potential risks arising from **policy and regulatory** shocks?
+
+**(d)** Why is assessing climate risks challenging?
+:::
+
+### How to answer
+
+::: incremental
+-   Answer (a) with the **horizons**: the tragedy of the horizon — climate damages fall outside the investment and electoral cycle, so they are not priced.
+-   For (c), separate an orderly transition from a **disorderly** one. The risk to a portfolio is the disorderly path, not the transition itself.
+-   For (d), the honest answer is that the historical distribution does not contain the events we are pricing. That is a problem for every risk model in this course.
+:::
+
+### For the discussion
+
+::: ask
+If climate risk is not priced because horizons are misaligned, **which of the four sections of today's session does the correction have to come through** — markets, the balance of payments, the interest rate, or the exchange rate?
+:::
+:::
+
+## Next session {.center}
+
+Sessions 3 and 4 move on to **securities markets**.
+
+::: keyidea
+Two things to bring: **Sartzetakis (2021)** on green bonds, read — and the security your group wants to analyse. Not "a stock". A specific one, with a ticker.
+:::
+
+::: {.source}
+Press **`O`** for the slide overview · **`C`** to draw · **`S`** for speaker notes · **`F`** for fullscreen · **`E`** then print for a PDF of the slides.
+:::

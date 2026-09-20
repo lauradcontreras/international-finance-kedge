@@ -35,8 +35,8 @@ for an overview. A PDF version is available next to each session.
 :::
 
 ::: {.session}
-[2 · The international financial system, continued]{.title}
-[To come]{.soon}
+[2 · Interest rates, exchange rates and the climate reading]{.title}
+[[Slides](02-interest-and-exchange-rates/02-interest-and-exchange-rates.html) · [PDF](02-interest-and-exchange-rates/02-interest-and-exchange-rates.pdf)]{.links}
 :::
 
 ::: {.session}

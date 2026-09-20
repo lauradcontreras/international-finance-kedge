@@ -20,6 +20,8 @@ website:
         href: index.qmd
       - text: "Session 1"
         href: 01-international-financial-system/01-international-financial-system.html
+      - text: "Session 2"
+        href: 02-interest-and-exchange-rates/02-interest-and-exchange-rates.html
     right:
       - text: "Laura Contreras-Portela"
         href: "https://lauradcontreras.github.io"
