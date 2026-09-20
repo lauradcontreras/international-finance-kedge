@@ -6,10 +6,6 @@ Hi! Welcome to the International Finance course website :wave:
 
 :link: **[Course website](https://lauradcontreras.github.io/international-finance-kedge/)** — slides, handouts and readings in one place.
 
-:paperclip: [Syllabus](http://learn.kedgebs.com) *(replace with the direct link)*
-
-:calendar: [Calendar](http://learn.kedgebs.com) *(replace with the direct link)*
-
 :loudspeaker: [Announcements](announcements.md)
 
 :computer: Course description and materials on [LEARN](http://learn.kedgebs.com)
