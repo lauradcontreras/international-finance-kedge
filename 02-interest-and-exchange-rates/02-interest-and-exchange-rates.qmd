@@ -27,7 +27,7 @@ format:
       buttons: true
       theme: whiteboard
       chalk-effect: 0
-    footer: "International Finance · Session 2 · KEDGE"
+    footer: "International Finance · International Financial System · KEDGE"
     embed-resources: false          # true -> one portable file, no wifi needed
   beamer:                           # same source -> a real LaTeX PDF handout
     aspectratio: 169
@@ -58,76 +58,1363 @@ knitr:
 source("../_R/setup.R")
 ```
 
-# 3 · The Interest Rate {.divider .center background-color="#06302F"}
 
-## The week a number moved a pension fund {.hook background-color="#FAF7F2"}
+## Today's lecture
 
-September 2022, the UK. Gilt yields jumped after the mini-budget. Pension funds running leveraged liability-driven strategies got collateral calls, sold gilts to meet them, and pushed yields higher still. The Bank of England had to step in and buy.
+1. The **interest rate** — the price of money  
+2. The **exchange rate** — the price of a currency, and who pays to defend it  
+3. **Climate and the financial system** — discussion of [Monasterolo (2020)](https://www.annualreviews.org/docserver/fulltext/resource/12/1/annurev-resource-110119-031134.pdf?expires=1788964584&id=id&accname=guest&checksum=4408CBC7A9F5E1E1ECD8BCE5667B6E7E)
 
-::: incremental
--   Nobody's view of the British economy changed that fast. The **price of money** did.
--   An interest rate is not a number on a screen. It is the price that reprices everything you own.
+## But before... a few questions
+
+::: ask
+::: {.incremental}
+
+- What are the main ways of **channeling savings to borrowers**?
+- How do firms participate in **international markets**? Why do they participate?
+- Is **international trade** always good for everyone?
+- What can we use as an **antidote to policy bias**?
+- How do we keep track of all the **transactions between a country and the rest of the world**?
+- How do we record **income from goods sold abroad**, a **foreign direct investment**, or the **purchase of U.S. dollars**?
+
 :::
-
-## 3 · Supply and demand for loanable funds
-
-:::: columns
-::: {.column width="42%"}
-The interest rate is the price that clears the market for **loanable funds**.
-
-::: keyidea
-Everything in the next two slides is a shift of one of these two curves. Ask yourself which one, and in which direction.
-:::
-:::
-
-::: {.column width="58%"}
-```{r}
-#| fig-width: 6.4
-#| fig-height: 4.4
-q <- seq(1, 10, length.out = 200)
-lf <- rbind(
-  data.frame(q = q, r = 9 / q,            curve = "Demand"),
-  data.frame(q = q, r = 0.9 + 0.09 * q^2, curve = "Supply")
-)
-ggplot(lf, aes(q, r, colour = curve)) +
-  geom_line(linewidth = 1.2) +
-  scale_colour_manual(values = c(Demand = IF_COL$slate, Supply = IF_COL$teal700)) +
-  annotate("text", x = 2.0, y = 8.2, label = "Demand", colour = IF_COL$slate,
-           size = 4.4, fontface = "bold") +
-  annotate("text", x = 8.4, y = 8.2, label = "Supply", colour = IF_COL$teal700,
-           size = 4.4, fontface = "bold") +
-  labs(x = "Loanable funds", y = "Interest rate") +
-  coord_cartesian(xlim = c(0, 11), ylim = c(0, 10)) +
-  theme_schematic() + theme(legend.position = "none")
-```
-:::
-::::
-
-## 3 · What shifts the supply of funds
-
-::: incremental
--   **Wealth of fund suppliers** rises (households, businesses) → more available for investment
--   **Risk of the security falls** — lower probability of issuer default → securities more attractive to suppliers
--   **Near-term spending needs fall** → more available for investment
--   **Monetary expansion** by the central bank → more funds available
--   **Economic conditions improve** (inflation, unemployment, growth) → the flow of funds to the country increases
-:::
-
-## 3 · What shifts the demand for funds
-
-::: incremental
--   **Utility from assets bought with borrowed funds rises** → market participants borrow more
--   **Non-price conditions on borrowing become less restrictive** → borrowing increases
--   **Economic conditions improve** — a period of growth → borrowing increases
 :::
 
 . . .
 
+So far, we have assumed that funds move from **savers** to **borrowers** at no cost.
+But is money really *free*?
+
+
+# 3 · The Interest Rate {.divider .center background-color="#06302F"}
+
+## The week a number moved a pension fund {.hook background-color="#FAF7F2"}
+
+September 2022, the UK.
+
+After the mini-budget, **gilt yields jumped**. Pension funds suddenly needed more cash to cover their investment positions. To raise it, they sold gilts — pushing yields even higher.
+
+The Bank of England eventually stepped in and bought gilts.
+
+::: {.incremental}
+- A change in an **interest rate** had triggered a chain reaction across the financial system.
+- Interest rates affect **asset prices, borrowing costs, and financial stability**.
+:::
+
+::: {.notes}
+Before defining an interest rate, let's see why we care about this number.
+
+In September 2022, the UK government announced what became known as the **mini-budget**. Financial markets reacted very strongly.
+
+A **gilt** is simply the British name for a government bond: the government borrows money from investors and promises to repay it in the future.
+
+Gilt prices fell and their yields increased sharply.
+
+Some pension funds had investment positions that required them to provide more cash when gilt prices fell. So suddenly, they needed a lot of cash.
+
+How do you get cash quickly? **You sell assets.**
+
+Many pension funds started selling gilts at the same time.
+
+This created a feedback loop:
+
+**gilt prices fall → yields rise → pension funds need cash → sell gilts → gilt prices fall further → yields rise further**
+
+The point is that an interest rate can look like a boring number — 2%, 4%, 5% — but when it moves, it changes asset prices, borrowing costs, and potentially financial stability.
+
+**So, what exactly is an interest rate?**
+:::
+
+
+. . .
+
 ::: ask
-The ECB's 2022–2023 hiking cycle: which curve moved, which way, and did the **quantity** of loanable funds rise or fall? (The rate going up does not settle it.)
+What is the interest rate, how is it fixed? 
+:::
+
+
+
+
+## 3 · Supply and demand for loanable funds
+
+The interest rate is the price that clears the market for **loanable funds**
+. . .
+
+```{=html}
+<div id="loanable-demo" style="
+  max-width:1100px;
+  margin:0 auto;
+  font-family:inherit;
+">
+
+  <div style="
+    display:grid;
+    grid-template-columns:minmax(0, 3fr) minmax(210px, 1fr);
+    gap:22px;
+    align-items:stretch;
+  ">
+
+    <!-- ================================================== -->
+    <!-- LEFT: GRAPH + CONTROLS                             -->
+    <!-- ================================================== -->
+
+    <div style="min-width:0;">
+
+      <svg
+        id="loanable-chart"
+        viewBox="0 0 800 500"
+        style="
+          width:100%;
+          height:auto;
+          display:block;
+        "
+        aria-label="Interactive market for loanable funds">
+      </svg>
+
+
+      <!-- CONTROLS -->
+
+      <div style="
+        margin-top:2px;
+        border-top:1px solid #DDD;
+        padding-top:10px;
+      ">
+
+        <!-- DEMAND -->
+
+        <div style="
+          display:grid;
+          grid-template-columns:115px 1fr 90px;
+          gap:10px;
+          align-items:center;
+          margin-bottom:8px;
+        ">
+
+          <div style="
+            font-weight:700;
+            color:#3579D8;
+            font-size:0.82em;
+          ">
+            Demand (D)
+          </div>
+
+          <div style="
+            display:flex;
+            align-items:center;
+            gap:7px;
+          ">
+
+            <span style="
+              font-size:0.67em;
+              color:#777;
+            ">
+              Decrease
+            </span>
+
+            <input
+              id="demand-slider"
+              type="range"
+              min="-2"
+              max="2"
+              step="0.1"
+              value="0"
+              style="
+                flex:1;
+                min-width:0;
+                accent-color:#3579D8;
+              "
+            >
+
+            <span style="
+              font-size:0.67em;
+              color:#777;
+            ">
+              Increase
+            </span>
+
+          </div>
+
+          <div
+            id="demand-value"
+            style="
+              text-align:center;
+              font-weight:700;
+              color:#3579D8;
+              font-size:0.75em;
+            ">
+            Baseline
+          </div>
+
+        </div>
+
+
+        <!-- SUPPLY -->
+
+        <div style="
+          display:grid;
+          grid-template-columns:115px 1fr 90px;
+          gap:10px;
+          align-items:center;
+        ">
+
+          <div style="
+            font-weight:700;
+            color:#4FA56A;
+            font-size:0.82em;
+          ">
+            Supply (S)
+          </div>
+
+          <div style="
+            display:flex;
+            align-items:center;
+            gap:7px;
+          ">
+
+            <span style="
+              font-size:0.67em;
+              color:#777;
+            ">
+              Decrease
+            </span>
+
+            <input
+              id="supply-slider"
+              type="range"
+              min="-2"
+              max="2"
+              step="0.1"
+              value="0"
+              style="
+                flex:1;
+                min-width:0;
+                accent-color:#4FA56A;
+              "
+            >
+
+            <span style="
+              font-size:0.67em;
+              color:#777;
+            ">
+              Increase
+            </span>
+
+          </div>
+
+          <div
+            id="supply-value"
+            style="
+              text-align:center;
+              font-weight:700;
+              color:#4FA56A;
+              font-size:0.75em;
+            ">
+            Baseline
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================================================== -->
+    <!-- RIGHT: OUTCOMES                                    -->
+    <!-- ================================================== -->
+
+    <div style="
+      border-left:1px solid #DDD;
+      padding-left:24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:30px;
+      min-width:0;
+    ">
+
+      <!-- INTEREST RATE -->
+
+      <div>
+
+        <div style="
+          font-size:0.78em;
+          color:#666;
+          margin-bottom:5px;
+        ">
+          Interest rate
+        </div>
+
+        <div
+          id="rate-result"
+          style="
+            font-size:1.35em;
+            font-weight:750;
+          ">
+          Baseline
+        </div>
+
+      </div>
+
+
+      <!-- QUANTITY -->
+
+      <div>
+
+        <div style="
+          font-size:0.78em;
+          color:#666;
+          margin-bottom:5px;
+        ">
+          Quantity of loanable funds
+        </div>
+
+        <div
+          id="quantity-result"
+          style="
+            font-size:1.35em;
+            font-weight:750;
+          ">
+          Baseline
+        </div>
+
+      </div>
+
+
+      <!-- RESET -->
+
+      <button
+        id="loanable-reset"
+        type="button"
+        style="
+          margin-top:5px;
+          align-self:flex-start;
+          padding:5px 13px;
+          border:1px solid #AAA;
+          border-radius:6px;
+          background:white;
+          cursor:pointer;
+          font-size:0.72em;
+          font-weight:600;
+        ">
+        Reset
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+(() => {
+
+  const root =
+    document.getElementById("loanable-demo");
+
+  if (!root ||
+      root.dataset.initialized === "true") return;
+
+  root.dataset.initialized = "true";
+
+
+  const svg =
+    document.getElementById("loanable-chart");
+
+  const demandSlider =
+    document.getElementById("demand-slider");
+
+  const supplySlider =
+    document.getElementById("supply-slider");
+
+  const demandValue =
+    document.getElementById("demand-value");
+
+  const supplyValue =
+    document.getElementById("supply-value");
+
+  const rateResult =
+    document.getElementById("rate-result");
+
+  const quantityResult =
+    document.getElementById("quantity-result");
+
+  const resetButton =
+    document.getElementById("loanable-reset");
+
+
+  // =========================================================
+  // MODEL
+  // =========================================================
+
+  const a = 9;
+  const b = 0.65;
+
+  const c = 1.2;
+  const d = 0.65;
+
+
+  function demandRate(q, shift) {
+
+    return a - b * (q - shift);
+
+  }
+
+
+  function supplyRate(q, shift) {
+
+    return c + d * (q - shift);
+
+  }
+
+
+  const Q0 =
+    (a - c) / (b + d);
+
+  const r0 =
+    demandRate(Q0, 0);
+
+
+  // =========================================================
+  // GRAPH DIMENSIONS
+  // =========================================================
+
+  const W = 800;
+  const H = 500;
+
+  const margin = {
+    top:42,
+    right:55,
+    bottom:62,
+    left:80
+  };
+
+  const plotW =
+    W - margin.left - margin.right;
+
+  const plotH =
+    H - margin.top - margin.bottom;
+
+  const qMin = 0;
+  const qMax = 12;
+
+  const rMin = 0;
+  const rMax = 10;
+
+
+  const x = q =>
+    margin.left +
+    ((q - qMin) /
+    (qMax - qMin)) *
+    plotW;
+
+
+  const y = rate =>
+    margin.top +
+    plotH -
+    ((rate - rMin) /
+    (rMax - rMin)) *
+    plotH;
+
+
+  // =========================================================
+  // SVG HELPERS
+  // =========================================================
+
+  function el(name, attrs = {}) {
+
+    const node =
+      document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        name
+      );
+
+    for (const [key, value]
+         of Object.entries(attrs)) {
+
+      node.setAttribute(key, value);
+
+    }
+
+    return node;
+
+  }
+
+
+  function line(x1, y1, x2, y2, attrs = {}) {
+
+    const node = el("line", {
+      x1:x1,
+      y1:y1,
+      x2:x2,
+      y2:y2,
+      ...attrs
+    });
+
+    svg.appendChild(node);
+
+    return node;
+
+  }
+
+
+  function text(txt, tx, ty, attrs = {}) {
+
+    const node = el("text", {
+      x:tx,
+      y:ty,
+      ...attrs
+    });
+
+    node.textContent = txt;
+
+    svg.appendChild(node);
+
+    return node;
+
+  }
+
+
+  function circle(cx, cy, radius, attrs = {}) {
+
+    const node = el("circle", {
+      cx:cx,
+      cy:cy,
+      r:radius,
+      ...attrs
+    });
+
+    svg.appendChild(node);
+
+    return node;
+
+  }
+
+
+  // =========================================================
+  // AXES
+  // =========================================================
+
+  line(
+    x(0), y(0),
+    x(qMax), y(0),
+    {
+      stroke:"#333",
+      "stroke-width":1.7
+    }
+  );
+
+
+  line(
+    x(0), y(0),
+    x(0), y(rMax),
+    {
+      stroke:"#333",
+      "stroke-width":1.7
+    }
+  );
+
+
+  text(
+    "Interest rate (r)",
+    x(0) + 5,
+    margin.top - 14,
+    {
+      "font-size":19,
+      "font-weight":700,
+      fill:"#222"
+    }
+  );
+
+
+  text(
+    "Quantity of loanable funds (Q)",
+    x(qMax / 2),
+    H - 13,
+    {
+      "text-anchor":"middle",
+      "font-size":19,
+      "font-weight":700,
+      fill:"#222"
+    }
+  );
+
+
+  // =========================================================
+  // BASELINE CURVES
+  // =========================================================
+
+  const baseDemand =
+    el("path", {
+      fill:"none",
+      stroke:"#A9C3E8",
+      "stroke-width":2.5,
+      "stroke-dasharray":"8 7"
+    });
+
+  svg.appendChild(baseDemand);
+
+
+  const baseSupply =
+    el("path", {
+      fill:"none",
+      stroke:"#A8CFB4",
+      "stroke-width":2.5,
+      "stroke-dasharray":"8 7"
+    });
+
+  svg.appendChild(baseSupply);
+
+
+  baseDemand.setAttribute(
+    "d",
+    "M " +
+    x(0) + " " +
+    y(demandRate(0, 0)) +
+    " L " +
+    x(12) + " " +
+    y(demandRate(12, 0))
+  );
+
+
+  baseSupply.setAttribute(
+    "d",
+    "M " +
+    x(0) + " " +
+    y(supplyRate(0, 0)) +
+    " L " +
+    x(12) + " " +
+    y(supplyRate(12, 0))
+  );
+
+
+  // =========================================================
+  // BASELINE EQUILIBRIUM
+  // =========================================================
+
+  line(
+    x(0),
+    y(r0),
+    x(Q0),
+    y(r0),
+    {
+      stroke:"#999",
+      "stroke-width":1.5,
+      "stroke-dasharray":"6 6"
+    }
+  );
+
+
+  line(
+    x(Q0),
+    y(0),
+    x(Q0),
+    y(r0),
+    {
+      stroke:"#999",
+      "stroke-width":1.5,
+      "stroke-dasharray":"6 6"
+    }
+  );
+
+
+  circle(
+    x(Q0),
+    y(r0),
+    6,
+    {
+      fill:"#999"
+    }
+  );
+
+
+  text(
+    "r₀",
+    x(0) - 12,
+    y(r0) + 6,
+    {
+      "text-anchor":"end",
+      "font-size":19,
+      "font-weight":700,
+      fill:"#777"
+    }
+  );
+
+
+  text(
+    "Q₀",
+    x(Q0),
+    y(0) + 28,
+    {
+      "text-anchor":"middle",
+      "font-size":19,
+      "font-weight":700,
+      fill:"#777"
+    }
+  );
+
+
+  // =========================================================
+  // ACTIVE CURVES
+  // =========================================================
+
+  const demandPath =
+    el("path", {
+      fill:"none",
+      stroke:"#3579D8",
+      "stroke-width":5
+    });
+
+  svg.appendChild(demandPath);
+
+
+  const supplyPath =
+    el("path", {
+      fill:"none",
+      stroke:"#4FA56A",
+      "stroke-width":5
+    });
+
+  svg.appendChild(supplyPath);
+
+
+  const demandLabel =
+    text(
+      "D₀",
+      0,
+      0,
+      {
+        "font-size":25,
+        "font-style":"italic",
+        "font-weight":700,
+        fill:"#3579D8"
+      }
+    );
+
+
+  const supplyLabel =
+    text(
+      "S₀",
+      0,
+      0,
+      {
+        "font-size":25,
+        "font-style":"italic",
+        "font-weight":700,
+        fill:"#4FA56A"
+      }
+    );
+
+
+  // =========================================================
+  // NEW EQUILIBRIUM
+  // =========================================================
+
+  const rateGuide =
+    line(
+      0,0,0,0,
+      {
+        stroke:"#3579D8",
+        "stroke-width":2,
+        "stroke-dasharray":"7 6"
+      }
+    );
+
+
+  const quantityGuide =
+    line(
+      0,0,0,0,
+      {
+        stroke:"#3579D8",
+        "stroke-width":2,
+        "stroke-dasharray":"7 6"
+      }
+    );
+
+
+  const equilibrium =
+    circle(
+      0,
+      0,
+      8,
+      {
+        fill:"#222",
+        stroke:"white",
+        "stroke-width":2
+      }
+    );
+
+
+  const rateLabel =
+    text(
+      "",
+      0,
+      0,
+      {
+        "font-size":19,
+        "font-weight":700,
+        fill:"#3579D8"
+      }
+    );
+
+
+  const quantityLabel =
+    text(
+      "",
+      0,
+      0,
+      {
+        "font-size":19,
+        "font-weight":700,
+        fill:"#3579D8"
+      }
+    );
+
+
+  // =========================================================
+  // UPDATE
+  // =========================================================
+
+  function update() {
+
+    const demandShift =
+      Number(demandSlider.value);
+
+    const supplyShift =
+      Number(supplySlider.value);
+
+
+    // -------------------------------------------------------
+    // EQUILIBRIUM
+    // -------------------------------------------------------
+
+    const Q =
+      (
+        a -
+        c +
+        b * demandShift +
+        d * supplyShift
+      ) /
+      (b + d);
+
+
+    const rate =
+      demandRate(
+        Q,
+        demandShift
+      );
+
+
+    // -------------------------------------------------------
+    // MOVE DEMAND CURVE
+    // -------------------------------------------------------
+
+    demandPath.setAttribute(
+      "d",
+      "M " +
+      x(0) + " " +
+      y(demandRate(0, demandShift)) +
+      " L " +
+      x(12) + " " +
+      y(demandRate(12, demandShift))
+    );
+
+
+    // -------------------------------------------------------
+    // MOVE SUPPLY CURVE
+    // -------------------------------------------------------
+
+    supplyPath.setAttribute(
+      "d",
+      "M " +
+      x(0) + " " +
+      y(supplyRate(0, supplyShift)) +
+      " L " +
+      x(12) + " " +
+      y(supplyRate(12, supplyShift))
+    );
+
+
+    // -------------------------------------------------------
+    // CURVE LABELS
+    // -------------------------------------------------------
+
+    demandLabel.setAttribute(
+      "x",
+      x(10.7)
+    );
+
+    demandLabel.setAttribute(
+      "y",
+      y(
+        demandRate(
+          10.7,
+          demandShift
+        )
+      ) - 10
+    );
+
+
+    demandLabel.textContent =
+      Math.abs(demandShift) < 0.05
+      ? "D₀"
+      : "D₁";
+
+
+    supplyLabel.setAttribute(
+      "x",
+      x(10.2)
+    );
+
+    supplyLabel.setAttribute(
+      "y",
+      y(
+        supplyRate(
+          10.2,
+          supplyShift
+        )
+      ) - 10
+    );
+
+
+    supplyLabel.textContent =
+      Math.abs(supplyShift) < 0.05
+      ? "S₀"
+      : "S₁";
+
+
+    // -------------------------------------------------------
+    // NEW EQUILIBRIUM GUIDES
+    // -------------------------------------------------------
+
+    rateGuide.setAttribute(
+      "x1",
+      x(0)
+    );
+
+    rateGuide.setAttribute(
+      "x2",
+      x(Q)
+    );
+
+    rateGuide.setAttribute(
+      "y1",
+      y(rate)
+    );
+
+    rateGuide.setAttribute(
+      "y2",
+      y(rate)
+    );
+
+
+    quantityGuide.setAttribute(
+      "x1",
+      x(Q)
+    );
+
+    quantityGuide.setAttribute(
+      "x2",
+      x(Q)
+    );
+
+    quantityGuide.setAttribute(
+      "y1",
+      y(0)
+    );
+
+    quantityGuide.setAttribute(
+      "y2",
+      y(rate)
+    );
+
+
+    equilibrium.setAttribute(
+      "cx",
+      x(Q)
+    );
+
+    equilibrium.setAttribute(
+      "cy",
+      y(rate)
+    );
+
+
+    rateLabel.setAttribute(
+      "x",
+      x(0) - 12
+    );
+
+    rateLabel.setAttribute(
+      "y",
+      y(rate) + 6
+    );
+
+    rateLabel.setAttribute(
+      "text-anchor",
+      "end"
+    );
+
+
+    quantityLabel.setAttribute(
+      "x",
+      x(Q)
+    );
+
+    quantityLabel.setAttribute(
+      "y",
+      y(0) + 28
+    );
+
+    quantityLabel.setAttribute(
+      "text-anchor",
+      "middle"
+    );
+
+
+    // -------------------------------------------------------
+    // BASELINE / NEW EQUILIBRIUM
+    // -------------------------------------------------------
+
+    const baseline =
+      Math.abs(demandShift) < 0.05 &&
+      Math.abs(supplyShift) < 0.05;
+
+
+    if (baseline) {
+
+      rateGuide.setAttribute(
+        "visibility",
+        "hidden"
+      );
+
+      quantityGuide.setAttribute(
+        "visibility",
+        "hidden"
+      );
+
+      equilibrium.setAttribute(
+        "visibility",
+        "hidden"
+      );
+
+      rateLabel.setAttribute(
+        "visibility",
+        "hidden"
+      );
+
+      quantityLabel.setAttribute(
+        "visibility",
+        "hidden"
+      );
+
+    } else {
+
+      rateGuide.setAttribute(
+        "visibility",
+        "visible"
+      );
+
+      quantityGuide.setAttribute(
+        "visibility",
+        "visible"
+      );
+
+      equilibrium.setAttribute(
+        "visibility",
+        "visible"
+      );
+
+      rateLabel.setAttribute(
+        "visibility",
+        "visible"
+      );
+
+      quantityLabel.setAttribute(
+        "visibility",
+        "visible"
+      );
+
+
+      rateLabel.textContent =
+        "r₁";
+
+      quantityLabel.textContent =
+        "Q₁";
+
+    }
+
+
+    // -------------------------------------------------------
+    // SLIDER LABELS
+    // -------------------------------------------------------
+
+    if (Math.abs(demandShift) < 0.05) {
+
+      demandValue.textContent =
+        "Baseline";
+
+    } else if (demandShift > 0) {
+
+      demandValue.textContent =
+        "Increase";
+
+    } else {
+
+      demandValue.textContent =
+        "Decrease";
+
+    }
+
+
+    if (Math.abs(supplyShift) < 0.05) {
+
+      supplyValue.textContent =
+        "Baseline";
+
+    } else if (supplyShift > 0) {
+
+      supplyValue.textContent =
+        "Increase";
+
+    } else {
+
+      supplyValue.textContent =
+        "Decrease";
+
+    }
+
+
+    // =======================================================
+    // ECONOMIC INTERPRETATION
+    // =======================================================
+
+    const dUp =
+      demandShift > 0.05;
+
+    const dDown =
+      demandShift < -0.05;
+
+    const sUp =
+      supplyShift > 0.05;
+
+    const sDown =
+      supplyShift < -0.05;
+
+    const dSame =
+      Math.abs(demandShift) <= 0.05;
+
+    const sSame =
+      Math.abs(supplyShift) <= 0.05;
+
+
+    // Baseline
+
+    if (dSame && sSame) {
+
+      rateResult.textContent =
+        "Baseline";
+
+      quantityResult.textContent =
+        "Baseline";
+
+    }
+
+
+    // Demand increases
+
+    else if (dUp && sSame) {
+
+      rateResult.innerHTML =
+        "↑ Increases";
+
+      quantityResult.innerHTML =
+        "↑ Increases";
+
+    }
+
+
+    // Demand decreases
+
+    else if (dDown && sSame) {
+
+      rateResult.innerHTML =
+        "↓ Decreases";
+
+      quantityResult.innerHTML =
+        "↓ Decreases";
+
+    }
+
+
+    // Supply increases
+
+    else if (dSame && sUp) {
+
+      rateResult.innerHTML =
+        "↓ Decreases";
+
+      quantityResult.innerHTML =
+        "↑ Increases";
+
+    }
+
+
+    // Supply decreases
+
+    else if (dSame && sDown) {
+
+      rateResult.innerHTML =
+        "↑ Increases";
+
+      quantityResult.innerHTML =
+        "↓ Decreases";
+
+    }
+
+
+    // Demand and supply increase
+
+    else if (dUp && sUp) {
+
+      rateResult.innerHTML =
+        "? Ambiguous";
+
+      quantityResult.innerHTML =
+        "↑ Increases";
+
+    }
+
+
+    // Demand and supply decrease
+
+    else if (dDown && sDown) {
+
+      rateResult.innerHTML =
+        "? Ambiguous";
+
+      quantityResult.innerHTML =
+        "↓ Decreases";
+
+    }
+
+
+    // Demand increases, supply decreases
+
+    else if (dUp && sDown) {
+
+      rateResult.innerHTML =
+        "↑ Increases";
+
+      quantityResult.innerHTML =
+        "? Ambiguous";
+
+    }
+
+
+    // Demand decreases, supply increases
+
+    else if (dDown && sUp) {
+
+      rateResult.innerHTML =
+        "↓ Decreases";
+
+      quantityResult.innerHTML =
+        "? Ambiguous";
+
+    }
+
+  }
+
+
+  // =========================================================
+  // CONTROLS
+  // =========================================================
+
+  demandSlider.addEventListener(
+    "input",
+    update
+  );
+
+
+  supplySlider.addEventListener(
+    "input",
+    update
+  );
+
+
+  resetButton.addEventListener(
+    "click",
+    () => {
+
+      demandSlider.value = 0;
+
+      supplySlider.value = 0;
+
+      update();
+
+    }
+  );
+
+
+  // =========================================================
+  // INITIAL DRAW
+  // =========================================================
+
+  update();
+
+})();
+</script>
+```
+
+
+## 3 · What shifts the curves?
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### Supply of funds
+
+::: {.incremental}
+
+- **Wealth of fund suppliers rises**: more funds available for investment
+- **Risk of securities falls**: supplying funds becomes more attractive
+- **Near-term spending needs fall**: more funds available for investment
+- **Monetary expansion**: more funds available
+- **Economic conditions improve**: greater inflows of funds
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+### Demand for funds
+
+::: {.incremental}
+
+- **Utility from assets bought with borrowed funds rises**: borrowing increases
+- **Non-price borrowing conditions become less restrictive**: borrowing increases
+- **Economic conditions improve**: borrowing increases
+
+:::
+
+:::
+
+::::
+
+. . .
+
+::: ask
+Remember the **UK gilt crisis** from the beginning of the lecture?
+
+Gilt prices fell and yields rose sharply. In our loanable-funds framework, **what could have shifted?**
 :::
 
 ## 3 · The interest rate over the business cycle
+
+Economic conditions can shift **both the supply and the demand for funds**
 
 ```{r}
 #| fig-width: 10
@@ -149,6 +1436,46 @@ if (is.null(tb)) {
 ::: ask
 What is the relationship between the business cycle and interest rates — and which way does the causality run?
 :::
+
+
+::: {.notes}
+Economic conditions can affect both the supply and the demand for funds.
+
+Here I am showing the interest rate on a **3-month U.S. Treasury bill** short-term government security, useful measure of short-term market interest rates
+
+The shaded areas are **recessions**
+
+**What pattern do you see around recessions?**
+
+Interest rates tend to be relatively high around the end of expansions and then fall during recessions. As the economy recovers and expands, they tend to rise again.
+
+**Why?**
+
+During an expansion, firms may see more profitable investment opportunities and households may want to borrow more. What happens to the **demand for funds**? Upward pressure on interest rates.
+
+During a downturn, investment opportunities and borrowing demand tend to weaken, which can put downward pressure on rates.
+Interest rates affect borrowing, investment, consumption, asset prices, and therefore economic activity.
+
+Causality also runs in the **other direction**.
+
+But economic activity is not the only thing changing over the business cycle.
+
+One particularly important variable is **inflation**.
+
+And there is another important actor here: the **central bank** and monetary policy! 
+
+Central banks respond to economic conditions. How? 
+When inflationary pressures build or the economy is running strongly, they may raise short-term interest rates. During recessions, they often cut rates to support economic activity.
+
+So the relationship we see in this graph reflects several mechanisms operating simultaneously:
+
+**economic conditions → supply and demand for funds → interest rates**
+
+but also
+
+**monetary policy → inflation →  interest rates → economic activity**
+:::
+
 
 ## 3 · The interest rate and the CPI
 
@@ -181,15 +1508,27 @@ if (is.null(tb) || is.null(cpi)) {
 What is the relationship between the interest rate and the CPI?
 :::
 
+::: {.notes}
+What do you see?
+
+Interest rates and inflation tend to move together: periods of higher inflation are generally associated with higher interest rates.
+
+But again, correlation is not causation.
+
+Why might inflation matter for interest rates? And why might interest rates, in turn, matter for inflation?
+
+This is where **monetary policy** becomes central.
+:::
+
+
 ## 3 · Real and nominal
 
-::: keyidea
-$$i_r = i - \pi^e$$ The real rate is the nominal rate adjusted for **expected** changes in the price level. It reflects the true cost of borrowing.
-:::
+The real rate is the nominal rate adjusted for **expected** changes in the price level. It reflects the true cost of borrowing
+$$i_r = i - \pi^e$$ 
 
 ```{r}
 #| fig-width: 10
-#| fig-height: 3.4
+#| fig-height: 4
 tb  <- fred("TB3MS")
 cpi <- fred("CPIAUCSL")
 if (is.null(tb) || is.null(cpi)) {
@@ -212,11 +1551,16 @@ if (is.null(tb) || is.null(cpi)) {
 }
 ```
 
-::: ask
-When the real rate is low, borrowing looks clever and lending looks foolish. Find the stretches where it was **negative** — someone was quietly transferring wealth to someone else. Who, and to whom?
-:::
+::: incremental
+
+- When the real rate is low, there are greater incentives to borrow and less to lend
+- The real interest rate adjusts for changes in *purchasing power* and therefore captures the economically relevant cost of borrowing and return to saving
+
+::: 
 
 ## 3 · Risk and term structure
+
+Different bonds offer different yields so that interest rates differ across financial assets 
 
 ::: panel-tabset
 ### Default risk
@@ -227,69 +1571,151 @@ The risk that the issuer is unable or unwilling to make interest payments as pro
 
 A liquid asset is quickly and cheaply converted into cash. Demand is higher for more liquid assets, so the premium reflects **both** default risk and liquidity.
 
-### Taxation
+### Income Tax Considerations
 
 Tax exemption acts like an increase in expected return. U.S. municipal bonds are exempt from federal income tax; Treasuries are exempt from state and local income tax.
 
 ### Maturity
 
-Rates at different maturities move together. When short rates are low, yield curves tend to slope steeply upward; when short rates are high, the curve tends to slope gently downward. Most of the time it slopes **upward**.
+Interest rates also differ according to **how long funds are lent**. The relationship between interest rates and maturity is the **term structure of interest rates**, summarized by the **yield curve**.
+
 :::
 
+::: {.notes}
+Until now, our model gave us one equilibrium interest rate.
+
+But open any financial newspaper and you will see many: government bond rates, corporate bond rates, 3-month rates, 10-year rates, mortgage rates...
+
+Why are they different?
+
+Because a euro lent through one financial asset is not necessarily equivalent to a euro lent through another.
+
+Investors care about whether they will be repaid, how easily they can sell the asset, how returns are taxed, and how long their money is committed.
+
+These characteristics generate differences in the interest rates we observe.
+:::
+
+
 ## 3 · Yield curves
+
+The **yield curve** describes the relationship between the **yield to maturity** and the **maturity** of debt securities with **comparable** risk, liquidity, and tax characteristics. It summarizes the relationship between **short-term and long-term interest rates**
 
 :::: columns
 ::: {.column width="52%"}
 ```{r}
 #| fig-width: 6
 #| fig-height: 4.2
-m  <- c(0.25, 0.5, 1, 2, 3, 5, 7, 10, 20, 30)
+
+m <- c(0.25, 0.5, 1, 2, 3, 5, 7, 10, 20, 30)
+
 yc <- rbind(
-  data.frame(m = m, y = 1.0 + 2.0 * (1 - exp(-m / 6)),            shape = "Normal (upward)"),
-  data.frame(m = m, y = 4.9 + 0.02 * m,                            shape = "Flat"),
-  data.frame(m = m, y = 5.1 - 0.9 * (1 - exp(-m / 4)) + 0.01 * m,  shape = "Inverted")
+  data.frame(
+    m = m,
+    y = 1.0 + 2.0 * (1 - exp(-m / 6)),
+    shape = "Upward sloping"
+  ),
+  data.frame(
+    m = m,
+    y = 4.9 + 0.02 * m,
+    shape = "Flat"
+  ),
+  data.frame(
+    m = m,
+    y = 5.1 - 0.9 * (1 - exp(-m / 4)) + 0.01 * m,
+    shape = "Inverted"
+  )
 )
+
 ggplot(yc, aes(m, y, colour = shape)) +
-  geom_line(linewidth = 1.1) + geom_point(size = 1.6) +
-  scale_colour_manual(values = c("Normal (upward)" = IF_COL$teal700,
-                                 "Flat"            = IF_COL$slate,
-                                 "Inverted"        = IF_COL$clay)) +
+  geom_line(linewidth = 1.1) +
+  geom_point(size = 1.6) +
+  scale_colour_manual(
+    values = c(
+      "Upward sloping" = IF_COL$teal700,
+      "Flat"           = IF_COL$slate,
+      "Inverted"       = IF_COL$clay
+    )
+  ) +
   scale_x_continuous(breaks = c(1, 5, 10, 20, 30)) +
-  labs(x = "Maturity (years)", y = "Interest rate (%)",
-       title = "Three shapes of the yield curve (schematic)") +
+  labs(
+    x = "Maturity (years)",
+    y = "Yield (%)",
+    title = "Alternative shapes of the yield curve"
+  ) +
   theme_if()
 ```
 :::
 
-::: {.column width="48%"}
-Most of the time the curve slopes upward. The two other shapes are the interesting ones.
+::: {.column width="45%"}
+::: incremental
+- **Upward sloping**: Long-term yields exceed short-term yields
+- **Flat**: Short- and long-term yields are approximately equal
+- **Inverted**: Short-term yields exceed long-term yields
+:::
 
 ::: ask
-An **inverted** curve has preceded most U.S. recessions. Does that make it a forecast, or a symptom?
+What economic information can be inferred from the **slope of the yield curve**?
 :::
 
 ::: {.source}
-Live curve: [U.S. Treasury daily yield curve rates](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve). Pull the current one before class — the shape today is the best slide you have.
+Live curve: [U.S. Treasury daily yield curve rates](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve).
 :::
 :::
 ::::
+
+::: {.notes}
+The yield curve isolates the **maturity dimension** of interest rates by comparing securities with similar risk, liquidity, and tax characteristics.
+
+An upward-sloping curve is the most common configuration: yields increase with maturity. A flat curve implies little difference between short- and long-term yields, while an inverted curve implies that short-term yields exceed long-term yields.
+
+The slope is economically informative because long-term yields depend, among other factors, on expectations about the future path of short-term interest rates.
+
+Changes in the yield curve can therefore contain information about market expectations regarding future monetary and economic conditions.
+:::
+
 
 # 4 · The exchange rate {.divider .center background-color="#06302F"}
 
 ## 15 January 2015 {.hook background-color="#FAF7F2"}
 
-For three years the Swiss National Bank had promised it would not let the franc strengthen past 1.20 per euro. That morning, it stopped. The franc jumped by roughly a fifth against the euro within the day, and several retail FX brokers did not survive the week.
+For more than three years, the Swiss National Bank had maintained a **minimum exchange rate of CHF 1.20 per euro**
+
+On 15 January 2015, it abandoned the policy.
+
+The Swiss franc **appreciated sharply within minutes**.
 
 ::: incremental
--   A fixed exchange rate is a **promise**, and a promise is worth exactly the reserves standing behind it.
--   Section 4: who makes the promise, what it costs to keep, and what happens on the day it breaks.
+- Exchange rates are not only **market prices** — under some regimes, they are also **policy targets**.
+- Maintaining a target may require the central bank to **intervene in the foreign-exchange market**.
 :::
 
-::: {.imgslot}
-photo idea: the EUR/CHF chart of 15 Jan 2015, or a Swiss franc note — search "EURCHF january 2015 chart"
+::: ask
+What does it mean for a central bank to **defend an exchange rate** — and what does it cost?
 :::
+
+::: {.notes}
+We have just studied the interest rate: the price of borrowing funds.
+
+We now turn to another fundamental price in international finance: the **exchange rate — the price of one currency in terms of another**.
+
+The Swiss experience gives us the central question for this section.
+
+From 2011, the Swiss National Bank prevented the franc from appreciating beyond CHF 1.20 per euro.
+
+To maintain that exchange rate, it was prepared to intervene in the foreign-exchange market by buying foreign currency.
+
+On 15 January 2015, it abandoned the minimum exchange rate. The franc appreciated immediately.
+
+So an exchange-rate regime is not simply a label. It determines **whether the exchange rate is determined primarily by the market or whether the authorities commit to influencing its value**.
+
+We will first distinguish the main exchange-rate regimes, and then study how an exchange rate is determined and how intervention works.
+:::
+
 
 ## 4 · Exchange rate regimes
+Exchange-rate regimes differ mainly in how much the exchange rate is allowed to respond to market forces** and how much authorities intervene 
+
+<div style="font-size: 1.10em;">
 
 | Regime | Definition | In favour | Against |
 |:---|:---|:---|:---|
@@ -299,67 +1725,336 @@ photo idea: the EUR/CHF chart of 15 Jan 2015, or a Swiss franc note — search "
 | **Pegged** | Home currency pegged to a foreign currency or unit of account | | Hard to defend against speculators in a crisis |
 | **No national currency** | The country uses another currency, e.g. the U.S. dollar | | |
 
+</div>
+
+There is a **trade-off**: greater exchange-rate stability generally requires a stronger policy commitment to maintain that rate
+
+::: {.notes}
+Under a **fixed regime**, authorities commit to maintaining the exchange rate at, or close to, a particular value. This reduces exchange-rate uncertainty, which can facilitate international trade and investment, but maintaining the rate may require substantial intervention. HK
+
+Under a **free float**, the exchange rate is determined primarily by supply and demand in the foreign-exchange market. The exchange rate can therefore adjust to economic shocks, but firms operating internationally face greater exchange-rate risk. US-UK
+
+A **managed float** lies between these two: the exchange rate is market-determined, but the central bank intervenes when it considers movements excessive or undesirable. India, Colombia
+
+Under a **peg**, the domestic currency is linked to another currency or a basket of currencies. Maintaining that link requires the authorities to defend the announced rate. DENMARK TO THE EURO
+
+Finally, some countries give up their national currency altogether and adopt another currency. ECUADOR, PANAMA
+
+The important point is that there is a **trade-off**: greater exchange-rate stability generally requires a stronger policy commitment to maintain that rate.
+
+This brings us to the market itself: **what determines the exchange rate when currencies are traded?**
+:::
+
+
 ## 4 · Exchange rate policy
 
+The choice of exchange-rate regime determines the extent to which authorities **allow the exchange rate to adjust** or **intervene to influence it**
+
 ::: incremental
--   The **spot market** is the immediate purchase or sale of foreign exchange. $S(j/k)$ is the price of one unit of currency $k$ in terms of currency $j$.
--   The exchange rate is the result of national currency supply and demand: the price of a currency in terms of another.
--   Exchange rate policy is a **component of economic policy**. Authorities can defend the rate by
-    -   fixing short-term interest rates to prevent capital flight,
-    -   buying and selling on the foreign exchange market,
-    -   controlling exchanges through quantitative restrictions on capital movements.
+- The **spot exchange rate** is the price at which currencies are exchanged for immediate delivery. $S(j/k)$ denotes the price of one unit of currency $k$ in terms of currency $j$.
+
+- Under managed or fixed regimes, authorities may influence or defend the exchange rate through:
+    - **interest-rate policy**, affecting capital flows;
+    - **foreign-exchange intervention**, buying or selling currencies;
+    - **capital controls**, restricting international financial transactions.
 :::
 
-::: {.content-visible when-format="revealjs"}
-::: {style="text-align:center"}
-<iframe width="560" height="270" src="https://www.youtube-nocookie.com/embed/geoe-6NBy10" title="Exchange rate policy" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen data-external="1">
+::: {.notes}
+The regimes we have just seen differ in the degree to which authorities allow the exchange rate to be determined by the market.
 
-</iframe>
-:::
+But what does intervention actually mean?
+
+Ultimately, the exchange rate is a **market price**. It is determined in the foreign-exchange market by the supply and demand for currencies.
+
+Authorities can therefore influence the exchange rate either by affecting these market forces or by restricting the transactions behind them.
+
+To understand how this works, we first need to understand the **foreign-exchange market**.
 :::
 
 ## 4 · Fixed versus flexible: the pound market
 
-:::: columns
-::: {.column width="42%"}
-The rate starts at 1.60 \$/£ and the U.S. runs a trade deficit.
+At **$1.60/£**, the demand for pounds exceeds their supply
+
+::: {.incremental}
+- **Demand for £:** U.S. residents need pounds to buy British goods and assets.
+- **Supply of £:** British residents supply pounds when they buy U.S. goods and assets.
+- The question is: **how does the market return to equilibrium when $D_{£} > S_{£}$?**
+:::
+
+```{=html}
+<div style="width:70%; display:flex; justify-content:center;">
+
+<svg viewBox="0 0 900 520"
+     style="width:72%; max-width:900px; height:auto;">
+
+  <!-- Axes -->
+  <line x1="120" y1="430" x2="830" y2="430"
+        stroke="#333" stroke-width="2.5"/>
+  <line x1="120" y1="430" x2="120" y2="45"
+        stroke="#333" stroke-width="2.5"/>
+
+  <!-- Axis labels -->
+  <text x="480" y="500"
+        text-anchor="middle"
+        font-size="23"
+        fill="#333">
+    Quantity of British pounds
+  </text>
+
+  <text x="35" y="240"
+        text-anchor="middle"
+        font-size="22"
+        fill="#333"
+        transform="rotate(-90 35 240)">
+    Dollar price per pound ($/£)
+  </text>
+
+
+  <!-- ========================================================= -->
+  <!-- SUPPLY -->
+  <!-- ========================================================= -->
+
+  <path d="M 180 390
+           C 260 375, 315 330, 355 275
+           C 400 235, 440 220, 475 215
+           C 535 145, 585 75, 635 45"
+        fill="none"
+        stroke="#176B68"
+        stroke-width="4"/>
+
+  <text x="640" y="52"
+        font-size="22"
+        font-weight="700"
+        fill="#176B68">
+    Supply (S)
+  </text>
+
+
+  <!-- ========================================================= -->
+  <!-- ORIGINAL DEMAND D -->
+  <!-- Flexible equilibrium: D = S at $1.80 -->
+  <!-- ========================================================= -->
+
+  <path d="M 250 50
+           C 285 120, 350 175, 475 215
+           C 585 250, 690 275, 805 290"
+        fill="none"
+        stroke="#3579D8"
+        stroke-width="4"/>
+
+  <text x="755" y="280"
+        font-size="22"
+        font-weight="700"
+        fill="#3579D8">
+    Demand (D)
+  </text>
+
+
+  <!-- ========================================================= -->
+  <!-- NEW DEMAND D* -->
+  <!-- Fixed equilibrium: D* = S exactly at $1.60 -->
+  <!-- ========================================================= -->
+
+  <path d="M 190 75
+           C 230 145, 285 220, 355 275
+           C 440 340, 565 375, 760 395"
+        fill="none"
+        stroke="#B66A50"
+        stroke-width="3.5"
+        stroke-dasharray="10 7"/>
+
+  <text x="715" y="390"
+        font-size="22"
+        font-weight="700"
+        fill="#B66A50">
+    Demand (D*)
+  </text>
+
+
+  <!-- ========================================================= -->
+  <!-- EXCHANGE RATE = $1.80 -->
+  <!-- ========================================================= -->
+
+  <line x1="120" y1="215" x2="475" y2="215"
+        stroke="#777"
+        stroke-width="1.5"
+        stroke-dasharray="7 6"/>
+
+  <text x="105" y="222"
+        text-anchor="end"
+        font-size="21"
+        fill="#444">
+    $1.80
+  </text>
+
+
+  <!-- ========================================================= -->
+  <!-- EXCHANGE RATE = $1.60 -->
+  <!-- ========================================================= -->
+
+  <line x1="120" y1="275" x2="665" y2="275"
+        stroke="#777"
+        stroke-width="1.5"
+        stroke-dasharray="7 6"/>
+
+  <text x="105" y="282"
+        text-anchor="end"
+        font-size="21"
+        fill="#444">
+    $1.60
+  </text>
+
+
+  <!-- ========================================================= -->
+  <!-- FIXED-REGIME EQUILIBRIUM: D* = S -->
+  <!-- ========================================================= -->
+
+  <circle cx="355" cy="275" r="6"
+          fill="#333"/>
+
+  <line x1="355" y1="275" x2="355" y2="430"
+        stroke="#777"
+        stroke-width="1.4"
+        stroke-dasharray="6 6"/>
+
+  <text x="355" y="455"
+        text-anchor="middle"
+        font-size="21"
+        font-style="italic">
+    D* = S
+  </text>
+
+
+  <!-- ========================================================= -->
+  <!-- FLEXIBLE-REGIME EQUILIBRIUM: D = S -->
+  <!-- ========================================================= -->
+
+  <circle cx="475" cy="215" r="6"
+          fill="#333"/>
+
+  <line x1="475" y1="215" x2="475" y2="430"
+        stroke="#777"
+        stroke-width="1.4"
+        stroke-dasharray="6 6"/>
+
+  <text x="475" y="455"
+        text-anchor="middle"
+        font-size="21"
+        font-style="italic">
+    D = S
+  </text>
+
+
+  <!-- ========================================================= -->
+  <!-- QUANTITY DEMANDED AT $1.60 -->
+  <!-- ========================================================= -->
+
+  <line x1="665" y1="275" x2="665" y2="430"
+        stroke="#777"
+        stroke-width="1.4"
+        stroke-dasharray="6 6"/>
+
+  <text x="665" y="455"
+        text-anchor="middle"
+        font-size="21"
+        font-style="italic">
+    D
+  </text>
+
+
+  <!-- ========================================================= -->
+  <!-- TRADE DEFICIT -->
+  <!-- ========================================================= -->
+
+  <line x1="355" y1="410" x2="665" y2="410"
+        stroke="#B66A50"
+        stroke-width="3"/>
+
+  <line x1="355" y1="401" x2="355" y2="419"
+        stroke="#B66A50"
+        stroke-width="3"/>
+
+  <line x1="665" y1="401" x2="665" y2="419"
+        stroke="#B66A50"
+        stroke-width="3"/>
+
+  <text x="510" y="395"
+        text-anchor="middle"
+        font-size="20"
+        font-weight="600"
+        fill="#B66A50">
+    Trade deficit
+  </text>
+
+
+  <!-- ========================================================= -->
+  <!-- FLEXIBLE REGIME: DOLLAR DEPRECIATES -->
+  <!-- ========================================================= -->
+
+  <line x1="150" y1="270" x2="150" y2="225"
+        stroke="#3579D8"
+        stroke-width="2.5"/>
+
+  <polygon points="150,215 142,230 158,230"
+           fill="#3579D8"/>
+
+  <text x="165" y="245"
+        font-size="18"
+        font-weight="600"
+        fill="#3579D8">
+    Dollar depreciates
+  </text>
+
+
+  <!-- ========================================================= -->
+  <!-- FIXED REGIME: CONTRACTIONARY POLICY -->
+  <!-- ========================================================= -->
+
+  <line x1="320" y1="110" x2="235" y2="110"
+        stroke="#B66A50"
+        stroke-width="2.5"/>
+
+  <polygon points="225,110 242,102 242,118"
+           fill="#B66A50"/>
+
+  <text x="275" y="88"
+        text-anchor="middle"
+        font-size="18"
+        font-weight="600"
+        fill="#B66A50">
+    Contractionary policy
+  </text>
+
+</svg>
+
+</div>
+```
 
 ::: incremental
--   **Flexible**: the dollar depreciates to 1.80 \$/£ and the deficit disappears.
--   **Fixed**: the rate stays at 1.60 and the Fed supplies pounds out of reserves — or runs contractionary policies to shift demand back.
-:::
+-  Under the **flexible regime:** the **exchange rate adjusts** ($\$1.60$ to $\$1.80/£$).  
+-  Under the **fixed regime:** the exchange rate cannot adjust, so **policy must adjust** (D to $D^*$).
 :::
 
-::: {.column width="58%"}
-```{r}
-#| fig-width: 6.4
-#| fig-height: 4.4
-q <- seq(1, 10, length.out = 200)
-mk <- rbind(
-  data.frame(q = q, p = 1.05 + .10 * q,   curve = "Supply (S)"),
-  data.frame(q = q, p = 2.55 - .13 * q,   curve = "Demand (D)"),
-  data.frame(q = q, p = 2.15 - .13 * q,   curve = "Demand (D*)")
-)
-ggplot(mk, aes(q, p, colour = curve, linetype = curve)) +
-  geom_line(linewidth = 1) +
-  geom_hline(yintercept = c(1.60, 1.80), colour = IF_COL$muted,
-             linetype = "22", linewidth = .4) +
-  scale_colour_manual(values = c("Supply (S)" = IF_COL$teal700,
-                                 "Demand (D)" = IF_COL$slate,
-                                 "Demand (D*)" = IF_COL$clay)) +
-  scale_linetype_manual(values = c("Supply (S)" = 1, "Demand (D)" = 1,
-                                   "Demand (D*)" = 5)) +
-  scale_y_continuous(breaks = c(1.60, 1.80), labels = c("$1.60", "$1.80")) +
-  annotate("text", x = 5.5, y = 1.35, label = "trade deficit at the fixed rate",
-           colour = IF_COL$muted, size = 3.4) +
-  labs(x = "Quantity of British pounds", y = "Dollar price per pound") +
-  coord_cartesian(ylim = c(1.1, 2.3)) +
-  theme_if() + theme(panel.grid.major.x = element_blank())
-```
-:::
-::::
+::: {.notes}
+We are looking at the market for British pounds from the perspective of the United States.
 
-## 4 · The Mundell–Fleming model
+Americans demand pounds when they want to buy British goods or assets. British residents supply pounds when they want to buy U.S. goods or assets.
+
+Start at $1.60 per pound. At this exchange rate, the quantity of pounds demanded is greater than the quantity supplied. In this simplified example, this reflects a U.S. trade deficit.
+
+So the question is: how can this imbalance disappear?
+
+Under a flexible regime, the price is allowed to adjust. Excess demand for pounds causes the pound to appreciate — equivalently, the dollar depreciates — from $1.60 to $1.80 per pound. At the new exchange rate, demand equals supply.
+
+Under a fixed regime, the exchange rate is not allowed to move. Something else must adjust. The graph illustrates contractionary policy: lower U.S. expenditure reduces imports and therefore reduces the demand for pounds. Demand shifts from D to D*, restoring equilibrium at $1.60.
+
+The key point is that fixing the exchange rate does not eliminate adjustment. It changes **what has to adjust**.
+:::
+
+
+## 4 · The Mundell–Fleming model: bridging the real economy to the fx markets
+
+But if governments change fiscal or monetary policy to influence the exchange rate, what happens to the real economy?
 
 :::: columns
 ::: {.column width="52%"}
@@ -372,34 +2067,113 @@ $$Y = C(Y-T) + I(i^{*}) + G + NX(e)$$
 LM — money market, for a given $i^{*}$:
 
 $$M/P = L(i^{*}, Y)$$
-
-::: keyidea
-LM is **vertical**: given $i^{*}$ only one $Y$ clears the money market, whatever $e$. That single fact drives every result on the next slide.
-:::
 :::
 
 ::: {.column width="48%"}
-```{r}
-#| fig-width: 5.6
-#| fig-height: 4.2
-yy <- seq(0, 10, length.out = 100)
-ggplot() +
-  geom_line(data = data.frame(y = yy, e = 8.4 - .62 * yy),
-            aes(y, e), colour = IF_COL$slate, linewidth = 1.1) +
-  annotate("segment", x = 5.6, xend = 5.6, y = 0, yend = 9,
-           colour = IF_COL$teal700, linewidth = 1.1) +
-  annotate("segment", x = 0, xend = 5.6, y = 4.93, yend = 4.93,
-           colour = IF_COL$muted, linetype = "22", linewidth = .4) +
-  annotate("text", x = 6.1, y = 8.6, label = "LM", colour = IF_COL$teal700,
-           size = 4.6, fontface = "italic") +
-  annotate("text", x = 9.2, y = 2.9, label = "IS", colour = IF_COL$slate,
-           size = 4.6, fontface = "italic") +
-  labs(x = expression(Y), y = expression(e)) +
-  coord_cartesian(xlim = c(0, 10), ylim = c(0, 9)) +
-  theme_schematic()
+
+```{=html}
+<div style="width:100%; display:flex; justify-content:center;">
+
+<svg viewBox="0 0 600 470"
+     style="width:100%; max-width:600px; height:auto;">
+
+  <!-- Axes -->
+  <line x1="80" y1="390" x2="555" y2="390"
+        stroke="#333" stroke-width="2.5"/>
+
+  <line x1="80" y1="390" x2="80" y2="35"
+        stroke="#333" stroke-width="2.5"/>
+
+  <!-- Axis labels -->
+  <text x="320" y="445"
+        text-anchor="middle"
+        font-size="25"
+        font-style="italic"
+        fill="#333">
+    Output, Y
+  </text>
+
+  <text x="25" y="210"
+        text-anchor="middle"
+        font-size="25"
+        font-style="italic"
+        fill="#333"
+        transform="rotate(-90 25 210)">
+    Exchange rate, e
+  </text>
+
+  <!-- IS curve -->
+  <path d="M 125 80
+           C 220 135, 330 220, 505 345"
+        fill="none"
+        stroke="#5C6670"
+        stroke-width="4"/>
+
+  <text x="505" y="330"
+        font-size="25"
+        font-weight="700"
+        font-style="italic"
+        fill="#5C6670">
+    IS
+  </text>
+
+  <!-- LM curve -->
+  <line x1="335" y1="55"
+        x2="335" y2="390"
+        stroke="#176B68"
+        stroke-width="4"/>
+
+  <text x="350" y="75"
+        font-size="25"
+        font-weight="700"
+        font-style="italic"
+        fill="#176B68">
+    LM
+  </text>
+
+  <!-- Equilibrium point -->
+  <circle cx="335" cy="225"
+          r="7"
+          fill="#333"/>
+
+  <!-- Equilibrium exchange rate guide -->
+  <line x1="80" y1="225"
+        x2="335" y2="225"
+        stroke="#999"
+        stroke-width="1.5"
+        stroke-dasharray="7 6"/>
+
+  <!-- Equilibrium output guide -->
+  <line x1="335" y1="225"
+        x2="335" y2="390"
+        stroke="#999"
+        stroke-width="1.5"
+        stroke-dasharray="7 6"/>
+
+  <!-- e* -->
+  <text x="66" y="232"
+        text-anchor="end"
+        font-size="22"
+        font-style="italic"
+        fill="#555">
+    e*
+  </text>
+
+  <!-- Y* -->
+  <text x="335" y="417"
+        text-anchor="middle"
+        font-size="22"
+        font-style="italic"
+        fill="#555">
+    Y*
+  </text>
+
+</svg>
+
+</div>
 ```
 
-$e$ = nominal exchange rate, foreign currency per unit of domestic currency.
+
 :::
 ::::
 
@@ -409,194 +2183,950 @@ $e$ = nominal exchange rate, foreign currency per unit of domestic currency.
 What is the consequence of a **fiscal expansion**, a **monetary expansion** and a **trade restriction** on the exchange rate and on output — under floating and under fixed rates?
 :::
 
-| Policy | Floating: $e$ | Floating: $Y$ | Fixed: $e$ | Fixed: $Y$ |
-|:---|:--:|:--:|:--:|:--:|
-| Fiscal expansion | | | | |
-| Monetary expansion | | | | |
-| Import restriction | | | | |
+```{=html}
+<div style="
+  width:80%;
+  display:flex;
+  gap:45px;
+  justify-content:center;
+  align-items:flex-start;
+">
 
-::: {.content-visible when-format="revealjs"}
-Fill the table with them — press **`C`** and draw the IS and LM shifts for each row before writing the sign.
-:::
+<!-- ====================================================== -->
+<!-- FLOATING EXCHANGE RATE                                 -->
+<!-- ====================================================== -->
 
-::: notes
+<div style="width:48%; text-align:center;">
+
+<div style="
+  font-size:1.15em;
+  font-weight:700;
+  margin-bottom:4px;
+">
+Floating exchange rate
+</div>
+
+<svg viewBox="0 0 600 440"
+     style="width:100%; height:auto;">
+
+  <!-- Axes -->
+  <line x1="80" y1="370" x2="555" y2="370"
+        stroke="#333" stroke-width="2.5"/>
+
+  <line x1="80" y1="370" x2="80" y2="35"
+        stroke="#333" stroke-width="2.5"/>
+
+  <!-- Axis labels -->
+  <text x="320" y="425"
+        text-anchor="middle"
+        font-size="25"
+        font-style="italic"
+        fill="#333">
+    Output, Y
+  </text>
+
+  <text x="27" y="200"
+        text-anchor="middle"
+        font-size="25"
+        font-style="italic"
+        fill="#333"
+        transform="rotate(-90 27 200)">
+    Exchange rate, e
+  </text>
+
+  <!-- IS -->
+  <path d="M 125 70
+           C 215 120, 330 205, 510 330"
+        fill="none"
+        stroke="#5C6670"
+        stroke-width="4"/>
+
+  <text x="505" y="315"
+        font-size="25"
+        font-weight="700"
+        font-style="italic"
+        fill="#5C6670">
+    IS
+  </text>
+
+  <!-- LM -->
+  <line x1="335" y1="50"
+        x2="335" y2="370"
+        stroke="#176B68"
+        stroke-width="4"/>
+
+  <text x="350" y="72"
+        font-size="25"
+        font-weight="700"
+        font-style="italic"
+        fill="#176B68">
+    LM
+  </text>
+
+  <!-- Initial equilibrium -->
+  <circle cx="335" cy="210"
+          r="6"
+          fill="#333"/>
+
+  <!-- e0 -->
+  <line x1="80" y1="210"
+        x2="335" y2="210"
+        stroke="#999"
+        stroke-width="1.4"
+        stroke-dasharray="7 6"/>
+
+  <text x="65" y="217"
+        text-anchor="end"
+        font-size="21"
+        font-style="italic"
+        fill="#555">
+    e₀
+  </text>
+
+  <!-- Y0 -->
+  <line x1="335" y1="210"
+        x2="335" y2="370"
+        stroke="#999"
+        stroke-width="1.4"
+        stroke-dasharray="7 6"/>
+
+  <text x="335" y="398"
+        text-anchor="middle"
+        font-size="21"
+        font-style="italic"
+        fill="#555">
+    Y₀
+  </text>
+
+</svg>
+</div>
+
+
+<!-- ====================================================== -->
+<!-- FIXED EXCHANGE RATE                                    -->
+<!-- ====================================================== -->
+
+<div style="width:48%; text-align:center;">
+
+<div style="
+  font-size:1.15em;
+  font-weight:700;
+  margin-bottom:4px;
+">
+Fixed exchange rate
+</div>
+
+<svg viewBox="0 0 600 440"
+     style="width:100%; height:auto;">
+
+  <!-- Axes -->
+  <line x1="80" y1="370" x2="555" y2="370"
+        stroke="#333" stroke-width="2.5"/>
+
+  <line x1="80" y1="370" x2="80" y2="35"
+        stroke="#333" stroke-width="2.5"/>
+
+  <!-- Axis labels -->
+  <text x="320" y="425"
+        text-anchor="middle"
+        font-size="25"
+        font-style="italic"
+        fill="#333">
+    Output, Y
+  </text>
+
+  <text x="27" y="200"
+        text-anchor="middle"
+        font-size="25"
+        font-style="italic"
+        fill="#333"
+        transform="rotate(-90 27 200)">
+    Exchange rate, e
+  </text>
+
+  <!-- IS -->
+  <path d="M 125 70
+           C 215 120, 330 205, 510 330"
+        fill="none"
+        stroke="#5C6670"
+        stroke-width="4"/>
+
+  <text x="505" y="315"
+        font-size="25"
+        font-weight="700"
+        font-style="italic"
+        fill="#5C6670">
+    IS
+  </text>
+
+  <!-- LM -->
+  <line x1="335" y1="50"
+        x2="335" y2="370"
+        stroke="#176B68"
+        stroke-width="4"/>
+
+  <text x="350" y="72"
+        font-size="25"
+        font-weight="700"
+        font-style="italic"
+        fill="#176B68">
+    LM
+  </text>
+
+  <!-- Initial equilibrium -->
+  <circle cx="335" cy="210"
+          r="6"
+          fill="#333"/>
+
+  <!-- Fixed exchange rate -->
+  <line x1="80" y1="210"
+        x2="540" y2="210"
+        stroke="#999"
+        stroke-width="1.6"
+        stroke-dasharray="7 6"/>
+
+  <text x="65" y="217"
+        text-anchor="end"
+        font-size="21"
+        font-style="italic"
+        fill="#555">
+    ē
+  </text>
+
+  <!-- Y0 -->
+  <line x1="335" y1="210"
+        x2="335" y2="370"
+        stroke="#999"
+        stroke-width="1.4"
+        stroke-dasharray="7 6"/>
+
+  <text x="335" y="398"
+        text-anchor="middle"
+        font-size="21"
+        font-style="italic"
+        fill="#555">
+    Y₀
+  </text>
+
+</svg>
+</div>
+
+</div>
+```
+
+Mundell–Fleming gives us the macroeconomic result: fiscal policy, monetary policy, or trade policy can change output and create appreciation or depreciation pressure
+
+
+::: {.notes}
 Floating: fiscal expansion appreciates e, Y unchanged; monetary expansion
 depreciates e, raises Y; trade restriction appreciates e, Y unchanged.
 Fixed: fiscal expansion raises Y, e fixed; monetary expansion is powerless
 (reserves drain, M endogenous); trade restriction raises Y.
 The whole point is the reversal of fiscal and monetary potency.
+
+**Floating exchange rate**
+
+Fiscal expansion shifts IS to the right. With LM vertical, output cannot increase. The exchange rate appreciates until net exports fall enough to offset the fiscal expansion. Therefore e rises and Y is unchanged.
+
+Monetary expansion shifts LM to the right. Output rises and the exchange rate depreciates.
+
+An import restriction initially increases net exports and shifts IS to the right. But the resulting appreciation offsets the increase in net exports. Output is unchanged.
+
+**Fixed exchange rate**
+
+Fiscal expansion shifts IS to the right. To prevent the exchange rate from appreciating, the central bank expands the money supply. LM shifts right and output rises.
+
+A monetary expansion cannot be sustained independently. Pressure for depreciation forces the central bank to intervene, reversing the increase in the money supply. The exchange rate and output are unchanged.
+
+An import restriction shifts IS to the right. To prevent appreciation, the central bank expands the money supply. LM shifts right and output rises.
+
+The central result is the reversal in policy effectiveness:
+
+**Floating rates → monetary policy is powerful; fiscal policy does not change output.**
+
+**Fixed rates → fiscal policy is powerful; independent monetary policy is ineffective.**
+
+
+
+
 :::
+
 
 ## 4 · Currency supply and demand
 
-| | **Domestic currency supply** | **Domestic currency demand** |
+The Mundell–Fleming model tells us **whether the currency appreciates or depreciates**
+
+::: ask
+Who is **supplying** the domestic currency, and who is **demanding** it?
+:::
+
+<style>
+#currency-flows table {
+  font-size: 1.0em !important;
+  width: 70%;
+}
+
+#currency-flows th {
+  font-size: 1.0em !important;
+  font-weight: 300;
+}
+
+#currency-flows th,
+#currency-flows td {
+  padding: 0.5em 0.6em !important;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+#currency-flows td:first-child {
+  font-weight: 300;
+  white-space: nowrap;
+}
+</style>
+
+<div id="currency-flows">
+
+| | **Supply of domestic currency** | **Demand for domestic currency** |
 |:---|:---|:---|
-| **Private sector** | Purchase of foreign goods and services (imports) | Purchase of domestic goods and services (exports) |
-| | Income paid on non-residents' investments here | Income received on residents' investments abroad |
-| | Unilateral transfers out | Unilateral transfers in |
-| | Net purchase of foreign assets by residents (capital outflow) | Net purchase of domestic assets by non-residents (capital inflow) |
-| | Foreign debt repayment (cash outflow) | Settlement of foreign credit (cash inflow) |
-| **Central bank** | Foreign currency purchased (reserves increase) | Foreign currency sold (reserves decrease) |
+| **Trade** | Imports of foreign goods and services | Exports of domestic goods and services |
+| **Income & transfers** | Payments to non-residents; transfers abroad | Income received from abroad; transfers received |
+| **Financial flows** | Residents purchase foreign assets → **capital outflow** | Non-residents purchase domestic assets → **capital inflow** |
+| **Debt flows** | Repayment of foreign debt | Foreign borrowing / credit received |
+| **Central bank** | Buys foreign currency → reserves **increase** | Sells foreign currency → reserves **decrease** |
+
+</div>
+
+::: {.notes}
+In Mundell–Fleming, we saw the exchange rate appreciate or depreciate in response to different policies.
+
+But e does not simply move by itself. These movements come from transactions in the foreign-exchange market.
+
+So now let's look behind the Mundell–Fleming diagram.
+
+Who supplies the domestic currency?
+
+Domestic residents supply it when they need foreign currency — for example, to import foreign goods, invest abroad, or make payments abroad.
+
+Who demands the domestic currency?
+
+Foreign residents demand it when they want to buy our goods, invest in our assets, or make payments to domestic residents.
+
+And under a fixed exchange rate, there is one additional actor: the central bank.
+
+If it wants to resist depreciation, it sells foreign reserves and buys domestic currency. If it wants to resist appreciation, it buys foreign currency and supplies domestic currency.
+
+This gives us the market mechanism behind the movements we just saw in Mundell–Fleming.
+:::
+
 
 ## 4 · Central bank intervention
 
 ::: ask
-What is the ECB's intervention in the foreign exchange market in each of these two situations?
+Suppose the ECB wants to keep the euro at a **fixed exchange rate $\bar e$**.
+
+What must it do in each situation?
 :::
 
-```{r}
-#| fig-width: 10
-#| fig-height: 3.8
-q  <- seq(1, 9, length.out = 150)
-p1 <- rbind(
-  data.frame(q = q, v = 1 + .38 * q, curve = "S",  panel = "Demand for euro shifts out"),
-  data.frame(q = q, v = 5.2 - .28 * q, curve = "D1", panel = "Demand for euro shifts out"),
-  data.frame(q = q, v = 6.1 - .28 * q, curve = "D2", panel = "Demand for euro shifts out"),
-  data.frame(q = q, v = 1 + .38 * q, curve = "S1", panel = "Supply of euro shifts out"),
-  data.frame(q = q, v = 0.1 + .38 * q, curve = "S2", panel = "Supply of euro shifts out"),
-  data.frame(q = q, v = 5.2 - .28 * q, curve = "D",  panel = "Supply of euro shifts out")
-)
-ggplot(p1, aes(q, v, colour = curve)) +
-  geom_line(linewidth = 1) +
-  facet_wrap(~panel) +
-  scale_colour_manual(values = c(S = IF_COL$teal700, S1 = IF_COL$teal700,
-                                 S2 = IF_COL$clay, D = IF_COL$slate,
-                                 D1 = IF_COL$slate,   D2 = IF_COL$clay)) +
-  labs(x = "Quantity of euro", y = "Value of the euro") +
-  theme_schematic() +
-  theme(legend.position = "none",
-        strip.text = element_text(colour = IF_COL$teal700, face = "bold", size = rel(.9)))
+```{=html}
+<div style="
+  width:80%;
+  display:flex;
+  gap:55px;
+  justify-content:center;
+  align-items:flex-start;
+">
+
+<!-- ====================================================== -->
+<!-- DEMAND INCREASES                                       -->
+<!-- ====================================================== -->
+
+<div style="width:47%; text-align:center;">
+
+<div style="font-size:1.12em; font-weight:700; margin-bottom:5px;">
+Demand for euros increases
+</div>
+
+<svg viewBox="0 0 600 430"
+     style="width:100%; height:auto;">
+
+  <!-- Axes -->
+  <line x1="80" y1="365" x2="555" y2="365"
+        stroke="#333" stroke-width="2.5"/>
+  <line x1="80" y1="365" x2="80" y2="35"
+        stroke="#333" stroke-width="2.5"/>
+
+  <!-- Axis labels -->
+  <text x="320" y="415"
+        text-anchor="middle"
+        font-size="23"
+        fill="#333">
+    Quantity of euros
+  </text>
+
+  <text x="25" y="200"
+        text-anchor="middle"
+        font-size="23"
+        fill="#333"
+        transform="rotate(-90 25 200)">
+    Value of the euro
+  </text>
+
+  <!-- Supply -->
+  <path d="M 135 330 L 500 70"
+        fill="none"
+        stroke="#176B68"
+        stroke-width="4"/>
+
+  <text x="490" y="62"
+        font-size="23"
+        font-weight="700"
+        fill="#176B68">
+    S
+  </text>
+
+  <!-- Initial demand -->
+  <path d="M 130 70 L 500 330"
+        fill="none"
+        stroke="#5C6670"
+        stroke-width="4"/>
+
+  <text x="490" y="345"
+        font-size="22"
+        font-weight="700"
+        fill="#5C6670">
+    D₁
+  </text>
+
+  <!-- New demand -->
+  <path d="M 195 70 L 555 320"
+        fill="none"
+        stroke="#B66A50"
+        stroke-width="4"
+        stroke-dasharray="10 7"/>
+
+  <text x="535" y="335"
+        font-size="22"
+        font-weight="700"
+        fill="#B66A50">
+    D₂
+  </text>
+
+  <!-- Fixed exchange rate -->
+  <line x1="80" y1="200" x2="550" y2="200"
+        stroke="#777"
+        stroke-width="2"
+        stroke-dasharray="7 6"/>
+
+  <text x="65" y="207"
+        text-anchor="end"
+        font-size="22"
+        font-style="italic"
+        fill="#444">
+    ē
+  </text>
+
+  <!-- Initial equilibrium -->
+  <circle cx="315" cy="200" r="6" fill="#333"/>
+
+</svg>
+
+</div>
+
+
+<!-- ====================================================== -->
+<!-- SUPPLY INCREASES                                       -->
+<!-- ====================================================== -->
+
+<div style="width:47%; text-align:center;">
+
+<div style="font-size:1.12em; font-weight:700; margin-bottom:5px;">
+Supply of euros increases
+</div>
+
+<svg viewBox="0 0 600 430"
+     style="width:100%; height:auto;">
+
+  <!-- Axes -->
+  <line x1="80" y1="365" x2="555" y2="365"
+        stroke="#333" stroke-width="2.5"/>
+  <line x1="80" y1="365" x2="80" y2="35"
+        stroke="#333" stroke-width="2.5"/>
+
+  <!-- Axis labels -->
+  <text x="320" y="415"
+        text-anchor="middle"
+        font-size="23"
+        fill="#333">
+    Quantity of euros
+  </text>
+
+  <text x="25" y="200"
+        text-anchor="middle"
+        font-size="23"
+        fill="#333"
+        transform="rotate(-90 25 200)">
+    Value of the euro
+  </text>
+
+  <!-- Initial supply -->
+  <path d="M 135 330 L 500 70"
+        fill="none"
+        stroke="#176B68"
+        stroke-width="4"/>
+
+  <text x="490" y="62"
+        font-size="22"
+        font-weight="700"
+        fill="#176B68">
+    S₁
+  </text>
+
+  <!-- New supply -->
+  <path d="M 200 330 L 555 80"
+        fill="none"
+        stroke="#B66A50"
+        stroke-width="4"
+        stroke-dasharray="10 7"/>
+
+  <text x="535" y="72"
+        font-size="22"
+        font-weight="700"
+        fill="#B66A50">
+    S₂
+  </text>
+
+  <!-- Demand -->
+  <path d="M 130 70 L 500 330"
+        fill="none"
+        stroke="#5C6670"
+        stroke-width="4"/>
+
+  <text x="490" y="345"
+        font-size="23"
+        font-weight="700"
+        fill="#5C6670">
+    D
+  </text>
+
+  <!-- Fixed exchange rate -->
+  <line x1="80" y1="200" x2="550" y2="200"
+        stroke="#777"
+        stroke-width="2"
+        stroke-dasharray="7 6"/>
+
+  <text x="65" y="207"
+        text-anchor="end"
+        font-size="22"
+        font-style="italic"
+        fill="#444">
+    ē
+  </text>
+
+  <!-- Initial equilibrium -->
+  <circle cx="315" cy="200" r="6" fill="#333"/>
+
+</svg>
+
+</div>
+
+</div>
 ```
 
-## 4 · The euro against the dollar
+::: {.notes}
+Start on the left.
 
-```{r}
-#| fig-width: 10
-#| fig-height: 4.2
-fx <- fred("DEXUSEU")
-if (is.null(fx)) {
-  no_data_note("DEXUSEU")
-} else {
-  ggplot(fx, aes(date, value)) +
-    geom_line(colour = IF_COL$teal700, linewidth = .4) +
-    geom_hline(yintercept = 1, colour = IF_COL$clay, linetype = "22", linewidth = .4) +
-    labs(x = NULL, y = "U.S. dollars per euro",
-         title = "The euro since January 1999",
-         caption = "Source: Board of Governors of the Federal Reserve System via FRED (DEXUSEU).") +
-    theme_if()
-}
-```
+Demand for euros increases. Without intervention, the euro would appreciate.
 
-## 4 · The Asian crisis (1)
+But suppose the ECB wants to maintain the exchange rate at e-bar.
+
+At the fixed exchange rate there is now excess demand for euros.
+
+What can the ECB do?
+
+It must **supply euros to the foreign-exchange market**. In exchange, it buys foreign currency.
+
+So:
+
+**ECB buys foreign currency → supplies euros → foreign reserves increase.**
+
+Now look at the right-hand graph.
+
+The supply of euros increases. Without intervention, the euro would depreciate.
+
+At e-bar there is now excess supply of euros.
+
+To maintain the fixed exchange rate, the ECB must **demand euros**. It does this by selling foreign currency from its reserves and receiving euros in exchange.
+
+So:
+
+**ECB sells foreign currency → buys euros → foreign reserves decrease.**
+
+This is exactly the central-bank row in the previous table.
+
+And it also explains the Mundell–Fleming result: under a fixed exchange rate, intervention changes the domestic money supply. Monetary policy therefore cannot be conducted independently of the exchange-rate commitment.
+:::
+
+## 4 · Foreign-exchange crisis: Thailand, 1997
 
 ::: incremental
--   In 1997–98 Thailand was at the centre of a financial crisis.
--   It began with a **loss of confidence** in the Thai financial system: the supply and demand curves for baht shifted, the equilibrium rate fell, but Thailand kept the actual rate fixed at \$0.04 — above equilibrium.
--   The central bank depleted its dollar reserves defending it, which led traders to **anticipate a devaluation** and shift the curves further.
--   In July 1997 it ran out of reserves and let the baht float. It fell immediately from \$0.04 to \$0.02.
--   Thai banks, counting on the fixed rate, had borrowed heavily in dollars and yen and lent in baht. **That currency mismatch is the crisis.**
+- Before 1997, Thailand maintained the baht within a **very narrow range**, effectively limiting its movement against the U.S. dollar.
+- Financial-sector weaknesses, short-term foreign debt and external imbalances increasingly undermined confidence in the baht.
+- Investors began expecting a **devaluation** and selling baht → **supply of baht ↑ and demand for baht ↓**.
+- To resist depreciation, the Bank of Thailand **bought baht and sold foreign currency**, progressively depleting its usable reserves.
+- On **2 July 1997**, Thailand abandoned the peg and moved to a managed float. The baht depreciated sharply.
 :::
 
 ::: ask
-How did the Thai central bank maintain the fixed rate — and why did it try?
+Using our previous FX-market graph: **how could the central bank defend the baht — and why couldn't it do so indefinitely?**
 :::
 
-## 4 · The Asian crisis (2)
+::: {.notes}
+This is the mechanism from the previous slide playing out in an actual crisis.
+
+Thailand had maintained a tightly managed exchange rate. But by late 1996 and 1997, concerns about the financial system, external imbalances and short-term foreign debt increasingly undermined confidence in the baht.
+
+Investors started expecting that the existing exchange rate could not be maintained.
+
+What happens in our foreign-exchange market?
+
+People try to sell baht and acquire foreign currencies. The supply of baht increases, while demand weakens. This creates depreciation pressure.
+
+But the central bank is trying to maintain the exchange rate.
+
+So what does it do?
+
+Exactly what we saw on the previous slide: it sells foreign currency and buys baht.
+
+The problem is that its ability to do this is limited by its foreign-exchange resources.
+
+As speculative pressure intensified, the Bank of Thailand's usable reserves were progressively depleted. On 2 July 1997, the authorities abandoned the peg and introduced a managed float.
+
+And this is where the exchange-rate crisis became especially damaging: substantial foreign-currency liabilities meant that depreciation increased debt burdens measured in baht.
+:::
+
+## 4 · The Asian crisis: the mechanism
 
 :::: columns
 ::: {.column width="45%"}
-At the fixed rate of \$0.04, once the equilibrium has fallen to \$0.02, the central bank must **buy 300 million baht a month** with dollars.
+
+Suppose the baht is fixed at **$0.04**, while market pressure pushes its equilibrium value toward **$0.02**.
+
+At the fixed rate:
+
+$$S_{\text{baht}} > D_{\text{baht}}$$
 
 ::: incremental
--   Once reserves are gone there are two choices: float (immediate depreciation) or declare a new, lower fixed rate — a devaluation.
--   Speculators anticipate the drop, which lowers the equilibrium value further and increases the excess supply of baht.
--   Defending the rate gets **harder the longer you defend it**.
+- The central bank must absorb the **excess supply of baht**.
+- It **buys baht and sells dollars** → reserves $\downarrow$.
+- Expectations of devaluation can trigger further baht sales → even greater pressure on reserves.
+- Once the defense becomes unsustainable: **devalue or float**.
 :::
+
 :::
 
 ::: {.column width="55%"}
-```{r}
-#| fig-width: 6.2
-#| fig-height: 4.4
-q <- seq(50, 500, length.out = 200)
-bt <- rbind(
-  data.frame(q = q, p = 0.010 + 0.00008 * q, curve = "S1 (baht supply)"),
-  data.frame(q = q, p = 0.001 + 0.00008 * q, curve = "S2 (after the shift)"),
-  data.frame(q = q, p = 0.062 - 0.00008 * q, curve = "D1 (baht demand)"),
-  data.frame(q = q, p = 0.050 - 0.00008 * q, curve = "D2 (after the shift)")
-)
-ggplot(bt, aes(q, p, colour = curve, linetype = curve)) +
-  geom_line(linewidth = .95) +
-  geom_hline(yintercept = c(0.02, 0.04), colour = IF_COL$muted,
-             linetype = "22", linewidth = .4) +
-  annotate("segment", x = 100, xend = 400, y = 0.0415, yend = 0.0415,
-           colour = IF_COL$clay, linewidth = 1,
-           arrow = grid::arrow(length = unit(.018, "npc"), ends = "both", type = "closed")) +
-  annotate("text", x = 250, y = 0.0445, label = "central bank buys 300",
-           colour = IF_COL$clay, size = 3.5, fontface = "bold") +
-  scale_colour_manual(values = c(IF_COL$slate, IF_COL$clay,
-                                 IF_COL$teal700, IF_COL$teal300)) +
-  scale_linetype_manual(values = c(1, 5, 1, 5)) +
-  scale_x_continuous(breaks = c(100, 400)) +
-  scale_y_continuous(breaks = c(0.02, 0.04), labels = c("$0.02", "$0.04")) +
-  labs(x = "Millions of baht per month", y = "Dollars per baht") +
-  theme_if() +
-  theme(panel.grid.major.x = element_blank(),
-        legend.text = element_text(size = rel(.7)))
+```{=html}
+<div style="width:100%; display:flex; justify-content:center;">
+
+<svg viewBox="0 0 760 520"
+     style="width:100%; max-width:760px; height:auto;">
+
+  <!-- ================= AXES ================= -->
+
+  <line x1="110" y1="440" x2="710" y2="440"
+        stroke="#333" stroke-width="2.5"/>
+
+  <line x1="110" y1="440" x2="110" y2="45"
+        stroke="#333" stroke-width="2.5"/>
+
+  <!-- arrowheads -->
+  <polygon points="710,440 697,433 697,447" fill="#333"/>
+  <polygon points="110,45 103,58 117,58" fill="#333"/>
+
+  <!-- axis labels -->
+  <text x="35" y="52"
+        text-anchor="middle"
+        font-size="21"
+        fill="#333">
+    <tspan x="35" dy="0">Dollars</tspan>
+    <tspan x="35" dy="23">per baht</tspan>
+  </text>
+
+  <text x="650" y="468"
+        text-anchor="middle"
+        font-size="21"
+        fill="#333">
+    <tspan x="650" dy="0">Millions of</tspan>
+    <tspan x="650" dy="23">baht per month</tspan>
+  </text>
+
+
+  <!-- ================= PRICE LINES ================= -->
+
+  <!-- $0.04 -->
+  <line x1="110" y1="180" x2="440" y2="180"
+        stroke="#777"
+        stroke-width="1.4"
+        stroke-dasharray="5 5"/>
+
+  <text x="90" y="187"
+        text-anchor="end"
+        font-size="20"
+        fill="#333">
+    $0.04
+  </text>
+
+  <!-- $0.02 -->
+  <line x1="110" y1="315" x2="440" y2="315"
+        stroke="#777"
+        stroke-width="1.4"
+        stroke-dasharray="5 5"/>
+
+  <text x="90" y="322"
+        text-anchor="end"
+        font-size="20"
+        fill="#333">
+    $0.02
+  </text>
+
+
+  <!-- ================= QUANTITY GUIDES ================= -->
+
+  <!-- 100 -->
+  <line x1="190" y1="180" x2="190" y2="440"
+        stroke="#777"
+        stroke-width="1.4"
+        stroke-dasharray="5 5"/>
+
+  <text x="190" y="466"
+        text-anchor="middle"
+        font-size="20"
+        fill="#333">
+    100
+  </text>
+
+  <!-- 400 -->
+  <line x1="440" y1="180" x2="440" y2="440"
+        stroke="#777"
+        stroke-width="1.4"
+        stroke-dasharray="5 5"/>
+
+  <text x="440" y="466"
+        text-anchor="middle"
+        font-size="20"
+        fill="#333">
+    400
+  </text>
+
+
+  <!-- ================= ORIGINAL CURVES ================= -->
+
+  <!-- S1 -->
+  <!-- passes through A -->
+  <line x1="150" y1="390"
+        x2="390" y2="75"
+        stroke="#176B68"
+        stroke-width="3.5"/>
+
+  <text x="392" y="68"
+        font-size="22"
+        font-weight="700"
+        fill="#176B68">
+    S₁
+  </text>
+
+  <!-- D1 -->
+  <!-- passes through A -->
+  <line x1="245" y1="75"
+        x2="540" y2="405"
+        stroke="#5C6670"
+        stroke-width="3.5"/>
+
+  <text x="530" y="420"
+        font-size="22"
+        font-weight="700"
+        fill="#5C6670">
+    D₁
+  </text>
+
+
+  <!-- ================= SHIFTED CURVES ================= -->
+
+  <!-- D2 -->
+  <!-- intersects $0.04 at Q = 100 and crosses S2 at B -->
+  <line x1="120" y1="90"
+        x2="395" y2="405"
+        stroke="#B66A50"
+        stroke-width="3.5"/>
+
+  <text x="390" y="420"
+        font-size="22"
+        font-weight="700"
+        fill="#B66A50">
+    D₂
+  </text>
+
+  <!-- S2 -->
+  <!-- intersects $0.04 at Q = 400 and crosses D2 at B -->
+  <line x1="255" y1="390"
+        x2="535" y2="70"
+        stroke="#3579D8"
+        stroke-width="3.5"/>
+
+  <text x="535" y="64"
+        font-size="22"
+        font-weight="700"
+        fill="#3579D8">
+    S₂
+  </text>
+
+
+  <!-- ================= POINT A ================= -->
+
+  <!-- initial equilibrium: S1 x D1 -->
+  <circle cx="315" cy="180" r="6" fill="#333"/>
+
+  <text x="327" y="169"
+        font-size="22"
+        font-weight="700"
+        fill="#333">
+    A
+  </text>
+
+
+  <!-- ================= POINT B ================= -->
+
+  <!-- new equilibrium: S2 x D2 -->
+  <circle cx="315" cy="315" r="6" fill="#333"/>
+
+  <text x="327" y="337"
+        font-size="22"
+        font-weight="700"
+        fill="#333">
+    B
+  </text>
+
+
+  <!-- ================= POINT C ================= -->
+
+  <!-- S2 at the defended $0.04 -->
+  <circle cx="440" cy="180" r="6" fill="#333"/>
+
+  <text x="452" y="197"
+        font-size="22"
+        font-weight="700"
+        fill="#333">
+    C
+  </text>
+
+
+  <!-- ================= CENTRAL BANK PURCHASE ================= -->
+
+  <line x1="190" y1="145"
+        x2="440" y2="145"
+        stroke="#B66A50"
+        stroke-width="3"/>
+
+  <!-- left arrow -->
+  <polygon points="190,145 204,137 204,153"
+           fill="#B66A50"/>
+
+  <!-- right arrow -->
+  <polygon points="440,145 426,137 426,153"
+           fill="#B66A50"/>
+
+  <text x="315" y="112"
+        text-anchor="middle"
+        font-size="19"
+        font-weight="700"
+        fill="#333">
+    <tspan x="315">Thailand CB</tspan>
+    <tspan x="315" dy="22">buys 300 million baht</tspan>
+  </text>
+
+</svg>
+
+</div>
 ```
 :::
 ::::
 
-# 5 · Reading discussion {.divider .center background-color="#06302F"}
+::: {.notes}
+This is a stylized representation of the mechanism, not the literal quantities observed in Thailand.
 
-## The tragedy of the horizon {.hook background-color="#FAF7F2"}
+Suppose the central bank maintains the baht at four cents, but after a loss of confidence the market-clearing value would be closer to two cents.
 
-Mark Carney, at Lloyd's of London in 2015: the costs of climate change fall **beyond the horizon** of the business cycle, the political cycle and the investment cycle.
+At four cents, there is now excess supply of baht.
 
-By the time it is unambiguously a financial risk, it is too late to treat it as one.
+To maintain the fixed rate, the central bank has to buy that excess baht. What does it use to buy it? Its foreign-currency resources.
 
-::: {.imgslot}
-photo idea: flooded street, or a stranded coal plant — search "flooded street climate" or "abandoned coal power plant"
+So it sells dollars and buys baht.
+
+Now introduce expectations.
+
+If investors believe the central bank will eventually be unable to maintain the rate, holding baht becomes less attractive. They have an incentive to sell before the devaluation occurs.
+
+That creates additional selling pressure, requiring still more intervention.
+
+This is why credibility and reserves matter under a fixed exchange-rate regime.
+
+In Thailand, speculative attacks and intervention substantially depleted the Bank of Thailand's usable reserves. The authorities eventually abandoned the peg on 2 July 1997.
+
+The subsequent depreciation was particularly damaging because firms and financial institutions had substantial foreign-currency exposures. When the baht depreciated, the domestic-currency burden of those liabilities increased sharply.
 :::
+
+. . .
+
+::: keyidea
+A fixed exchange rate can become a **self-reinforcing reserve problem** when expectations of devaluation generate additional capital outflows.
+:::
+
+
+# 5 · Climate change and the financial system {.divider .center background-color="#06302F"}
+
+## 5 · Monasterolo (2020) — Discussion
+
+10 groups of 6–7 students · 2 groups per question
+
+### 1 · Prepare — 45 min
+
+- **One question** per group
+- Read the paper and prepare a **collective answer**
+- Main **arguments, mechanisms, and examples** - also challenge the author's ideas
+- Choose a **lead speaker**, but everyone should be ready to contribute
+
+### 2 · Discuss — ~5 min per question
+
+- **Group A · 2 min** — Present your answer
+- **Group B · 2 min** — React and add: **complement, qualify, or challenge**
+- **Both groups · 1 min** — Respond to each other; anyone can jump in
+
 
 ## 5 · Monasterolo (2020), *Climate Change and the Financial System*
 
-::: panel-tabset
-### The questions
+
+1. Why might **investors' decisions be misaligned with climate risks**?
+
+2. What are the main **climate-related financial risks**, and how can they affect the financial system?
+
+3. How can **climate policy and regulation** create risks for financial assets?
+
+4. Why is **assessing and pricing climate risk** particularly challenging?
+
+5. What would **good practices** for investors, financial institutions, and regulators look like?
+
+
+
+## Next class {.hook background-color="#FAF7F2"}
+
+Next class, we will start our session on **securities markets**.
 
 ::: ask
-**(a)** Why is there a misalignment between climate impacts and investors' decisions?
+### Coming next
 
-**(b)** What are the various climate **physical** risks?
-
-**(c)** What are the potential risks arising from **policy and regulatory** shocks?
-
-**(d)** Why is assessing climate risks challenging?
+- What are **securities markets**?
+- How do **money markets** and **capital markets** differ?
+- Who participates in these markets — and why?
+- How are securities **issued, traded, and priced**?
 :::
 
-### How to answer
-
-::: incremental
--   Answer (a) with the **horizons**: the tragedy of the horizon — climate damages fall outside the investment and electoral cycle, so they are not priced.
--   For (c), separate an orderly transition from a **disorderly** one. The risk to a portfolio is the disorderly path, not the transition itself.
--   For (d), the honest answer is that the historical distribution does not contain the events we are pricing. That is a problem for every risk model in this course.
-:::
-
-### For the discussion
-
-::: ask
-If climate risk is not priced because horizons are misaligned, **which of the four sections of today's session does the correction have to come through** — markets, the balance of payments, the interest rate, or the exchange rate?
-:::
-:::
-
-## Next session {.center}
-
-Sessions 3 and 4 move on to **securities markets**.
-
-::: keyidea
-Two things to bring: **Sartzetakis (2021)** on green bonds, read — and the security your group wants to analyse. Not "a stock". A specific one, with a ticker.
-:::
-
-::: {.source}
-Press **`O`** for the slide overview · **`C`** to draw · **`S`** for speaker notes · **`F`** for fullscreen · **`E`** then print for a PDF of the slides.
-:::
