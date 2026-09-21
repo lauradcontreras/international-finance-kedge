@@ -36,7 +36,7 @@ for an overview. A PDF version is available next to each session.
 
 ::: {.session}
 [2 · Interest rates, exchange rates and the climate reading]{.title}
-[[Slides](02-interest-and-exchange-rates/02-interest-and-exchange-rates.html) · [PDF](02-interest-and-exchange-rates/02-interest-and-exchange-rates.pdf)]{.links}
+[[Slides](02-interest-and-exchange-rates/02-interest-and-exchange-rates.html) · [PDF](02-interest-and-exchange-rates/02-interest-and-exchange-rates.pdf) · [Paper](https://www.annualreviews.org/doi/10.1146/annurev-resource-110119-031134)]{.links}
 :::
 
 ::: {.session}
