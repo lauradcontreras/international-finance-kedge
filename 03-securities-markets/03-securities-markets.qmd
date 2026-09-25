@@ -1,0 +1,1281 @@
+---
+title: "International Finance"
+subtitle: "Sessions 3-4 — Securities Markets"
+author: "Laura Contreras-Portela"
+institute: "KEDGE Business School"
+date: today
+date-format: "MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_theme/theme.scss]
+    width: 1600
+    height: 900
+    title-slide-attributes:
+      data-background-color: "#FAF7F2"
+    slide-number: c/t
+    show-slide-number: all
+    progress: true
+    history: true
+    hash: true
+    controls: true
+    navigation-mode: linear      # right arrow always goes to the next slide
+    preview-links: auto
+    highlight-style: github
+    code-line-numbers: true
+    html-math-method: katex
+    chalkboard:                     # C = draw on the slide, B = blank board
+      buttons: true
+      theme: whiteboard
+      chalk-effect: 0
+    footer: "International Finance · Sessions 3-4 · KEDGE"
+    embed-resources: false          # true -> one portable file, no wifi needed
+  beamer:                           # same source -> a real LaTeX PDF handout
+    aspectratio: 169
+    theme: metropolis
+    incremental: false
+    header-includes: |
+      \definecolor{ifteal}{HTML}{0E5250}
+      \definecolor{ifclay}{HTML}{B4573C}
+      \setbeamercolor{frametitle}{bg=ifteal}
+      \setbeamercolor{progress bar}{fg=ifteal}
+      \setbeamercolor{title separator}{fg=ifteal}
+      \setbeamercolor{structure}{fg=ifteal}
+      \setbeamercolor{alerted text}{fg=ifclay}
+execute:
+  echo: false
+  warning: false
+  message: false
+  fig-align: center
+  fig-width: 8
+  fig-height: 4.2
+knitr:
+  opts_chunk:
+    dev: png
+    dpi: 300
+---
+
+```{r setup}
+source("../_R/setup.R")
+```
+
+## Where we are
+
+Session 1 and 2 built four prices and one accounting identity. Now we open the
+box: **who issues the paper, who buys it, and what happens to the price.**
+
+:::: columns
+::: {.column width="50%"}
+1. **Money markets** — short, dull, enormous
+2. **Bond market** — long-term debt
+3. **Stock market** — ownership
+:::
+
+::: {.column width="50%"}
+4. **Mortgage markets** — debt secured on a house
+5. **Foreign exchange** — the price of a currency
+6. **Derivatives** — the price of a promise
+:::
+::::
+
+::: keyidea
+Every market in this session answers the same two questions: **what is the
+instrument**, and **what makes its price move**. If you can answer those two
+for each, you can answer the exam.
+:::
+
+::: {.source}
+Plus the reading discussion: **Sartzetakis (2021)** on green bonds.
+:::
+
+## Why a session on plumbing {.hook background-color="#FAF7F2"}
+
+In August 2007, BNP Paribas froze three funds. The reason it gave was that it
+could not value them: the **commercial paper** market had stopped rolling over.
+
+::: incremental
+-   Not a stock market crash. A **money market** that quietly refused to
+    refinance itself.
+-   Within a year the same plumbing took down Lehman, and with it the idea that
+    short-term secured funding is always there.
+:::
+
+. . .
+
+::: ask
+The boring markets are the ones that break the system. Keep that in mind for
+the next two sessions.
+:::
+
+::: notes
+Worth two minutes. Students expect "securities markets" to mean stock-picking.
+The point of opening with BNP Paribas is to set the opposite expectation: the
+short, dull, enormous markets are where the accidents happen.
+:::
+
+# 1 · Money markets {.divider .center background-color="#06302F"}
+
+## Where your company parks its cash {.hook background-color="#FAF7F2"}
+
+A firm collects EUR 40 million on the 25th and pays it out on the 5th. For
+eleven days that money cannot sit in a current account earning nothing, and it
+cannot be locked up either.
+
+::: incremental
+-   That is the whole reason the money market exists: **cash-timing problems**.
+-   Inflows and outflows are never synchronised, for corporations or for
+    governments.
+:::
+
+## 1 · What makes a money market instrument
+
+::: incremental
+-   **Short term** — maturity under one year, and for most of it, under 120 days.
+-   **Highly liquid** — you can get out before maturity without moving the price.
+-   **Low default risk** — you are lending to Treasuries, large banks, big firms.
+-   **Large denominations** — USD 1,000,000 and up. This is not a retail market.
+:::
+
+. . .
+
+:::: columns
+::: {.column width="50%"}
+**Investors** want somewhere to put surplus funds for a short period.
+:::
+
+::: {.column width="50%"}
+**Borrowers** want a low-cost source of temporary funds.
+:::
+::::
+
+::: keyidea
+Both sides are solving a **timing** problem, not an investment problem. Nobody
+buys commercial paper because they believe in the company.
+:::
+
+## 1 · The instruments
+
+::: {.panel-tabset}
+
+### Treasury bills
+
+-   Maturities from 28 days to 12 months, issued by the U.S. Treasury.
+-   Sold at **auction**, which accepts both competitive bids (you name a price)
+    and noncompetitive bids (you take the average and are always filled).
+-   The benchmark for everything else: as close to default-free as the market gets.
+
+### Fed funds
+
+-   Short-term loans of **reserves** between financial institutions, usually
+    **overnight**.
+-   Banks use them to meet reserve requirements at the end of the day.
+-   The rate on them is the one the central bank actually targets.
+
+### Repos
+
+-   A **repurchase agreement** is a sale with a promise to buy back, usually 3 to
+    14 days later, at an agreed price.
+-   Economically a secured loan: the securities are the collateral.
+-   Like fed funds, except **nonbanks can play** — which is exactly why the repo
+    market got so large, and so fragile.
+
+### CDs and CP
+
+-   **Negotiable certificates of deposit** are issued by banks, USD 100,000 to
+    USD 10 million, at a discount or at a fixed rate payable at maturity.
+-   **Commercial paper** is an *unsecured* promissory note issued by a
+    corporation, maturity capped at **270 days** to avoid SEC registration.
+-   Unsecured is the word to remember when we get to 2007.
+
+### BAs and eurodollars
+
+-   A **banker's acceptance** is a short-term debt instrument issued by a company
+    and **guaranteed by its bank** — built for international trade.
+-   The exporter is paid immediately, is shielded from FX risk, and never has to
+    assess the importer's balance sheet. The importer's bank does that.
+-   **Eurodollars** are dollar-denominated deposits held in banks outside the
+    United States. They exist because contracts settle in dollars everywhere.
+
+:::
+
+## 1 · The instruments side by side
+
+| Instrument | Issuer | Buyer | Usual maturity | Secondary market |
+|:---|:---|:---|:---|:--:|
+| Treasury bills | U.S. government | Consumers and companies | 4, 13, 26 weeks | Excellent |
+| Federal funds | Banks | Banks | 1 to 7 days | None |
+| Repurchase agreements | Businesses and banks | Businesses and banks | 1 to 15 days | Good |
+| Negotiable CDs | Large money-centre banks | Businesses | 14 to 120 days | Good |
+| Commercial paper | Finance companies and businesses | Businesses | 1 to 270 days | Poor |
+| Banker's acceptance | Banks | Businesses | 30 to 180 days | Good |
+| Eurodollar deposits | Non-US banks | Businesses, governments, banks | 1 day to 1 year | Poor |
+
+::: {.source}
+Read the last column as a liquidity ranking. Source: Mishkin and Eakins.
+:::
+
+## 1 · The rates move together
+
+```{r}
+#| fig-width: 12
+#| fig-height: 4.4
+ids <- c(TB3MS = "3-month Treasury bill",
+         FEDFUNDS = "Federal funds",
+         MPRIME = "Bank prime rate")
+series <- lapply(names(ids), function(id) {
+  d <- fred(id)
+  if (is.null(d)) return(NULL)
+  d$series <- ids[[id]]
+  d
+})
+series <- Filter(Negate(is.null), series)
+
+if (!length(series)) {
+  no_data_note("TB3MS / FEDFUNDS / MPRIME")
+} else {
+  d <- do.call(rbind, series)
+  d <- d[d$date >= as.Date("2000-01-01"), ]
+  ggplot(d, aes(date, value, colour = series)) +
+    recession_bands(from = as.Date("2000-01-01")) +
+    geom_line(linewidth = .5) +
+    scale_colour_manual(values = unname(unlist(
+      IF_COL[c("teal700", "clay", "slate")]))) +
+    labs(x = NULL, y = "Percent",
+         title = "Money market rates move as one",
+         caption = "Shaded: NBER recessions. Source: Federal Reserve via FRED.") +
+    theme_if()
+}
+```
+
+::: ask
+They are almost on top of each other. So what is the **spread** between them
+telling you in the weeks when they come apart?
+:::
+
+::: notes
+The answer is credit and liquidity risk. In a calm market the spread is a few
+basis points; in August 2007 and September 2008 it explodes. If the chart has
+downloaded, zoom in on 2008 with the chalkboard.
+:::
+
+## 1 · Commercial paper outstanding
+
+```{r}
+#| fig-width: 12
+#| fig-height: 4.2
+cp <- fred("COMPOUT")
+if (is.null(cp)) {
+  no_data_note("COMPOUT")
+} else {
+  cp$value <- cp$value / 1000
+  ggplot(cp, aes(date, value)) +
+    recession_bands(from = min(cp$date)) +
+    geom_line(colour = IF_COL$teal700, linewidth = .55) +
+    labs(x = NULL, y = "USD trillion",
+         title = "Commercial paper outstanding",
+         caption = "Shaded: NBER recessions. Source: Federal Reserve Board via FRED.") +
+    theme_if()
+}
+```
+
+::: ask
+Find 2007. The market did not decline — it **fell off a cliff** and never came
+back to the old level. Who was funding themselves there, and where did they go
+instead?
+:::
+
+## 1 · Price and rate
+
+A money market instrument pays no coupon. You buy it below face value and it
+matures at face value, so the whole return is in the **discount**.
+
+:::: columns
+::: {.column width="50%"}
+The **discount rate** — how far below face value you paid:
+
+$$i_{discount} = \frac{F-P}{F} \times \frac{360}{n}$$
+:::
+
+::: {.column width="50%"}
+The **annualised yield** — what you actually earned:
+
+$$i_{yt} = \frac{F-P}{P} \times \frac{365}{n}$$
+:::
+::::
+
+. . .
+
+::: keyidea
+Same instrument, two numbers. The discount rate divides by **F** and uses a
+360-day year; the yield divides by **P** and uses 365. The yield is always the
+larger of the two, and it is the one you can compare with anything else.
+:::
+
+## 1 · The two rates, drawn
+
+```{r}
+#| fig-width: 10
+#| fig-height: 4.0
+P <- seq(97, 100, length.out = 200)
+F <- 100; n <- 90
+d <- rbind(
+  data.frame(P = P, rate = (F - P) / F * 360 / n, which = "Discount rate"),
+  data.frame(P = P, rate = (F - P) / P * 365 / n, which = "Annualised yield")
+)
+ggplot(d, aes(P, rate, colour = which)) +
+  geom_line(linewidth = .8) +
+  scale_colour_manual(values = c(IF_COL$clay, IF_COL$slate)) +
+  scale_y_continuous(labels = function(x) paste0(round(x * 100), "%")) +
+  labs(x = "Current price", y = "Rate",
+       title = "F = 100, n = 90 days",
+       caption = "The gap between the two is the 360 / 365 convention plus the choice of denominator.") +
+  theme_if()
+```
+
+## 1 · Problem 2.1
+
+::: ask
+A 28-day T-bill costs **$996.73** and is worth **$1,000** at maturity.
+
+1.  What is the **discount rate**?
+2.  What is the **annualised yield**?
+:::
+
+. . .
+
+:::: columns
+::: {.column width="50%"}
+$$i_{discount} = \frac{1000-996.73}{1000}\times\frac{360}{28} = 4.20\%$$
+:::
+
+::: {.column width="50%"}
+$$i_{yt} = \frac{1000-996.73}{996.73}\times\frac{365}{28} = 4.28\%$$
+:::
+::::
+
+::: notes
+Make them do it on the calculator, not in their heads. The point of the exercise
+is that the two answers differ by 8 basis points on an instrument that everyone
+would describe as "the same rate".
+:::
+
+## 1 · Problem 2.2
+
+The Treasury auctions **$2.5 billion** of 91-day bills. Competitive bids:
+
+| Bidder | Bid amount | Bid price |
+|:--:|:--:|:--:|
+| 1 | $500 million | $0.9940 |
+| 2 | $750 million | $0.9901 |
+| 3 | $1.5 billion | $0.9925 |
+| 4 | $1 billion | $0.9936 |
+| 5 | $600 million | $0.9939 |
+
+It also received **$750 million** of noncompetitive bids.
+
+::: ask
+Who receives bills, how many, and at what price?
+:::
+
+::: notes
+Order by price descending: 1 (0.9940), 5 (0.9939), 4 (0.9936), 3 (0.9925),
+2 (0.9901). Noncompetitive bids are filled first and come off the top: 2.5 - 0.75
+= 1.75bn left for competitive bidders. Work down the list until it is exhausted.
+Bidder 3 is partially filled and bidder 2 gets nothing.
+:::
+
+# 2 · The bond market {.divider .center background-color="#06302F"}
+
+## A promise with a date on it {.hook background-color="#FAF7F2"}
+
+In 2012 Greece restructured EUR 200 billion of bonds. Holders took a haircut of
+roughly 53% on face value. The bonds had been rated investment grade a few
+years earlier.
+
+::: incremental
+-   A bond is a **contract**: specified payments on specified dates.
+-   Nothing about that contract guarantees you will be paid.
+:::
+
+## 2 · The vocabulary
+
+| Term | What it means |
+|:---|:---|
+| Coupon interest rate | The annual interest rate, usually fixed for the whole life |
+| Current yield | Coupon payment divided by the current price |
+| Face amount / par value | The maturity value |
+| Indenture | The contract that specifies the terms of the loan agreement |
+| Market rate | The rate currently in effect on securities of like risk and maturity |
+| Maturity | Number of periods until the security matures |
+| Yield to maturity | The yield if you buy at the current price and hold to maturity |
+
+::: keyidea
+**Coupon rate is fixed. Market rate moves.** Everything in bond pricing follows
+from the gap between those two.
+:::
+
+## 2 · The instruments
+
+::: {.panel-tabset}
+
+### Treasuries
+
+-   **Treasury notes**: maturity 1 to 10 years. **Treasury bonds**: 10 to 30 years.
+-   No default risk in the usual sense — the Treasury issues the currency it
+    owes. **Inflation risk is still there**, and so is the risk of a price fall
+    if rates rise.
+
+### Municipals
+
+-   Issued by local, county and state governments to fund public projects.
+-   **Tax free**, which is the whole point. Compare like with like:
+
+    $$\text{after-tax rate} = \text{taxable rate}\times(1-\text{marginal tax rate})$$
+
+-   **General obligation** bonds are repaid from taxes; **revenue** bonds from
+    user fees on the project itself.
+-   They are **not** default free. Detroit, 2013.
+
+### Corporates
+
+-   Face value usually USD 1,000, interest paid semi-annually.
+-   **Restrictive covenants** limit dividends, new debt, ratios — they exist
+    because shareholder and bondholder interests conflict.
+-   A **call provision** lets the issuer buy the bond back. A **conversion**
+    feature lets the holder turn it into equity.
+-   **Secured** bondholders have first claim on a specific asset; **unsecured**
+    ones do not, and charge more for it.
+
+### Ratings
+
+-   Risk ranges from **Aaa/AAA** down. Below **BBB-/Baa3** a bond is
+    **speculative grade** — "junk".
+-   That line matters more than it should: many trusts and insurance companies
+    are *not permitted* to hold debt below it.
+-   Which means a downgrade across the line forces selling by people who have no
+    view on the credit at all.
+
+:::
+
+## 2 · The rating scales
+
+:::: columns
+::: {.column width="52%"}
+| Moody's | S&P | Fitch | Meaning |
+|:--:|:--:|:--:|:---|
+| Aaa | AAA | AAA | Best quality, least credit risk |
+| Aa1-Aa3 | AA+/AA/AA- | AA+/AA/AA- | High quality, very strong capacity |
+| A1-A3 | A+/A/A- | A+/A/A- | Upper-medium grade |
+| Baa1-Baa3 | BBB+/BBB/BBB- | BBB+/BBB/BBB- | Medium quality, adequate capacity |
+:::
+
+::: {.column width="48%"}
+| Moody's | S&P | Fitch | Meaning |
+|:--:|:--:|:--:|:---|
+| Ba1-Ba3 | BB+/BB/BB- | BB+/BB/BB- | Speculative |
+| B1-B3 | B+/B/B- | B+/B/B- | Very speculative |
+| Caa-C | CCC/CC/C | CCC/CC/C | Highly speculative, near or in default |
+| — | D | DDD/DD/D | In default |
+:::
+::::
+
+::: ask
+The **investment grade** line sits between Baa3 and Ba1. Why should a single
+notch matter so much to the price?
+:::
+
+## 2 · Rates by credit quality
+
+```{r}
+#| fig-width: 12
+#| fig-height: 4.4
+ids <- c(AAA = "Corporate Aaa", BAA = "Corporate Baa", GS20 = "20-year Treasury")
+series <- lapply(names(ids), function(id) {
+  d <- fred(id)
+  if (is.null(d)) return(NULL)
+  d$series <- ids[[id]]
+  d
+})
+series <- Filter(Negate(is.null), series)
+
+if (!length(series)) {
+  no_data_note("AAA / BAA / GS20")
+} else {
+  d <- do.call(rbind, series)
+  d <- d[d$date >= as.Date("1980-01-01"), ]
+  ggplot(d, aes(date, value, colour = series)) +
+    recession_bands(from = as.Date("1980-01-01")) +
+    geom_line(linewidth = .5) +
+    scale_colour_manual(values = unname(unlist(
+      IF_COL[c("slate", "clay", "teal700")]))) +
+    labs(x = NULL, y = "Percent",
+         title = "The credit spread is the distance between these lines",
+         caption = "Shaded: NBER recessions. Source: Moody's and the Treasury via FRED.") +
+    theme_if()
+}
+```
+
+::: ask
+The lines are furthest apart exactly when you would most like to borrow. Why?
+:::
+
+## 2 · Price and yield
+
+The price of a bond is the present value of everything it will pay you:
+
+$$P = \frac{C}{(1+r)} + \frac{C}{(1+r)^2} + \dots + \frac{C}{(1+r)^n} + \frac{F}{(1+r)^n}$$
+
+. . .
+
+The **yield to maturity** is the $r$ that makes that equation hold at the price
+you actually see:
+
+$$0 = -P + \sum_{t=1}^{n}\frac{C}{(1+r)^t} + \frac{F}{(1+r)^n}$$
+
+. . .
+
+The **coupon yield** is a shortcut — the coupon over the market price:
+
+$$r_c = \frac{C}{P}$$
+
+::: keyidea
+Price and yield move in **opposite directions**, always. The coupon never
+changes; the only way a fixed payment can offer a higher return is if you pay
+less for it.
+:::
+
+## 2 · Coupon yield is only an approximation
+
+```{r}
+#| fig-width: 10
+#| fig-height: 4.0
+Pr <- seq(50, 150, length.out = 300)
+F <- 100; C <- 5; n <- 10
+ytm <- sapply(Pr, function(p) {
+  f <- function(r) -p + sum(C / (1 + r)^(1:n)) + F / (1 + r)^n
+  tryCatch(uniroot(f, c(-0.5, 1))$root, error = function(e) NA_real_)
+})
+d <- rbind(
+  data.frame(P = Pr, rate = ytm,    which = "Yield to maturity"),
+  data.frame(P = Pr, rate = C / Pr, which = "Coupon yield")
+)
+ggplot(d, aes(P, rate, colour = which)) +
+  geom_hline(yintercept = 0, colour = IF_COL$muted, linewidth = .3) +
+  geom_vline(xintercept = 100, linetype = "dotted", colour = IF_COL$muted) +
+  geom_line(linewidth = .8) +
+  scale_colour_manual(values = c(IF_COL$clay, IF_COL$slate)) +
+  scale_y_continuous(labels = function(x) paste0(round(x * 100), "%")) +
+  labs(x = "Current price", y = NULL,
+       title = "F = 100, coupon 5, 10 years to maturity",
+       caption = "The two agree only at par. Away from par the coupon yield misleads.") +
+  theme_if()
+```
+
+## 2 · Problem 2.3
+
+::: ask
+1.  A corporate bond yields **9%**, a municipal bond **6.75%**. Which do you buy?
+2.  A corporate bond yields **5%**, a municipal **3.5%**, and your marginal tax
+    rate is **28%**. Which now?
+:::
+
+. . .
+
+:::: columns
+::: {.column width="50%"}
+**First case.** The comparison needs a tax rate to be meaningful. At a marginal
+rate of 25%, the corporate is worth $9\% \times 0.75 = 6.75\%$ after tax —
+exactly the municipal. Above 25% the municipal wins.
+:::
+
+::: {.column width="50%"}
+**Second case.** $5\% \times (1-0.28) = 3.60\%$ after tax, against **3.5%**
+tax-free. The corporate wins, narrowly.
+:::
+::::
+
+::: notes
+The first part has no numerical answer until you ask them for the tax rate.
+That is deliberate: it is the question they should have asked. Let someone try
+to answer before pointing it out.
+:::
+
+## 2 · Problem 2.4
+
+::: ask
+1.  What is the **coupon yield** on a bond with face value $1,000, current
+    price $921.01 and a coupon rate of **10.95%**?
+2.  What is the **price** of a two-year, 10% coupon bond paying **semi-annually**,
+    face value $1,000, if the required return is **12%**?
+:::
+
+. . .
+
+:::: columns
+::: {.column width="46%"}
+$$r_c = \frac{109.50}{921.01} = 11.89\%$$
+:::
+
+::: {.column width="54%"}
+Four periods, coupon 50, discount rate 6% per period:
+
+$$P = \sum_{t=1}^{4}\frac{50}{1.06^t} + \frac{1000}{1.06^4} = 965.35$$
+:::
+::::
+
+::: notes
+The semi-annual part is where they lose marks: halve the coupon AND halve the
+rate AND double the number of periods. Three changes, not one.
+:::
+
+# 3 · The stock market {.divider .center background-color="#06302F"}
+
+## Owning a piece of the argument {.hook background-color="#FAF7F2"}
+
+A bondholder is owed a number. A shareholder owns whatever is left after
+everyone else is paid — which can be everything, or nothing.
+
+::: incremental
+-   Stocks earn a return two ways: **price appreciation** and **dividends**.
+-   Shareholders have a **residual** claim on assets, and a vote.
+:::
+
+## 3 · Common, preferred, and foreign
+
+:::: columns
+::: {.column width="50%"}
+**Common stock** — the right to vote for directors and on certain issues, and
+to receive dividends if the board declares them.
+
+**Preferred stock** — usually **no vote**, but a **fixed dividend** paid before
+common. Closer to a bond than most students expect.
+:::
+
+::: {.column width="50%"}
+**Foreign stocks** are useful for diversification but awkward to buy if they are
+not listed locally.
+
+**American depository receipts (ADRs)** solve it: a bank buys the foreign
+shares and issues receipts against them that trade on U.S. exchanges.
+:::
+::::
+
+::: keyidea
+An **index** — DJIA, S&P 500, NASDAQ composite — is a summary of a group of
+stocks, not an investment in itself. How it is *weighted* changes what it tells you.
+:::
+
+## 3 · Where the trading happens
+
+:::: columns
+::: {.column width="50%"}
+**Organised exchanges**
+
+-   NYSE trades roughly 4 to 7 billion shares a day.
+-   "Organised" once meant a physical floor; electronic networks have largely
+    replaced that idea.
+-   **Listing requirements** exclude small firms.
+-   Auction market with floor specialists; around 25% of trades filled directly
+    by the specialist.
+:::
+
+::: {.column width="50%"}
+**Over the counter**
+
+-   NASDAQ is the obvious example, with roughly 3,000 securities listed.
+-   **Dealers** stand ready to make a market — without one, the equity would be
+    hard to trade at all.
+-   Multiple market makers post bid and ask prices for the same security.
+:::
+::::
+
+::: ask
+If several dealers quote the same stock, what stops one of them quoting a
+terrible price?
+:::
+
+## 3 · Price-weighted versus value-weighted
+
+The **DJIA** is a price-weighted average of 30 stocks. The **S&P 500** is a
+market-value-weighted index of 500.
+
+```{r}
+#| fig-width: 12
+#| fig-height: 3.9
+dj <- fred("DJIA")
+sp <- fred("SP500")
+if (is.null(dj)) {
+  no_data_note("DJIA")
+} else {
+  dj <- dj[dj$date >= as.Date("2015-01-01"), ]
+  dj$index <- 100 * dj$value / dj$value[1]
+  dj$series <- "Dow Jones Industrial Average"
+  d <- dj[, c("date", "index", "series")]
+  if (!is.null(sp)) {
+    sp <- sp[sp$date >= as.Date("2015-01-01"), ]
+    sp$index <- 100 * sp$value / sp$value[1]
+    sp$series <- "S&P 500"
+    d <- rbind(d, sp[, c("date", "index", "series")])
+  }
+  ggplot(d, aes(date, index, colour = series)) +
+    geom_line(linewidth = .5) +
+    scale_colour_manual(values = c(IF_COL$slate, IF_COL$teal500)) +
+    labs(x = NULL, y = "Index, first observation = 100",
+         title = "Thirty stocks by price, or five hundred by market value",
+         caption = "Source: S&P Dow Jones Indices via FRED.") +
+    theme_if()
+}
+```
+
+::: ask
+A price-weighted index gives a $400 stock thirteen times the weight of a $30
+stock, whatever the companies are worth. Is that a sensible way to summarise a
+market?
+:::
+
+## 3 · What a share is worth
+
+The **Gordon growth model** — a share is the present value of its dividends,
+growing forever at $g$:
+
+$$P = \sum_{t=1}^{\infty}\frac{Div_t}{(1+k_e)^t} = \frac{Div_1}{k_e - g}$$
+
+:::: columns
+::: {.column width="50%"}
+**Geometric growth**, for backing out $g$ from two observations:
+
+$$g = \left(\frac{\text{final}}{\text{initial}}\right)^{1/n} - 1$$
+:::
+
+::: {.column width="50%"}
+**Price-to-earnings**, the shortcut everyone actually quotes:
+
+$$PE = \frac{\text{Price}}{\text{Earnings}}$$
+:::
+::::
+
+::: keyidea
+Look at the denominator: $k_e - g$. As growth approaches the required return,
+the price goes to **infinity**. Every valuation argument about a fast-growing
+company is a fight over that subtraction.
+:::
+
+## 3 · The denominator does all the work
+
+```{r}
+#| fig-width: 12
+#| fig-height: 4.0
+div1 <- 2
+a <- data.frame(x = seq(.06, .24, length.out = 200))
+a$price <- div1 / (a$x - .05); a$panel <- "Varying the required return (g = 5%)"
+b <- data.frame(x = seq(.01, .19, length.out = 200))
+b$price <- div1 / (.20 - b$x); b$panel <- "Varying the growth rate (k = 20%)"
+d <- rbind(a, b)
+ggplot(d, aes(x, price)) +
+  geom_line(colour = IF_COL$clay, linewidth = .8) +
+  facet_wrap(~panel, scales = "free_x") +
+  scale_x_continuous(labels = function(x) paste0(round(x * 100), "%")) +
+  coord_cartesian(ylim = c(0, 250)) +
+  labs(x = NULL, y = "Stock price",
+       title = "Gordon growth, with the first dividend fixed at 2",
+       caption = "Both curves are the same asymptote seen from two directions.") +
+  theme_if() +
+  theme(strip.text = element_text(colour = IF_COL$teal700, face = "bold"))
+```
+
+## 3 · Problem 2.5
+
+::: ask
+1.  A stock is expected to pay a dividend of **$0.16** and to be worth **$60**
+    in a year. At a **12%** discount rate, what is it worth now?
+2.  If the industry PE ratio is **16** and the firm earns **$1.13 per share**,
+    what is the price?
+:::
+
+. . .
+
+:::: columns
+::: {.column width="50%"}
+$$P_0 = \frac{0.16 + 60}{1.12} = 53.71$$
+:::
+
+::: {.column width="50%"}
+$$P = 16 \times 1.13 = 18.08$$
+:::
+::::
+
+## 3 · Problem 2.6
+
+::: ask
+The DJIA was **10,000** in 2010 and **20,000** in 2017. What was the annual
+**geometric growth rate**?
+:::
+
+. . .
+
+$$g = \left(\frac{20000}{10000}\right)^{1/7} - 1 = 2^{1/7} - 1 = 10.41\%$$
+
+::: notes
+Watch for students using 8 years instead of 7. The exponent is the number of
+*periods between* the observations, not the number of years mentioned.
+:::
+
+# 4 · Mortgage markets {.divider .center background-color="#06302F"}
+
+## The market that ate the world {.hook background-color="#FAF7F2"}
+
+By 2006 an American mortgage was not a loan a bank held. It was an input:
+pooled, tranched, rated, and sold to a German Landesbank that had never seen
+Ohio.
+
+::: incremental
+-   A mortgage is a **long-term loan secured by real estate**.
+-   It is **amortised**: one fixed payment covers both interest and principal
+    every month.
+:::
+
+## 4 · The types
+
+| Type | What it is |
+|:---|:---|
+| Conventional | Not guaranteed; usually needs private mortgage insurance and 5-20% down |
+| Insured | Guaranteed by a government agency; low or zero down payment |
+| Fixed-rate | The rate is fixed for the life of the mortgage |
+| Adjustable-rate (ARM) | Rate tied to another security, adjusted periodically within annual limits |
+| Graduated-payment (GPM) | Low initial payment rising each year; amortises in 30 years |
+| Growing-equity (GEM) | Payment rises each year; amortises in less than 30 years |
+| Second mortgage | Secured by a second lien; used for credit lines and home improvement |
+| Reverse annuity (RAM) | The lender pays the borrower monthly; due when the property is sold |
+
+::: ask
+Which of these transfers **interest rate risk** from the lender to the borrower?
+And who tends to be sold those?
+:::
+
+## 4 · Securitisation, in four steps
+
+::: incremental
+1.  The **secondary mortgage market** was created by the federal government
+    after WWII, when it set up Fannie Mae. It grew quickly from the mid-1980s.
+2.  Individual mortgages default unpredictably, so they are **pooled** —
+    hundreds at a time — on the argument that diversification tames the risk.
+3.  Rights to the pool's cash flows are sold as separate securities:
+    **pass-throughs**, or mortgage-backed securities.
+4.  The borrower's monthly payment passes through a trustee before reaching the
+    investors.
+:::
+
+. . .
+
+::: ask
+Step 2 is the load-bearing one. Diversification removes risk that is
+**independent** across loans. What happens to a pool of American mortgages if
+house prices fall everywhere at once?
+:::
+
+::: notes
+This is the hinge of the whole session and it pays to slow down. The 2008
+answer: the correlation everyone assumed was near zero turned out to be near
+one, and every tranche above the bottom was priced on that assumption.
+:::
+
+## 4 · Mortgage rates track long Treasuries
+
+```{r}
+#| fig-width: 12
+#| fig-height: 4.4
+ids <- c(MORTGAGE30US = "30-year fixed mortgage", GS10 = "10-year Treasury")
+series <- lapply(names(ids), function(id) {
+  d <- fred(id)
+  if (is.null(d)) return(NULL)
+  d$series <- ids[[id]]
+  d
+})
+series <- Filter(Negate(is.null), series)
+
+if (!length(series)) {
+  no_data_note("MORTGAGE30US / GS10")
+} else {
+  d <- do.call(rbind, series)
+  ggplot(d, aes(date, value, colour = series)) +
+    recession_bands(from = min(d$date)) +
+    geom_line(linewidth = .5) +
+    scale_colour_manual(values = c(IF_COL$slate, IF_COL$clay)) +
+    labs(x = NULL, y = "Percent",
+         title = "The mortgage rate is a spread over the long Treasury",
+         caption = "Shaded: NBER recessions. Source: Freddie Mac and the Treasury via FRED.") +
+    theme_if()
+}
+```
+
+::: ask
+The gap between the two is not constant. What widens it?
+:::
+
+## 4 · Loan and annuity
+
+:::: columns
+::: {.column width="50%"}
+What you can **borrow**, given what you can pay each period:
+
+$$C_0 = a \times \left[\frac{1-(1+i)^{-T}}{i}\right]$$
+:::
+
+::: {.column width="50%"}
+What you must **pay** each period, given what you borrowed:
+
+$$a = C_0 \times \left[\frac{i}{1-(1+i)^{-T}}\right]$$
+:::
+::::
+
+```{r}
+#| fig-width: 10
+#| fig-height: 3.3
+i <- 0.05 / 12; T <- 20 * 12
+d <- data.frame(a = seq(1000, 3000, by = 25))
+d$loan <- d$a * (1 - (1 + i)^(-T)) / i
+ggplot(d, aes(a, loan)) +
+  geom_line(colour = IF_COL$slate, linewidth = .8) +
+  scale_y_continuous(labels = function(x) format(x, big.mark = " ", scientific = FALSE)) +
+  labs(x = "Monthly payment", y = "Loan you can support",
+       title = "5% nominal, 20 years: i = 0.417% per month, T = 240 months",
+       caption = "Linear in the payment, which is why affordability is really about the rate.") +
+  theme_if()
+```
+
+## 4 · Problem 2.7
+
+::: ask
+You want to borrow **$100,000**. Choose between a **12% 30-year** mortgage and
+an **11.5%** mortgage with **2 discount points**. Which?
+:::
+
+::: {.smaller}
+A discount point is 1% of the loan paid up front: on a $200,000 loan, 1 point
+costs $2,000, half a point $1,000, a quarter point $500.
+:::
+
+. . .
+
+::: keyidea
+Two points on $100,000 is $2,000 today against 50 basis points saved every month
+for thirty years. Compute both monthly payments with the annuity formula, then
+ask how long it takes the saving to repay the $2,000. **The answer depends
+entirely on how long you stay in the house.**
+:::
+
+::: notes
+This is the one problem in the session with a genuinely conditional answer.
+If they move in four years the points are a bad deal; if they hold to maturity
+they are a good one. Getting them to state the break-even horizon is the goal.
+:::
+
+# 5 · The foreign exchange market {.divider .center background-color="#06302F"}
+
+## The biggest market nobody sees {.hook background-color="#FAF7F2"}
+
+No building, no opening bell, no ticker on the news. Over-the-counter, bank to
+bank, and turnover in the **trillions of dollars a day**.
+
+::: incremental
+-   What is traded is **bank deposits denominated in different currencies**.
+-   Trades are large — typically in excess of USD 1 million.
+-   We met the price in session 2. Now we meet the market.
+:::
+
+## 5 · Purchasing power parity
+
+**Absolute PPP** — the exchange rate equals the ratio of price levels:
+
+$$E_{\$/\mathrm{EUR}} = \frac{P_{US}}{P_{EUR}}$$
+
+. . .
+
+**Relative PPP** — the rate of depreciation equals the **inflation differential**:
+
+$$\frac{\Delta E_{\$/\mathrm{EUR}}}{E_{\$/\mathrm{EUR}}} = \pi_{US} - \pi_{EUR}$$
+
+. . .
+
+::: ask
+PPP works in the long run and fails in the short run. Given what it assumes,
+which of its assumptions is the one that fails first?
+:::
+
+::: notes
+Answers to steer towards: differentiated goods with brand names and legal
+protection give firms pricing power, so identical goods do not have identical
+prices; and prices are sticky, so they do not adjust quickly to market
+conditions. Both break the arbitrage that PPP relies on.
+:::
+
+## 5 · Spot, forward, and what moves them
+
+:::: columns
+::: {.column width="46%"}
+**Spot rate** — near-immediate exchange of bank deposits.
+
+**Forward rate** — exchange at an agreed future date, at a price agreed now.
+:::
+
+::: {.column width="54%"}
+Rates move when money demand or supply moves, which happens on expected changes in:
+
+-   **relative price levels**
+-   **trade barriers** — tariffs and quotas
+-   **preferences** for domestic versus foreign goods
+-   **relative productivity**
+:::
+::::
+
+. . .
+
+::: keyidea
+Every item on that list is an **expected change**. The spot rate today is
+mostly a statement about tomorrow.
+:::
+
+## 5 · What an appreciation does
+
+::: incremental
+-   Domestic goods become **more expensive abroad**; foreign goods become
+    cheaper at home.
+-   Domestic businesses become **less competitive**.
+-   Domestic consumers gain **purchasing power**.
+:::
+
+. . .
+
+::: ask
+So is a strong currency good news? Ask a French exporter and a French
+holidaymaker on the same day and you get two answers.
+:::
+
+# 6 · Derivative markets {.divider .center background-color="#06302F"}
+
+## A price for a promise {.hook background-color="#FAF7F2"}
+
+In 1995 Barings Bank, 233 years old, was destroyed in weeks by one trader's
+position in Nikkei futures. The instruments were not exotic. The position was
+simply unhedged and unsupervised.
+
+::: incremental
+-   **Hedging** means using a financial transaction to reduce or remove a risk.
+-   The same instrument that hedges a position can create one many times larger.
+:::
+
+## 6 · Long, short, and offsetting
+
+:::: columns
+::: {.column width="50%"}
+A **long** position: you own the asset and expect the price to rise.
+
+A **short** position: you do not own it — you borrow it, sell it, and expect to
+buy it back cheaper.
+:::
+
+::: {.column width="50%"}
+To **hedge**:
+
+-   a long position is offset by taking an additional **short** position
+-   a short position is offset by taking an additional **long** position
+:::
+::::
+
+::: keyidea
+Hedging is not the absence of a position. It is **two** positions chosen so
+that what one loses, the other gains.
+:::
+
+## 6 · The instruments
+
+::: {.panel-tabset}
+
+### Forwards
+
+-   An agreement between two parties to transact at a **future point in time**.
+-   Specifies the exact assets, the price, and the date of exchange.
+-   **Long** = agree to buy later. **Short** = agree to sell later.
+-   Private, bilateral, and therefore exposed to the other party defaulting.
+
+### Futures
+
+-   Same idea, but traded on an **organised exchange** rather than privately.
+-   **Standardised**, and therefore far more liquid than forwards.
+-   **Marked to market daily**, which is what removes most of the default risk.
+-   No need to deliver: positions are netted in cash.
+-   Harder to corner, because the deliverable range of securities is wide.
+-   Regulated in the U.S. by the CFTC.
+
+### Options
+
+-   The **right, not the obligation**, to buy (**call**) or sell (**put**) at
+    the strike price.
+-   **American** options can be exercised up to expiry; **European** options only
+    on the expiry date.
+-   You pay a **premium** for that right. The premium rises with
+    **time to expiry** and with **volatility**, and moves with the strike.
+
+### Swaps
+
+-   An **interest-rate swap** exchanges one stream of interest payments for
+    another, in the same currency.
+-   The **plain vanilla** version specifies the rates exchanged, the type of
+    payments, and the notional amount.
+-   No balance-sheet change, longer-dated than futures or options — but
+    **illiquid** and exposed to **default risk**.
+
+### Credit
+
+-   **Credit derivatives** pay off on changes in credit events. The notional
+    outstanding is in the trillions.
+-   **Credit options** are tied to ratings or spreads.
+-   **Credit swaps** exchange payments on loan portfolios, letting lenders
+    specialise locally while diversifying.
+-   A **credit default swap** pays off option-like when a basket of loans
+    defaults. Remember that one.
+
+:::
+
+## 6 · Why the payoff diagram is the whole lesson
+
+```{r}
+#| fig-width: 12
+#| fig-height: 4.2
+S <- seq(105, 130, length.out = 300)
+K <- 115; prem <- 2000; mult <- 400
+call <- data.frame(S = S, profit = pmax(S - K, 0) * mult - prem,
+                   who = "Buyer of call option", panel = "Call option and long future")
+futl <- data.frame(S = S, profit = (S - K) * mult,
+                   who = "Buyer of futures", panel = "Call option and long future")
+put  <- data.frame(S = S, profit = pmax(K - S, 0) * mult - prem,
+                   who = "Buyer of put option", panel = "Put option and short future")
+futs <- data.frame(S = S, profit = (K - S) * mult,
+                   who = "Seller of futures", panel = "Put option and short future")
+d <- rbind(call, futl, put, futs)
+
+ggplot(d, aes(S, profit, colour = who)) +
+  geom_hline(yintercept = 0, colour = IF_COL$muted, linewidth = .3) +
+  geom_line(linewidth = .8) +
+  facet_wrap(~panel) +
+  scale_colour_manual(values = unname(unlist(
+    IF_COL[c("clay", "slate", "clay", "slate")]))) +
+  scale_y_continuous(labels = function(x) format(x, big.mark = " ", scientific = FALSE)) +
+  labs(x = "Price at expiration", y = "Profit",
+       title = "The option has a floor. The future does not.",
+       caption = "Strike 115, premium 2 000 per contract.") +
+  theme_if() +
+  theme(strip.text = element_text(colour = IF_COL$teal700, face = "bold"))
+```
+
+::: ask
+The option line **bends** and the futures line does not. What did you pay for
+that bend, and when is it worth it?
+:::
+
+## 6 · Problem 2.8
+
+Rock Solid holds a **$100 million** stock portfolio that tracks the S&P 500.
+The manager fears a decline and wants to hedge the downside completely.
+
+::: ask
+1.  The S&P is at **1,000**. How is the hedge done with **futures**?
+2.  What happens if a year later the index is at **900**?
+3.  And if it is at **1,100**?
+:::
+
+::: {.smaller}
+An index futures contract has a multiplier of **250**, so one contract is worth
+$250 \times 1000 = \$250{,}000$.
+:::
+
+::: notes
+400 contracts sold short. At 900 the portfolio loses 10m and the futures gain
+10m. At 1100 the portfolio gains 10m and the futures lose 10m. The hedge works
+in both directions — which is the point students miss. They think a hedge
+protects the downside and keeps the upside.
+:::
+
+## 6 · Problem 2.9
+
+Same portfolio, same fear. Now the S&P is at **1,000** and a strike of **950**
+costs a premium of **$200 per contract**.
+
+::: ask
+1.  How is the hedge done with **options**?
+2.  What happens at **900**?
+3.  What happens at **1,100**?
+:::
+
+::: {.smaller}
+An index option contract has a multiplier of **100**, so one contract is worth
+$100 \times 1000 = \$100{,}000$.
+:::
+
+. . .
+
+::: keyidea
+Compare with 2.8. The option costs money up front and leaves a gap down to 950
+uncovered — but at 1,100 you keep the gain. **That is what the premium bought.**
+:::
+
+# 7 · Reading discussion {.divider .center background-color="#06302F"}
+
+## Does a green label change the price? {.hook background-color="#FAF7F2"}
+
+A green bond funds an environmental project. Otherwise it is an ordinary bond
+from an ordinary issuer, with the same claim on the same balance sheet.
+
+::: incremental
+-   So if the cash flows and the credit risk are identical, should it trade at a
+    different yield?
+-   If it should not, what exactly is the instrument for?
+:::
+
+## 7 · Sartzetakis (2021), green bonds and the low-carbon transition
+
+::: {.panel-tabset}
+
+### The questions
+
+Come with an answer to each of these. I will ask.
+
+1.  What are the **advantages and disadvantages of enlarging the mandate of the
+    central bank**?
+2.  Which projects can be considered **"green"** and financed by green bonds?
+3.  What is the process for **project evaluation and selection**?
+4.  What are the **positive developments** in the green bond market, and the
+    **limits** to its development?
+
+### How to prepare
+
+-   Question 1 is the contested one. A central bank with a climate mandate is
+    making distributional choices it was not elected to make — against the
+    argument that climate risk is financial risk and therefore already in its
+    remit.
+-   Questions 2 and 3 are where **greenwashing** lives. If the issuer defines
+    "green" and the issuer picks the verifier, what is the label worth?
+-   For question 4, separate market **growth** from market **effect**. A market
+    can grow quickly and still finance nothing that would not have been financed
+    anyway.
+
+:::
+
+::: notes
+Run this as a discussion, not a lecture. Ten minutes in pairs on questions 2 and
+3, then open the floor on 1. Question 4 is the one that connects back to the
+bond pricing at the start of the session: if the green label does not change the
+yield, the issuer has no incentive beyond reputation.
+:::
+
+## Next session {.center}
+
+Sessions 5 and 6 move to **financial institutions and firms**.
+
+::: keyidea
+Bring **Muñoz (2020)** on boards of trustees and the performance of socially
+responsible mutual funds, read — and keep working on your group's security.
+:::
+
+::: {.source}
+Press **`O`** for the slide overview · **`C`** to draw · **`S`** for speaker notes · **`F`** for fullscreen · **`E`** then print for a PDF of the slides.
+:::

@@ -22,6 +22,8 @@ website:
         href: 01-international-financial-system/01-international-financial-system.html
       - text: "Session 2"
         href: 02-interest-and-exchange-rates/02-interest-and-exchange-rates.html
+      - text: "Sessions 3-4"
+        href: 03-securities-markets/03-securities-markets.html
     right:
       - text: "Laura Contreras-Portela"
         href: "https://lauradcontreras.github.io"
