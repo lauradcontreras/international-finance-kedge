@@ -709,13 +709,32 @@ If the chart has not downloaded, say so and use the numbers: Baa-Treasury went
 from about 2 points to over 6 in late 2008.
 :::
 
-## 2 · Price and yield
+## 2 · The price of a bond
 
-The price of a bond is the present value of everything it will pay you:
+The price is the present value of the contractual payments, discounted at the
+rate the market currently requires on claims of comparable risk and maturity:
 
 $$P = \frac{C}{(1+r)} + \frac{C}{(1+r)^2} + \dots + \frac{C}{(1+r)^n} + \frac{F}{(1+r)^n}$$
 
 . . .
+
+::: keyidea
+Price and yield are **inversely related**, necessarily. The payments $C$ and
+$F$ are fixed by the indenture, so a higher required return can only be
+delivered by a lower price.
+:::
+
+::: notes
+Build it rather than present it. Start with a one-year bond and a single cash
+flow, then add periods until the expression on the slide appears. They have
+seen present value in corporate finance; the novelty is only that the final
+period carries two payments.
+
+Make them state the inverse relation themselves: if the contract cannot change
+and the required return has risen, what is left to adjust?
+:::
+
+## 2 · Two ways of quoting the return
 
 The **yield to maturity** is the internal rate of return $r$ that equates the
 present value of the contractual payments to the observed market price:
@@ -724,29 +743,25 @@ $$0 = -P + \sum_{t=1}^{n}\frac{C}{(1+r)^t} + \frac{F}{(1+r)^n}$$
 
 . . .
 
-The **current (coupon) yield** is an approximation that ignores any capital
-gain or loss at redemption:
+The **current (coupon) yield** ignores any capital gain or loss at redemption:
 
 $$r_c = \frac{C}{P}$$
 
 ::: keyidea
-Price and yield are **inversely related**, necessarily: the payments are fixed,
-so a higher return can only be obtained at a lower price. Note the assumptions
-embedded in the yield to maturity — that the bond is **held to maturity** and
-that all coupons are **reinvested at $r$**. Neither holds in general, which is
-why realised returns differ from quoted yields.
+Two assumptions are embedded in the yield to maturity: that the bond is **held
+to maturity**, and that every coupon is **reinvested at $r$**. Neither holds in
+general, which is why realised returns differ from quoted yields.
 :::
 
 ::: notes
-Build it, do not present it. Start with a one-year bond and a single cash flow,
-then add periods until the formula on the slide appears.
-
 The yield to maturity equation is implicit - there is no closed form for r
-beyond two periods. Tell them that honestly: this is why the exam gives them
-either a short maturity or a calculator, and why in practice a machine solves it.
+beyond two periods. Say so honestly: it is why the exam gives them either a
+short maturity or a calculator, and why in practice a solver does it.
 
-End on the key idea and make them say it back: if the payments are fixed, the
-only way to earn more is to pay less.
+The reinvestment assumption is the one worth dwelling on. A bond quoted at 6%
+returns 6% only if every coupon is reinvested at 6%. If rates fall, the
+realised return is lower - that is reinvestment risk, and it is the mirror
+image of the interest-rate risk on the price.
 :::
 
 ## 2 · Coupon yield is only an approximation
