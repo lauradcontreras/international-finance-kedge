@@ -40,8 +40,13 @@ for an overview. A PDF version is available next to each session.
 :::
 
 ::: {.session}
-[3–4 · Securities markets]{.title}
+[3 · Securities markets — money, bonds and stocks]{.title}
 [[Slides](03-securities-markets/03-securities-markets.html) · [PDF](03-securities-markets/03-securities-markets.pdf) · [Paper](https://link.springer.com/article/10.1007/s10644-020-09266-9)]{.links}
+:::
+
+::: {.session}
+[4 · Securities markets — mortgages, currencies and derivatives]{.title}
+[To come]{.soon}
 :::
 
 ::: {.session}

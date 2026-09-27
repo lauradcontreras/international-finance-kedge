@@ -1,6 +1,6 @@
 ---
 title: "International Finance"
-subtitle: "Sessions 3-4 — Securities Markets"
+subtitle: "Session 3 — Securities Markets: Money, Bonds and Stocks"
 author: "Laura Contreras-Portela"
 institute: "KEDGE Business School"
 date: today
@@ -27,7 +27,7 @@ format:
       buttons: true
       theme: whiteboard
       chalk-effect: 0
-    footer: "International Finance · Sessions 3-4 · KEDGE"
+    footer: "International Finance · Session 3 · KEDGE"
     embed-resources: false          # true -> one portable file, no wifi needed
   beamer:                           # same source -> a real LaTeX PDF handout
     aspectratio: 169
@@ -87,6 +87,15 @@ for each, you can answer the exam.
 Plus the reading discussion: **Sartzetakis (2021)** on green bonds.
 :::
 
+::: notes
+Ninety seconds. The point of this slide is to set the promise: two questions per
+market, repeated six times. Tell them explicitly that the exam asks those two
+questions, because it makes the rest of the session feel like a checklist they
+are filling in rather than a list of definitions to memorise.
+
+Today covers the first three. Mortgages, FX and derivatives are next session.
+:::
+
 ## Why a session on plumbing {.hook background-color="#FAF7F2"}
 
 In August 2007, BNP Paribas froze three funds. The reason it gave was that it
@@ -126,6 +135,15 @@ cannot be locked up either.
     governments.
 :::
 
+::: notes
+Make the numbers concrete. Eleven days on EUR 40 million at 3% is roughly
+EUR 36,000 - real money for doing nothing except not leaving it in a current
+account. That is the entire commercial logic of the money market.
+
+Ask who in the room has done a treasury internship. There is usually one, and
+they will have watched exactly this.
+:::
+
 ## 1 · What makes a money market instrument
 
 ::: incremental
@@ -150,6 +168,16 @@ cannot be locked up either.
 ::: keyidea
 Both sides are solving a **timing** problem, not an investment problem. Nobody
 buys commercial paper because they believe in the company.
+:::
+
+::: notes
+The four characteristics are examinable and they hang together: short maturity
+is what makes low default risk credible, and low default risk plus large
+denominations is what makes the secondary market liquid.
+
+Push on "large denominations". Retail investors reach this market only through
+money market funds - which matters later, because those funds breaking the buck
+in 2008 is how the plumbing reached ordinary savers.
 :::
 
 ## 1 · The instruments
@@ -197,6 +225,18 @@ buys commercial paper because they believe in the company.
 
 :::
 
+::: notes
+Do not read all five tabs. Pick Treasury bills and repos, and let them read the
+rest in the handout.
+
+Repos are the one to spend time on. Frame it as a pawn shop: I give you my
+securities, you give me cash, and tomorrow I buy them back slightly dearer. The
+difference is the interest. Everything about 2008 repo runs follows from asking
+what happens when the lender suddenly wants a bigger haircut on the collateral.
+
+Commercial paper being *unsecured* is the line to plant for later.
+:::
+
 ## 1 · The instruments side by side
 
 | Instrument | Issuer | Buyer | Usual maturity | Secondary market |
@@ -211,6 +251,17 @@ buys commercial paper because they believe in the company.
 
 ::: {.source}
 Read the last column as a liquidity ranking. Source: Mishkin and Eakins.
+:::
+
+::: notes
+Do not read the table aloud. Give them thirty seconds to read it, then ask one
+question: why does the secondary market column vary so much?
+
+Answer to steer towards: standardisation. Treasury bills are fungible - one is
+exactly like another, so anyone will buy yours. Commercial paper is a specific
+claim on a specific firm with a specific maturity, so there is no ready buyer.
+Fed funds are unsecured overnight loans between named banks - there is nothing
+to sell.
 :::
 
 ## 1 · The rates move together
@@ -283,6 +334,18 @@ back to the old level. Who was funding themselves there, and where did they go
 instead?
 :::
 
+::: notes
+Let them look before you talk. Ask what they notice, and wait.
+
+What to draw out: the fall in 2008 is not a dip, it is a step down to a level
+the market never regained. The issuers who vanished were the ones funding
+long-dated assets with 30-day paper - structured investment vehicles and
+finance arms. When the paper stopped rolling, the assets had to be sold or the
+sponsoring bank had to take them back on balance sheet. Both happened.
+
+This is the slide that connects to the BNP Paribas opening.
+:::
+
 ## 1 · Price and rate
 
 A money market instrument pays no coupon. You buy it below face value and it
@@ -310,6 +373,18 @@ Same instrument, two numbers. The discount rate divides by **F** and uses a
 larger of the two, and it is the one you can compare with anything else.
 :::
 
+::: notes
+The two formulas are on the exam and students lose marks by mixing them.
+
+Say out loud what makes them different: the discount rate divides by F, the
+face value, and uses a 360-day year, because that is the convention the market
+inherited. The yield divides by P, what you actually paid, and uses 365. Only
+the yield is comparable with a deposit rate or a bond yield.
+
+Ask them which one a seller would prefer to quote. The discount rate is always
+the smaller number.
+:::
+
 ## 1 · The two rates, drawn
 
 ```{r}
@@ -330,6 +405,14 @@ ggplot(d, aes(P, rate, colour = which)) +
        caption = "The gap between the two is the 360 / 365 convention plus the choice of denominator.") +
   theme_if()
 ```
+
+::: notes
+Thirty seconds. The only thing to notice is that the gap widens as the price
+falls - the two conventions agree when there is nothing to discount and diverge
+as the discount grows.
+
+If nobody asks why the lines are not straight, do not volunteer it.
+:::
 
 ## 1 · Problem 2.1
 
@@ -396,6 +479,17 @@ years earlier.
 -   Nothing about that contract guarantees you will be paid.
 :::
 
+::: notes
+Short and blunt. The Greek restructuring is the counterexample to every
+sentence in the next ten slides: the contract was explicit, the payments were
+specified, and holders still took roughly 53% off face value.
+
+Worth naming why it was called "voluntary" - collective action clauses were
+inserted retroactively, so holdouts were bound by the majority. A sovereign
+writing the rules of its own default is a risk with no equivalent in corporate
+credit.
+:::
+
 ## 2 · The vocabulary
 
 | Term | What it means |
@@ -411,6 +505,18 @@ years earlier.
 ::: keyidea
 **Coupon rate is fixed. Market rate moves.** Everything in bond pricing follows
 from the gap between those two.
+:::
+
+::: notes
+Do not lecture the table. Give them a minute to read it and take questions.
+
+The line that matters is the key idea: the coupon rate is fixed in the
+indenture and never changes; the market rate moves every day. Ask them what has
+to give if the contract is fixed and the required return has risen. The answer -
+the price - is the whole of bond pricing and they will have said it themselves.
+
+Current yield versus yield to maturity is the distinction they will get wrong
+in the exam. Flag it now and again in three slides.
 :::
 
 ## 2 · The instruments
@@ -456,6 +562,21 @@ from the gap between those two.
 
 :::
 
+::: notes
+Municipals and ratings are the two tabs worth your time.
+
+On municipals: the tax comparison is a favourite exam question and problem 2.3
+is coming, so do the algebra once here. Detroit 2013 is the counterexample to
+"municipal bonds are safe" - pensioners and bondholders in the same queue.
+
+On ratings: the investment grade line is the thing to hammer. A downgrade from
+Baa3 to Ba1 is one notch of credit opinion, but it forces selling by funds whose
+mandates prohibit speculative grade. Price falls for a reason that has nothing
+to do with the issuer's prospects. That is a market structure effect, not a
+credit effect, and it is the kind of distinction that separates a good answer
+from an average one.
+:::
+
 ## 2 · The rating scales
 
 :::: columns
@@ -481,6 +602,18 @@ from the gap between those two.
 ::: ask
 The **investment grade** line sits between Baa3 and Ba1. Why should a single
 notch matter so much to the price?
+:::
+
+::: notes
+Two minutes maximum. They do not need to memorise the ladder; they need to know
+where the line is and why it matters.
+
+Ask the question on the slide and wait. If nobody bites: a pension fund
+mandated to hold only investment grade must sell on the downgrade, whatever it
+thinks. Forced sellers meeting no natural buyers is how a one-notch change moves
+a price several points.
+
+The term "fallen angel" is worth giving them.
 :::
 
 ## 2 · Rates by credit quality
@@ -518,6 +651,19 @@ if (!length(series)) {
 The lines are furthest apart exactly when you would most like to borrow. Why?
 :::
 
+::: notes
+The lines are the lesson: the distance between Baa and Treasury is the credit
+spread, and it is not constant.
+
+Point at 2008 and at 2020. Ask the question on the slide and let it sit -
+spreads widen exactly when firms most need to borrow, because that is when
+default probability rises and risk appetite falls at the same time. Credit is
+procyclical, and that is a policy problem, not a market quirk.
+
+If the chart has not downloaded, say so and use the numbers: Baa-Treasury went
+from about 2 points to over 6 in late 2008.
+:::
+
 ## 2 · Price and yield
 
 The price of a bond is the present value of everything it will pay you:
@@ -541,6 +687,18 @@ $$r_c = \frac{C}{P}$$
 Price and yield move in **opposite directions**, always. The coupon never
 changes; the only way a fixed payment can offer a higher return is if you pay
 less for it.
+:::
+
+::: notes
+Build it, do not present it. Start with a one-year bond and a single cash flow,
+then add periods until the formula on the slide appears.
+
+The yield to maturity equation is implicit - there is no closed form for r
+beyond two periods. Tell them that honestly: this is why the exam gives them
+either a short maturity or a calculator, and why in practice a machine solves it.
+
+End on the key idea and make them say it back: if the payments are fixed, the
+only way to earn more is to pay less.
 :::
 
 ## 2 · Coupon yield is only an approximation
@@ -569,6 +727,17 @@ ggplot(d, aes(P, rate, colour = which)) +
        caption = "The two agree only at par. Away from par the coupon yield misleads.") +
   theme_if()
 ```
+
+::: notes
+The two curves cross exactly at par, where price equals face value. Everywhere
+else the coupon yield is wrong, and it is wrong in a predictable direction.
+
+Ask which direction and why. Below par the coupon yield understates the return
+because it ignores the capital gain you make when the bond redeems at 100.
+Above par it overstates, because it ignores the capital loss.
+
+That is problem 2.4 part one in a sentence.
+:::
 
 ## 2 · Problem 2.3
 
@@ -639,6 +808,15 @@ everyone else is paid — which can be everything, or nothing.
 -   Shareholders have a **residual** claim on assets, and a vote.
 :::
 
+::: notes
+Short slide, one idea: the bondholder is owed a number, the shareholder owns the
+remainder. Everything that follows - voting rights, dividend policy, valuation
+by discounting dividends - comes from being last in the queue.
+
+Ask which they would rather hold in a firm about to be liquidated, and which in
+a firm about to triple in size. The answer differing is the point.
+:::
+
 ## 3 · Common, preferred, and foreign
 
 :::: columns
@@ -662,6 +840,19 @@ shares and issues receipts against them that trade on U.S. exchanges.
 ::: keyidea
 An **index** — DJIA, S&P 500, NASDAQ composite — is a summary of a group of
 stocks, not an investment in itself. How it is *weighted* changes what it tells you.
+:::
+
+::: notes
+Preferred stock is the one worth a minute: fixed dividend, paid ahead of common,
+usually no vote. Ask whether that is equity or debt. The honest answer is that
+it sits between them, which is why accounting and ratings treat it
+inconsistently.
+
+ADRs connect back to session 1 - a claim on a foreign asset, repackaged so it
+settles in dollars under domestic law. Same engineering as a eurodollar deposit.
+
+On indexes: an index is a summary, not an investment. The weighting decides what
+it summarises, which is the next slide.
 :::
 
 ## 3 · Where the trading happens
@@ -691,6 +882,17 @@ stocks, not an investment in itself. How it is *weighted* changes what it tells 
 ::: ask
 If several dealers quote the same stock, what stops one of them quoting a
 terrible price?
+:::
+
+::: notes
+The exchange-versus-OTC distinction is less sharp than the textbook makes it -
+say so. Most NYSE volume is electronic and NASDAQ has a central book.
+
+The question on the slide is the useful one. A dealer quoting a bad price simply
+gets no trades, because the buyer goes to another market maker. Competition
+between dealers is what replaces the auction. Then push: what if there is only
+one dealer willing to quote? That is a thin market, and it is why liquidity
+disappears exactly when it is needed.
 :::
 
 ## 3 · Price-weighted versus value-weighted
@@ -732,6 +934,19 @@ stock, whatever the companies are worth. Is that a sensible way to summarise a
 market?
 :::
 
+::: notes
+The arithmetic first: in a price-weighted index a 10% move in a USD 400 stock
+moves the index thirteen times as much as a 10% move in a USD 30 stock, whatever
+the two companies are worth. In a value-weighted index the weights are market
+capitalisations, which is what an investor holding the market would actually own.
+
+The DJIA is a historical artifact kept for continuity. Ask why anyone still
+quotes it. The honest answer is journalism, not finance.
+
+Stock splits are the killer detail: a split changes a price-weighted index's
+composition without anything happening to any company.
+:::
+
 ## 3 · What a share is worth
 
 The **Gordon growth model** — a share is the present value of its dividends,
@@ -759,6 +974,19 @@ the price goes to **infinity**. Every valuation argument about a fast-growing
 company is a fight over that subtraction.
 :::
 
+::: notes
+Derive the Gordon model rather than asserting it - a growing perpetuity, three
+lines of algebra, and they have seen it in corporate finance.
+
+The condition k > g is not a technicality. If a firm could grow faster than the
+required return forever it would eventually be the whole economy. Say that out
+loud; it is the sanity check that catches a wrong answer in an exam.
+
+PE ratio: a shortcut whose numerator is a market price and whose denominator is
+an accounting number. Ask what a high PE means. Both "expensive" and "expected
+to grow" are right, and you cannot tell which from the ratio alone.
+:::
+
 ## 3 · The denominator does all the work
 
 ```{r}
@@ -782,6 +1010,19 @@ ggplot(d, aes(x, price)) +
   theme(strip.text = element_text(colour = IF_COL$teal700, face = "bold"))
 ```
 
+::: notes
+Both panels are the same asymptote seen from two directions. As k falls towards
+g, or g rises towards k, the price goes vertical.
+
+The lesson is about fragility, not maths: near the asymptote a small revision to
+a growth assumption produces an enormous revision to the price. That is why
+high-growth valuations move so violently on small news, and why two analysts
+with almost identical assumptions can publish wildly different target prices.
+
+Connect it forward: this is the same sensitivity that made the dot-com and the
+2021 growth repricings so severe.
+:::
+
 ## 3 · Problem 2.5
 
 ::: ask
@@ -803,6 +1044,18 @@ $$P = 16 \times 1.13 = 18.08$$
 :::
 ::::
 
+::: notes
+Both parts are one line each - the point is that they are different methods
+answering the same question.
+
+Part 1 is a discounted cash flow: you forecast, then discount. Part 2 is
+relative valuation: you assume the market has priced comparable firms correctly
+and apply their multiple.
+
+Ask which they trust more, and why they disagree. That argument is the whole of
+equity research.
+:::
+
 ## 3 · Problem 2.6
 
 ::: ask
@@ -819,8 +1072,38 @@ Watch for students using 8 years instead of 7. The exponent is the number of
 *periods between* the observations, not the number of years mentioned.
 :::
 
-# 4 · Mortgage markets {.divider .center background-color="#06302F"}
+## Next session {.center}
 
+Session 4 finishes securities markets: **mortgages**, **foreign exchange** and
+**derivatives**, then the green bonds discussion.
+
+::: keyidea
+Bring **Sartzetakis (2021)** on green bonds, read — and the security your group
+wants to analyse. Not "a stock". A specific one, with a ticker.
+:::
+
+::: {.source}
+Press **`O`** for the slide overview · **`C`** to draw · **`S`** for speaker notes · **`F`** for fullscreen · **`E`** then print for a PDF of the slides.
+:::
+
+::: notes
+Leave two minutes for this. Read the paper before the session, not after -
+the discussion is the assessment-relevant part.
+
+The group work reminder is the one that saves you grief later: a specific
+security with a ticker, chosen now, not the week before session 8.
+:::
+
+<!-- ===================================================================
+     SESSION 4 - not rendered yet. Uncomment, or split into its own
+     folder the way session 2 was, when you are ready.
+     Sections 4 (mortgages), 5 (foreign exchange), 6 (derivatives)
+     and 7 (Sartzetakis discussion).
+     =================================================================== -->
+
+<!--
+
+# 4 · Mortgage markets {.divider .center background-color="#06302F"}
 ## The market that ate the world {.hook background-color="#FAF7F2"}
 
 By 2006 an American mortgage was not a loan a bank held. It was an input:
@@ -832,7 +1115,6 @@ Ohio.
 -   It is **amortised**: one fixed payment covers both interest and principal
     every month.
 :::
-
 ## 4 · The types
 
 | Type | What it is |
@@ -850,7 +1132,6 @@ Ohio.
 Which of these transfers **interest rate risk** from the lender to the borrower?
 And who tends to be sold those?
 :::
-
 ## 4 · Securitisation, in four steps
 
 ::: incremental
@@ -877,7 +1158,6 @@ This is the hinge of the whole session and it pays to slow down. The 2008
 answer: the correlation everyone assumed was near zero turned out to be near
 one, and every tranche above the bottom was priced on that assumption.
 :::
-
 ## 4 · Mortgage rates track long Treasuries
 
 ```{r}
@@ -910,7 +1190,6 @@ if (!length(series)) {
 ::: ask
 The gap between the two is not constant. What widens it?
 :::
-
 ## 4 · Loan and annuity
 
 :::: columns
@@ -941,7 +1220,6 @@ ggplot(d, aes(a, loan)) +
        caption = "Linear in the payment, which is why affordability is really about the rate.") +
   theme_if()
 ```
-
 ## 4 · Problem 2.7
 
 ::: ask
@@ -968,9 +1246,7 @@ This is the one problem in the session with a genuinely conditional answer.
 If they move in four years the points are a bad deal; if they hold to maturity
 they are a good one. Getting them to state the break-even horizon is the goal.
 :::
-
 # 5 · The foreign exchange market {.divider .center background-color="#06302F"}
-
 ## The biggest market nobody sees {.hook background-color="#FAF7F2"}
 
 No building, no opening bell, no ticker on the news. Over-the-counter, bank to
@@ -981,7 +1257,6 @@ bank, and turnover in the **trillions of dollars a day**.
 -   Trades are large — typically in excess of USD 1 million.
 -   We met the price in session 2. Now we meet the market.
 :::
-
 ## 5 · Purchasing power parity
 
 **Absolute PPP** — the exchange rate equals the ratio of price levels:
@@ -1007,7 +1282,6 @@ protection give firms pricing power, so identical goods do not have identical
 prices; and prices are sticky, so they do not adjust quickly to market
 conditions. Both break the arbitrage that PPP relies on.
 :::
-
 ## 5 · Spot, forward, and what moves them
 
 :::: columns
@@ -1033,7 +1307,6 @@ Rates move when money demand or supply moves, which happens on expected changes 
 Every item on that list is an **expected change**. The spot rate today is
 mostly a statement about tomorrow.
 :::
-
 ## 5 · What an appreciation does
 
 ::: incremental
@@ -1049,9 +1322,7 @@ mostly a statement about tomorrow.
 So is a strong currency good news? Ask a French exporter and a French
 holidaymaker on the same day and you get two answers.
 :::
-
 # 6 · Derivative markets {.divider .center background-color="#06302F"}
-
 ## A price for a promise {.hook background-color="#FAF7F2"}
 
 In 1995 Barings Bank, 233 years old, was destroyed in weeks by one trader's
@@ -1062,7 +1333,6 @@ simply unhedged and unsupervised.
 -   **Hedging** means using a financial transaction to reduce or remove a risk.
 -   The same instrument that hedges a position can create one many times larger.
 :::
-
 ## 6 · Long, short, and offsetting
 
 :::: columns
@@ -1085,7 +1355,6 @@ To **hedge**:
 Hedging is not the absence of a position. It is **two** positions chosen so
 that what one loses, the other gains.
 :::
-
 ## 6 · The instruments
 
 ::: {.panel-tabset}
@@ -1135,7 +1404,6 @@ that what one loses, the other gains.
     defaults. Remember that one.
 
 :::
-
 ## 6 · Why the payoff diagram is the whole lesson
 
 ```{r}
@@ -1171,7 +1439,6 @@ ggplot(d, aes(S, profit, colour = who)) +
 The option line **bends** and the futures line does not. What did you pay for
 that bend, and when is it worth it?
 :::
-
 ## 6 · Problem 2.8
 
 Rock Solid holds a **$100 million** stock portfolio that tracks the S&P 500.
@@ -1194,7 +1461,6 @@ $250 \times 1000 = \$250{,}000$.
 in both directions — which is the point students miss. They think a hedge
 protects the downside and keeps the upside.
 :::
-
 ## 6 · Problem 2.9
 
 Same portfolio, same fear. Now the S&P is at **1,000** and a strike of **950**
@@ -1217,9 +1483,7 @@ $100 \times 1000 = \$100{,}000$.
 Compare with 2.8. The option costs money up front and leaves a gap down to 950
 uncovered — but at 1,100 you keep the gain. **That is what the premium bought.**
 :::
-
 # 7 · Reading discussion {.divider .center background-color="#06302F"}
-
 ## Does a green label change the price? {.hook background-color="#FAF7F2"}
 
 A green bond funds an environmental project. Otherwise it is an ordinary bond
@@ -1230,7 +1494,6 @@ from an ordinary issuer, with the same claim on the same balance sheet.
     different yield?
 -   If it should not, what exactly is the instrument for?
 :::
-
 ## 7 · Sartzetakis (2021), green bonds and the low-carbon transition
 
 ::: {.panel-tabset}
@@ -1267,15 +1530,4 @@ bond pricing at the start of the session: if the green label does not change the
 yield, the issuer has no incentive beyond reputation.
 :::
 
-## Next session {.center}
-
-Sessions 5 and 6 move to **financial institutions and firms**.
-
-::: keyidea
-Bring **Muñoz (2020)** on boards of trustees and the performance of socially
-responsible mutual funds, read — and keep working on your group's security.
-:::
-
-::: {.source}
-Press **`O`** for the slide overview · **`C`** to draw · **`S`** for speaker notes · **`F`** for fullscreen · **`E`** then print for a PDF of the slides.
-:::
+-->
