@@ -164,7 +164,7 @@ $body-bottom:  56px;   // keeps the body clear of the footer
 .reveal .hook .lead {
   font-size: 1.06em;
   color: $teal-800;
-  max-width: 26em;
+  max-width: 44em;   /* lead paragraphs carry more now; 26em wrapped too tight */
 }
 
 /* ---- title slide ---- */

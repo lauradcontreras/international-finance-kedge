@@ -60,27 +60,28 @@ source("../_R/setup.R")
 
 ## Where we are
 
-Session 1 and 2 built four prices and one accounting identity. Now we open the
-box: **who issues the paper, who buys it, and what happens to the price.**
+Sessions 1 and 2 established four prices and the balance-of-payments identity.
+We now disaggregate the financial system by **instrument**, and ask how each
+market transfers funds from surplus units to deficit units.
 
 :::: columns
 ::: {.column width="50%"}
-1. **Money markets** — short, dull, enormous
-2. **Bond market** — long-term debt
-3. **Stock market** — ownership
+1. **Money markets** — short maturity, high liquidity
+2. **Bond market** — long-term debt claims
+3. **Stock market** — residual ownership claims
 :::
 
 ::: {.column width="50%"}
-4. **Mortgage markets** — debt secured on a house
-5. **Foreign exchange** — the price of a currency
-6. **Derivatives** — the price of a promise
+4. **Mortgage markets** — debt secured on real property
+5. **Foreign exchange** — claims in different currencies
+6. **Derivatives** — claims contingent on other claims
 :::
 ::::
 
 ::: keyidea
-Every market in this session answers the same two questions: **what is the
-instrument**, and **what makes its price move**. If you can answer those two
-for each, you can answer the exam.
+Each market is analysed through the same two questions: **what contractual
+claim does the instrument represent**, and **what determines its price**. These
+are the organising questions of the course, and of the examination.
 :::
 
 ::: {.source}
@@ -96,23 +97,28 @@ are filling in rather than a list of definitions to memorise.
 Today covers the first three. Mortgages, FX and derivatives are next session.
 :::
 
-## Why a session on plumbing {.hook background-color="#FAF7F2"}
+## 9 August 2007: a funding market stops {.hook background-color="#FAF7F2"}
 
-In August 2007, BNP Paribas froze three funds. The reason it gave was that it
-could not value them: the **commercial paper** market had stopped rolling over.
+BNP Paribas suspended redemptions on three funds, citing an evaporation of
+liquidity that made it impossible to value the assets they held. Those assets
+were **asset-backed commercial paper**, and the market for them had ceased to
+refinance itself.
 
 ::: incremental
--   Not a stock market crash. A **money market** that quietly refused to
-    refinance itself.
--   Within a year the same plumbing took down Lehman, and with it the idea that
-    short-term secured funding is always there.
+-   This was not an equity market event. It was a **money market** — the
+    shortest, safest, largest segment of the system — that stopped rolling over.
+-   The underlying practice is **maturity transformation**: funding long-dated
+    assets with short-dated liabilities. It is profitable precisely because it
+    is risky, and the risk is **rollover risk**.
+-   The same mechanism propagated through Northern Rock, Bear Stearns and
+    Lehman Brothers within thirteen months.
 :::
 
 . . .
 
 ::: ask
-The boring markets are the ones that break the system. Keep that in mind for
-the next two sessions.
+Market microstructure is usually treated as detail. Under what conditions does
+it become the **binding constraint** on the whole financial system?
 :::
 
 ::: notes
@@ -123,16 +129,17 @@ short, dull, enormous markets are where the accidents happen.
 
 # 1 · Money markets {.divider .center background-color="#06302F"}
 
-## Where your company parks its cash {.hook background-color="#FAF7F2"}
+## The corporate cash-timing problem {.hook background-color="#FAF7F2"}
 
-A firm collects EUR 40 million on the 25th and pays it out on the 5th. For
-eleven days that money cannot sit in a current account earning nothing, and it
-cannot be locked up either.
+A firm receives EUR 40 million on the 25th of the month and disburses it on the
+5th. For eleven days those funds must earn a return without being committed:
+the firm requires a **liquid**, short-dated, low-risk store of value.
 
 ::: incremental
--   That is the whole reason the money market exists: **cash-timing problems**.
--   Inflows and outflows are never synchronised, for corporations or for
-    governments.
+-   Receipts and disbursements are **imperfectly synchronised** — for
+    corporations, for banks, and for governments alike.
+-   The money market exists to price that mismatch. It is a market for
+    **liquidity over short horizons**, not for long-run investment returns.
 :::
 
 ::: notes
@@ -147,27 +154,26 @@ they will have watched exactly this.
 ## 1 · What makes a money market instrument
 
 ::: incremental
--   **Short term** — maturity under one year, and for most of it, under 120 days.
--   **Highly liquid** — you can get out before maturity without moving the price.
--   **Low default risk** — you are lending to Treasuries, large banks, big firms.
--   **Large denominations** — USD 1,000,000 and up. This is not a retail market.
+-   **Short maturity** — under one year, and typically under 120 days. This
+    limits both interest-rate risk and the horizon over which credit quality
+    can deteriorate.
+-   **High liquidity** — the instrument can be sold before maturity without a
+    material price concession.
+-   **Low default risk** — issuers are sovereigns, large banks and highly rated
+    corporations.
+-   **Large denominations** — USD 1 million and above. This is a **wholesale**
+    market; households participate indirectly, through money market funds.
 :::
 
 . . .
 
-:::: columns
-::: {.column width="50%"}
-**Investors** want somewhere to put surplus funds for a short period.
-:::
-
-::: {.column width="50%"}
-**Borrowers** want a low-cost source of temporary funds.
-:::
-::::
-
 ::: keyidea
-Both sides are solving a **timing** problem, not an investment problem. Nobody
-buys commercial paper because they believe in the company.
+The four properties are not independent. Short maturity makes low default risk
+credible; low default risk and standardisation are what sustain a liquid
+secondary market. Both parties are managing a **liquidity-timing** problem
+rather than seeking a risk-adjusted return — which is why these instruments
+price close to the risk-free curve, and why small deviations from it are
+informative.
 :::
 
 ::: notes
@@ -186,42 +192,55 @@ in 2008 is how the plumbing reached ordinary savers.
 
 ### Treasury bills
 
--   Maturities from 28 days to 12 months, issued by the U.S. Treasury.
--   Sold at **auction**, which accepts both competitive bids (you name a price)
-    and noncompetitive bids (you take the average and are always filled).
--   The benchmark for everything else: as close to default-free as the market gets.
+-   Zero-coupon obligations of the U.S. Treasury, 28 days to 12 months.
+-   Issued by **auction**. *Competitive* bids specify a price and may be
+    rationed; *noncompetitive* bids accept the clearing price and are filled in
+    full.
+-   They constitute the **benchmark risk-free asset** of the domestic market:
+    every other short rate in this session is quoted relative to them.
 
 ### Fed funds
 
--   Short-term loans of **reserves** between financial institutions, usually
-    **overnight**.
--   Banks use them to meet reserve requirements at the end of the day.
--   The rate on them is the one the central bank actually targets.
+-   Uncollateralised loans of **reserve balances** between depository
+    institutions, predominantly **overnight**.
+-   Banks use them to satisfy reserve requirements at the close of the
+    maintenance period.
+-   The **federal funds rate** is the operating target of U.S. monetary policy,
+    which makes it the anchor of the short end of the yield curve.
 
 ### Repos
 
--   A **repurchase agreement** is a sale with a promise to buy back, usually 3 to
-    14 days later, at an agreed price.
--   Economically a secured loan: the securities are the collateral.
--   Like fed funds, except **nonbanks can play** — which is exactly why the repo
-    market got so large, and so fragile.
+-   A **repurchase agreement** is the sale of a security with a simultaneous
+    commitment to repurchase it at a fixed price, typically within 3 to 14 days.
+-   Economically it is a **collateralised loan**; the repurchase price less the
+    sale price is the interest. Legally it is a sale, which is why repo
+    receives privileged treatment in bankruptcy.
+-   The lender applies a **haircut** — lending less than the collateral's market
+    value — as protection against a fall in that value.
+-   Unlike fed funds, **non-bank institutions participate**, which is what made
+    the repo market both large and, in 2008, a channel for runs.
 
 ### CDs and CP
 
--   **Negotiable certificates of deposit** are issued by banks, USD 100,000 to
-    USD 10 million, at a discount or at a fixed rate payable at maturity.
--   **Commercial paper** is an *unsecured* promissory note issued by a
-    corporation, maturity capped at **270 days** to avoid SEC registration.
--   Unsecured is the word to remember when we get to 2007.
+-   **Negotiable certificates of deposit**: bank-issued time deposits,
+    USD 100,000 to USD 10 million, transferable before maturity.
+-   **Commercial paper**: an **unsecured** promissory note issued by a
+    corporation. Maturity is capped at **270 days** because that is the limit of
+    the exemption from SEC registration.
+-   Being unsecured, commercial paper is a direct claim on the issuer's
+    creditworthiness — the feature that matters in section 1's charts.
 
 ### BAs and eurodollars
 
--   A **banker's acceptance** is a short-term debt instrument issued by a company
-    and **guaranteed by its bank** — built for international trade.
--   The exporter is paid immediately, is shielded from FX risk, and never has to
-    assess the importer's balance sheet. The importer's bank does that.
--   **Eurodollars** are dollar-denominated deposits held in banks outside the
-    United States. They exist because contracts settle in dollars everywhere.
+-   A **banker's acceptance** is a time draft on which a commercial bank has
+    substituted its own credit for the importer's.
+-   This resolves a problem of **asymmetric information** in cross-border trade:
+    the exporter is paid at once, bears no exchange-rate exposure, and need not
+    evaluate a counterparty it cannot observe. The importer's bank, which can
+    observe it, performs that assessment.
+-   **Eurodollars** are dollar-denominated deposits held at banks outside the
+    United States — a response to the dollar's role as invoicing and settlement
+    currency, not to any feature of U.S. regulation alone.
 
 :::
 
@@ -250,7 +269,8 @@ Commercial paper being *unsecured* is the line to plant for later.
 | Eurodollar deposits | Non-US banks | Businesses, governments, banks | 1 day to 1 year | Poor |
 
 ::: {.source}
-Read the last column as a liquidity ranking. Source: Mishkin and Eakins.
+The final column is a ranking of secondary-market liquidity. Adapted from
+Mishkin, F.S. and Eakins, S.G., *Financial Markets and Institutions*.
 :::
 
 ::: notes
@@ -298,8 +318,9 @@ if (!length(series)) {
 ```
 
 ::: ask
-They are almost on top of each other. So what is the **spread** between them
-telling you in the weeks when they come apart?
+The series co-move closely because they share a common policy anchor. Under
+what conditions does the **spread** between the federal funds rate and the
+Treasury bill rate widen, and what is that spread measuring?
 :::
 
 ::: notes
@@ -329,9 +350,9 @@ if (is.null(cp)) {
 ```
 
 ::: ask
-Find 2007. The market did not decline — it **fell off a cliff** and never came
-back to the old level. Who was funding themselves there, and where did they go
-instead?
+2007 marks a **structural break**, not a cyclical decline: the series steps
+down and does not recover its prior level. Which class of issuer exited the
+market, why could it not return, and what replaced that funding?
 :::
 
 ::: notes
@@ -348,8 +369,9 @@ This is the slide that connects to the BNP Paribas opening.
 
 ## 1 · Price and rate
 
-A money market instrument pays no coupon. You buy it below face value and it
-matures at face value, so the whole return is in the **discount**.
+Money market instruments are **zero-coupon**: they are purchased below face
+value and redeemed at face value, so the entire return is the **discount**.
+Two conventions are used to express it, and they are not interchangeable.
 
 :::: columns
 ::: {.column width="50%"}
@@ -368,9 +390,12 @@ $$i_{yt} = \frac{F-P}{P} \times \frac{365}{n}$$
 . . .
 
 ::: keyidea
-Same instrument, two numbers. The discount rate divides by **F** and uses a
-360-day year; the yield divides by **P** and uses 365. The yield is always the
-larger of the two, and it is the one you can compare with anything else.
+One instrument, two measures. The **bank discount basis** deflates by face
+value $F$ on a 360-day year — a convention inherited from pre-computational
+market practice. The **annualised yield** deflates by the price actually paid,
+$P$, on a 365-day year, and is therefore the true holding-period return
+expressed annually. Since $P < F$, the yield always exceeds the discount rate.
+Only the yield is comparable across instruments.
 :::
 
 ::: notes
@@ -468,15 +493,21 @@ Bidder 3 is partially filled and bidder 2 gets nothing.
 
 # 2 · The bond market {.divider .center background-color="#06302F"}
 
-## A promise with a date on it {.hook background-color="#FAF7F2"}
+## Athens, March 2012 {.hook background-color="#FAF7F2"}
 
-In 2012 Greece restructured EUR 200 billion of bonds. Holders took a haircut of
-roughly 53% on face value. The bonds had been rated investment grade a few
-years earlier.
+Greece restructured approximately EUR 200 billion of sovereign bonds. Private
+holders accepted a reduction of roughly 53% of face value — the largest
+sovereign restructuring on record. The same bonds had carried investment-grade
+ratings a few years earlier.
 
 ::: incremental
--   A bond is a **contract**: specified payments on specified dates.
--   Nothing about that contract guarantees you will be paid.
+-   A bond is a **contractual claim**: specified payments on specified dates,
+    enforceable under a governing law.
+-   Enforceability is not payment. **Credit risk** is the probability that the
+    contract is not performed, and it is priced.
+-   For sovereign debt the issuer can also alter the contract: Greece inserted
+    **collective action clauses** retroactively, binding dissenting holders to
+    the majority. This has no corporate equivalent.
 :::
 
 ::: notes
@@ -503,8 +534,10 @@ credit.
 | Yield to maturity | The yield if you buy at the current price and hold to maturity |
 
 ::: keyidea
-**Coupon rate is fixed. Market rate moves.** Everything in bond pricing follows
-from the gap between those two.
+The **coupon rate** is fixed in the indenture at issue. The **market rate** on
+comparable risk and maturity varies continuously. If the contractual payments
+cannot adjust, the only variable that can reconcile the two is the **price**.
+The whole of bond valuation follows from that single observation.
 :::
 
 ::: notes
@@ -525,10 +558,14 @@ in the exam. Flag it now and again in three slides.
 
 ### Treasuries
 
--   **Treasury notes**: maturity 1 to 10 years. **Treasury bonds**: 10 to 30 years.
--   No default risk in the usual sense — the Treasury issues the currency it
-    owes. **Inflation risk is still there**, and so is the risk of a price fall
-    if rates rise.
+-   **Treasury notes**: 1 to 10 years. **Treasury bonds**: 10 to 30 years.
+-   Nominal default risk is negligible because the obligation is denominated in
+    a currency the issuer creates. That is a statement about **nominal**
+    default only.
+-   Two risks remain and are examinable: **inflation risk**, which erodes the
+    real value of fixed payments, and **interest-rate risk**, the capital loss
+    on an existing bond when market rates rise. The latter increases with
+    maturity.
 
 ### Municipals
 
@@ -553,12 +590,17 @@ in the exam. Flag it now and again in three slides.
 
 ### Ratings
 
--   Risk ranges from **Aaa/AAA** down. Below **BBB-/Baa3** a bond is
-    **speculative grade** — "junk".
--   That line matters more than it should: many trusts and insurance companies
-    are *not permitted* to hold debt below it.
--   Which means a downgrade across the line forces selling by people who have no
-    view on the credit at all.
+-   Agencies map credit risk onto an ordinal scale from **Aaa/AAA** downwards.
+    Below **Baa3/BBB-** an issue is **speculative grade**.
+-   That threshold has effects beyond information. Many institutional mandates
+    — insurers, pension funds, some trusts — **prohibit** holdings below it, so
+    a one-notch downgrade can compel sales by investors with no independent
+    view of the credit.
+-   The result is **forced selling** into a falling market: a price movement
+    caused by mandate design rather than by fundamentals.
+-   Note also the **issuer-pays** model: the entity being rated selects and
+    remunerates the agency. The conflict of interest this creates is central to
+    the post-2008 literature on structured credit.
 
 :::
 
@@ -600,8 +642,9 @@ from an average one.
 ::::
 
 ::: ask
-The **investment grade** line sits between Baa3 and Ba1. Why should a single
-notch matter so much to the price?
+The investment-grade boundary lies between Baa3 and Ba1. Ratings are ordinal
+and credit quality is continuous, so why should **one notch** produce a
+discontinuity in price?
 :::
 
 ::: notes
@@ -648,7 +691,9 @@ if (!length(series)) {
 ```
 
 ::: ask
-The lines are furthest apart exactly when you would most like to borrow. Why?
+The spread is widest precisely when firms most need external finance. Identify
+the two distinct mechanisms behind this, and explain why their coincidence
+makes credit supply **procyclical**.
 :::
 
 ::: notes
@@ -672,21 +717,24 @@ $$P = \frac{C}{(1+r)} + \frac{C}{(1+r)^2} + \dots + \frac{C}{(1+r)^n} + \frac{F}
 
 . . .
 
-The **yield to maturity** is the $r$ that makes that equation hold at the price
-you actually see:
+The **yield to maturity** is the internal rate of return $r$ that equates the
+present value of the contractual payments to the observed market price:
 
 $$0 = -P + \sum_{t=1}^{n}\frac{C}{(1+r)^t} + \frac{F}{(1+r)^n}$$
 
 . . .
 
-The **coupon yield** is a shortcut — the coupon over the market price:
+The **current (coupon) yield** is an approximation that ignores any capital
+gain or loss at redemption:
 
 $$r_c = \frac{C}{P}$$
 
 ::: keyidea
-Price and yield move in **opposite directions**, always. The coupon never
-changes; the only way a fixed payment can offer a higher return is if you pay
-less for it.
+Price and yield are **inversely related**, necessarily: the payments are fixed,
+so a higher return can only be obtained at a lower price. Note the assumptions
+embedded in the yield to maturity — that the bond is **held to maturity** and
+that all coupons are **reinvested at $r$**. Neither holds in general, which is
+why realised returns differ from quoted yields.
 :::
 
 ::: notes
@@ -798,14 +846,19 @@ rate AND double the number of periods. Three changes, not one.
 
 # 3 · The stock market {.divider .center background-color="#06302F"}
 
-## Owning a piece of the argument {.hook background-color="#FAF7F2"}
+## The residual claim {.hook background-color="#FAF7F2"}
 
-A bondholder is owed a number. A shareholder owns whatever is left after
-everyone else is paid — which can be everything, or nothing.
+A bondholder holds a claim to a fixed sum. A shareholder holds a claim to
+whatever remains once all prior claims are satisfied — a quantity bounded below
+by zero and unbounded above.
 
 ::: incremental
--   Stocks earn a return two ways: **price appreciation** and **dividends**.
--   Shareholders have a **residual** claim on assets, and a vote.
+-   Equity returns arise from **dividends** and **capital appreciation**.
+-   Shareholders are **residual claimants** on the firm's assets and cash flows,
+    and hold **control rights** through the vote.
+-   Ranking last in liquidation is what gives equity its asymmetric payoff, and
+    what makes the **agency relationship** between managers and shareholders a
+    central problem of corporate finance.
 :::
 
 ::: notes
@@ -838,8 +891,9 @@ shares and issues receipts against them that trade on U.S. exchanges.
 ::::
 
 ::: keyidea
-An **index** — DJIA, S&P 500, NASDAQ composite — is a summary of a group of
-stocks, not an investment in itself. How it is *weighted* changes what it tells you.
+An **index** is a summary statistic for a defined set of securities, not an
+asset. Its **weighting scheme** determines what the statistic measures — and
+therefore what a given movement in it means.
 :::
 
 ::: notes
@@ -880,8 +934,10 @@ it summarises, which is the next slide.
 ::::
 
 ::: ask
-If several dealers quote the same stock, what stops one of them quoting a
-terrible price?
+Dealers quote a **bid-ask spread** and profit from it. Competition constrains
+that spread — but a spread of zero would not be sustainable either. What costs
+must the spread compensate the dealer for, and what happens to liquidity when
+those costs rise?
 :::
 
 ::: notes
@@ -929,9 +985,10 @@ if (is.null(dj)) {
 ```
 
 ::: ask
-A price-weighted index gives a $400 stock thirteen times the weight of a $30
-stock, whatever the companies are worth. Is that a sensible way to summarise a
-market?
+Under price weighting, a USD 400 constituent carries roughly thirteen times the
+weight of a USD 30 constituent, irrespective of the firms' market values. State
+the implication for a **stock split**, and hence whether the index measures
+anything economically meaningful.
 :::
 
 ::: notes
@@ -949,8 +1006,8 @@ composition without anything happening to any company.
 
 ## 3 · What a share is worth
 
-The **Gordon growth model** — a share is the present value of its dividends,
-growing forever at $g$:
+The **Gordon growth model** — a special case of the dividend discount model, in
+which dividends grow at a constant rate $g$ in perpetuity and $k_e > g$:
 
 $$P = \sum_{t=1}^{\infty}\frac{Div_t}{(1+k_e)^t} = \frac{Div_1}{k_e - g}$$
 
@@ -962,16 +1019,18 @@ $$g = \left(\frac{\text{final}}{\text{initial}}\right)^{1/n} - 1$$
 :::
 
 ::: {.column width="50%"}
-**Price-to-earnings**, the shortcut everyone actually quotes:
+**Price-to-earnings**, a relative valuation measure:
 
 $$PE = \frac{\text{Price}}{\text{Earnings}}$$
 :::
 ::::
 
 ::: keyidea
-Look at the denominator: $k_e - g$. As growth approaches the required return,
-the price goes to **infinity**. Every valuation argument about a fast-growing
-company is a fight over that subtraction.
+The denominator $k_e - g$ governs everything. As $g \to k_e$ the valuation
+diverges, so near that boundary the price is **highly sensitive** to small
+revisions in either parameter. This is not a defect of the model but a property
+of perpetual growth — and it explains why estimates of high-growth firms
+disperse so widely, and why such valuations reprice violently on modest news.
 :::
 
 ::: notes
