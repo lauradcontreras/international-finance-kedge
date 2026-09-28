@@ -80,13 +80,27 @@ The LM curve comes out **vertical** in $(Y, e)$ space. **Why?**
 :::
 
 ::: {.column width="48%"}
-::: {.smaller}
-Axes: $Y$ horizontal, $e$ vertical, where $e$ = foreign currency per unit of
-domestic currency.
-:::
+```{r}
+#| fig-width: 5.6
+#| fig-height: 4.2
+yy <- seq(0, 10, length.out = 100)
+ggplot() +
+  geom_line(data = data.frame(y = yy, e = 8.4 - .62 * yy),
+            aes(y, e), colour = IF_COL$slate, linewidth = 1.1) +
+  annotate("segment", x = 5.6, xend = 5.6, y = 0, yend = 9,
+           colour = IF_COL$teal700, linewidth = 1.1) +
+  annotate("segment", x = 0, xend = 5.6, y = 4.93, yend = 4.93,
+           colour = IF_COL$muted, linetype = "22", linewidth = .4) +
+  annotate("text", x = 6.1, y = 8.6, label = "LM", colour = IF_COL$teal700,
+           size = 4.6, fontface = "italic") +
+  annotate("text", x = 8.4, y = 3.8, label = "IS", colour = IF_COL$slate,
+           size = 4.6, fontface = "italic") +
+  labs(x = expression(Y), y = expression(e)) +
+  coord_cartesian(xlim = c(0, 10), ylim = c(0, 9)) +
+  theme_schematic()
+```
 
-::: {style="height: 400px;"}
-:::
+$e$ = foreign currency per unit of domestic currency.
 :::
 ::::
 
@@ -102,7 +116,7 @@ reason half of today's instruments exist.
 
 Then put the question up and wait for an answer before you say anything.
 
-*[wait, then press C and draw IS and LM in the empty half of the slide]*
+*[wait]*
 
 What you are listening for: the interest rate is fixed at the world rate. Look
 at the LM equation - if $i^{*}$ is given and $M/P$ is given, then there is only
@@ -182,35 +196,12 @@ fallen to **$0.02**.
 :::
 
 ::: {.column width="55%"}
-```{r}
-#| fig-width: 6.2
-#| fig-height: 4.4
-q <- seq(50, 500, length.out = 200)
-bt <- rbind(
-  data.frame(q = q, p = 0.010 + 0.00008 * q, curve = "S1 supply"),
-  data.frame(q = q, p = 0.001 + 0.00008 * q, curve = "S2 shifted"),
-  data.frame(q = q, p = 0.062 - 0.00008 * q, curve = "D1 demand"),
-  data.frame(q = q, p = 0.050 - 0.00008 * q, curve = "D2 shifted")
-)
-ggplot(bt, aes(q, p, colour = curve, linetype = curve)) +
-  geom_line(linewidth = .95) +
-  geom_hline(yintercept = c(0.02, 0.04), colour = IF_COL$muted,
-             linetype = "22", linewidth = .4) +
-  annotate("segment", x = 100, xend = 400, y = 0.0415, yend = 0.0415,
-           colour = IF_COL$clay, linewidth = 1,
-           arrow = grid::arrow(length = unit(.018, "npc"), ends = "both", type = "closed")) +
-  annotate("text", x = 250, y = 0.0465, label = "central bank buys 300",
-           colour = IF_COL$clay, size = 3.5, fontface = "bold") +
-  scale_colour_manual(values = c(IF_COL$slate, IF_COL$clay,
-                                 IF_COL$teal700, IF_COL$teal300)) +
-  scale_linetype_manual(values = c(1, 5, 1, 5)) +
-  scale_x_continuous(breaks = c(100, 400)) +
-  scale_y_continuous(breaks = c(0.02, 0.04), labels = c("$0.02", "$0.04")) +
-  labs(x = "Millions of baht per month", y = "Dollars per baht") +
-  theme_if() +
-  theme(panel.grid.major.x = element_blank(),
-        legend.text = element_text(size = rel(.7)))
-```
+::: {.smaller}
+Axes: millions of baht per month horizontal, dollars per baht vertical.
+:::
+
+::: {style="height: 400px;"}
+:::
 :::
 ::::
 
@@ -221,7 +212,8 @@ three minutes, and the purpose is to make the fixed-rate column concrete.
 Set it up in a sentence: Thailand promised to keep the baht at four cents. The
 market thought it was worth two. The promise costs money to keep.
 
-*[point at the gap between the two dashed lines]*
+*[press C and draw it: supply and demand for baht, the two horizontal lines at
+four cents and two cents, and the gap between quantities at the fixed rate]*
 
 That distance is what the central bank is buying, every month, out of a finite
 pile of dollars.
