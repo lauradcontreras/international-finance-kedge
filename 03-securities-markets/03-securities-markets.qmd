@@ -58,6 +58,113 @@ knitr:
 source("../_R/setup.R")
 ```
 
+## Before we start: Thailand, 1997 {.hook background-color="#FAF7F2"}
+
+Last session we ended on the Asian crisis. Three questions before we open
+anything new.
+
+::: ask
+1.  Thailand held the baht at **$0.04** while the equilibrium rate had fallen to
+    **$0.02**. **How** did the central bank hold it there?
+2.  **Why** did it try, rather than letting the currency float?
+3.  Thai banks had borrowed in dollars and lent in baht. Why does a devaluation
+    turn that into a **banking** crisis and not only a currency one?
+:::
+
+::: notes
+Do not move on until somebody answers. This is a recall check on last session,
+and it also sets up everything we do today.
+
+Give them a full minute. If the room is silent, take question 1 alone and ask
+for a show of hands: who thinks the central bank was buying baht, and who
+thinks it was selling?
+
+*[wait for answers before advancing]*
+
+What you are listening for on each:
+
+One - it bought baht and sold dollars out of reserves, every month.
+
+Two - the fixed rate was there to make foreign borrowing cheap and predictable.
+Abandoning it is an admission of failure, and by then the banks had already
+built their balance sheets on the assumption it would hold.
+
+Three - this is the one they find hardest. Liabilities in dollars, assets in
+baht. Halve the baht and the liabilities double in local terms while the assets
+do not move. A currency mismatch turns an exchange rate event into insolvency.
+
+If nobody gets three, do not tell them yet. It comes out of the next slide.
+:::
+
+## Why defending a peg gets harder {.center}
+
+:::: columns
+::: {.column width="45%"}
+At $0.04, with equilibrium at $0.02, the central bank must **buy 300 million
+baht a month** with its dollar reserves.
+
+::: incremental
+-   When reserves run out there are two options: **float**, and take the
+    immediate depreciation, or declare a lower fixed rate — a **devaluation**.
+-   Speculators anticipate the fall. That shifts the curves further and widens
+    the excess supply of baht.
+-   So the defence becomes **more expensive the longer it lasts**. In July 1997
+    Thailand ran out and the baht went from $0.04 to $0.02 at once.
+:::
+:::
+
+::: {.column width="55%"}
+```{r}
+#| fig-width: 6.2
+#| fig-height: 4.4
+q <- seq(50, 500, length.out = 200)
+bt <- rbind(
+  data.frame(q = q, p = 0.010 + 0.00008 * q, curve = "S1 supply"),
+  data.frame(q = q, p = 0.001 + 0.00008 * q, curve = "S2 shifted"),
+  data.frame(q = q, p = 0.062 - 0.00008 * q, curve = "D1 demand"),
+  data.frame(q = q, p = 0.050 - 0.00008 * q, curve = "D2 shifted")
+)
+ggplot(bt, aes(q, p, colour = curve, linetype = curve)) +
+  geom_line(linewidth = .95) +
+  geom_hline(yintercept = c(0.02, 0.04), colour = IF_COL$muted,
+             linetype = "22", linewidth = .4) +
+  annotate("segment", x = 100, xend = 400, y = 0.0415, yend = 0.0415,
+           colour = IF_COL$clay, linewidth = 1,
+           arrow = grid::arrow(length = unit(.018, "npc"), ends = "both", type = "closed")) +
+  annotate("text", x = 250, y = 0.0445, label = "central bank buys 300",
+           colour = IF_COL$clay, size = 3.5, fontface = "bold") +
+  scale_colour_manual(values = c(IF_COL$slate, IF_COL$clay,
+                                 IF_COL$teal700, IF_COL$teal300)) +
+  scale_linetype_manual(values = c(1, 5, 1, 5)) +
+  scale_x_continuous(breaks = c(100, 400)) +
+  scale_y_continuous(breaks = c(0.02, 0.04), labels = c("$0.02", "$0.04")) +
+  labs(x = "Millions of baht per month", y = "Dollars per baht") +
+  theme_if() +
+  theme(panel.grid.major.x = element_blank(),
+        legend.text = element_text(size = rel(.7)))
+```
+:::
+::::
+
+::: notes
+Same diagram as last session, so do not rebuild it. Point at the gap between
+the two dashed lines and say: that distance is what the central bank is buying,
+every month, out of a finite pile of dollars.
+
+*[reveal the bullets one at a time]*
+
+The sentence to land is the third one. The defence gets more expensive the
+longer it goes on, because the market can see the reserves falling. That is why
+a peg under pressure tends not to fail gradually. It fails all at once.
+
+Then the bridge into today:
+
+Everything in that story is a **funding** problem. Thai banks borrowed short
+in one currency and lent long in another. Today we look at the markets where
+that borrowing actually happens - and at the first one, the money market, the
+same mismatch appears in a different costume.
+:::
+
 ## Where we are
 
 Sessions 1 and 2 established four prices and the balance-of-payments identity.
