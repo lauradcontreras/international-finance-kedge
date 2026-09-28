@@ -89,12 +89,17 @@ Plus the reading discussion: **Sartzetakis (2021)** on green bonds.
 :::
 
 ::: notes
-Ninety seconds. The point of this slide is to set the promise: two questions per
-market, repeated six times. Tell them explicitly that the exam asks those two
-questions, because it makes the rest of the session feel like a checklist they
-are filling in rather than a list of definitions to memorise.
+In the first two sessions we built four prices and one accounting identity.
+Today we open the box. We stop asking what the exchange rate is, and start
+asking who issues the paper, who buys it, and what makes the price move.
 
-Today covers the first three. Mortgages, FX and derivatives are next session.
+There are six markets on this list. We do the first three today: money markets,
+bonds, and stocks. Mortgages, currencies and derivatives are next session.
+
+For every one of them I am going to ask you the same two questions. What is the
+claim? And what determines its price. Those two questions are the course. They
+are also the exam, so if you find yourself memorising definitions, stop, and go
+back to those two.
 :::
 
 ## 9 August 2007: a funding market stops {.hook background-color="#FAF7F2"}
@@ -122,9 +127,29 @@ it become the **binding constraint** on the whole financial system?
 :::
 
 ::: notes
-Worth two minutes. Students expect "securities markets" to mean stock-picking.
-The point of opening with BNP Paribas is to set the opposite expectation: the
-short, dull, enormous markets are where the accidents happen.
+On the ninth of August 2007, BNP Paribas told investors in three of its funds
+that they could not have their money back. Not that the funds had lost value —
+that the bank could not say what they were worth.
+
+The assets were asset-backed commercial paper. Very short-term corporate
+borrowing. And the market for it had simply stopped.
+
+*[pause]*
+
+Notice what this was not. It was not a stock market crash. It was the shortest,
+safest, most boring corner of the system — and it was the one that seized.
+
+Here is why it seized. Those vehicles were borrowing for thirty days and lending
+for thirty years. We call that maturity transformation, and it is profitable
+exactly because it is dangerous. Every thirty days you have to find someone
+willing to lend to you again. That is rollover risk. One month nobody was
+willing.
+
+Thirteen months later the same mechanism had taken down Northern Rock, Bear
+Stearns, and Lehman Brothers.
+
+So when I say market plumbing, I do not mean detail. I mean the thing that
+decides whether the rest of the system works on a given morning.
 :::
 
 # 1 · Money markets {.divider .center background-color="#06302F"}
@@ -143,12 +168,23 @@ the firm requires a **liquid**, short-dated, low-risk store of value.
 :::
 
 ::: notes
-Make the numbers concrete. Eleven days on EUR 40 million at 3% is roughly
-EUR 36,000 - real money for doing nothing except not leaving it in a current
-account. That is the entire commercial logic of the money market.
+Let me make this concrete. You work in treasury. Your company is paid forty
+million euros on the twenty-fifth of the month, and it pays that money out on
+the fifth of the next month.
 
-Ask who in the room has done a treasury internship. There is usually one, and
-they will have watched exactly this.
+So for eleven days you are sitting on forty million euros. You cannot leave it
+in a current account earning nothing. You cannot lock it away either, because
+you need it on the fifth.
+
+*[ask]* What do you do with it?
+
+You need something short, safe, and sellable. That is the money market. Eleven
+days at three percent on forty million is about thirty-six thousand euros. That
+is real money for doing nothing except not being careless.
+
+And this is not only companies. Banks have the same problem. Governments have
+the same problem. Money comes in and goes out, and the two are never
+synchronised.
 :::
 
 ## 1 · What makes a money market instrument
@@ -177,13 +213,32 @@ informative.
 :::
 
 ::: notes
-The four characteristics are examinable and they hang together: short maturity
-is what makes low default risk credible, and low default risk plus large
-denominations is what makes the secondary market liquid.
+Four properties. They are examinable, and they are connected, so do not learn
+them as a list.
 
-Push on "large denominations". Retail investors reach this market only through
-money market funds - which matters later, because those funds breaking the buck
-in 2008 is how the plumbing reached ordinary savers.
+Short maturity. Under a year, usually under a hundred and twenty days. That
+matters for two reasons: rates cannot move far against you in three months, and
+a company's credit cannot deteriorate far in three months either.
+
+High liquidity. You can sell before maturity without dropping the price to find
+a buyer.
+
+Low default risk. Look at who is borrowing here: governments, the largest banks,
+the best-rated companies.
+
+Large denominations. A million dollars and up. None of you will ever buy one
+of these directly. You reach this market through a money market fund.
+
+*[pause]*
+
+Now the connection. Short maturity is *why* the low default risk is believable.
+And low default risk plus standardisation is *why* there is a liquid secondary
+market. Pull one property out and the others go with it.
+
+And notice what nobody is doing here. Nobody buys commercial paper because they
+believe in the company. Both sides are solving a timing problem. That is why
+these instruments price so close to the risk-free rate — and why when they move
+away from it, that gap tells you something is wrong.
 :::
 
 ## 1 · The instruments
@@ -245,15 +300,32 @@ in 2008 is how the plumbing reached ordinary savers.
 :::
 
 ::: notes
-Do not read all five tabs. Pick Treasury bills and repos, and let them read the
-rest in the handout.
+I am not going to read all five tabs. You have them in the handout. I want to
+spend the time on two.
 
-Repos are the one to spend time on. Frame it as a pawn shop: I give you my
-securities, you give me cash, and tomorrow I buy them back slightly dearer. The
-difference is the interest. Everything about 2008 repo runs follows from asking
-what happens when the lender suddenly wants a bigger haircut on the collateral.
+Treasury bills first. Zero coupon, sold at auction, and they are the benchmark.
+Every other short rate you will see today is quoted relative to them.
 
-Commercial paper being *unsecured* is the line to plant for later.
+*[switch to the repo tab]*
+
+Now repos, because this is the one that matters.
+
+A repo is a pawn shop for securities. I sell you my bonds today and I promise to
+buy them back on Thursday at a slightly higher price. That difference is the
+interest. Legally it is a sale. Economically it is a loan with collateral.
+
+The lender does not lend the full value of the collateral. If the bonds are
+worth a hundred, they lend you ninety. That ten is called the haircut, and it
+protects the lender if the collateral falls in value.
+
+*[ask]* So what happens to me if my lender wakes up one morning and decides the
+haircut should be thirty instead of ten?
+
+That is the 2008 repo run in one question. Nobody has to refuse to lend. They
+only have to ask for more collateral.
+
+One more thing before we move on. Commercial paper is unsecured — no collateral
+at all. Hold on to that word. We come back to it in two slides.
 :::
 
 ## 1 · The instruments side by side
@@ -274,14 +346,21 @@ Mishkin, F.S. and Eakins, S.G., *Financial Markets and Institutions*.
 :::
 
 ::: notes
-Do not read the table aloud. Give them thirty seconds to read it, then ask one
-question: why does the secondary market column vary so much?
+Do not write this down, it is in the handout. Take thirty seconds and read the
+last column.
 
-Answer to steer towards: standardisation. Treasury bills are fungible - one is
-exactly like another, so anyone will buy yours. Commercial paper is a specific
-claim on a specific firm with a specific maturity, so there is no ready buyer.
-Fed funds are unsecured overnight loans between named banks - there is nothing
-to sell.
+*[wait]*
+
+*[ask]* Why does that column vary so much? Treasury bills are excellent,
+commercial paper is poor. Same kind of instrument, same kind of maturity.
+
+The answer is standardisation. One Treasury bill is identical to another, so
+anyone will buy yours. Commercial paper is a specific claim, on one company, for
+one maturity — there is no queue of buyers for that. And fed funds are unsecured
+overnight loans between two named banks. There is nothing to sell.
+
+Liquidity is not a property of the paper. It is a property of how many people
+want the same thing you are holding.
 :::
 
 ## 1 · The rates move together
@@ -324,9 +403,25 @@ Treasury bill rate widen, and what is that spread measuring?
 :::
 
 ::: notes
-The answer is credit and liquidity risk. In a calm market the spread is a few
-basis points; in August 2007 and September 2008 it explodes. If the chart has
-downloaded, zoom in on 2008 with the chalkboard.
+Three rates here: Treasury bills, federal funds, the prime rate.
+
+*[ask]* What do you notice?
+
+They move together. All three are anchored to the same policy rate, so most of
+the time they are on top of each other.
+
+*[pause]*
+
+Which makes the interesting question the opposite one. What does it mean when
+they come apart?
+
+The federal funds rate is banks lending to each other, unsecured. The Treasury
+bill is lending to the government. When the gap between those two widens, it is
+telling you that banks have stopped trusting each other.
+
+In a normal month that gap is a few basis points. In September 2008 it went past
+three hundred. Same chart, same two rates — and that spread was the clearest
+real-time measure we had of the panic.
 :::
 
 ## 1 · Commercial paper outstanding
@@ -356,15 +451,24 @@ market, why could it not return, and what replaced that funding?
 :::
 
 ::: notes
-Let them look before you talk. Ask what they notice, and wait.
+Look at this one before I say anything.
 
-What to draw out: the fall in 2008 is not a dip, it is a step down to a level
-the market never regained. The issuers who vanished were the ones funding
-long-dated assets with 30-day paper - structured investment vehicles and
-finance arms. When the paper stopped rolling, the assets had to be sold or the
-sponsoring bank had to take them back on balance sheet. Both happened.
+*[wait]*
 
-This is the slide that connects to the BNP Paribas opening.
+*[ask]* What happened in 2007?
+
+I want you to notice that this is not a recession dip. The line does not fall
+and recover. It steps down and stays down. Twenty years later it has never
+returned to the old level.
+
+So who left? The issuers who disappeared were the ones funding long-term assets
+with thirty-day paper — structured investment vehicles, the finance arms of
+banks. When the paper stopped rolling over, they had two options: sell the
+assets, or hand them back to the bank that sponsored them. Both happened, and
+both made things worse.
+
+This is the same chart as the BNP Paribas story we opened with. That is what it
+looks like in the data.
 :::
 
 ## 1 · Price and rate
@@ -399,15 +503,32 @@ Only the yield is comparable across instruments.
 :::
 
 ::: notes
-The two formulas are on the exam and students lose marks by mixing them.
+These instruments pay no coupon. You buy at ninety-eight, you get a hundred at
+maturity, and the whole return is that gap. So there is no interest rate to
+quote — there is only a discount, and we have to turn it into a rate.
 
-Say out loud what makes them different: the discount rate divides by F, the
-face value, and uses a 360-day year, because that is the convention the market
-inherited. The yield divides by P, what you actually paid, and uses 365. Only
-the yield is comparable with a deposit rate or a bond yield.
+The market does that two ways, and they do not give the same number.
 
-Ask them which one a seller would prefer to quote. The discount rate is always
-the smaller number.
+The first one, the discount rate, divides by F — the face value, what you get at
+the end — and uses a three-hundred-and-sixty-day year.
+
+The second one, the annualised yield, divides by P — what you actually paid —
+and uses three hundred and sixty-five days.
+
+*[pause]*
+
+Three hundred and sixty is not a mistake. It is a convention from before
+calculators, when twelve months of thirty days made the arithmetic possible by
+hand. We are still using it.
+
+Now: P is always smaller than F. So dividing by P always gives you the bigger
+number. The yield is always higher than the discount rate on the same
+instrument.
+
+*[ask]* If you were selling me this bill, which of the two would you quote?
+
+Only the yield can be compared with a deposit rate or a bond yield. If you take
+one thing from this slide, take that.
 :::
 
 ## 1 · The two rates, drawn
@@ -432,11 +553,13 @@ ggplot(d, aes(P, rate, colour = which)) +
 ```
 
 ::: notes
-Thirty seconds. The only thing to notice is that the gap widens as the price
-falls - the two conventions agree when there is nothing to discount and diverge
-as the discount grows.
+Same two formulas, drawn. Face value a hundred, ninety days.
 
-If nobody asks why the lines are not straight, do not volunteer it.
+The only thing to see is that the two lines pull apart as the price falls. When
+there is almost no discount they agree. The bigger the discount, the more the
+choice of denominator matters.
+
+Thirty seconds on this slide and we move on.
 :::
 
 ## 1 · Problem 2.1
@@ -461,9 +584,20 @@ $$i_{yt} = \frac{1000-996.73}{996.73}\times\frac{365}{28} = 4.28\%$$
 ::::
 
 ::: notes
-Make them do it on the calculator, not in their heads. The point of the exercise
-is that the two answers differ by 8 basis points on an instrument that everyone
-would describe as "the same rate".
+Calculators out. This is the kind of question that appears on the exam.
+
+Twenty-eight day bill, you pay nine hundred and ninety-six seventy-three, you
+get a thousand.
+
+*[give them two minutes, then reveal]*
+
+Discount rate, four point two zero percent. Yield, four point two eight.
+
+*[pause]*
+
+Eight basis points apart. And everybody in the room would describe both of those
+as "the rate on this bill". On a hundred million euros, eight basis points is
+eighty thousand a year. This is why the convention matters.
 :::
 
 ## 1 · Problem 2.2
@@ -485,10 +619,25 @@ Who receives bills, how many, and at what price?
 :::
 
 ::: notes
-Order by price descending: 1 (0.9940), 5 (0.9939), 4 (0.9936), 3 (0.9925),
-2 (0.9901). Noncompetitive bids are filled first and come off the top: 2.5 - 0.75
-= 1.75bn left for competitive bidders. Work down the list until it is exhausted.
-Bidder 3 is partially filled and bidder 2 gets nothing.
+This one is an auction. Two and a half billion of ninety-one day bills, five
+competitive bidders, and seven hundred and fifty million of noncompetitive bids.
+
+Remember the rule from the Treasury bills tab: noncompetitive bidders take
+whatever price comes out, and they are always filled.
+
+*[ask]* So where do we start?
+
+Noncompetitive comes off the top. Two and a half minus zero point seven five
+leaves one point seven five billion for the competitive bidders.
+
+Now sort them by price, highest first — the highest price is the lowest interest
+rate, so that is the cheapest money for the Treasury. Bidder one at nine nine
+four zero. Bidder five. Bidder four. Bidder three.
+
+Work down until the one point seven five billion is gone. Bidder three only gets
+part of what they asked for, and bidder two gets nothing at all.
+
+*[ask]* Bidder two bid nine nine zero one. What did they get wrong?
 :::
 
 # 2 · The bond market {.divider .center background-color="#06302F"}
@@ -511,14 +660,28 @@ ratings a few years earlier.
 :::
 
 ::: notes
-Short and blunt. The Greek restructuring is the counterexample to every
-sentence in the next ten slides: the contract was explicit, the payments were
-specified, and holders still took roughly 53% off face value.
+March 2012. Greece restructures about two hundred billion euros of government
+bonds. Private holders take a cut of roughly fifty-three percent of face value.
+It is the largest sovereign restructuring there has ever been.
 
-Worth naming why it was called "voluntary" - collective action clauses were
-inserted retroactively, so holdouts were bound by the majority. A sovereign
-writing the rules of its own default is a risk with no equivalent in corporate
-credit.
+And a few years before that, those same bonds were rated investment grade.
+
+*[pause]*
+
+Everything I am about to teach you for the next ten slides assumes a bond is a
+contract. Specified payments, specified dates, enforceable in court. That is
+true. It is just not the same thing as being paid.
+
+And with a government there is a further problem. Greece inserted collective
+action clauses into bonds that had already been issued. Retroactively. Which
+meant that if enough holders agreed to the deal, the ones who refused were bound
+anyway.
+
+*[ask]* Think about what that means. The borrower rewrote the contract after you
+signed it. Can a company do that?
+
+No. This is a risk that exists only in sovereign debt, and it is why we price it
+separately.
 :::
 
 ## 2 · The vocabulary
@@ -541,15 +704,25 @@ The whole of bond valuation follows from that single observation.
 :::
 
 ::: notes
-Do not lecture the table. Give them a minute to read it and take questions.
+Take a minute to read this. It is all in the handout.
 
-The line that matters is the key idea: the coupon rate is fixed in the
-indenture and never changes; the market rate moves every day. Ask them what has
-to give if the contract is fixed and the required return has risen. The answer -
-the price - is the whole of bond pricing and they will have said it themselves.
+*[wait, take questions]*
 
-Current yield versus yield to maturity is the distinction they will get wrong
-in the exam. Flag it now and again in three slides.
+I only want to insist on one line of it.
+
+The coupon rate is written into the indenture on the day the bond is issued, and
+it never changes. The market rate — what investors currently demand for this
+much risk and this much time — changes every day.
+
+*[ask]* So if the payments cannot move, and what people demand has gone up, what
+is left to adjust?
+
+The price. That is it. That is the whole of bond valuation, and you just said it
+yourselves.
+
+One warning. Current yield and yield to maturity are not the same thing, and
+telling me they are is the single most common way to lose marks on this part of
+the exam. We come back to it in three slides.
 :::
 
 ## 2 · The instruments
@@ -605,18 +778,42 @@ in the exam. Flag it now and again in three slides.
 :::
 
 ::: notes
-Municipals and ratings are the two tabs worth your time.
+Four tabs. I want two of them.
 
-On municipals: the tax comparison is a favourite exam question and problem 2.3
-is coming, so do the algebra once here. Detroit 2013 is the counterexample to
-"municipal bonds are safe" - pensioners and bondholders in the same queue.
+*[municipals tab]*
 
-On ratings: the investment grade line is the thing to hammer. A downgrade from
-Baa3 to Ba1 is one notch of credit opinion, but it forces selling by funds whose
-mandates prohibit speculative grade. Price falls for a reason that has nothing
-to do with the issuer's prospects. That is a market structure effect, not a
-credit effect, and it is the kind of distinction that separates a good answer
-from an average one.
+Municipal bonds are issued by cities and states, and the interest is tax free.
+That is the whole point of them, and it means you cannot compare them with a
+corporate bond directly.
+
+To compare, you take the corporate rate and multiply by one minus your marginal
+tax rate. That gives you what you actually keep. We do this as a problem in a
+few slides, so make a note of the formula.
+
+And they are not safe. Detroit filed for bankruptcy in 2013 — the pensioners and
+the bondholders were standing in the same queue.
+
+*[ratings tab]*
+
+Now ratings, and this is the one I want you to remember.
+
+Below BBB minus, a bond stops being investment grade and becomes speculative.
+Junk, if you want the market word.
+
+Here is why that line does more than describe risk. A lot of institutions —
+insurers, pension funds — are simply *not allowed* to hold anything below it.
+It is written into their mandate.
+
+*[ask]* So what happens to the price when a bond is downgraded from BBB minus to
+BB plus?
+
+It falls — and it falls because people who have no opinion at all about the
+company are forced to sell it. That is forced selling, and it is a price move
+caused by regulation, not by anything the company did.
+
+One last thing. Who pays the rating agency? The company being rated chooses the
+agency and pays the fee. Sit with that for a second. That conflict of interest is
+at the centre of everything written about structured credit after 2008.
 :::
 
 ## 2 · The rating scales
@@ -648,15 +845,22 @@ discontinuity in price?
 :::
 
 ::: notes
-Two minutes maximum. They do not need to memorise the ladder; they need to know
-where the line is and why it matters.
+You do not need to memorise this ladder. You need to know where one line is.
 
-Ask the question on the slide and wait. If nobody bites: a pension fund
-mandated to hold only investment grade must sell on the downgrade, whatever it
-thinks. Forced sellers meeting no natural buyers is how a one-notch change moves
-a price several points.
+It is between Baa3 and Ba1 — investment grade above, speculative below.
 
-The term "fallen angel" is worth giving them.
+*[ask]* Credit quality is continuous. A company does not become a different
+company overnight. So why should one notch produce a jump in the price?
+
+*[wait]*
+
+Because of what I just said. The mandates. A pension fund that is prohibited
+from holding speculative grade has to sell, whatever it thinks about the credit.
+Everybody in that position sells at the same time, and there is no natural buyer
+on the other side.
+
+The market has a name for a bond that crosses that line: a fallen angel. Worth
+knowing.
 :::
 
 ## 2 · Rates by credit quality
@@ -697,16 +901,29 @@ makes credit supply **procyclical**.
 :::
 
 ::: notes
-The lines are the lesson: the distance between Baa and Treasury is the credit
-spread, and it is not constant.
+Three lines. Aaa corporates at the top of the quality range, Baa lower down, and
+the twenty-year Treasury.
 
-Point at 2008 and at 2020. Ask the question on the slide and let it sit -
-spreads widen exactly when firms most need to borrow, because that is when
-default probability rises and risk appetite falls at the same time. Credit is
-procyclical, and that is a policy problem, not a market quirk.
+The distance between the Baa line and the Treasury line is the credit spread.
+That is what you are paid for taking corporate risk instead of government risk.
 
-If the chart has not downloaded, say so and use the numbers: Baa-Treasury went
-from about 2 points to over 6 in late 2008.
+*[point at 2008, then 2020]*
+
+Look at what it does in a crisis. It goes from about two percentage points to
+over six.
+
+*[ask]* Now think about when a company most needs to raise money. Is it in a
+boom, or in a downturn?
+
+Exactly. The spread is widest precisely when firms most need to borrow.
+
+Two separate things are happening at once. The probability of default genuinely
+has gone up. And investors want less risk than they did last month. Both push
+the same way, at the same time.
+
+That is what we mean by credit being procyclical. Finance is hardest to get
+exactly when it is most needed — and that is a policy problem, not a quirk of
+the market.
 :::
 
 ## 2 · The price of a bond
@@ -725,13 +942,26 @@ delivered by a lower price.
 :::
 
 ::: notes
-Build it rather than present it. Start with a one-year bond and a single cash
-flow, then add periods until the expression on the slide appears. They have
-seen present value in corporate finance; the novelty is only that the final
-period carries two payments.
+Let us build this rather than just look at it.
 
-Make them state the inverse relation themselves: if the contract cannot change
-and the required return has risen, what is left to adjust?
+Start with the simplest bond you can imagine. One year, one payment at the end.
+What is it worth today? The payment, discounted one year. Everybody is fine with
+that.
+
+Now make it two years. Two payments, discounted one and two years.
+
+Keep going and you have the expression on the slide. The only new thing is the
+very last period, where you get the final coupon *and* the face value back.
+
+*[pause]*
+
+*[ask]* Now. The coupon is fixed in the contract. The face value is fixed in the
+contract. If I demand a higher return than the last person who bought this bond,
+what has to happen?
+
+The price has to fall. It is the only variable left. Price and yield move in
+opposite directions, and not as a rule of thumb — there is nothing else that can
+move.
 :::
 
 ## 2 · Two ways of quoting the return
@@ -754,14 +984,34 @@ general, which is why realised returns differ from quoted yields.
 :::
 
 ::: notes
-The yield to maturity equation is implicit - there is no closed form for r
-beyond two periods. Say so honestly: it is why the exam gives them either a
-short maturity or a calculator, and why in practice a solver does it.
+The yield to maturity is the discount rate that makes the price you see and the
+payments you expect balance exactly. It is an internal rate of return.
 
-The reinvestment assumption is the one worth dwelling on. A bond quoted at 6%
-returns 6% only if every coupon is reinvested at 6%. If rates fall, the
-realised return is lower - that is reinvestment risk, and it is the mirror
-image of the interest-rate risk on the price.
+Be honest with yourselves about this equation: you cannot solve it for r by
+rearranging. Beyond two periods there is no formula. In the exam I will give you
+either a short maturity or a calculator. In a bank, software does it.
+
+*[pause]*
+
+The current yield underneath is a shortcut. Coupon divided by price. It ignores
+what happens at redemption entirely.
+
+*[ask]* Suppose I buy a bond for eighty and it repays a hundred at maturity.
+Does the current yield capture that extra twenty?
+
+No. That is why it is only an approximation, and the next slide shows you how
+wrong it gets.
+
+One more thing, and this is the part people skip. The yield to maturity assumes
+two things. That you hold the bond to the end. And that you reinvest every
+single coupon at that same rate r.
+
+*[ask]* What if rates fall after you buy?
+
+Then you are reinvesting those coupons at less than r, and what you actually
+earn is below the yield you were quoted. That is reinvestment risk. It is the
+mirror image of the price risk we just talked about — when rates fall your price
+goes up, but your reinvestment gets worse.
 :::
 
 ## 2 · Coupon yield is only an approximation
@@ -792,14 +1042,23 @@ ggplot(d, aes(P, rate, colour = which)) +
 ```
 
 ::: notes
-The two curves cross exactly at par, where price equals face value. Everywhere
-else the coupon yield is wrong, and it is wrong in a predictable direction.
+Blue is the true yield to maturity. Red is the current yield shortcut.
 
-Ask which direction and why. Below par the coupon yield understates the return
-because it ignores the capital gain you make when the bond redeems at 100.
-Above par it overstates, because it ignores the capital loss.
+Notice they only touch in one place. At a price of a hundred — at par.
 
-That is problem 2.4 part one in a sentence.
+*[ask]* Look to the left of par, where the bond is cheap. Which line is higher,
+and why?
+
+The true yield is higher, because if you buy at eighty and get a hundred back,
+there is a capital gain the current yield is not counting.
+
+*[ask]* And to the right of par?
+
+The other way round. You paid a hundred and twenty, you get a hundred back, and
+there is a capital loss the current yield is ignoring.
+
+So the shortcut is not just imprecise. It is wrong in a direction you can
+predict. Below par it flatters the bond. Above par it flatters it too.
 :::
 
 ## 2 · Problem 2.3
@@ -826,9 +1085,27 @@ tax-free. The corporate wins, narrowly.
 ::::
 
 ::: notes
-The first part has no numerical answer until you ask them for the tax rate.
-That is deliberate: it is the question they should have asked. Let someone try
-to answer before pointing it out.
+Two parts. Read the first one.
+
+*[wait — let someone attempt an answer]*
+
+Nine percent against six seventy-five. Most of you will say the corporate, and
+I want to push back on that.
+
+*[ask]* What do you need to know before you can answer at all?
+
+The tax rate. Without it the question has no answer. The municipal is tax free
+and the corporate is not, so you are comparing two numbers that are not
+comparable. That is the lesson of part one — notice when a question is missing
+something.
+
+If you put the tax rate at twenty-five percent, nine times zero point seven five
+is six seventy-five. Exactly the municipal. Above twenty-five percent, the
+municipal wins.
+
+Part two gives you the rate. Five percent, twenty-eight percent tax. Five times
+zero point seven two is three point six zero, against three point five tax free.
+The corporate wins — but only by ten basis points.
 :::
 
 ## 2 · Problem 2.4
@@ -855,8 +1132,22 @@ $$P = \sum_{t=1}^{4}\frac{50}{1.06^t} + \frac{1000}{1.06^4} = 965.35$$
 ::::
 
 ::: notes
-The semi-annual part is where they lose marks: halve the coupon AND halve the
-rate AND double the number of periods. Three changes, not one.
+Part one is straightforward. The coupon is ten point nine five percent of a
+thousand, so a hundred and nine fifty a year. Divide by the price of nine
+twenty-one. Eleven point eight nine percent.
+
+Part two is where people lose marks, so go slowly.
+
+*[ask]* Semi-annual coupons. What has to change in the formula?
+
+Three things, and you need all three. Halve the coupon — fifty, not a hundred.
+Halve the rate — six percent per period, not twelve. And double the number of
+periods — four, not two.
+
+Most people remember one of the three. Some remember two. Three changes.
+
+The answer is nine sixty-five thirty-five. The bond trades below par, and it
+should — the coupon is ten percent and the market wants twelve.
 :::
 
 # 3 · The stock market {.divider .center background-color="#06302F"}
@@ -877,12 +1168,26 @@ by zero and unbounded above.
 :::
 
 ::: notes
-Short slide, one idea: the bondholder is owed a number, the shareholder owns the
-remainder. Everything that follows - voting rights, dividend policy, valuation
-by discounting dividends - comes from being last in the queue.
+Here is the difference between what we have been doing and what comes next.
 
-Ask which they would rather hold in a firm about to be liquidated, and which in
-a firm about to triple in size. The answer differing is the point.
+A bondholder is owed a number. It is written down. If the company can pay, they
+get exactly that and not a cent more.
+
+A shareholder owns what is left after everyone else has been paid. Which can be
+a great deal, or can be nothing at all.
+
+*[ask]* Imagine a company about to be liquidated. Which would you rather hold?
+
+*[ask]* Now a company about to triple in size. Which now?
+
+That is the whole thing. Everything that follows — why shareholders vote, why
+dividends are discretionary, why we value equity by discounting dividends —
+comes from being last in the queue.
+
+And one more consequence, which you will meet properly in corporate finance:
+because shareholders own the upside but are protected on the downside by limited
+liability, their interests and the managers' interests are not automatically the
+same. That problem has a name. It is the agency problem.
 :::
 
 ## 3 · Common, preferred, and foreign
@@ -912,16 +1217,31 @@ therefore what a given movement in it means.
 :::
 
 ::: notes
-Preferred stock is the one worth a minute: fixed dividend, paid ahead of common,
-usually no vote. Ask whether that is equity or debt. The honest answer is that
-it sits between them, which is why accounting and ratings treat it
-inconsistently.
+Common stock is what you picture: a vote, and a dividend if the board declares
+one.
 
-ADRs connect back to session 1 - a claim on a foreign asset, repackaged so it
-settles in dollars under domestic law. Same engineering as a eurodollar deposit.
+Preferred stock is the interesting one. Usually no vote. Fixed dividend. Paid
+before common shareholders.
 
-On indexes: an index is a summary, not an investment. The weighting decides what
-it summarises, which is the next slide.
+*[ask]* Fixed payment, paid ahead of others, no control. Is that equity, or is
+that debt?
+
+The honest answer is that it sits between the two, and that is exactly why
+accountants and rating agencies treat it inconsistently. If you see it in a
+balance sheet, look at how it has been classified — it is not always obvious.
+
+On the right, ADRs. If you want to hold a Brazilian company but you can only
+trade in New York, a bank buys the Brazilian shares and issues receipts against
+them that trade in dollars on a US exchange.
+
+*[pause]*
+
+If that sounds familiar, it should. It is the same engineering as the eurodollar
+deposit from an hour ago: take a claim, repackage it so it settles in the
+currency and the legal system the buyer is comfortable with.
+
+Last line. An index is not an investment. It is a summary statistic. And how you
+weight it decides what it is a summary *of* — which is the next slide.
 :::
 
 ## 3 · Where the trading happens
@@ -956,14 +1276,36 @@ those costs rise?
 :::
 
 ::: notes
-The exchange-versus-OTC distinction is less sharp than the textbook makes it -
-say so. Most NYSE volume is electronic and NASDAQ has a central book.
+Two ways to organise a market.
 
-The question on the slide is the useful one. A dealer quoting a bad price simply
-gets no trades, because the buyer goes to another market maker. Competition
-between dealers is what replaces the auction. Then push: what if there is only
-one dealer willing to quote? That is a thin market, and it is why liquidity
-disappears exactly when it is needed.
+Exchanges on the left — one central place where orders meet. The New York Stock
+Exchange still uses the word organised, but the trading floor you have seen in
+films is mostly theatre now. It is computers.
+
+Over the counter on the right. No central place. Dealers hold inventory and
+quote you a price to buy and a price to sell.
+
+*[ask]* The dealer buys from you at the bid and sells to someone else at the
+ask, and keeps the difference. So why does competition not push that spread to
+zero?
+
+*[wait]*
+
+Two reasons, and they are both real costs.
+
+First, the dealer is holding inventory. They bought your shares and now they are
+exposed until they sell them.
+
+Second — and this is the one worth thinking about — some of the people trading
+with the dealer know something the dealer does not. If you are selling to me
+because you know bad news is coming, I lose. I cannot tell who those people are,
+so I widen the spread against everyone.
+
+*[ask]* Now, in a crisis, when nobody knows what anything is worth. What happens
+to that second cost, and what happens to the spread?
+
+It widens. Which is the same lesson as this morning. Liquidity disappears
+exactly when you need it.
 :::
 
 ## 3 · Price-weighted versus value-weighted
@@ -1007,16 +1349,34 @@ anything economically meaningful.
 :::
 
 ::: notes
-The arithmetic first: in a price-weighted index a 10% move in a USD 400 stock
-moves the index thirteen times as much as a 10% move in a USD 30 stock, whatever
-the two companies are worth. In a value-weighted index the weights are market
-capitalisations, which is what an investor holding the market would actually own.
+Two indices, two completely different ideas.
 
-The DJIA is a historical artifact kept for continuity. Ask why anyone still
-quotes it. The honest answer is journalism, not finance.
+The S&P 500 weights by market value. If a company is worth two percent of the
+market, it is two percent of the index. That is what you would own if you bought
+the whole market.
 
-Stock splits are the killer detail: a split changes a price-weighted index's
-composition without anything happening to any company.
+The Dow weights by *price per share*. Not by size. By the number printed on the
+share.
+
+*[ask]* So a four-hundred-dollar share and a thirty-dollar share. Which one
+moves the Dow more?
+
+The four-hundred-dollar one — about thirteen times more — regardless of whether
+the companies are the same size or one is a hundred times bigger than the other.
+
+*[pause]*
+
+Now here is the part that should bother you. A company does a two-for-one stock
+split. Same company, same value, twice as many shares at half the price.
+
+*[ask]* What just happened to its weight in the Dow?
+
+It halved. Nothing happened to the company at all.
+
+*[ask]* So why does every news programme still quote the Dow?
+
+Because it is from 1896 and people recognise the number. That is a reason from
+journalism, not from finance.
 :::
 
 ## 3 · What a share is worth
@@ -1049,16 +1409,33 @@ disperse so widely, and why such valuations reprice violently on modest news.
 :::
 
 ::: notes
-Derive the Gordon model rather than asserting it - a growing perpetuity, three
-lines of algebra, and they have seen it in corporate finance.
+A share pays you dividends, forever. So its value is the present value of all of
+them. Write that down and you get the sum on the left.
 
-The condition k > g is not a technicality. If a firm could grow faster than the
-required return forever it would eventually be the whole economy. Say that out
-loud; it is the sanity check that catches a wrong answer in an exam.
+If the dividend grows at a constant rate g, that infinite sum collapses to the
+expression on the right. Next year's dividend, over the required return minus
+the growth rate. That is the Gordon growth model, and you have met growing
+perpetuities before in corporate finance.
 
-PE ratio: a shortcut whose numerator is a market price and whose denominator is
-an accounting number. Ask what a high PE means. Both "expensive" and "expected
-to grow" are right, and you cannot tell which from the ratio alone.
+Two conditions, and they are not fine print. The growth rate has to be constant
+forever. And k has to be bigger than g.
+
+*[ask]* Why must k be bigger than g? What is wrong with a company that grows
+faster than the required return, forever?
+
+*[wait]*
+
+Eventually it is bigger than the entire economy. That is your sanity check — if
+you ever get g above k in the exam, you have made an arithmetic error, not
+discovered a fantastic company.
+
+Underneath: the PE ratio. Price over earnings. A market number on top, an
+accounting number on the bottom.
+
+*[ask]* A company has a PE of forty. Is it expensive, or is it expected to grow?
+
+Both answers are right, and you cannot tell which from the ratio. That is the
+limitation of every multiple.
 :::
 
 ## 3 · The denominator does all the work
@@ -1085,16 +1462,28 @@ ggplot(d, aes(x, price)) +
 ```
 
 ::: notes
-Both panels are the same asymptote seen from two directions. As k falls towards
-g, or g rises towards k, the price goes vertical.
+Two panels, same model. On the left I vary the required return. On the right I
+vary the growth rate.
 
-The lesson is about fragility, not maths: near the asymptote a small revision to
-a growth assumption produces an enormous revision to the price. That is why
-high-growth valuations move so violently on small news, and why two analysts
-with almost identical assumptions can publish wildly different target prices.
+Both go vertical. It is the same asymptote, seen from two directions — as g gets
+close to k, the denominator goes to zero and the price explodes.
 
-Connect it forward: this is the same sensitivity that made the dot-com and the
-2021 growth repricings so severe.
+*[pause]*
+
+This is not a flaw in the model. It is what perpetual growth means. But look at
+what it implies.
+
+Near that edge, change your growth assumption by half a percentage point and the
+valuation changes enormously.
+
+*[ask]* So two analysts, same company, almost identical assumptions. How far
+apart can their target prices be?
+
+Very far. And that is why high-growth companies reprice so violently on news
+that sounds small. Nothing happened to this year's earnings. Something happened
+to the assumption in the denominator.
+
+You have watched this happen — in 2000, and again in 2021 and 2022.
 :::
 
 ## 3 · Problem 2.5
@@ -1119,15 +1508,27 @@ $$P = 16 \times 1.13 = 18.08$$
 ::::
 
 ::: notes
-Both parts are one line each - the point is that they are different methods
-answering the same question.
+Two parts, one line each. But they are two different methods, and that is the
+point.
 
-Part 1 is a discounted cash flow: you forecast, then discount. Part 2 is
-relative valuation: you assume the market has priced comparable firms correctly
-and apply their multiple.
+Part one. You expect a dividend of sixteen cents and a price of sixty in a year,
+and you discount at twelve percent. Sixty point one six over one point one two.
+Fifty-three seventy-one.
 
-Ask which they trust more, and why they disagree. That argument is the whole of
-equity research.
+Part two. The industry trades at sixteen times earnings, this firm earns a
+dollar thirteen. Sixteen times one thirteen. Eighteen zero eight.
+
+*[pause]*
+
+Part one is a discounted cash flow. You forecast, then you discount.
+
+Part two is relative valuation. You assume the market has priced similar
+companies correctly, and you apply their multiple.
+
+*[ask]* Which one do you trust more?
+
+That argument is most of what equity analysts do for a living. Notice that the
+first needs you to forecast, and the second needs the market to be right.
 :::
 
 ## 3 · Problem 2.6
@@ -1142,8 +1543,18 @@ The DJIA was **10,000** in 2010 and **20,000** in 2017. What was the annual
 $$g = \left(\frac{20000}{10000}\right)^{1/7} - 1 = 2^{1/7} - 1 = 10.41\%$$
 
 ::: notes
-Watch for students using 8 years instead of 7. The exponent is the number of
-*periods between* the observations, not the number of years mentioned.
+Ten thousand in 2010, twenty thousand in 2017. What is the annual growth rate?
+
+*[ask]* Careful. How many years is that?
+
+Seven, not eight. Count the gaps, not the dates — that is the most common error
+on this question.
+
+So it is two to the power of one seventh, minus one. Ten point four one percent.
+
+Notice the shape: the index doubled in seven years at about ten percent a year.
+That is a useful number to carry around. Roughly seven years to double at ten
+percent.
 :::
 
 ## Next session {.center}
@@ -1161,11 +1572,19 @@ Press **`O`** for the slide overview · **`C`** to draw · **`S`** for speaker n
 :::
 
 ::: notes
-Leave two minutes for this. Read the paper before the session, not after -
-the discussion is the assessment-relevant part.
+That is money markets, bonds and stocks. Next session we finish securities
+markets: mortgages, foreign exchange, and derivatives, and then we discuss the
+green bonds paper.
 
-The group work reminder is the one that saves you grief later: a specific
-security with a ticker, chosen now, not the week before session 8.
+Two things to bring.
+
+First, read Sartzetakis. Read it before the session, not after — the discussion
+is part of what I assess, and it does not work if I am the only one who has read
+it.
+
+Second, your group's security. Not "a stock". A specific one, with a ticker,
+that you can find real data on. Choose it now. Every year somebody chooses in
+the week before the presentation and it shows.
 :::
 
 <!-- ===================================================================
