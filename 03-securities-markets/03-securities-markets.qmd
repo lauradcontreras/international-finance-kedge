@@ -58,58 +58,133 @@ knitr:
 source("../_R/setup.R")
 ```
 
-## Before we start: Thailand, 1997 {.hook background-color="#FAF7F2"}
+## Repaso: the Mundell-Fleming model {.hook background-color="#FAF7F2"}
 
-Last session we ended on the Asian crisis. Three questions before we open
-anything new.
+:::: columns
+::: {.column width="52%"}
+Before anything new. A **small open economy** with **perfect capital mobility**,
+so the domestic rate is pinned to the world rate: $i = i^{*}$.
+
+**IS** — the goods market, for a given $i^{*}$:
+
+$$Y = C(Y-T) + I(i^{*}) + G + NX(e)$$
+
+**LM** — the money market, for a given $i^{*}$:
+
+$$M/P = L(i^{*}, Y)$$
 
 ::: ask
-1.  Thailand held the baht at **$0.04** while the equilibrium rate had fallen to
-    **$0.02**. **How** did the central bank hold it there?
-2.  **Why** did it try, rather than letting the currency float?
-3.  Thai banks had borrowed in dollars and lent in baht. Why does a devaluation
-    turn that into a **banking** crisis and not only a currency one?
+The LM curve comes out **vertical** in $(Y, e)$ space. **Why?**
+:::
+:::
+
+::: {.column width="48%"}
+```{r}
+#| fig-width: 5.6
+#| fig-height: 4.2
+yy <- seq(0, 10, length.out = 100)
+ggplot() +
+  geom_line(data = data.frame(y = yy, e = 8.4 - .62 * yy),
+            aes(y, e), colour = IF_COL$slate, linewidth = 1.1) +
+  annotate("segment", x = 5.6, xend = 5.6, y = 0, yend = 9,
+           colour = IF_COL$teal700, linewidth = 1.1) +
+  annotate("segment", x = 0, xend = 5.6, y = 4.93, yend = 4.93,
+           colour = IF_COL$muted, linetype = "22", linewidth = .4) +
+  annotate("text", x = 6.1, y = 8.6, label = "LM", colour = IF_COL$teal700,
+           size = 4.6, fontface = "italic") +
+  annotate("text", x = 9.2, y = 2.9, label = "IS", colour = IF_COL$slate,
+           size = 4.6, fontface = "italic") +
+  labs(x = expression(Y), y = expression(e)) +
+  coord_cartesian(xlim = c(0, 10), ylim = c(0, 9)) +
+  theme_schematic()
+```
+
+$e$ = foreign currency per unit of domestic currency.
+:::
+::::
+
+::: notes
+This is a repaso, so do not re-derive it. Ten minutes on these three slides,
+then we start the new material.
+
+Put the question up and wait for an answer before you say anything.
+
+*[wait]*
+
+What you are listening for: the interest rate is fixed at the world rate. Look
+at the LM equation - if $i^{*}$ is given and $M/P$ is given, then there is only
+one level of $Y$ that clears the money market. The exchange rate does not appear
+in it at all. So the curve is vertical.
+
+Then say the consequence out loud, because everything on the next slide follows
+from it:
+
+If LM is vertical, output is determined by the money market alone. Anything that
+shifts IS - government spending, taxes, a tariff - moves the exchange rate and
+leaves output exactly where it was.
+:::
+
+## Repaso: what the model predicts {.center}
+
+::: ask
+Fill it in. A **fiscal expansion**, a **monetary expansion**, an **import
+restriction** — what does each do to the exchange rate and to output, under
+**floating** and under **fixed** rates?
+:::
+
+::: {.fillin}
+| Policy | Floating: $e$ | Floating: $Y$ | Fixed: $e$ | Fixed: $Y$ |
+|:---|:--:|:--:|:--:|:--:|
+| Fiscal expansion | | | | |
+| Monetary expansion | | | | |
+| Import restriction | | | | |
+:::
+
+::: {.smaller}
+Press **`C`** and draw the IS and LM shift for each row before writing the sign.
 :::
 
 ::: notes
-Do not move on until somebody answers. This is a recall check on last session,
-and it also sets up everything we do today.
+Do not fill this in for them. Draw it.
 
-Give them a full minute. If the room is silent, take question 1 alone and ask
-for a show of hands: who thinks the central bank was buying baht, and who
-thinks it was selling?
+*[press C for the chalkboard]*
 
-*[wait for answers before advancing]*
+Take the rows one at a time. For each one ask: which curve moves, and in which
+direction? Then read the answer off the diagram.
 
-What you are listening for on each:
+The answers, so you have them:
 
-One - it bought baht and sold dollars out of reserves, every month.
+Floating. Fiscal expansion: IS shifts right, e appreciates, Y unchanged.
+Monetary expansion: LM shifts right, e depreciates, Y rises. Import
+restriction: IS shifts right, e appreciates, Y unchanged.
 
-Two - the fixed rate was there to make foreign borrowing cheap and predictable.
-Abandoning it is an admission of failure, and by then the banks had already
-built their balance sheets on the assumption it would hold.
+Fixed. Fiscal expansion: Y rises, e fixed by construction. Monetary expansion:
+powerless - the central bank has to sell reserves to hold the rate, which pulls
+the money supply straight back in. Import restriction: Y rises.
 
-Three - this is the one they find hardest. Liabilities in dollars, assets in
-baht. Halve the baht and the liabilities double in local terms while the assets
-do not move. A currency mismatch turns an exchange rate event into insolvency.
+*[pause]*
 
-If nobody gets three, do not tell them yet. It comes out of the next slide.
+The sentence to land, and ask them to write it down:
+
+Under floating rates monetary policy works and fiscal policy does not. Under
+fixed rates it is exactly the other way round. The exchange rate regime decides
+which instrument your government actually has.
 :::
 
-## Why defending a peg gets harder {.center}
+## Repaso: the fixed-rate row, in one country {.center}
 
 :::: columns
 ::: {.column width="45%"}
-At $0.04, with equilibrium at $0.02, the central bank must **buy 300 million
-baht a month** with its dollar reserves.
+Thailand, 1997. The baht was **fixed at $0.04** while the equilibrium rate had
+fallen to **$0.02**.
 
 ::: incremental
--   When reserves run out there are two options: **float**, and take the
-    immediate depreciation, or declare a lower fixed rate — a **devaluation**.
--   Speculators anticipate the fall. That shifts the curves further and widens
-    the excess supply of baht.
--   So the defence becomes **more expensive the longer it lasts**. In July 1997
-    Thailand ran out and the baht went from $0.04 to $0.02 at once.
+-   To hold the rate the central bank must **buy 300 million baht a month**,
+    paying in dollars from its reserves.
+-   That is the fixed-rate row of the table, happening: every intervention
+    contracts the domestic money supply. **Monetary policy is not available.**
+-   When the reserves run out the choice is to **float** or to **devalue**. In
+    July 1997 Thailand floated, and the baht halved overnight.
 :::
 :::
 
@@ -147,22 +222,32 @@ ggplot(bt, aes(q, p, colour = curve, linetype = curve)) +
 ::::
 
 ::: notes
-Same diagram as last session, so do not rebuild it. Point at the gap between
-the two dashed lines and say: that distance is what the central bank is buying,
-every month, out of a finite pile of dollars.
+They have not studied this crisis, so introduce it rather than test it. Two or
+three minutes, and the purpose is to make the fixed-rate column concrete.
+
+Set it up in a sentence: Thailand promised to keep the baht at four cents. The
+market thought it was worth two. The promise costs money to keep.
+
+*[point at the gap between the two dashed lines]*
+
+That distance is what the central bank is buying, every month, out of a finite
+pile of dollars.
 
 *[reveal the bullets one at a time]*
 
-The sentence to land is the third one. The defence gets more expensive the
-longer it goes on, because the market can see the reserves falling. That is why
-a peg under pressure tends not to fail gradually. It fails all at once.
+On the second bullet, connect it back explicitly:
 
-Then the bridge into today:
+This is the row we just filled in. Every time the central bank buys baht it is
+taking baht out of circulation - the money supply contracts whether it wants
+that or not. That is what "monetary policy is powerless under a fixed rate"
+looks like from the inside.
 
-Everything in that story is a **funding** problem. Thai banks borrowed short
-in one currency and lent long in another. Today we look at the markets where
-that borrowing actually happens - and at the first one, the money market, the
-same mismatch appears in a different costume.
+Then the bridge into today, and do not skip it:
+
+Notice what actually broke. Thai banks had borrowed in dollars, short, and lent
+in baht, long. Halve the baht and the debts double while the assets do not move.
+That mismatch - borrow short in one form, lend long in another - is the subject
+of today's first market. Same structure, different costume.
 :::
 
 ## Where we are

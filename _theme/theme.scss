@@ -266,6 +266,11 @@ $body-bottom:  56px;   // keeps the body clear of the footer
 .reveal table tbody tr:nth-child(even) { background: $teal-050; }
 .reveal table tbody tr:last-child td { border-bottom: none; }
 
+/* ---- a table meant to be written into with the chalkboard ---- */
+.reveal .fillin table { width: 100%; font-size: .62em; }
+.reveal .fillin table td { height: 2.6em; }
+.reveal .fillin table th { padding: .5em .7em; }
+
 /* ---- tabsets ---- */
 .reveal .panel-tabset [role="tab"] {
   color: $muted;
