@@ -58,12 +58,13 @@ knitr:
 source("../_R/setup.R")
 ```
 
-## Repaso: the Mundell-Fleming model {.hook background-color="#FAF7F2"}
+## A small open economy, in two equations {.hook background-color="#FAF7F2"}
 
 :::: columns
 ::: {.column width="52%"}
-Before anything new. A **small open economy** with **perfect capital mobility**,
-so the domestic rate is pinned to the world rate: $i = i^{*}$.
+Every market we open today sits inside one framework. A **small open economy**
+with **perfect capital mobility**, so the domestic rate is pinned to the world
+rate: $i = i^{*}$.
 
 **IS** — the goods market, for a given $i^{*}$:
 
@@ -92,7 +93,7 @@ ggplot() +
            colour = IF_COL$muted, linetype = "22", linewidth = .4) +
   annotate("text", x = 6.1, y = 8.6, label = "LM", colour = IF_COL$teal700,
            size = 4.6, fontface = "italic") +
-  annotate("text", x = 9.2, y = 2.9, label = "IS", colour = IF_COL$slate,
+  annotate("text", x = 8.4, y = 3.8, label = "IS", colour = IF_COL$slate,
            size = 4.6, fontface = "italic") +
   labs(x = expression(Y), y = expression(e)) +
   coord_cartesian(xlim = c(0, 10), ylim = c(0, 9)) +
@@ -104,10 +105,16 @@ $e$ = foreign currency per unit of domestic currency.
 ::::
 
 ::: notes
-This is a repaso, so do not re-derive it. Ten minutes on these three slides,
-then we start the new material.
+Ten minutes on these three slides. Do not re-derive the model - put it up as the
+machinery we are going to use, and make them operate it.
 
-Put the question up and wait for an answer before you say anything.
+Open with the claim, so they know why it is on the board:
+
+Whether a government can do anything at all with monetary policy depends on one
+choice: fixed or floating. That is what this model tells you, and it is the
+reason half of today's instruments exist.
+
+Then put the question up and wait for an answer before you say anything.
 
 *[wait]*
 
@@ -124,7 +131,7 @@ shifts IS - government spending, taxes, a tariff - moves the exchange rate and
 leaves output exactly where it was.
 :::
 
-## Repaso: what the model predicts {.center}
+## What the model predicts {.center}
 
 ::: ask
 Fill it in. A **fiscal expansion**, a **monetary expansion**, an **import
@@ -171,7 +178,7 @@ fixed rates it is exactly the other way round. The exchange rate regime decides
 which instrument your government actually has.
 :::
 
-## Repaso: the fixed-rate row, in one country {.center}
+## The fixed-rate row, in one country {.center}
 
 :::: columns
 ::: {.column width="45%"}
@@ -206,7 +213,7 @@ ggplot(bt, aes(q, p, colour = curve, linetype = curve)) +
   annotate("segment", x = 100, xend = 400, y = 0.0415, yend = 0.0415,
            colour = IF_COL$clay, linewidth = 1,
            arrow = grid::arrow(length = unit(.018, "npc"), ends = "both", type = "closed")) +
-  annotate("text", x = 250, y = 0.0445, label = "central bank buys 300",
+  annotate("text", x = 250, y = 0.0465, label = "central bank buys 300",
            colour = IF_COL$clay, size = 3.5, fontface = "bold") +
   scale_colour_manual(values = c(IF_COL$slate, IF_COL$clay,
                                  IF_COL$teal700, IF_COL$teal300)) +
