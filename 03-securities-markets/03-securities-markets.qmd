@@ -748,18 +748,6 @@ A 28-day T-bill costs **$996.73** and is worth **$1,000** at maturity.
 2.  What is the **annualised yield**?
 :::
 
-. . .
-
-:::: columns
-::: {.column width="50%"}
-$$i_{discount} = \frac{1000-996.73}{1000}\times\frac{360}{28} = 4.20\%$$
-:::
-
-::: {.column width="50%"}
-$$i_{yt} = \frac{1000-996.73}{996.73}\times\frac{365}{28} = 4.28\%$$
-:::
-::::
-
 ::: notes
 Calculators out. This is the kind of question that appears on the exam.
 
@@ -775,6 +763,9 @@ Discount rate, four point two zero percent. Yield, four point two eight.
 Eight basis points apart. And everybody in the room would describe both of those
 as "the rate on this bill". On a hundred million euros, eight basis points is
 eighty thousand a year. This is why the convention matters.
+
+**Worked.** Discount rate: (1000 - 996.73) / 1000 x 360/28 = 4.20%.
+Yield: (1000 - 996.73) / 996.73 x 365/28 = 4.28%.
 :::
 
 ## 1 · Problem 2.2
@@ -1246,21 +1237,6 @@ predict. Below par it flatters the bond. Above par it flatters it too.
     rate is **28%**. Which now?
 :::
 
-. . .
-
-:::: columns
-::: {.column width="50%"}
-**First case.** The comparison needs a tax rate to be meaningful. At a marginal
-rate of 25%, the corporate is worth $9\% \times 0.75 = 6.75\%$ after tax —
-exactly the municipal. Above 25% the municipal wins.
-:::
-
-::: {.column width="50%"}
-**Second case.** $5\% \times (1-0.28) = 3.60\%$ after tax, against **3.5%**
-tax-free. The corporate wins, narrowly.
-:::
-::::
-
 ::: notes
 Two parts. Read the first one.
 
@@ -1278,11 +1254,12 @@ something.
 
 If you put the tax rate at twenty-five percent, nine times zero point seven five
 is six seventy-five. Exactly the municipal. Above twenty-five percent, the
-municipal wins.
+municipal wins. **Worked:** 9% x 0.75 = 6.75%.
 
 Part two gives you the rate. Five percent, twenty-eight percent tax. Five times
 zero point seven two is three point six zero, against three point five tax free.
 The corporate wins — but only by ten basis points.
+**Worked:** 5% x (1 - 0.28) = 3.60%, against 3.5% tax-free.
 :::
 
 ## 2 · Problem 2.4
@@ -1293,20 +1270,6 @@ The corporate wins — but only by ten basis points.
 2.  What is the **price** of a two-year, 10% coupon bond paying **semi-annually**,
     face value $1,000, if the required return is **12%**?
 :::
-
-. . .
-
-:::: columns
-::: {.column width="46%"}
-$$r_c = \frac{109.50}{921.01} = 11.89\%$$
-:::
-
-::: {.column width="54%"}
-Four periods, coupon 50, discount rate 6% per period:
-
-$$P = \sum_{t=1}^{4}\frac{50}{1.06^t} + \frac{1000}{1.06^4} = 965.35$$
-:::
-::::
 
 ::: notes
 Part one is straightforward. The coupon is ten point nine five percent of a
@@ -1325,6 +1288,10 @@ Most people remember one of the three. Some remember two. Three changes.
 
 The answer is nine sixty-five thirty-five. The bond trades below par, and it
 should — the coupon is ten percent and the market wants twelve.
+
+**Worked.** Coupon yield: 109.50 / 921.01 = 11.89%. Price: four periods,
+coupon 50, 6% per period - sum of 50 / 1.06^t for t = 1 to 4, plus
+1000 / 1.06^4 = 965.35.
 :::
 
 # 3 · The stock market {.divider .center background-color="#06302F"}
@@ -1672,18 +1639,6 @@ You have watched this happen — in 2000, and again in 2021 and 2022.
     what is the price?
 :::
 
-. . .
-
-:::: columns
-::: {.column width="50%"}
-$$P_0 = \frac{0.16 + 60}{1.12} = 53.71$$
-:::
-
-::: {.column width="50%"}
-$$P = 16 \times 1.13 = 18.08$$
-:::
-::::
-
 ::: notes
 Two parts, one line each. But they are two different methods, and that is the
 point.
@@ -1706,6 +1661,8 @@ companies correctly, and you apply their multiple.
 
 That argument is most of what equity analysts do for a living. Notice that the
 first needs you to forecast, and the second needs the market to be right.
+
+**Worked.** (0.16 + 60) / 1.12 = 53.71. And 16 x 1.13 = 18.08.
 :::
 
 ## 3 · Problem 2.6
@@ -1714,10 +1671,6 @@ first needs you to forecast, and the second needs the market to be right.
 The DJIA was **10,000** in 2010 and **20,000** in 2017. What was the annual
 **geometric growth rate**?
 :::
-
-. . .
-
-$$g = \left(\frac{20000}{10000}\right)^{1/7} - 1 = 2^{1/7} - 1 = 10.41\%$$
 
 ::: notes
 Ten thousand in 2010, twenty thousand in 2017. What is the annual growth rate?
@@ -1732,6 +1685,8 @@ So it is two to the power of one seventh, minus one. Ten point four one percent.
 Notice the shape: the index doubled in seven years at about ten percent a year.
 That is a useful number to carry around. Roughly seven years to double at ten
 percent.
+
+**Worked.** g = (20000/10000)^(1/7) - 1 = 2^(1/7) - 1 = 10.41%.
 :::
 
 ## Next session {.center}
@@ -1902,19 +1857,15 @@ A discount point is 1% of the loan paid up front: on a $200,000 loan, 1 point
 costs $2,000, half a point $1,000, a quarter point $500.
 :::
 
-. . .
-
-::: keyidea
-Two points on $100,000 is $2,000 today against 50 basis points saved every month
-for thirty years. Compute both monthly payments with the annuity formula, then
-ask how long it takes the saving to repay the $2,000. **The answer depends
-entirely on how long you stay in the house.**
-:::
-
 ::: notes
 This is the one problem in the session with a genuinely conditional answer.
 If they move in four years the points are a bad deal; if they hold to maturity
 they are a good one. Getting them to state the break-even horizon is the goal.
+
+**Worked.** Two points on $100,000 is $2,000 today against 50 basis points saved
+every month for thirty years. Compute both monthly payments with the annuity
+formula, then ask how long it takes the saving to repay the $2,000. The answer
+depends entirely on how long you stay in the house.
 :::
 # 5 · The foreign exchange market {.divider .center background-color="#06302F"}
 ## The biggest market nobody sees {.hook background-color="#FAF7F2"}
@@ -2147,11 +2098,9 @@ An index option contract has a multiplier of **100**, so one contract is worth
 $100 \times 1000 = \$100{,}000$.
 :::
 
-. . .
-
-::: keyidea
+::: notes
 Compare with 2.8. The option costs money up front and leaves a gap down to 950
-uncovered — but at 1,100 you keep the gain. **That is what the premium bought.**
+uncovered — but at 1,100 you keep the gain. That is what the premium bought.
 :::
 # 7 · Reading discussion {.divider .center background-color="#06302F"}
 ## Does a green label change the price? {.hook background-color="#FAF7F2"}
