@@ -80,27 +80,13 @@ The LM curve comes out **vertical** in $(Y, e)$ space. **Why?**
 :::
 
 ::: {.column width="48%"}
-```{r}
-#| fig-width: 5.6
-#| fig-height: 4.2
-yy <- seq(0, 10, length.out = 100)
-ggplot() +
-  geom_line(data = data.frame(y = yy, e = 8.4 - .62 * yy),
-            aes(y, e), colour = IF_COL$slate, linewidth = 1.1) +
-  annotate("segment", x = 5.6, xend = 5.6, y = 0, yend = 9,
-           colour = IF_COL$teal700, linewidth = 1.1) +
-  annotate("segment", x = 0, xend = 5.6, y = 4.93, yend = 4.93,
-           colour = IF_COL$muted, linetype = "22", linewidth = .4) +
-  annotate("text", x = 6.1, y = 8.6, label = "LM", colour = IF_COL$teal700,
-           size = 4.6, fontface = "italic") +
-  annotate("text", x = 8.4, y = 3.8, label = "IS", colour = IF_COL$slate,
-           size = 4.6, fontface = "italic") +
-  labs(x = expression(Y), y = expression(e)) +
-  coord_cartesian(xlim = c(0, 10), ylim = c(0, 9)) +
-  theme_schematic()
-```
+::: {.smaller}
+Axes: $Y$ horizontal, $e$ vertical, where $e$ = foreign currency per unit of
+domestic currency.
+:::
 
-$e$ = foreign currency per unit of domestic currency.
+::: {style="height: 400px;"}
+:::
 :::
 ::::
 
@@ -116,7 +102,7 @@ reason half of today's instruments exist.
 
 Then put the question up and wait for an answer before you say anything.
 
-*[wait]*
+*[wait, then press C and draw IS and LM in the empty half of the slide]*
 
 What you are listening for: the interest rate is fixed at the world rate. Look
 at the LM equation - if $i^{*}$ is given and $M/P$ is given, then there is only
