@@ -974,9 +974,9 @@ at the centre of everything written about structured credit after 2008.
 ::::
 
 ::: ask
-The investment-grade boundary lies between Baa3 and Ba1. Ratings are ordinal
-and credit quality is continuous, so why should **one notch** produce a
-discontinuity in price?
+A bond is downgraded just one step, from **BBB− to BB+**. The change in credit risk may be small. But BB+ is no longer investment grade.
+
+Why might this small downgrade cause a large fall in the bond's price?
 :::
 
 ::: notes
@@ -989,7 +989,10 @@ company overnight. So why should one notch produce a jump in the price?
 
 *[wait]*
 
-Because of what I just said. The mandates. A pension fund that is prohibited
+Some institutional investors can only hold investment-grade bonds → they sell → price falls.
+The mandates. 
+
+A pension fund that is prohibited
 from holding speculative grade has to sell, whatever it thinks about the credit.
 Everybody in that position sells at the same time, and there is no natural buyer
 on the other side.
@@ -999,6 +1002,21 @@ knowing.
 :::
 
 ## 2 · Rates by credit quality
+
+Credit ratings summarize differences in **credit risk**.
+
+If investors think a bond is more likely to default, they will only hold it if
+it offers a **higher yield**.
+
+\[
+\text{Higher credit risk}
+\quad\Rightarrow\quad
+\text{Lower bond price}
+\quad\Rightarrow\quad
+\text{Higher yield}
+\]
+
+So how large is this difference in practice?
 
 ```{r}
 #| fig-width: 12
@@ -1023,80 +1041,142 @@ if (!length(series)) {
     scale_colour_manual(values = unname(unlist(
       IF_COL[c("slate", "clay", "teal700")]))) +
     labs(x = NULL, y = "Percent",
-         title = "The credit spread is the distance between these lines",
+         title = "More credit risk means a higher required yield",
          caption = "Shaded: NBER recessions. Source: Moody's and the Treasury via FRED.") +
     theme_if()
 }
 ```
 
 ::: ask
-The spread is widest precisely when firms most need external finance. Identify
-the two distinct mechanisms behind this, and explain why their coincidence
-makes credit supply **procyclical**.
+Why does the gap between corporate and Treasury yields become much larger
+during recessions?
 :::
 
 ::: notes
-Three lines. Aaa corporates at the top of the quality range, Baa lower down, and
-the twenty-year Treasury.
+We have just seen that ratings summarize credit quality.
 
-The distance between the Baa line and the Treasury line is the credit spread.
-That is what you are paid for taking corporate risk instead of government risk.
+Now let's see what that means for the interest rate a borrower actually pays.
+
+If I lend to the US government, the probability of not being repaid is very low.
+
+If I lend to a company, I take additional credit risk. And I am not going to
+take that additional risk for free. I want a higher return.
+
+That difference is the **credit spread**.
+
+*[point to lines]*
+
+Aaa firms are considered very safe, so their yields are relatively close to
+Treasuries.
+
+Baa firms are riskier, so investors demand a higher yield.
+
+So far, this is exactly what we would expect from the ratings we just discussed.
+
+But now look at what happens during recessions.
 
 *[point at 2008, then 2020]*
 
-Look at what it does in a crisis. It goes from about two percentage points to
-over six.
+The gap becomes much larger.
 
-*[ask]* Now think about when a company most needs to raise money. Is it in a
-boom, or in a downturn?
+Why?
 
-Exactly. The spread is widest precisely when firms most need to borrow.
+Two things happen at the same time.
 
-Two separate things are happening at once. The probability of default genuinely
-has gone up. And investors want less risk than they did last month. Both push
-the same way, at the same time.
+First, firms genuinely become riskier: profits fall and the probability of
+default increases.
 
-That is what we mean by credit being procyclical. Finance is hardest to get
-exactly when it is most needed — and that is a policy problem, not a quirk of
-the market.
+Second, investors become less willing to hold risky assets, so they demand
+more compensation for taking risk.
+
+Both effects increase credit spreads.
+
+And notice the timing: borrowing becomes most expensive precisely when firms
+are struggling and may need external finance the most.
+
+This is one sense in which credit conditions are **procyclical**: they are
+easier in good times and tighter in bad times.
 :::
+
 
 ## 2 · The price of a bond
 
-The price is the present value of the contractual payments, discounted at the
-rate the market currently requires on claims of comparable risk and maturity:
+A bond is worth today the **present value of the payments it promises in the future**.
 
-$$P = \frac{C}{(1+r)} + \frac{C}{(1+r)^2} + \dots + \frac{C}{(1+r)^n} + \frac{F}{(1+r)^n}$$
+For a bond paying coupon $C$ each year and face value $F$ at maturity:
+
+$$
+P =
+\frac{C}{1+r}
++ \frac{C}{(1+r)^2}
++ \dots
++ \frac{C+F}{(1+r)^n}
+$$
+
+where $r$ is the return investors currently require for a bond with similar
+**risk and maturity**.
 
 . . .
 
 ::: keyidea
-Price and yield are **inversely related**, necessarily. The payments $C$ and
-$F$ are fixed by the indenture, so a higher required return can only be
-delivered by a lower price.
+When the required yield rises, the bond price falls:
+
+$$
+r \uparrow \quad \Longrightarrow \quad P \downarrow
+$$
+
+The bond's promised payments have not changed. What changes is the **price
+investors are willing to pay for them today**.
 :::
 
 ::: notes
-Let us build this rather than just look at it.
+We know what a bond promises: coupons over time and the face value at maturity.
 
-Start with the simplest bond you can imagine. One year, one payment at the end.
-What is it worth today? The payment, discounted one year. Everybody is fine with
-that.
+Now we need to answer a different question:
 
-Now make it two years. Two payments, discounted one and two years.
+*[ask]* How much would you pay **today** for those future payments?
 
-Keep going and you have the expression on the slide. The only new thing is the
-very last period, where you get the final coupon *and* the face value back.
+Suppose a bond will pay me 100 euros one year from now.
+
+I would not normally pay 100 euros for it today. Why?
+
+Because I could invest my money somewhere else and earn a return.
+
+So I need to discount that future payment.
+
+For a bond, we do exactly the same thing with every payment.
+
+Each coupon is discounted back to today, and in the final year we also receive
+the face value.
+
+Add all those present values together, and we have the price of the bond.
 
 *[pause]*
 
-*[ask]* Now. The coupon is fixed in the contract. The face value is fixed in the
-contract. If I demand a higher return than the last person who bought this bond,
-what has to happen?
+Now look at $r$.
 
-The price has to fall. It is the only variable left. Price and yield move in
-opposite directions, and not as a rule of thumb — there is nothing else that can
-move.
+This is the return investors require to hold this bond.
+
+Remember what we just saw with credit risk: if investors perceive more risk,
+they require a higher return.
+
+So what happens to the price when $r$ increases?
+
+*[ask]* Look at the formula. If the denominators become larger, what happens
+to the present value?
+
+It falls.
+
+So:
+
+**yield up, price down.**
+
+And importantly, nothing about the bond's promised payments had to change.
+
+The coupons are the same. The face value is the same.
+
+Investors are simply willing to pay **less today** for those same future
+payments because they now require a higher return.
 :::
 
 ## 2 · Two ways of quoting the return
