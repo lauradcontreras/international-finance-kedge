@@ -383,7 +383,7 @@ of these directly. You reach this market through a money market fund.
 *[pause]*
 
 Now the connection. Short maturity is *why* the low default risk is believable.
-And low default risk plus standardisation is *why* there is a liquid secondary
+And low default risk plus standardisation (unified legal framework) is *why* there is a liquid secondary
 market. Pull one property out and the others go with it.
 
 And notice what nobody is doing here. Nobody buys commercial paper because they
@@ -786,44 +786,37 @@ part of what they asked for, and bidder two gets nothing at all.
 
 ## Athens, March 2012 {.hook background-color="#FAF7F2"}
 
-Greece restructured approximately EUR 200 billion of sovereign bonds. Private
-holders accepted a reduction of roughly 53% of face value — the largest
-sovereign restructuring on record. The same bonds had carried investment-grade
-ratings a few years earlier.
+In March 2012, Greece restructured around **€200 billion of government debt**. 
+Private investors accepted losses of roughly **53% of face value**. Only a few 
+years earlier, Greek government bonds had been rated investment grade.
 
 ::: incremental
--   A bond is a **contractual claim**: specified payments on specified dates,
-    enforceable under a governing law.
--   Enforceability is not payment. **Credit risk** is the probability that the
-    contract is not performed, and it is priced.
--   For sovereign debt the issuer can also alter the contract: Greece inserted
-    **collective action clauses** retroactively, binding dissenting holders to
-    the majority. This has no corporate equivalent.
+- A bond is a **contract**: the issuer promises specific payments on specific dates.
+- But promised payments are **not guaranteed**. The issuer may be unable or unwilling to pay.
+- This possibility is **credit risk** — and investors require compensation for bearing it.
+- Sovereign bonds have an additional complication: enforcing claims against a **government** can be particularly difficult.
 :::
 
 ::: notes
-March 2012. Greece restructures about two hundred billion euros of government
-bonds. Private holders take a cut of roughly fifty-three percent of face value.
-It is the largest sovereign restructuring there has ever been.
+March 2012. Greece restructures around two hundred billion euros of government debt. Private investors accept losses of roughly fifty-three percent of the face value of their bonds.
 
-And a few years before that, those same bonds were rated investment grade.
+And only a few years earlier, Greek government bonds had been considered investment grade.
 
 *[pause]*
 
-Everything I am about to teach you for the next ten slides assumes a bond is a
-contract. Specified payments, specified dates, enforceable in court. That is
-true. It is just not the same thing as being paid.
+This gives us the first important idea about bonds.
+A bond is a contract. When you buy one, the issuer promises to make certain payments at certain dates.
+But a promise is not a guarantee.
+If the issuer gets into financial trouble, you may not receive everything that was originally promised.
+That possibility is what we call **credit risk**.
 
-And with a government there is a further problem. Greece inserted collective
-action clauses into bonds that had already been issued. Retroactively. Which
-meant that if enough holders agreed to the deal, the ones who refused were bound
-anyway.
+And investors will care about that risk when deciding how much they are willing to pay for a bond.
 
-*[ask]* Think about what that means. The borrower rewrote the contract after you
-signed it. Can a company do that?
+*[ask]* So if two bonds promise exactly the same €100 payment one year from now, but one issuer is much more likely to default, would you pay the same price for both?
 
-No. This is a risk that exists only in sovereign debt, and it is why we price it
-separately.
+Probably not.
+
+And that difference is going to be central to how we understand bond prices and yields.
 :::
 
 ## 2 · The vocabulary
