@@ -152,11 +152,7 @@ Press **`C`** and draw the IS and LM shift for each row before writing the sign.
 :::
 
 ::: notes
-Do not fill this in for them. Draw it.
-
-*[press C for the chalkboard]*
-
-Take the rows one at a time. For each one ask: which curve moves, and in which
+Which curve moves, and in which
 direction? Then read the answer off the diagram.
 
 The answers, so you have them:
@@ -170,8 +166,6 @@ powerless - the central bank has to sell reserves to hold the rate, which pulls
 the money supply straight back in. Import restriction: Y rises.
 
 *[pause]*
-
-The sentence to land, and ask them to write it down:
 
 Under floating rates monetary policy works and fiscal policy does not. Under
 fixed rates it is exactly the other way round. The exchange rate regime decides
@@ -206,10 +200,7 @@ Axes: millions of baht per month horizontal, dollars per baht vertical.
 ::::
 
 ::: notes
-They have not studied this crisis, so introduce it rather than test it. Two or
-three minutes, and the purpose is to make the fixed-rate column concrete.
-
-Set it up in a sentence: Thailand promised to keep the baht at four cents. The
+Thailand promised to keep the baht at four cents. The
 market thought it was worth two. The promise costs money to keep.
 
 *[press C and draw it: supply and demand for baht, the two horizontal lines at
@@ -220,14 +211,12 @@ pile of dollars.
 
 *[reveal the bullets one at a time]*
 
-On the second bullet, connect it back explicitly:
 
 This is the row we just filled in. Every time the central bank buys baht it is
 taking baht out of circulation - the money supply contracts whether it wants
 that or not. That is what "monetary policy is powerless under a fixed rate"
 looks like from the inside.
 
-Then the bridge into today, and do not skip it:
 
 Notice what actually broke. Thai banks had borrowed in dollars, short, and lent
 in baht, long. Halve the baht and the debts double while the assets do not move.
@@ -243,15 +232,15 @@ market transfers funds from surplus units to deficit units.
 
 :::: columns
 ::: {.column width="50%"}
-1. **Money markets** — short maturity, high liquidity
-2. **Bond market** — long-term debt claims
-3. **Stock market** — residual ownership claims
+1. **Money markets** — short-term debt instruments
+2. **Bond markets** — long-term debt instruments
+3. **Stock markets** — ownership claims in firms
 :::
 
 ::: {.column width="50%"}
-4. **Mortgage markets** — debt secured on real property
-5. **Foreign exchange** — claims in different currencies
-6. **Derivatives** — claims contingent on other claims
+4. **Mortgage markets** — loans secured by real estate
+5. **Foreign exchange markets** — trading of currencies
+6. **Derivatives markets** — contracts whose value depends on an underlying asset
 :::
 ::::
 
@@ -279,54 +268,39 @@ are also the exam, so if you find yourself memorising definitions, stop, and go
 back to those two.
 :::
 
-## 9 August 2007: a funding market stops {.hook background-color="#FAF7F2"}
+## 9 August 2007: a funding market stops
 
-BNP Paribas suspended redemptions on three funds, citing an evaporation of
-liquidity that made it impossible to value the assets they held. Those assets
-were **asset-backed commercial paper**, and the market for them had ceased to
-refinance itself.
+BNP Paribas suspended redemptions from three investment funds after liquidity disappeared from parts of the market for mortgage-related securities.
 
 ::: incremental
--   This was not an equity market event. It was a **money market** — the
-    shortest, safest, largest segment of the system — that stopped rolling over.
--   The underlying practice is **maturity transformation**: funding long-dated
-    assets with short-dated liabilities. It is profitable precisely because it
-    is risky, and the risk is **rollover risk**.
--   The same mechanism propagated through Northern Rock, Bear Stearns and
-    Lehman Brothers within thirteen months.
+- Financial institutions often **borrow short-term to finance longer-term assets**. This is known as **maturity transformation**.
+- When short-term debt matures, institutions must **repay it or obtain new funding**. Much of this short-term funding is obtained in **money markets**.
+- This creates **rollover risk**: the risk that new funding is unavailable when existing debt matures.
+- In 2007, access to short-term funding became increasingly difficult. Similar funding pressures later affected **Northern Rock, Bear Stearns, and Lehman Brothers**.
 :::
 
 . . .
 
 ::: ask
-Market microstructure is usually treated as detail. Under what conditions does
-it become the **binding constraint** on the whole financial system?
+Why can a disruption in short-term funding threaten the stability of a financial institution?*
+
 :::
-
 ::: notes
-On the ninth of August 2007, BNP Paribas told investors in three of its funds
-that they could not have their money back. Not that the funds had lost value —
-that the bank could not say what they were worth.
+On 9 August 2007, BNP Paribas suspended withdrawals from three investment funds.
 
-The assets were asset-backed commercial paper. Very short-term corporate
-borrowing. And the market for it had simply stopped.
+The funds held securities linked to US mortgages. Trading in these securities had largely stopped, making their market value difficult to determine.
 
-*[pause]*
+But why does this matter for the **money market**?
 
-Notice what this was not. It was not a stock market crash. It was the shortest,
-safest, most boring corner of the system — and it was the one that seized.
+Many financial institutions held long-term assets like these while relying on **short-term borrowing** to finance them.
 
-Here is why it seized. Those vehicles were borrowing for thirty days and lending
-for thirty years. We call that maturity transformation, and it is profitable
-exactly because it is dangerous. Every thirty days you have to find someone
-willing to lend to you again. That is rollover risk. One month nobody was
-willing.
+When short-term debt matured, they had to borrow again. This is **maturity transformation**, and it creates **rollover risk**.
 
-Thirteen months later the same mechanism had taken down Northern Rock, Bear
-Stearns, and Lehman Brothers.
+In 2007, lenders became increasingly worried about the value of mortgage-related assets and stopped providing short-term funding.
 
-So when I say market plumbing, I do not mean detail. I mean the thing that
-decides whether the rest of the system works on a given morning.
+So a problem that began with mortgage-related assets became a **money-market crisis**: institutions could no longer rely on borrowing again when their debt matured.
+
+This same vulnerability later played an important role in the crises of Northern Rock, Bear Stearns, and Lehman Brothers.
 :::
 
 # 1 · Money markets {.divider .center background-color="#06302F"}
