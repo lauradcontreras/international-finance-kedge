@@ -1,0 +1,1555 @@
+---
+title: "International Finance"
+subtitle: "Session 4 — Securities Markets: Stocks, Mortgages, Currencies and Derivatives"
+author: "Laura Contreras-Portela"
+institute: "KEDGE Business School"
+date: today
+date-format: "MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_theme/theme.scss]
+    width: 1600
+    height: 900
+    title-slide-attributes:
+      data-background-color: "#FAF7F2"
+    slide-number: c/t
+    show-slide-number: all
+    progress: true
+    history: true
+    hash: true
+    controls: true
+    navigation-mode: linear      # right arrow always goes to the next slide
+    preview-links: auto
+    highlight-style: github
+    code-line-numbers: true
+    html-math-method: katex
+    chalkboard:                     # C = draw on the slide, B = blank board
+      buttons: true
+      theme: whiteboard
+      chalk-effect: 0
+    footer: "International Finance · Session 4 · KEDGE"
+    embed-resources: false          # true -> one portable file, no wifi needed
+  beamer:                           # same source -> a real LaTeX PDF handout
+    aspectratio: 169
+    theme: metropolis
+    incremental: false
+    header-includes: |
+      \definecolor{ifteal}{HTML}{0E5250}
+      \definecolor{ifclay}{HTML}{B4573C}
+      \setbeamercolor{frametitle}{bg=ifteal}
+      \setbeamercolor{progress bar}{fg=ifteal}
+      \setbeamercolor{title separator}{fg=ifteal}
+      \setbeamercolor{structure}{fg=ifteal}
+      \setbeamercolor{alerted text}{fg=ifclay}
+execute:
+  echo: false
+  warning: false
+  message: false
+  fig-align: center
+  fig-width: 8
+  fig-height: 4.2
+knitr:
+  opts_chunk:
+    dev: png
+    dpi: 300
+---
+
+```{r setup}
+source("../_R/setup.R")
+```
+
+## Two bonds, one required return {.hook background-color="#FAF7F2"}
+
+::: ask
+1.  What is the **coupon yield** on a bond with face value $1,000, current
+    price **$1,043.70** and a coupon rate of **8.25%**?
+2.  What is the **price** of a three-year, **6%** coupon bond paying
+    **semi-annually**, face value $1,000, if the required return is **8%**?
+3.  One of these trades **above** par and the other **below**. Which, and why?
+:::
+
+::: notes
+Same machinery as the problem we closed with last session, new numbers, and a
+third part that is the whole point. Ten minutes.
+
+Give them five minutes in pairs before anything is said out loud. Then take the
+parts in order.
+
+Part one is the easy one. The coupon is eight point two five percent of a
+thousand, so eighty-two fifty a year. Divide by what you actually paid, which is
+one thousand and forty-three seventy.
+
+*[ask]* Before we divide - will the coupon yield be above or below eight point
+two five percent?
+
+Below, because the denominator is bigger than the face value. Seven point nine
+zero percent.
+
+Part two. Three years, six percent, paid semi-annually, market wants eight.
+
+*[ask]* Three changes to the formula. What are they?
+
+Halve the coupon - thirty, not sixty. Halve the rate - four percent per period.
+Double the periods - six, not three. All three, every time.
+
+Nine forty-seven fifty-eight.
+
+*[pause]*
+
+Now part three, and this is the one to spend time on.
+
+*[ask]* The first bond costs more than a thousand. The second costs less. What
+is different about them?
+
+The first pays a coupon of eight point two five when the market is content with
+less, so people bid the price up above face value until the return falls into
+line. The second pays six when the market wants eight, so the price has to fall
+below face value to make up the difference.
+
+Write this down, because it is a one-line exam answer: **the price moves until
+the yield matches what the market requires.** Premium means the coupon is
+generous; discount means the coupon is mean. Nothing else is going on.
+
+**Worked.** Coupon yield: 82.50 / 1043.70 = 7.90%. Price: six periods, coupon
+30, 4% per period - 30 x [1 - 1.04^-6]/0.04 + 1000 / 1.04^6 = 157.26 + 790.31 =
+947.58. First trades at a premium (coupon 8.25% > required), second at a
+discount (coupon 6% < required 8%).
+:::
+
+## Where we are {.center}
+
+One chapter, two sessions. Last session established the **money market** and the
+**bond market**: the instruments, the rate conventions, and how a price and a
+yield are two statements of the same thing.
+
+:::: columns
+::: {.column width="50%"}
+Today, in order:
+
+3. **Stock markets** — ownership claims in firms
+4. **Mortgage markets** — debt secured by property
+:::
+
+::: {.column width="50%"}
+5. **Foreign exchange** — currencies as bank deposits
+6. **Derivatives** — claims whose value derives from another claim
+7. **Reading discussion** — Sartzetakis (2021)
+:::
+::::
+
+::: keyidea
+The same two questions apply to every market we open today: **what contractual
+claim does the instrument represent**, and **what determines its price**.
+:::
+
+::: notes
+This is a long session, so give them the shape of it before you start.
+
+Last time: money markets and bonds. Short-term paper, then long-term debt, and
+in both cases a price and a yield that are the same statement said two ways.
+
+Today: everything else in the chapter. Stocks, mortgages, currencies,
+derivatives, and then the green bonds paper.
+
+Keep putting the same two questions to them on every market. What is the claim?
+What determines the price? Six markets, two questions. That is the chapter and
+that is the exam.
+
+**Timing.** If you are running behind, the slides marked cuttable in the notes
+go first, in this order: common/preferred/foreign, the mortgage types table, the
+appreciation slide, and long/short in derivatives. Do not cut the Gordon growth
+slides, the payoff diagram, or the reading discussion.
+:::
+
+# 3 · The stock market {.divider .center background-color="#06302F"}
+
+## The residual claim {.hook background-color="#FAF7F2"}
+
+A bondholder holds a claim to a fixed sum. A shareholder holds a claim to
+whatever remains once all prior claims are satisfied — a quantity bounded below
+by zero and unbounded above.
+
+::: incremental
+-   Equity returns arise from **dividends** and **capital appreciation**.
+-   Shareholders are **residual claimants** on the firm's assets and cash flows,
+    and hold **control rights** through the vote.
+-   Ranking last in liquidation is what gives equity its asymmetric payoff, and
+    what makes the **agency relationship** between managers and shareholders a
+    central problem of corporate finance.
+:::
+
+::: notes
+Here is the difference between what we have been doing and what comes next.
+
+A bondholder is owed a number. It is written down. If the company can pay, they
+get exactly that and not a cent more.
+
+A shareholder owns what is left after everyone else has been paid. Which can be
+a great deal, or can be nothing at all.
+
+*[ask]* Imagine a company about to be liquidated. Which would you rather hold?
+
+*[ask]* Now a company about to triple in size. Which now?
+
+That is the whole thing. Everything that follows — why shareholders vote, why
+dividends are discretionary, why we value equity by discounting dividends —
+comes from being last in the queue.
+
+And one more consequence, which you will meet properly in corporate finance:
+because shareholders own the upside but are protected on the downside by limited
+liability, their interests and the managers' interests are not automatically the
+same. That problem has a name. It is the agency problem.
+:::
+
+## 3 · Common, preferred, and foreign
+
+:::: columns
+::: {.column width="50%"}
+**Common stock** — the right to vote for directors and on certain issues, and
+to receive dividends if the board declares them.
+
+**Preferred stock** — usually **no vote**, but a **fixed dividend** paid before
+common. Closer to a bond than most students expect.
+:::
+
+::: {.column width="50%"}
+**Foreign stocks** are useful for diversification but awkward to buy if they are
+not listed locally.
+
+**American depository receipts (ADRs)** solve it: a bank buys the foreign
+shares and issues receipts against them that trade on U.S. exchanges.
+:::
+::::
+
+::: keyidea
+An **index** is a summary statistic for a defined set of securities, not an
+asset. Its **weighting scheme** determines what the statistic measures — and
+therefore what a given movement in it means.
+:::
+
+::: notes
+Common stock is what you picture: a vote, and a dividend if the board declares
+one.
+
+Preferred stock is the interesting one. Usually no vote. Fixed dividend. Paid
+before common shareholders.
+
+*[ask]* Fixed payment, paid ahead of others, no control. Is that equity, or is
+that debt?
+
+The honest answer is that it sits between the two, and that is exactly why
+accountants and rating agencies treat it inconsistently. If you see it in a
+balance sheet, look at how it has been classified — it is not always obvious.
+
+On the right, ADRs. If you want to hold a Brazilian company but you can only
+trade in New York, a bank buys the Brazilian shares and issues receipts against
+them that trade in dollars on a US exchange.
+
+*[pause]*
+
+If that sounds familiar, it should. It is the same engineering as the eurodollar
+deposit from an hour ago: take a claim, repackage it so it settles in the
+currency and the legal system the buyer is comfortable with.
+
+Last line. An index is not an investment. It is a summary statistic. And how you
+weight it decides what it is a summary *of* — which is the next slide.
+:::
+
+## 3 · Where the trading happens
+
+:::: columns
+::: {.column width="50%"}
+**Organised exchanges**
+
+-   NYSE trades roughly 4 to 7 billion shares a day.
+-   "Organised" once meant a physical floor; electronic networks have largely
+    replaced that idea.
+-   **Listing requirements** exclude small firms.
+-   Auction market with floor specialists; around 25% of trades filled directly
+    by the specialist.
+:::
+
+::: {.column width="50%"}
+**Over the counter**
+
+-   NASDAQ is the obvious example, with roughly 3,000 securities listed.
+-   **Dealers** stand ready to make a market — without one, the equity would be
+    hard to trade at all.
+-   Multiple market makers post bid and ask prices for the same security.
+:::
+::::
+
+::: ask
+Dealers quote a **bid-ask spread** and profit from it. Competition constrains
+that spread — but a spread of zero would not be sustainable either. What costs
+must the spread compensate the dealer for, and what happens to liquidity when
+those costs rise?
+:::
+
+::: notes
+Two ways to organise a market.
+
+Exchanges on the left — one central place where orders meet. The New York Stock
+Exchange still uses the word organised, but the trading floor you have seen in
+films is mostly theatre now. It is computers.
+
+Over the counter on the right. No central place. Dealers hold inventory and
+quote you a price to buy and a price to sell.
+
+*[ask]* The dealer buys from you at the bid and sells to someone else at the
+ask, and keeps the difference. So why does competition not push that spread to
+zero?
+
+*[wait]*
+
+Two reasons, and they are both real costs.
+
+First, the dealer is holding inventory. They bought your shares and now they are
+exposed until they sell them.
+
+Second — and this is the one worth thinking about — some of the people trading
+with the dealer know something the dealer does not. If you are selling to me
+because you know bad news is coming, I lose. I cannot tell who those people are,
+so I widen the spread against everyone.
+
+*[ask]* Now, in a crisis, when nobody knows what anything is worth. What happens
+to that second cost, and what happens to the spread?
+
+It widens. Which is the same lesson as this morning. Liquidity disappears
+exactly when you need it.
+:::
+
+## 3 · Price-weighted versus value-weighted
+
+The **DJIA** is a price-weighted average of 30 stocks. The **S&P 500** is a
+market-value-weighted index of 500.
+
+```{r}
+#| fig-width: 12
+#| fig-height: 3.9
+dj <- fred("DJIA")
+sp <- fred("SP500")
+if (is.null(dj)) {
+  no_data_note("DJIA")
+} else {
+  dj <- dj[dj$date >= as.Date("2015-01-01"), ]
+  dj$index <- 100 * dj$value / dj$value[1]
+  dj$series <- "Dow Jones Industrial Average"
+  d <- dj[, c("date", "index", "series")]
+  if (!is.null(sp)) {
+    sp <- sp[sp$date >= as.Date("2015-01-01"), ]
+    sp$index <- 100 * sp$value / sp$value[1]
+    sp$series <- "S&P 500"
+    d <- rbind(d, sp[, c("date", "index", "series")])
+  }
+  ggplot(d, aes(date, index, colour = series)) +
+    geom_line(linewidth = .5) +
+    scale_colour_manual(values = c(IF_COL$slate, IF_COL$teal500)) +
+    labs(x = NULL, y = "Index, first observation = 100",
+         title = "Thirty stocks by price, or five hundred by market value",
+         caption = "Source: S&P Dow Jones Indices via FRED.") +
+    theme_if()
+}
+```
+
+::: ask
+Under price weighting, a USD 400 constituent carries roughly thirteen times the
+weight of a USD 30 constituent, irrespective of the firms' market values. State
+the implication for a **stock split**, and hence whether the index measures
+anything economically meaningful.
+:::
+
+::: notes
+Two indices, two completely different ideas.
+
+The S&P 500 weights by market value. If a company is worth two percent of the
+market, it is two percent of the index. That is what you would own if you bought
+the whole market.
+
+The Dow weights by *price per share*. Not by size. By the number printed on the
+share.
+
+*[ask]* So a four-hundred-dollar share and a thirty-dollar share. Which one
+moves the Dow more?
+
+The four-hundred-dollar one — about thirteen times more — regardless of whether
+the companies are the same size or one is a hundred times bigger than the other.
+
+*[pause]*
+
+Now here is the part that should bother you. A company does a two-for-one stock
+split. Same company, same value, twice as many shares at half the price.
+
+*[ask]* What just happened to its weight in the Dow?
+
+It halved. Nothing happened to the company at all.
+
+*[ask]* So why does every news programme still quote the Dow?
+
+Because it is from 1896 and people recognise the number. That is a reason from
+journalism, not from finance.
+:::
+
+## 3 · What a share is worth
+
+The **Gordon growth model** — a special case of the dividend discount model, in
+which dividends grow at a constant rate $g$ in perpetuity and $k_e > g$:
+
+$$P = \sum_{t=1}^{\infty}\frac{Div_t}{(1+k_e)^t} = \frac{Div_1}{k_e - g}$$
+
+:::: columns
+::: {.column width="50%"}
+**Geometric growth**, for backing out $g$ from two observations:
+
+$$g = \left(\frac{\text{final}}{\text{initial}}\right)^{1/n} - 1$$
+:::
+
+::: {.column width="50%"}
+**Price-to-earnings**, a relative valuation measure:
+
+$$PE = \frac{\text{Price}}{\text{Earnings}}$$
+:::
+::::
+
+::: keyidea
+The denominator $k_e - g$ governs everything. As $g \to k_e$ the valuation
+diverges, so near that boundary the price is **highly sensitive** to small
+revisions in either parameter. This is not a defect of the model but a property
+of perpetual growth — and it explains why estimates of high-growth firms
+disperse so widely, and why such valuations reprice violently on modest news.
+:::
+
+::: notes
+A share pays you dividends, forever. So its value is the present value of all of
+them. Write that down and you get the sum on the left.
+
+If the dividend grows at a constant rate g, that infinite sum collapses to the
+expression on the right. Next year's dividend, over the required return minus
+the growth rate. That is the Gordon growth model, and you have met growing
+perpetuities before in corporate finance.
+
+Two conditions, and they are not fine print. The growth rate has to be constant
+forever. And k has to be bigger than g.
+
+*[ask]* Why must k be bigger than g? What is wrong with a company that grows
+faster than the required return, forever?
+
+*[wait]*
+
+Eventually it is bigger than the entire economy. That is your sanity check — if
+you ever get g above k in the exam, you have made an arithmetic error, not
+discovered a fantastic company.
+
+Underneath: the PE ratio. Price over earnings. A market number on top, an
+accounting number on the bottom.
+
+*[ask]* A company has a PE of forty. Is it expensive, or is it expected to grow?
+
+Both answers are right, and you cannot tell which from the ratio. That is the
+limitation of every multiple.
+:::
+
+## 3 · The denominator does all the work
+
+```{r}
+#| fig-width: 12
+#| fig-height: 4.0
+div1 <- 2
+a <- data.frame(x = seq(.06, .24, length.out = 200))
+a$price <- div1 / (a$x - .05); a$panel <- "Varying the required return (g = 5%)"
+b <- data.frame(x = seq(.01, .19, length.out = 200))
+b$price <- div1 / (.20 - b$x); b$panel <- "Varying the growth rate (k = 20%)"
+d <- rbind(a, b)
+ggplot(d, aes(x, price)) +
+  geom_line(colour = IF_COL$clay, linewidth = .8) +
+  facet_wrap(~panel, scales = "free_x") +
+  scale_x_continuous(labels = function(x) paste0(round(x * 100), "%")) +
+  coord_cartesian(ylim = c(0, 250)) +
+  labs(x = NULL, y = "Stock price",
+       title = "Gordon growth, with the first dividend fixed at 2",
+       caption = "Both curves are the same asymptote seen from two directions.") +
+  theme_if() +
+  theme(strip.text = element_text(colour = IF_COL$teal700, face = "bold"))
+```
+
+::: notes
+Two panels, same model. On the left I vary the required return. On the right I
+vary the growth rate.
+
+Both go vertical. It is the same asymptote, seen from two directions — as g gets
+close to k, the denominator goes to zero and the price explodes.
+
+*[pause]*
+
+This is not a flaw in the model. It is what perpetual growth means. But look at
+what it implies.
+
+Near that edge, change your growth assumption by half a percentage point and the
+valuation changes enormously.
+
+*[ask]* So two analysts, same company, almost identical assumptions. How far
+apart can their target prices be?
+
+Very far. And that is why high-growth companies reprice so violently on news
+that sounds small. Nothing happened to this year's earnings. Something happened
+to the assumption in the denominator.
+
+You have watched this happen — in 2000, and again in 2021 and 2022.
+:::
+
+## 3 · Problem 2.5
+
+::: ask
+1.  A stock is expected to pay a dividend of **$0.16** and to be worth **$60**
+    in a year. At a **12%** discount rate, what is it worth now?
+2.  If the industry PE ratio is **16** and the firm earns **$1.13 per share**,
+    what is the price?
+:::
+
+::: notes
+Two parts, one line each. But they are two different methods, and that is the
+point.
+
+Part one. You expect a dividend of sixteen cents and a price of sixty in a year,
+and you discount at twelve percent. Sixty point one six over one point one two.
+Fifty-three seventy-one.
+
+Part two. The industry trades at sixteen times earnings, this firm earns a
+dollar thirteen. Sixteen times one thirteen. Eighteen zero eight.
+
+*[pause]*
+
+Part one is a discounted cash flow. You forecast, then you discount.
+
+Part two is relative valuation. You assume the market has priced similar
+companies correctly, and you apply their multiple.
+
+*[ask]* Which one do you trust more?
+
+That argument is most of what equity analysts do for a living. Notice that the
+first needs you to forecast, and the second needs the market to be right.
+
+**Worked.** (0.16 + 60) / 1.12 = 53.71. And 16 x 1.13 = 18.08.
+:::
+
+## 3 · Problem 2.6
+
+::: ask
+The DJIA was **10,000** in 2010 and **20,000** in 2017. What was the annual
+**geometric growth rate**?
+:::
+
+::: notes
+Ten thousand in 2010, twenty thousand in 2017. What is the annual growth rate?
+
+*[ask]* Careful. How many years is that?
+
+Seven, not eight. Count the gaps, not the dates — that is the most common error
+on this question.
+
+So it is two to the power of one seventh, minus one. Ten point four one percent.
+
+Notice the shape: the index doubled in seven years at about ten percent a year.
+That is a useful number to carry around. Roughly seven years to double at ten
+percent.
+
+**Worked.** g = (20000/10000)^(1/7) - 1 = 2^(1/7) - 1 = 10.41%.
+:::
+
+# 4 · Mortgage markets {.divider .center background-color="#06302F"}
+
+## The market that ate the world {.hook background-color="#FAF7F2"}
+
+By 2006 an American mortgage was no longer a loan a bank made and held. It was
+an input: pooled, tranched, rated, and sold on to a German Landesbank that had
+never seen Ohio.
+
+::: incremental
+-   A mortgage is a **long-term loan secured by real estate**.
+-   It is **amortised**: one fixed payment covers both interest and principal
+    every month, so the balance falls to zero at maturity.
+-   The security interest in the property is what makes the loan cheap. It is
+    also what links the credit market to the housing market.
+:::
+
+::: notes
+Set the scene before any definitions, because they already half know this story
+and it will carry the section.
+
+A mortgage is the most boring instrument in the chapter. A household borrows,
+the house is the collateral, they pay a fixed amount every month for thirty
+years. Nothing clever.
+
+What made it interesting was what the banks did with it afterwards. By two
+thousand and six, the bank that made the loan did not keep it. It sold it. It
+got pooled with hundreds of others, sliced up, given a rating, and ended up on
+the balance sheet of a regional bank in Germany that had never been to Ohio and
+could not have found it on a map.
+
+*[pause]*
+
+Two definitions before we go on. Secured, which means if you stop paying, they
+take the house - and that is why mortgage rates are lower than credit card
+rates. And amortised, which means each payment does two jobs: it pays the
+interest and it pays down some of the principal, so after thirty years you owe
+nothing.
+
+Hold on to the last line. The collateral is a house. So the credit market and
+the housing market are not two markets. They are one.
+:::
+
+## 4 · The types
+
+| Type | What it is |
+|:---|:---|
+| Conventional | Not guaranteed; usually needs private mortgage insurance and 5-20% down |
+| Insured | Guaranteed by a government agency; low or zero down payment |
+| Fixed-rate | The rate is fixed for the life of the mortgage |
+| Adjustable-rate (ARM) | Rate tied to another security, adjusted periodically within annual limits |
+| Graduated-payment (GPM) | Low initial payment rising each year; amortises in 30 years |
+| Growing-equity (GEM) | Payment rises each year; amortises in less than 30 years |
+| Second mortgage | Secured by a second lien; used for credit lines and home improvement |
+| Reverse annuity (RAM) | The lender pays the borrower monthly; due when the property is sold |
+
+::: ask
+Which of these transfer **interest rate risk** from the lender to the borrower,
+and which households tend to be sold those contracts?
+:::
+
+::: notes
+*[cuttable - if you are behind, show it for thirty seconds and move on]*
+
+Do not read this table out. It is a reference slide, and they have it.
+
+Point at two rows only.
+
+Fixed-rate. The lender is locked in for thirty years. If rates rise, the lender
+is stuck holding a loan that pays less than the market. The lender carries that
+risk.
+
+Adjustable-rate. The rate resets. If rates rise, the borrower's payment rises.
+The borrower carries that risk.
+
+*[ask]* So which of those two is cheaper on the day you sign, and why?
+
+The adjustable one, because the lender has handed the risk to you and is giving
+you a discount for taking it.
+
+*[ask]* Now the uncomfortable half of the question. Who gets sold the
+adjustable-rate contract with the low opening payment?
+
+The households least able to absorb a payment that doubles. That is not an
+accident of the product, it is how it was marketed, and it matters for what
+happened in 2007.
+:::
+
+## 4 · Securitisation, in four steps
+
+::: incremental
+1.  The **secondary mortgage market** was created by the federal government
+    after the Second World War, when it set up Fannie Mae. It grew quickly from
+    the mid-1980s.
+2.  Individual mortgages default unpredictably, so they are **pooled** —
+    hundreds at a time — on the argument that diversification tames the risk.
+3.  Rights to the pool's cash flows are sold as separate securities:
+    **pass-throughs**, or mortgage-backed securities.
+4.  The borrower's monthly payment passes through a trustee before reaching the
+    investors.
+:::
+
+. . .
+
+::: ask
+Step 2 is load-bearing. Diversification removes risk that is **independent**
+across loans. What becomes of a pool of American mortgages if house prices fall
+**everywhere at once**?
+:::
+
+::: notes
+This is the hinge of the whole session. Slow down here.
+
+Four steps, and reveal them one at a time.
+
+*[reveal 1]* The government built this market. Fannie Mae, after the war, to get
+mortgages flowing.
+
+*[reveal 2]* One mortgage is unpredictable - you cannot say whether this
+household defaults. But put three hundred together and the law of large numbers
+is supposed to do its work.
+
+*[reveal 3]* Then you sell claims on the pool. The pool is the asset, the
+securities are the claims.
+
+*[reveal 4]* The household pays its monthly instalment, it goes through a
+trustee, and it ends up with investors who have never met them.
+
+*[pause, then put up the question and wait]*
+
+*[wait - do not rescue them]*
+
+Here is what they have to see. Diversification only removes risk that is
+independent. If my neighbour defaulting tells you nothing about whether I
+default, pooling works beautifully.
+
+*[ask]* So - does my neighbour defaulting tell you nothing about me?
+
+It tells you a great deal, if the reason is that house prices across the country
+have fallen and we are both in negative equity. In that world the defaults
+arrive together.
+
+The correlation everyone had assumed was near zero turned out, in 2008, to be
+near one. Every tranche above the very bottom had been priced on the assumption
+it was near zero.
+
+Say the general lesson plainly, because it is examinable: a diversification
+argument is only as good as the independence assumption underneath it, and
+nobody checks that assumption while it is working.
+:::
+
+## 4 · Mortgage rates track long Treasuries
+
+```{r}
+#| fig-width: 12
+#| fig-height: 4.4
+ids <- c(MORTGAGE30US = "30-year fixed mortgage", GS10 = "10-year Treasury")
+series <- lapply(names(ids), function(id) {
+  d <- fred(id)
+  if (is.null(d)) return(NULL)
+  d$series <- ids[[id]]
+  d
+})
+series <- Filter(Negate(is.null), series)
+
+if (!length(series)) {
+  no_data_note("MORTGAGE30US / GS10")
+} else {
+  d <- do.call(rbind, series)
+  ggplot(d, aes(date, value, colour = series)) +
+    recession_bands(from = min(d$date)) +
+    geom_line(linewidth = .5) +
+    scale_colour_manual(values = c(IF_COL$slate, IF_COL$clay)) +
+    labs(x = NULL, y = "Percent",
+         title = "The mortgage rate is a spread over the long Treasury",
+         caption = "Shaded: NBER recessions. Source: Freddie Mac and the Treasury via FRED.") +
+    theme_if()
+}
+```
+
+::: ask
+The two series move together, but the **gap** between them is not constant.
+What widens it?
+:::
+
+::: notes
+Two lines, and the first thing to make them notice is that they move together.
+
+*[ask]* Why would a thirty-year mortgage rate follow a ten-year government bond
+rate at all? They are different instruments with different borrowers.
+
+Because the lender has an alternative. If the government will pay me four
+percent for lending to it, I am not lending to a household for less. The
+Treasury yield is the floor, and the mortgage rate sits on top of it.
+
+*[point at the gap]*
+
+Now the gap. It is a spread, and a spread is a price for something.
+
+*[ask]* Two things the household offers that the Treasury does not. What are
+they?
+
+Default risk - the household might not pay, the government will. And prepayment
+risk - the household can refinance the day rates fall, so the lender loses the
+good loans and keeps the bad ones.
+
+*[point at a recession band]*
+
+Look at what the gap does in the shaded periods. It widens, because in a
+recession both of those risks get worse at the same moment.
+:::
+
+## 4 · Loan and annuity
+
+:::: columns
+::: {.column width="50%"}
+What you can **borrow**, given what you can pay each period:
+
+$$C_0 = a \times \left[\frac{1-(1+i)^{-T}}{i}\right]$$
+:::
+
+::: {.column width="50%"}
+What you must **pay** each period, given what you borrowed:
+
+$$a = C_0 \times \left[\frac{i}{1-(1+i)^{-T}}\right]$$
+:::
+::::
+
+```{r}
+#| fig-width: 10
+#| fig-height: 3.3
+i_m <- 0.05 / 12; n_m <- 20 * 12
+d <- data.frame(a = seq(1000, 3000, by = 25))
+d$loan <- d$a * (1 - (1 + i_m)^(-n_m)) / i_m
+ggplot(d, aes(a, loan)) +
+  geom_line(colour = IF_COL$slate, linewidth = .8) +
+  scale_y_continuous(labels = function(x) format(x, big.mark = " ", scientific = FALSE)) +
+  labs(x = "Monthly payment", y = "Loan you can support",
+       title = "5% nominal, 20 years: i = 0.417% per month, T = 240 months",
+       caption = "Linear in the payment, which is why affordability is really about the rate.") +
+  theme_if() +
+  theme(strip.text = element_text(colour = IF_COL$teal700, face = "bold"))
+```
+
+::: notes
+One formula, written twice. Say that explicitly, because they will try to
+memorise two things.
+
+On the left: you tell me what you can pay every month, I tell you how much house
+you can buy. On the right: you tell me the loan, I tell you the payment. Same
+equation, rearranged.
+
+Two warnings about i and T, and they are the same two as the semi-annual bond
+from the warm-up. Monthly payments means a monthly rate - five percent a year is
+nought point four one seven percent a month, not five. And T counts periods, not
+years. Two hundred and forty, not twenty.
+
+*[point at the line]*
+
+The line is straight. Double the payment you can afford, double the loan.
+
+*[ask]* So if the line is straight in the payment, where does the interesting
+part come from?
+
+The slope. The slope is set by the interest rate, and it is not linear in the
+rate at all. Move the rate two points and this whole line swings.
+
+That is why housing affordability is mostly a story about interest rates rather
+than about prices or incomes - and it is why the chart we just looked at is a
+housing-market chart as much as a credit chart.
+:::
+
+## 4 · Problem 2.7
+
+::: ask
+You want to borrow **$100,000**. Choose between a **12% 30-year** mortgage and
+an **11.5%** mortgage with **2 discount points**. Which?
+:::
+
+::: {.smaller}
+A discount point is 1% of the loan paid up front: on a $200,000 loan, 1 point
+costs $2,000, half a point $1,000, a quarter point $500.
+:::
+
+::: notes
+This is the one problem in the chapter with a genuinely conditional answer, and
+that is why it is worth doing.
+
+Set it up: two thousand dollars today, against fifty basis points saved every
+month for thirty years.
+
+*[ask]* Before any arithmetic - what is the one piece of information the
+question has not given you?
+
+How long you are going to stay in the house. Without that the question has no
+answer, and spotting that is the skill being tested.
+
+Then do the arithmetic. Both monthly payments from the annuity formula, take the
+difference, and ask how many months of that saving it takes to earn back two
+thousand dollars.
+
+*[ask]* Suppose the break-even is around four years. You are a student who will
+move cities for a job. Points, or no points?
+
+No points. Same numbers, a family settling permanently: points.
+
+The general lesson, and it recurs in the derivatives section: a cost paid up
+front in exchange for a stream of savings is only worth it if you are around
+long enough to collect the stream.
+
+**Worked.** Two points on $100,000 is $2,000 today against 50 basis points saved
+every month for thirty years. Compute both monthly payments with the annuity
+formula, then ask how long it takes the saving to repay the $2,000. The answer
+depends entirely on how long you stay in the house.
+:::
+
+# 5 · The foreign exchange market {.divider .center background-color="#06302F"}
+
+## The biggest market nobody sees {.hook background-color="#FAF7F2"}
+
+No building, no opening bell, no ticker on the evening news. Over the counter,
+bank to bank, with turnover in the **trillions of dollars a day**.
+
+::: incremental
+-   What is traded is not currency in the sense of notes, but **bank deposits
+    denominated in different currencies**.
+-   Trades are large — typically in excess of USD 1 million.
+-   We met the **price** in session 2. Now we meet the **market** that sets it.
+:::
+
+::: notes
+A short section, and the job is to connect it to what they already did.
+
+*[ask]* Name the largest financial market in the world.
+
+They will say New York, or the stock market. It is this one, and most of them
+have never seen a picture of it, because there is nothing to photograph. No
+floor, no bell, no building.
+
+*[pause]*
+
+The second line matters more than it looks. What changes hands is not banknotes.
+It is bank deposits. When a French importer buys dollars, nobody counts out
+dollars - one bank's dollar deposit is credited, another's is debited.
+
+Why insist on that? Because it is the reason this market is enormous and
+invisible at the same time, and the reason it is bank to bank rather than on an
+exchange.
+
+Last line, and say it directly: in session two we spent a long time on the
+exchange rate as a price. We did supply and demand for baht, we did the fixed
+versus floating table. Today is the other half - the market where that price is
+actually made.
+:::
+
+## 5 · Purchasing power parity
+
+**Absolute PPP** — the exchange rate equals the ratio of price levels:
+
+$$E_{\$/\mathrm{EUR}} = \frac{P_{US}}{P_{EUR}}$$
+
+. . .
+
+**Relative PPP** — the rate of depreciation equals the **inflation differential**:
+
+$$\frac{\Delta E_{\$/\mathrm{EUR}}}{E_{\$/\mathrm{EUR}}} = \pi_{US} - \pi_{EUR}$$
+
+. . .
+
+::: ask
+PPP holds in the long run and fails in the short run. Given what it assumes,
+**which assumption fails first**?
+:::
+
+::: notes
+Start with the intuition, not the formula, because the formula is only the
+intuition written down.
+
+The idea is the law of one price. If the identical good costs more in one
+country than another, someone buys it where it is cheap, sells it where it is
+dear, and the trade pushes the prices together.
+
+*[reveal absolute PPP]*
+
+Do that for every good at once and you get this. The exchange rate is the ratio
+of the two price levels.
+
+*[reveal relative PPP]*
+
+And this is the same statement in rates of change, which is the version you can
+actually use: if American inflation runs two points above European inflation,
+the dollar should lose about two percent a year against the euro.
+
+*[put up the question and wait]*
+
+*[wait]*
+
+Two answers to steer them towards, and they are both failures of the arbitrage.
+
+First, goods are not identical. They are differentiated - brands, trademarks,
+legal protection - and that gives firms the power to charge different prices in
+different countries and keep doing it.
+
+Second, prices are sticky. Even where arbitrage would work, prices do not adjust
+quickly, so the gap persists for years.
+
+*[ask]* Then why does PPP work in the long run?
+
+Because sticky prices eventually unstick. The theory is about the destination,
+not the journey, which is exactly why it is useless for forecasting next
+quarter.
+:::
+
+## 5 · Spot, forward, and what moves them
+
+:::: columns
+::: {.column width="46%"}
+**Spot rate** — near-immediate exchange of bank deposits.
+
+**Forward rate** — exchange at an agreed future date, at a price agreed now.
+:::
+
+::: {.column width="54%"}
+Rates move when the demand for or supply of a currency moves, which happens on
+expected changes in:
+
+-   **relative price levels**
+-   **trade barriers** — tariffs and quotas
+-   **preferences** for domestic versus foreign goods
+-   **relative productivity**
+:::
+::::
+
+. . .
+
+::: keyidea
+Every item on that list is an **expected** change. Today's spot rate is mostly a
+statement about tomorrow.
+:::
+
+::: notes
+Two rates, and the difference is only timing. Spot: we exchange now. Forward: we
+agree the price now and exchange in three months.
+
+*[ask]* Who needs the forward one? Give me a firm and a reason.
+
+A French exporter who has invoiced an American customer in dollars and will be
+paid in ninety days. They know the amount in dollars. They do not know what it
+will be worth in euros. The forward removes that uncertainty - and note that it
+removes it in both directions, which is the same structure as the hedge we meet
+in the derivatives section.
+
+*[point at the list on the right]*
+
+Four things that move the rate. Do not drill the list.
+
+*[reveal the key idea]*
+
+Drill this instead. Every item on that list is an expected change, not a current
+one.
+
+*[ask]* Inflation data comes out this morning, exactly as everyone predicted.
+What happens to the exchange rate?
+
+Nothing. It was already in the price. The rate moves on surprises, and that is
+why exchange rates are so hard to forecast: you would be forecasting the part
+nobody expected.
+:::
+
+## 5 · What an appreciation does
+
+::: incremental
+-   Domestic goods become **more expensive abroad**; foreign goods become
+    **cheaper at home**.
+-   Domestic producers become **less competitive** in both markets.
+-   Domestic consumers gain **purchasing power**.
+:::
+
+. . .
+
+::: ask
+So is a strong currency good news? Ask a French exporter and a French
+holidaymaker on the same afternoon and you will get two answers.
+:::
+
+::: notes
+*[cuttable - the content is in the previous two slides if you are short]*
+
+Short slide, and the point is distributional.
+
+*[reveal the three bullets one at a time]*
+
+The euro appreciates. French wine costs more in New York. American machinery
+costs less in Lyon. So French producers lose on both sides, and French consumers
+win.
+
+*[pause]*
+
+*[ask]* The euro strengthens ten percent. Good news or bad news?
+
+Push back on whichever answer you get, because the question is badly posed on
+purpose.
+
+It is good news if you are flying to New York next week. It is bad news if your
+job is making the wine. A currency movement is not good or bad for a country -
+it is good for some people in it and bad for others, and the people it is bad
+for are usually better organised politically.
+
+*[ask]* So which group do governments tend to listen to?
+
+That is why "currency manipulation" is a political accusation and not just an
+economic one.
+:::
+
+# 6 · Derivative markets {.divider .center background-color="#06302F"}
+
+## A price for a promise {.hook background-color="#FAF7F2"}
+
+In 1995 Barings Bank, 233 years old, was destroyed in a matter of weeks by one
+trader's position in Nikkei futures. The instruments were not exotic. The
+position was simply unhedged and unsupervised.
+
+::: incremental
+-   A **derivative** is a contract whose value derives from the price of
+    something else.
+-   **Hedging** means using a financial transaction to reduce or remove an
+    existing risk.
+-   The same instrument that hedges a position can create one many times larger.
+:::
+
+::: notes
+Open with Barings, because it does the work of three slides of warnings.
+
+A bank that had been trading since seventeen sixty-two. It financed the
+Louisiana Purchase. One trader in Singapore, positions in Japanese index
+futures, and in a matter of weeks there was no bank. It was sold for one pound.
+
+*[ask]* What do you think the instruments were - something exotic that nobody
+understood?
+
+No. Index futures. The most standardised, most transparent, most boring
+derivative there is. Nothing about the instrument was the problem.
+
+*[pause]*
+
+Now the three lines.
+
+A derivative derives its value from something else - an index, a rate, a
+currency, a bushel of wheat. It is a claim on a claim.
+
+Hedging means taking a financial position to cancel a risk you already have.
+
+And the third line is the one that explains Barings. The same contract that
+cancels your risk, taken on its own, creates an enormous one. A hedge and a
+gamble are the same instrument. The difference is whether you already hold the
+thing it is written on.
+:::
+
+## 6 · Long, short, and offsetting
+
+:::: columns
+::: {.column width="50%"}
+A **long** position: you own the asset and gain if the price rises.
+
+A **short** position: you do not own it — you borrow it, sell it, and gain if
+you can buy it back cheaper.
+:::
+
+::: {.column width="50%"}
+To **hedge**:
+
+-   a long position is offset by taking an additional **short** position
+-   a short position is offset by taking an additional **long** position
+:::
+::::
+
+::: keyidea
+Hedging is not the absence of a position. It is **two** positions, chosen so
+that what one loses, the other gains.
+:::
+
+::: notes
+*[cuttable - but only if they already have long and short from another course]*
+
+*[ask]* Long and short. Who can define them?
+
+Long is easy: you own it, you want it to go up.
+
+Short is the one worth pausing on. You borrow the share from someone, sell it
+today, and you owe them a share back. So you are hoping to buy it back cheaper.
+
+*[ask]* What is the worst that can happen to someone who is long?
+
+The price goes to zero. They lose what they put in.
+
+*[ask]* And the worst that can happen to someone who is short?
+
+There is no worst. The price has no ceiling, so the loss has no ceiling. Write
+that asymmetry down - it is the same asymmetry as the one between the option
+buyer and the option writer later in this section.
+
+*[point at the key idea]*
+
+Last line, and it is the definition they should leave with. A hedge is not
+having no position. It is having two, pointing opposite ways, so the gain on one
+pays for the loss on the other.
+:::
+
+## 6 · The instruments
+
+::: {.panel-tabset}
+
+### Forwards
+
+-   An agreement between two parties to transact at a **future point in time**.
+-   Specifies the exact assets, the price, and the date of exchange.
+-   **Long** = agree to buy later. **Short** = agree to sell later.
+-   Private and bilateral, and therefore exposed to the other party defaulting.
+
+### Futures
+
+-   The same idea, traded on an **organised exchange** rather than privately.
+-   **Standardised**, and therefore far more liquid than forwards.
+-   **Marked to market daily**, which is what removes most of the default risk.
+-   No need to deliver: positions are netted in cash.
+-   Harder to corner, because the deliverable range of securities is wide.
+-   Regulated in the United States by the CFTC.
+
+### Options
+
+-   The **right, not the obligation**, to buy (**call**) or sell (**put**) at
+    the strike price.
+-   **American** options may be exercised up to expiry; **European** options
+    only on the expiry date.
+-   You pay a **premium** for that right. The premium rises with **time to
+    expiry** and with **volatility**, and moves with the strike.
+
+### Swaps
+
+-   An **interest-rate swap** exchanges one stream of interest payments for
+    another, in the same currency.
+-   The **plain vanilla** version specifies the rates exchanged, the type of
+    payments, and the notional amount.
+-   No balance-sheet change, and longer-dated than futures or options — but
+    **illiquid** and exposed to **default risk**.
+
+### Credit
+
+-   **Credit derivatives** pay off on changes in credit events. The notional
+    outstanding is in the trillions.
+-   **Credit options** are tied to ratings or spreads.
+-   **Credit swaps** exchange payments on loan portfolios, letting lenders
+    specialise locally while diversifying.
+-   A **credit default swap** pays off, option-like, when a basket of loans
+    defaults. Remember that one.
+
+:::
+
+::: notes
+Five tabs. Do not read them. Take forwards and futures together, spend real time
+on options, name swaps, and finish on credit.
+
+*[forwards and futures tabs]*
+
+Forwards and futures are the same promise. I agree today to buy from you in
+March at a price we fix now. The difference is only where it is done.
+
+*[ask]* A forward is a private agreement between us. What is the risk that
+creates?
+
+That in March, when the price has moved against you, you do not turn up. The
+exchange solves that - futures are standardised and marked to market every
+single day, so nobody is ever owed more than one day's movement.
+
+*[options tab]*
+
+Now the one that is genuinely different. A future obliges you. An option gives
+you the right and lets you walk away.
+
+*[ask]* If I am handing you the right to walk away, what do I want in return?
+
+A premium. And the premium goes up with time to expiry and with volatility -
+both of which are just saying the same thing, that more can happen between now
+and then.
+
+*[swaps tab]* Name it and move on. Two streams of interest payments exchanged.
+Enormous market, no balance-sheet change, illiquid, default risk.
+
+*[credit tab]*
+
+Finish here deliberately. A credit default swap pays you when a basket of loans
+defaults. It is insurance on someone else's borrowing.
+
+*[ask]* And can you buy that insurance on a house that is not yours?
+
+Yes. You can, and in 2007 people did, in volumes far larger than the loans
+themselves. Hold that thought for the regulation session.
+:::
+
+## 6 · Why the payoff diagram is the whole lesson
+
+```{r}
+#| fig-width: 12
+#| fig-height: 4.2
+S <- seq(105, 130, length.out = 300)
+K <- 115; prem <- 2000; mult <- 400
+call <- data.frame(S = S, profit = pmax(S - K, 0) * mult - prem,
+                   who = "Buyer of call option", panel = "Call option and long future")
+futl <- data.frame(S = S, profit = (S - K) * mult,
+                   who = "Buyer of futures", panel = "Call option and long future")
+put  <- data.frame(S = S, profit = pmax(K - S, 0) * mult - prem,
+                   who = "Buyer of put option", panel = "Put option and short future")
+futs <- data.frame(S = S, profit = (K - S) * mult,
+                   who = "Seller of futures", panel = "Put option and short future")
+d <- rbind(call, futl, put, futs)
+
+ggplot(d, aes(S, profit, colour = who)) +
+  geom_hline(yintercept = 0, colour = IF_COL$muted, linewidth = .3) +
+  geom_line(linewidth = .8) +
+  facet_wrap(~panel) +
+  scale_colour_manual(values = unname(unlist(
+    IF_COL[c("clay", "slate", "clay", "slate")]))) +
+  scale_y_continuous(labels = function(x) format(x, big.mark = " ", scientific = FALSE)) +
+  labs(x = "Price at expiration", y = "Profit",
+       title = "The option has a floor. The future does not.",
+       caption = "Strike 115, premium 2 000 per contract.") +
+  theme_if() +
+  theme(strip.text = element_text(colour = IF_COL$teal700, face = "bold"))
+```
+
+::: ask
+The option line **bends** and the futures line does not. What did you pay for
+that bend, and when is it worth paying for?
+:::
+
+::: notes
+Do not cut this slide. If they understand one picture from the derivatives
+section, it is this one.
+
+*[point at the straight line first]*
+
+The future is a straight line through the strike. Price goes up, you gain. Price
+goes down, you lose, and there is nothing underneath you.
+
+*[now trace the option line with a finger, from the right-hand side leftwards]*
+
+The option is the same line on the right - and then it stops falling. It goes
+flat. Below the strike you simply do not exercise, so your loss stops at the
+premium you paid.
+
+*[ask]* So where is the option line *below* the futures line?
+
+On the right, everywhere. The option buyer always ends up two thousand worse off
+than the futures buyer when the price rises, because that is what the premium
+cost.
+
+*[pause]*
+
+Say the trade-off as one sentence and ask them to write it: you buy the bend by
+giving up part of the upside.
+
+*[ask]* When is that worth doing?
+
+When the downside would actually hurt you - when you could not survive the
+straight line continuing downwards. That is the answer to both of the problems
+that follow.
+:::
+
+## 6 · Problem 2.8
+
+Rock Solid holds a **$100 million** stock portfolio that tracks the S&P 500.
+The manager fears a decline and wants to hedge the downside completely.
+
+::: ask
+1.  The S&P is at **1,000**. How is the hedge constructed with **futures**?
+2.  What happens if a year later the index is at **900**?
+3.  And if it is at **1,100**?
+:::
+
+::: {.smaller}
+An index futures contract has a multiplier of **250**, so one contract is worth
+$250 \times 1000 = \$250{,}000$.
+:::
+
+::: notes
+Five minutes in pairs, then take it apart on the board.
+
+*[ask]* The portfolio is long the index. Which way does the hedge point?
+
+Short. Sell futures.
+
+*[ask]* How many contracts?
+
+One hundred million divided by two hundred and fifty thousand. Four hundred
+contracts, sold short.
+
+Now the two states of the world, and do them both.
+
+At nine hundred: the index has fallen ten percent, so the portfolio loses ten
+million. The short futures position gains ten million. Net zero.
+
+At eleven hundred: the portfolio gains ten million, and the futures lose ten
+million. Net zero.
+
+*[pause]*
+
+This is where the misunderstanding lives, so put the question to them directly.
+
+*[ask]* Is that what the manager wanted?
+
+They wanted protection on the way down. What they bought was no exposure at all,
+in either direction. A futures hedge is symmetric - it does not know which way
+you were hoping the market would go.
+
+**Worked.** 400 contracts sold short. At 900 the portfolio loses 10m and the
+futures gain 10m. At 1100 the portfolio gains 10m and the futures lose 10m. The
+hedge works in both directions, which is the point students miss.
+:::
+
+## 6 · Problem 2.9
+
+The same portfolio and the same fear. Now the S&P is at **1,000**, and a strike
+of **950** costs a premium of **$200 per contract**.
+
+::: ask
+1.  How is the hedge constructed with **options**?
+2.  What happens at **900**?
+3.  What happens at **1,100**?
+:::
+
+::: {.smaller}
+An index option contract has a multiplier of **100**, so one contract is worth
+$100 \times 1000 = \$100{,}000$.
+:::
+
+::: notes
+Same portfolio, same fear, different instrument - so the only honest way to do
+this one is side by side with 2.8.
+
+*[ask]* Long the index, and you want protection on the way down. Call or put?
+
+Puts. You buy the right to sell.
+
+Contracts: one hundred million over one hundred thousand. One thousand
+contracts, and the premium is two hundred each, so two hundred thousand dollars
+leaves the fund today whatever happens next.
+
+At nine hundred: the puts are in the money below nine fifty, so they pay. But
+notice the portfolio fell from a thousand to nine hundred and the protection
+only starts at nine fifty - the first fifty points are uncovered. That gap is a
+deductible, and it is there because they chose that strike.
+
+At eleven hundred: the puts expire worthless, you have lost the premium, and you
+keep the whole ten million gain.
+
+*[pause]*
+
+*[ask]* So compare the two problems in one sentence each.
+
+The future gave away the upside and cost nothing up front. The option kept the
+upside and cost two hundred thousand up front, with a gap at the bottom.
+
+*[ask]* Which is the better hedge?
+
+Neither. They are different products at different prices, and the right answer
+depends on whether the fund can live with the gap and whether it needs the
+upside. That is the bend from the payoff diagram, with numbers on it.
+
+**Worked.** 1,000 put contracts at strike 950, premium 200 each = $200,000 paid
+today. At 900 the puts pay but the first 50 index points are uncovered. At 1,100
+the puts expire worthless and the portfolio keeps the full gain.
+:::
+
+# 7 · Reading discussion {.divider .center background-color="#06302F"}
+
+## Does a green label change the price? {.hook background-color="#FAF7F2"}
+
+A green bond funds an environmental project. In every other respect it is an
+ordinary bond from an ordinary issuer, with the same claim on the same balance
+sheet.
+
+::: incremental
+-   If the cash flows and the credit risk are identical, should it trade at a
+    different yield?
+-   If it should not, what exactly is the instrument **for**?
+:::
+
+::: notes
+This is the reading discussion, and it is assessed, so protect the time for it.
+Do not let the derivatives section eat it.
+
+Open with the puzzle rather than the paper.
+
+A green bond is a bond. Same issuer, same balance sheet, same legal claim, same
+seniority in default. The only difference is a promise about what the money is
+spent on.
+
+*[reveal the first bullet, then ask]*
+
+*[ask]* Identical cash flows, identical credit risk. Should it yield less than
+the ordinary bond?
+
+Let them argue. The finance answer is no - price the cash flows, and these cash
+flows are the same. Any yield difference is investors paying for something other
+than return.
+
+*[reveal the second bullet]*
+
+*[ask]* Then what is the instrument for?
+
+Three candidates worth having on the board before you open the paper:
+a signalling device, a marketing device, or a commitment device. The paper is
+largely an argument about which of the three it actually is.
+:::
+
+## 7 · Sartzetakis (2021), green bonds and the low-carbon transition
+
+::: {.panel-tabset}
+
+### The questions
+
+Come with an answer to each of these. I will ask.
+
+1.  What are the **advantages and disadvantages of enlarging the mandate of the
+    central bank**?
+2.  Which projects can be considered **"green"** and financed by green bonds?
+3.  What is the process for **project evaluation and selection**?
+4.  What are the **positive developments** in the green bond market, and the
+    **limits** to its development?
+
+### How to prepare
+
+-   Question 1 is the contested one. A central bank with a climate mandate is
+    making distributional choices it was not elected to make — against the
+    argument that climate risk is financial risk and therefore already within
+    its remit.
+-   Questions 2 and 3 are where **greenwashing** lives. If the issuer defines
+    "green" and the issuer appoints the verifier, what is the label worth?
+-   For question 4, separate market **growth** from market **effect**. A market
+    can grow quickly and still finance nothing that would not have been financed
+    anyway.
+
+:::
+
+::: notes
+Run this as a discussion, not a lecture. If you are talking for more than two
+minutes at a stretch, stop.
+
+Structure: ten minutes in pairs on questions two and three, then open the floor
+on question one, then close on four.
+
+On question one, make sure both sides get stated. For: climate risk is financial
+risk, so it is already the central bank's job. Against: deciding which sectors
+get cheap funding is fiscal policy, and nobody voted for the central bank.
+
+*[ask, if the room is quiet]* Who should decide which industries get cheap
+credit - a parliament, or a committee of unelected economists?
+
+On two and three, push them to the mechanism rather than the opinion. Who writes
+the definition of green? Who checks it? Who pays the person who checks it?
+
+On four, hold them to the distinction between growth and effect, and then close
+the loop with the start of the session:
+
+If the green label does not move the yield, the issuer gets no cheaper funding
+from it. And if they get no cheaper funding, the only reason to issue one is
+reputation. That is the paper's problem in one sentence, and it is the sentence
+I want back in the exam.
+:::
+
+## Next session {.center}
+
+Session 5 moves from instruments to institutions: **banks**, what they do with
+the maturity mismatch we keep meeting, and why they are regulated differently
+from everyone else.
+
+::: keyidea
+Group work: your security should be **chosen by now**. Not "a stock" — a
+specific one, with a ticker and available data.
+:::
+
+::: {.source}
+Press **`O`** for the slide overview · **`C`** to draw · **`S`** for speaker notes · **`F`** for fullscreen · **`E`** then print for a PDF of the slides.
+:::
+
+::: notes
+That closes securities markets. Six markets, and in every one of them the same
+two questions.
+
+Next session we stop looking at instruments and start looking at the
+institutions that hold them. Banks, mostly - and the maturity mismatch that has
+turned up in every session so far is going to be the centre of it.
+
+Last thing, and be firm about it. The group security should already be chosen.
+Not a sector, not "a bank" - a specific listed company with a ticker and data
+you can actually get. Every year a group chooses in the week before the
+presentation, and it is visible from the first slide.
+:::

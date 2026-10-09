@@ -18,9 +18,9 @@ Hi! Welcome to the International Finance course website :wave:
 
 - [Session 2: Interest rates, exchange rates and the climate reading](https://lauradcontreras.github.io/international-finance-kedge/02-interest-and-exchange-rates/02-interest-and-exchange-rates.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/02-interest-and-exchange-rates/02-interest-and-exchange-rates.pdf)]
 
-- [Session 3: Securities markets — money, bonds and stocks](https://lauradcontreras.github.io/international-finance-kedge/03-securities-markets/03-securities-markets.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/03-securities-markets/03-securities-markets.pdf)]
+- [Session 3: Securities markets — money markets and bonds](https://lauradcontreras.github.io/international-finance-kedge/03-securities-markets/03-securities-markets.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/03-securities-markets/03-securities-markets.pdf)]
 
-- Session 4: Securities markets — mortgages, currencies and derivatives *(to come)*
+- [Session 4: Securities markets — stocks, mortgages, currencies and derivatives](https://lauradcontreras.github.io/international-finance-kedge/04-securities-markets-ii/04-securities-markets-ii.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/04-securities-markets-ii/04-securities-markets-ii.pdf)]
 
 - Session 5: Financial institutions and firms *(to come)*
 

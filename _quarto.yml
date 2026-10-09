@@ -24,6 +24,8 @@ website:
         href: 02-interest-and-exchange-rates/02-interest-and-exchange-rates.html
       - text: "Session 3"
         href: 03-securities-markets/03-securities-markets.html
+      - text: "Session 4"
+        href: 04-securities-markets-ii/04-securities-markets-ii.html
     right:
       - text: "Laura Contreras-Portela"
         href: "https://lauradcontreras.github.io"
