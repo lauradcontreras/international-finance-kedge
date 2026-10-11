@@ -154,6 +154,18 @@ $body-bottom:  56px;   // keeps the body clear of the footer
 }
 .reveal .divider p, .reveal .divider li { color: #DCEBE9 !important; }
 
+/* One-line definition under a section divider's title. Indented to line up
+   with the h1 text, which sits .9em into a 1.7em heading. */
+.reveal .divider > p {
+  text-align: left;
+  padding-left: 2.13em;
+  max-width: 30em;
+  font-size: .72em;
+  line-height: 1.35;
+  margin: .7em 0 0 0;
+  opacity: .92;
+}
+
 /* ---- the hook slide that opens each section ---- */
 /* Fill comes from background-color="#FAF7F2" on the slide; matched here. */
 .reveal .hook { background: $sand; }

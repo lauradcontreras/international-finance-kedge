@@ -164,6 +164,9 @@ slides, the payoff diagram, or the reading discussion.
 
 # 3 · The stock market {.divider .center background-color="#06302F"}
 
+Ownership claims in firms, issued by corporations and traded on exchanges and
+over the counter. No maturity: the claim lasts as long as the firm does.
+
 ## The residual claim {.hook background-color="#FAF7F2"}
 
 A bondholder has a **contractual claim** to specified payments. A shareholder
@@ -593,6 +596,9 @@ percent.
 
 # 4 · Mortgage markets {.divider .center background-color="#06302F"}
 
+Long-term loans secured by real estate, made to households and firms, and the
+securities built by pooling them. Typical horizons of fifteen to thirty years.
+
 ## The market that ate the world {.hook background-color="#FAF7F2"}
 
 By 2006 an American mortgage was no longer a loan a bank made and held. It was
@@ -908,6 +914,9 @@ depends entirely on how long you stay in the house.
 
 # 5 · The foreign exchange market {.divider .center background-color="#06302F"}
 
+Bank deposits denominated in different currencies, traded over the counter
+between banks. Settlement in days for spot, in months for forward.
+
 ## The biggest market nobody sees {.hook background-color="#FAF7F2"}
 
 No building, no opening bell, no ticker on the evening news. Over the counter,
@@ -1105,6 +1114,9 @@ economic one.
 :::
 
 # 6 · Derivative markets {.divider .center background-color="#06302F"}
+
+Contracts whose value derives from an underlying asset, rate or credit event.
+Traded on exchanges or bilaterally, with the horizon written into the contract.
 
 ## A price for a promise {.hook background-color="#FAF7F2"}
 
@@ -1464,6 +1476,9 @@ the puts expire worthless and the portfolio keeps the full gain.
 :::
 
 # 7 · Reading discussion {.divider .center background-color="#06302F"}
+
+Sartzetakis (2021) on green bonds: whether an environmental label changes the
+price of a claim that is otherwise identical.
 
 ## Does a green label change the price? {.hook background-color="#FAF7F2"}
 

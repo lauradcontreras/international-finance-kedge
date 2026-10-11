@@ -305,6 +305,10 @@ This same vulnerability later played an important role in the crises of Northern
 
 # 1 · Money markets {.divider .center background-color="#06302F"}
 
+Short-term debt, issued by governments, banks and large firms, with maturities
+under one year. Large denominations and low credit risk: held for liquidity
+rather than for return.
+
 ## The corporate cash-timing problem {.hook background-color="#FAF7F2"}
 
 A firm receives EUR 40 million on the 25th of the month and disburses it on the
@@ -783,6 +787,9 @@ part of what they asked for, and bidder two gets nothing at all.
 :::
 
 # 2 · The bond market {.divider .center background-color="#06302F"}
+
+Long-term debt, issued by governments and corporations, with maturities from one
+year to thirty. A contractual claim to specified payments on specified dates.
 
 ## Athens, March 2012 {.hook background-color="#FAF7F2"}
 
