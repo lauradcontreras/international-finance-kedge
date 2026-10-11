@@ -165,40 +165,74 @@ slides, the payoff diagram, or the reading discussion.
 
 ## The residual claim {.hook background-color="#FAF7F2"}
 
-A bondholder holds a claim to a fixed sum. A shareholder holds a claim to
-whatever remains once all prior claims are satisfied — a quantity bounded below
-by zero and unbounded above.
+A bondholder has a **contractual claim** to specified payments. A shareholder
+owns a **residual claim**: whatever remains after the firm's obligations to
+creditors and other senior claimants have been satisfied.
 
 ::: incremental
--   Equity returns arise from **dividends** and **capital appreciation**.
--   Shareholders are **residual claimants** on the firm's assets and cash flows,
-    and hold **control rights** through the vote.
--   Ranking last in liquidation is what gives equity its asymmetric payoff, and
-    what makes the **agency relationship** between managers and shareholders a
-    central problem of corporate finance.
+-   Equity returns come from **dividends** and **capital appreciation**.
+-   Shareholders are **residual claimants** on the firm's assets and cash flows.
+    They also typically hold **voting rights**, allowing them to influence major
+    corporate decisions.
+-   Because shareholders have **limited liability**, their payoff at liquidation
+    cannot fall below zero, while their potential upside is unlimited.
+-   This payoff structure can create conflicts between **shareholders and
+    creditors**, particularly over **risk-taking**.
+-   Separately, because shareholders delegate day-to-day decisions to managers,
+    an **agency problem** arises: managers may pursue objectives that differ
+    from those of shareholders.
 :::
 
 ::: notes
-Here is the difference between what we have been doing and what comes next.
+Here is the difference between what we have been doing for two sessions and what
+comes next.
 
-A bondholder is owed a number. It is written down. If the company can pay, they
-get exactly that and not a cent more.
+A bondholder is owed a number. It is written in the contract. If the firm can
+pay, they receive exactly that and not a cent more.
 
 A shareholder owns what is left after everyone else has been paid. Which can be
 a great deal, or can be nothing at all.
 
-*[ask]* Imagine a company about to be liquidated. Which would you rather hold?
+*[ask]* A company is about to be liquidated. Which claim would you rather hold?
 
-*[ask]* Now a company about to triple in size. Which now?
+*[ask]* Now a company about to triple in size. Which one now?
 
-That is the whole thing. Everything that follows — why shareholders vote, why
-dividends are discretionary, why we value equity by discounting dividends —
-comes from being last in the queue.
+*[reveal the bullets one at a time]*
 
-And one more consequence, which you will meet properly in corporate finance:
-because shareholders own the upside but are protected on the downside by limited
-liability, their interests and the managers' interests are not automatically the
-same. That problem has a name. It is the agency problem.
+On the first two: returns come from dividends and from the price rising, and the
+vote comes attached. Keep the vote in mind - it is the only one of these
+instruments that carries any control over the firm.
+
+*[pause on the third bullet, because it is the one that matters]*
+
+Limited liability means the worst case is that your shares are worth zero. You
+do not owe the firm's creditors anything beyond what you put in. So the downside
+stops, and the upside does not.
+
+Draw that asymmetry in the air with your hand, because they will meet it again
+in an hour as the payoff diagram of a call option. It is the same shape.
+
+*[fourth bullet]*
+
+Now the consequence, and put it to them as a question.
+
+*[ask]* You own shares in a firm that is close to default. The managers can take
+a risky project: it either saves the firm or finishes it. Do you want them to
+take it?
+
+Yes - because you are nearly wiped out anyway, so you have very little left to
+lose and everything to gain. And the creditors, who would have recovered
+something in an orderly liquidation, want the opposite. That is the
+shareholder-creditor conflict, and it is sharpest exactly when the firm is in
+trouble.
+
+*[fifth bullet]*
+
+A separate problem, and do not let them merge the two. Shareholders own the
+firm but do not run it. Managers do. Managers have their own objectives - size,
+security, their own pay - and those do not automatically coincide with the
+shareholders'. That is the agency problem, and you will meet it properly in
+corporate finance.
 :::
 
 ## 3 · Common, preferred, and foreign
