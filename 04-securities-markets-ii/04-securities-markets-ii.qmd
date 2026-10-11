@@ -126,13 +126,14 @@ yield are two statements of the same thing.
 ::: {.column width="50%"}
 Today, in order:
 
-3. **Stock markets** — ownership claims in firms
-4. **Mortgage markets** — debt secured by property
+3. **Stock markets** — common and preferred shares, ADRs
+4. **Mortgage markets** — fixed-rate, adjustable-rate and the
+   mortgage-backed securities built from them
 :::
 
 ::: {.column width="50%"}
-5. **Foreign exchange** — currencies as bank deposits
-6. **Derivatives** — claims whose value derives from another claim
+5. **Foreign exchange** — spot and forward contracts on bank deposits
+6. **Derivatives** — forwards, futures, options, swaps, credit derivatives
 7. **Reading discussion** — Sartzetakis (2021)
 :::
 ::::
@@ -235,7 +236,7 @@ shareholders'. That is the agency problem, and you will meet it properly in
 corporate finance.
 :::
 
-## 3 · Common, preferred, and foreign
+## 3 · The instruments: common, preferred, ADRs
 
 :::: columns
 ::: {.column width="50%"}
@@ -632,7 +633,7 @@ Hold on to the last line. The collateral is a house. So the credit market and
 the housing market are not two markets. They are one.
 :::
 
-## 4 · The types
+## 4 · The instruments: eight kinds of mortgage
 
 | Type | What it is |
 |:---|:---|
@@ -1002,7 +1003,7 @@ not the journey, which is exactly why it is useless for forecasting next
 quarter.
 :::
 
-## 5 · Spot, forward, and what moves them
+## 5 · The instruments: spot and forward
 
 :::: columns
 ::: {.column width="46%"}
@@ -1197,7 +1198,7 @@ having no position. It is having two, pointing opposite ways, so the gain on one
 pays for the loss on the other.
 :::
 
-## 6 · The instruments
+## 6 · The instruments: five families
 
 ::: {.panel-tabset}
 
