@@ -418,11 +418,16 @@ if (is.null(dj)) {
 }
 ```
 
+Under price weighting a USD 400 share counts about **thirteen times** as much as
+a USD 30 share, whatever the two firms are worth. But the price per share is a
+bookkeeping choice: it is market value divided by the number of shares the firm
+decided to issue.
+
+So a **two-for-one split** turns one USD 400 share into two of USD 200. Same
+firm, same assets, same market value — and **half the weight** in the index.
+
 ::: ask
-Under price weighting, a USD 400 constituent carries roughly thirteen times the
-weight of a USD 30 constituent, irrespective of the firms' market values. State
-the implication for a **stock split**, and hence whether the index measures
-anything economically meaningful.
+Then what is the Dow actually measuring?
 :::
 
 ::: notes
@@ -453,22 +458,42 @@ share.
 *[ask]* So a four-hundred-dollar share and a thirty-dollar share. Which one
 moves the Dow more?
 
-The four-hundred-dollar one — about thirteen times more — regardless of whether
-the companies are the same size or one is a hundred times bigger than the other.
+The four-hundred-dollar one - about thirteen times more - regardless of whether
+the companies are the same size or one is a hundred times bigger.
+
+Now the step they usually miss, so take it slowly.
+
+*[ask]* What decides whether a share costs four hundred dollars or thirty?
+
+Not how big the company is. Price per share is market value divided by the
+number of shares the firm chose to issue. Two firms worth exactly the same can
+trade at four hundred and at four, purely because one issued ten times as many
+shares. The price per share carries no information about size.
 
 *[pause]*
 
-Now here is the part that should bother you. A company does a two-for-one stock
-split. Same company, same value, twice as many shares at half the price.
+Which is why the split is damaging. Two-for-one: one four-hundred-dollar share
+becomes two at two hundred. Same firm, same assets, same market value, and its
+weight in the Dow has halved.
 
-*[ask]* What just happened to its weight in the Dow?
+Be precise about one thing, because a good student will raise it: the divisor is
+adjusted at the split so the index level does not jump. What the adjustment
+cannot fix is the weight - from that day on the company counts half as much.
 
-It halved. Nothing happened to the company at all.
+*[ask]* So what is the Dow measuring?
+
+Push them to a real answer rather than "nothing". It measures the return on a
+portfolio holding one share of each of the thirty companies. That is a genuine
+portfolio - it is simply not one anybody would hold on purpose, because there is
+no economic reason to own equal *numbers* of shares across firms.
+
+Contrast it with the S&P: when that moves two percent, the combined market value
+of five hundred firms moved two percent. That is a quantity you can interpret.
 
 *[ask]* So why does every news programme still quote the Dow?
 
-Because it is from 1896 and people recognise the number. That is a reason from
-journalism, not from finance.
+Because it dates from 1896 and people recognise the number. That is a reason
+from journalism, not from finance.
 :::
 
 ## 3 · What a share is worth
