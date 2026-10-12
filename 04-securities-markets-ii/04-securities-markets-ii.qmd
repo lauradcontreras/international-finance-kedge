@@ -559,31 +559,61 @@ limitation of every multiple.
 
 ```{r}
 #| fig-width: 12
-#| fig-height: 4.0
+#| fig-height: 4.2
 div1 <- 2
-a <- data.frame(x = seq(.06, .24, length.out = 200))
-a$price <- div1 / (a$x - .05); a$panel <- "Varying the required return (g = 5%)"
-b <- data.frame(x = seq(.01, .19, length.out = 200))
-b$price <- div1 / (.20 - b$x); b$panel <- "Varying the growth rate (k = 20%)"
-d <- rbind(a, b)
+p1 <- "Vary the required return k   (g stays at 5%)"
+p2 <- "Vary the growth rate g   (k stays at 10%)"
+lv <- c(p1, p2)
+
+a <- data.frame(x = seq(.06, .20, length.out = 300))
+a$price <- div1 / (a$x - .05); a$panel <- p1
+b <- data.frame(x = seq(.00, .09, length.out = 300))
+b$price <- div1 / (.10 - b$x); b$panel <- p2
+d <- rbind(a, b); d$panel <- factor(d$panel, levels = lv)
+
+base <- data.frame(x = c(.10, .05), price = c(40, 40),
+                   panel = factor(lv, levels = lv))
+asym <- data.frame(x = c(.05, .10), panel = factor(lv, levels = lv))
+
 ggplot(d, aes(x, price)) +
-  geom_line(colour = IF_COL$clay, linewidth = .8) +
+  geom_vline(data = asym, aes(xintercept = x), colour = IF_COL$muted,
+             linetype = "22", linewidth = .45) +
+  geom_line(colour = IF_COL$clay, linewidth = .95) +
+  geom_point(data = base, size = 2.6, colour = IF_COL$teal700) +
+  geom_text(data = base, aes(label = "base case: 40"), nudge_y = 22,
+            colour = IF_COL$teal700, size = 3.7, fontface = "bold") +
   facet_wrap(~panel, scales = "free_x") +
   scale_x_continuous(labels = function(x) paste0(round(x * 100), "%")) +
-  coord_cartesian(ylim = c(0, 250)) +
-  labs(x = NULL, y = "Stock price",
-       title = "Gordon growth, with the first dividend fixed at 2",
-       caption = "Both curves are the same asymptote seen from two directions.") +
+  coord_cartesian(ylim = c(0, 200)) +
+  labs(x = NULL, y = "Price of the share",
+       title = "Same share, same dividend of 2 next year - only the gap k - g changes",
+       caption = "Dashed line: where k = g and the gap closes. Base case k = 10%, g = 5%, price 40.") +
   theme_if() +
   theme(strip.text = element_text(colour = IF_COL$teal700, face = "bold"))
 ```
 
 ::: notes
-Two panels, same model. On the left I vary the required return. On the right I
-vary the growth rate.
+Before anything, tell them what is held fixed, or the picture means nothing.
 
-Both go vertical. It is the same asymptote, seen from two directions — as g gets
-close to k, the denominator goes to zero and the price explodes.
+Same company throughout. Same dividend of two next year. One base case: the
+market wants ten percent, the dividend grows at five, so the price is forty.
+That is the dot, and it is the same dot in both panels.
+
+*[point at the left panel]*
+
+Here I move only the required return and leave growth at five. Walk left from
+the dot and the price climbs: ten to nine to eight percent, forty becomes fifty
+becomes sixty-seven.
+
+*[point at the right panel]*
+
+Here I move only the growth rate and leave the required return at ten. Walk
+right from the dot and exactly the same thing happens.
+
+*[point at the dashed lines]*
+
+Those mark where k equals g. In both panels the curve goes vertical there,
+because the denominator has gone to zero.
 
 *[pause]*
 
