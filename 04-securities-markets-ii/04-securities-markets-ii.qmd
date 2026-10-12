@@ -258,9 +258,10 @@ diversification, but awkward to buy when they are not listed locally.
 ::::
 
 ::: keyidea
-An **index** is a summary statistic for a defined set of securities, not an
-asset. Its **weighting scheme** determines what the statistic measures — and
-therefore what a given movement in it means.
+A **stock index** is how a market is **monitored**: one number that tracks a
+defined set of securities over time, so performance can be followed day to day
+and compared across markets and periods. It is a measuring instrument, not an
+asset — and its **weighting scheme** decides what is actually being measured.
 :::
 
 ::: notes
@@ -295,8 +296,18 @@ If that sounds familiar, it should. It is the same engineering as the eurodollar
 deposit from an hour ago: take a claim, repackage it so it settles in the
 currency and the legal system the buyer is comfortable with.
 
-Last line. An index is not an investment. It is a summary statistic. And how you
-weight it decides what it is a summary *of* — which is the next slide.
+Last line, and it sets up the next slide.
+
+An index is not something you buy. It is what you watch. When the news says the
+market fell two percent, what fell was an index - a single number built to
+monitor a set of securities so you can follow it over time and compare it with
+other markets.
+
+*[ask]* So if it is a measuring instrument, what is it measuring?
+
+That depends entirely on how it is weighted - which is the next slide, and the
+reason two indices of the same market can tell you different things on the same
+day.
 :::
 
 ## 3 · Where the trading happens
