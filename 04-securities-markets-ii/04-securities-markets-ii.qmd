@@ -1080,22 +1080,34 @@ actually made.
 
 ## 5 · Purchasing power parity
 
-**Absolute PPP** — the exchange rate equals the ratio of price levels:
+Both versions rest on the **law of one price**: if the same good is cheaper in
+one country, arbitrage moves goods until the two prices converge.
+
+:::: columns
+::: {.column width="50%"}
+**Absolute PPP** — about **levels**. The exchange rate equals the ratio of the
+two price levels:
 
 $$E_{\$/\mathrm{EUR}} = \frac{P_{US}}{P_{EUR}}$$
 
-. . .
+Needs identical baskets and no trade frictions, so it rarely holds exactly.
+:::
 
-**Relative PPP** — the rate of depreciation equals the **inflation differential**:
+::: {.column width="50%"}
+**Relative PPP** — about **changes**. Depreciation equals the inflation
+differential:
 
 $$\frac{\Delta E_{\$/\mathrm{EUR}}}{E_{\$/\mathrm{EUR}}} = \pi_{US} - \pi_{EUR}$$
 
-. . .
-
-::: ask
-PPP holds in the long run and fails in the short run. Given what it assumes,
-**which assumption fails first**?
+Constant frictions cancel out, so this is the version that can be tested.
 :::
+::::
+
+It **fails in the short run** on two counts: goods are differentiated, so firms
+hold pricing power and identical goods do not carry identical prices; and prices
+are **sticky**, so they do not adjust quickly. Both break the arbitrage. It
+**holds in the long run** because sticky prices eventually unstick — PPP
+describes the destination, not the journey.
 
 ::: notes
 Start with the intuition, not the formula, because the formula is only the
@@ -1105,35 +1117,36 @@ The idea is the law of one price. If the identical good costs more in one
 country than another, someone buys it where it is cheap, sells it where it is
 dear, and the trade pushes the prices together.
 
-*[reveal absolute PPP]*
+*[left column]*
 
-Do that for every good at once and you get this. The exchange rate is the ratio
-of the two price levels.
+Do that for every good at once and you get absolute PPP. The exchange rate is
+the ratio of the two price levels. Say plainly that it almost never holds
+exactly - identical baskets and frictionless trade are a lot to ask.
 
-*[reveal relative PPP]*
+*[right column]*
 
-And this is the same statement in rates of change, which is the version you can
-actually use: if American inflation runs two points above European inflation,
-the dollar should lose about two percent a year against the euro.
+Relative PPP is the same statement in rates of change, and the difference is
+what makes it usable. If American inflation runs two points above European
+inflation, the dollar should lose about two percent a year against the euro.
 
-*[put up the question and wait]*
+The reason this version survives: a constant friction - transport, a tariff, a
+retail margin - shifts the level but not the rate of change, so it cancels. That
+is why absolute PPP fails on the data and relative PPP is the one that gets
+tested.
 
-*[wait]*
+*[the paragraph below]*
 
-Two answers to steer them towards, and they are both failures of the arbitrage.
+Two reasons it fails in the short run, and both are failures of the arbitrage.
 
-First, goods are not identical. They are differentiated - brands, trademarks,
-legal protection - and that gives firms the power to charge different prices in
-different countries and keep doing it.
+Goods are not identical. Brands, trademarks and legal protection give firms the
+power to charge different prices in different countries and keep doing it.
 
-Second, prices are sticky. Even where arbitrage would work, prices do not adjust
+And prices are sticky. Even where arbitrage would work, prices do not adjust
 quickly, so the gap persists for years.
 
-*[ask]* Then why does PPP work in the long run?
-
-Because sticky prices eventually unstick. The theory is about the destination,
-not the journey, which is exactly why it is useless for forecasting next
-quarter.
+Then the long run, in one line: sticky prices eventually unstick. PPP is a
+statement about where things end up, not about next quarter - which is exactly
+why it is useless for forecasting and still worth knowing.
 :::
 
 ## 5 · The instruments: spot and forward
