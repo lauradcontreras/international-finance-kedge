@@ -380,12 +380,10 @@ needs it.
 
 ## 3 · Price-weighted versus value-weighted
 
-::: keyidea
-A **stock index** is how a market is **monitored**: one number that tracks a
-defined set of securities over time, so performance can be followed day to day
-and compared across markets and periods. It is a measuring instrument, not an
-asset — and its **weighting scheme** decides what is actually being measured.
-:::
+A **stock index** is how a market is **monitored**: one number tracking a defined
+set of securities over time, so performance can be followed day to day and
+compared across markets and periods. It is a measuring instrument, not an asset,
+and its **weighting scheme** decides what is being measured.
 
 The **DJIA** is a price-weighted average of 30 stocks. The **S&P 500** is a
 market-value-weighted index of 500.
