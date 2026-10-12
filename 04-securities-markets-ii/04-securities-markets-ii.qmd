@@ -236,7 +236,7 @@ shareholders'. That is the agency problem, and you will meet it properly in
 corporate finance.
 :::
 
-## 3 · The instruments: common, preferred, ADRs
+## 3 · The instruments: common, preferred, foreign
 
 :::: columns
 ::: {.column width="50%"}
@@ -248,11 +248,12 @@ common. Closer to a bond than most students expect.
 :::
 
 ::: {.column width="50%"}
-**Foreign stocks** are useful for diversification but awkward to buy if they are
-not listed locally.
+**Foreign stocks** — shares in a firm listed abroad. Useful for
+diversification, but awkward to buy when they are not listed locally.
 
-**American depository receipts (ADRs)** solve it: a bank buys the foreign
-shares and issues receipts against them that trade on U.S. exchanges.
+-   **American depository receipts (ADRs)** are the usual way to hold one: a
+    bank buys the foreign shares and issues receipts against them that trade in
+    dollars on a U.S. exchange.
 :::
 ::::
 
@@ -276,9 +277,17 @@ The honest answer is that it sits between the two, and that is exactly why
 accountants and rating agencies treat it inconsistently. If you see it in a
 balance sheet, look at how it has been classified — it is not always obvious.
 
-On the right, ADRs. If you want to hold a Brazilian company but you can only
-trade in New York, a bank buys the Brazilian shares and issues receipts against
-them that trade in dollars on a US exchange.
+On the right, the third category: foreign stocks. A share in a firm listed
+somewhere else. Good for diversification, awkward to buy - different exchange,
+different currency, sometimes different rules about who may hold it.
+
+*[point at the sub-item]*
+
+So an ADR is not a fourth kind of instrument. It is a way of holding a foreign
+stock. If you want a Brazilian company but you can only trade in New York, a
+bank buys the Brazilian shares, holds them, and issues receipts against them
+that trade in dollars on a US exchange. What you own is still the Brazilian
+company.
 
 *[pause]*
 
