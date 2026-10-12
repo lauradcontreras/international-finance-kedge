@@ -380,17 +380,13 @@ needs it.
 
 ## 3 · Price-weighted versus value-weighted
 
-A **stock index** is how a market is **monitored**: one number tracking a defined
-set of securities over time, so performance can be followed day to day and
-compared across markets and periods. It is a measuring instrument, not an asset,
-and its **weighting scheme** decides what is being measured.
-
-The **DJIA** is a price-weighted average of 30 stocks. The **S&P 500** is a
-market-value-weighted index of 500.
+An index is a **measuring instrument, not an asset**: one number tracking a set
+of securities over time. The **DJIA** is price-weighted across 30 stocks; the
+**S&P 500** is value-weighted across 500.
 
 ```{r}
 #| fig-width: 12
-#| fig-height: 3.9
+#| fig-height: 4.6
 dj <- fred("DJIA")
 sp <- fred("SP500")
 if (is.null(dj)) {
@@ -416,18 +412,9 @@ if (is.null(dj)) {
 }
 ```
 
-Under price weighting a USD 400 share counts about **thirteen times** as much as
-a USD 30 share, whatever the two firms are worth — and the price per share says
-nothing about size. It is the firm's value divided by however many shares it
-chose to issue.
-
-A **stock split** makes that visible. Two-for-one: each share becomes two, each
-worth half. **Same pie, twice as many slices** — and **half the weight** in the
-index. Under value weighting nothing happens at all: half the price, twice the
-shares, same market value, same weight.
-
 ::: ask
-Then what is the Dow actually measuring?
+A USD 400 share moves the Dow **thirteen times** as much as a USD 30 one,
+whatever the two firms are worth. So what is the Dow measuring?
 :::
 
 ::: notes
