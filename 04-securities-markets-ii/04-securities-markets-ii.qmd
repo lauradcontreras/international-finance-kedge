@@ -921,18 +921,35 @@ $$a = C_0 \times \left[\frac{i}{1-(1+i)^{-T}}\right]$$
 
 ```{r}
 #| fig-width: 10
-#| fig-height: 3.3
-i_m <- 0.05 / 12; n_m <- 20 * 12
-d <- data.frame(a = seq(1000, 3000, by = 25))
-d$loan <- d$a * (1 - (1 + i_m)^(-n_m)) / i_m
-ggplot(d, aes(a, loan)) +
-  geom_line(colour = IF_COL$slate, linewidth = .8) +
-  scale_y_continuous(labels = function(x) format(x, big.mark = " ", scientific = FALSE)) +
-  labs(x = "Monthly payment", y = "Loan you can support",
-       title = "5% nominal, 20 years: i = 0.417% per month, T = 240 months",
-       caption = "Linear in the payment, which is why affordability is really about the rate.") +
+#| fig-height: 3.6
+n_m <- 20 * 12
+rates <- c(.03, .05, .08)
+labs_r <- paste0(round(rates * 100), "% a year")
+pay <- seq(1000, 3000, by = 25)
+
+d <- do.call(rbind, lapply(seq_along(rates), function(k) {
+  i <- rates[k] / 12
+  data.frame(a = pay,
+             loan = pay * (1 - (1 + i)^(-n_m)) / i,
+             rate = labs_r[k])
+}))
+d$rate <- factor(d$rate, levels = labs_r)
+
+mark <- d[d$a == 2000, ]
+
+ggplot(d, aes(a, loan, colour = rate)) +
+  geom_vline(xintercept = 2000, colour = IF_COL$muted,
+             linetype = "22", linewidth = .4) +
+  geom_line(linewidth = .95) +
+  geom_point(data = mark, size = 2.3) +
+  scale_colour_manual(values = c(IF_COL$teal500, IF_COL$slate, IF_COL$clay)) +
+  scale_y_continuous(labels = function(x) format(round(x), big.mark = " ", scientific = FALSE)) +
+  scale_x_continuous(breaks = c(1000, 1500, 2000, 2500, 3000)) +
+  labs(x = "Monthly payment", y = "Loan you can support", colour = NULL,
+       title = "Same 20-year term, same payment - three interest rates",
+       caption = "At 2 000 a month: 361 000 at 3%, 303 000 at 5%, 239 000 at 8%.") +
   theme_if() +
-  theme(strip.text = element_text(colour = IF_COL$teal700, face = "bold"))
+  theme(legend.position = "top")
 ```
 
 ::: notes
@@ -948,19 +965,34 @@ from the warm-up. Monthly payments means a monthly rate - five percent a year is
 nought point four one seven percent a month, not five. And T counts periods, not
 years. Two hundred and forty, not twenty.
 
-*[point at the line]*
+*[point at any one line]*
 
-The line is straight. Double the payment you can afford, double the loan.
+Each line is straight. Double the payment you can afford and you double the
+loan. That part is dull.
 
-*[ask]* So if the line is straight in the payment, where does the interesting
-part come from?
+*[point at the three dots on the dashed line]*
 
-The slope. The slope is set by the interest rate, and it is not linear in the
-rate at all. Move the rate two points and this whole line swings.
+Now the same household, with two thousand a month to spend, at three different
+interest rates. At three percent they can borrow three hundred and sixty-one
+thousand. At five, three hundred and three. At eight, two hundred and
+thirty-nine.
 
-That is why housing affordability is mostly a story about interest rates rather
-than about prices or incomes - and it is why the chart we just looked at is a
+*[ask]* Their income has not changed by a cent. What has?
+
+Only the rate. Going from three percent to eight takes a third of their buying
+power away.
+
+Say the consequence plainly, because it is the link to everything else in this
+section:
+
+Housing affordability is mostly a story about interest rates, not about prices
+or incomes. And since this is what each household can bid, it is also what sets
+house prices - which is why the mortgage-rate chart we just looked at is a
 housing-market chart as much as a credit chart.
+
+*[ask]* So when the central bank raises rates, what happens to house prices?
+
+Hold that thought for the mortgage-market story - it is how 2006 begins.
 :::
 
 ## 4 · Problem 2.7
