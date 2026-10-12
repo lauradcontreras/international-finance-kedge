@@ -487,36 +487,45 @@ Because it dates from 1896 and people recognise the number. That is a reason
 from journalism, not from finance.
 :::
 
-## 3 · What a share is worth
+Three formulas, three jobs: **value** the share from forecasts, **estimate** one
+of the inputs, or value it **without forecasting at all**.
 
-The **Gordon growth model** — a special case of the dividend discount model, in
-which dividends grow at a constant rate $g$ in perpetuity and $k_e > g$:
+**1 · Value it.** The **Gordon growth model** — the dividend discount model with
+dividends growing at a constant rate $g$ forever, and $k_e > g$:
 
 $$P = \sum_{t=1}^{\infty}\frac{Div_t}{(1+k_e)^t} = \frac{Div_1}{k_e - g}$$
 
 :::: columns
 ::: {.column width="50%"}
-**Geometric growth**, for backing out $g$ from two observations:
+**2 · Estimate $g$.** Geometric growth, from two observations $n$ periods apart:
 
 $$g = \left(\frac{\text{final}}{\text{initial}}\right)^{1/n} - 1$$
 :::
 
 ::: {.column width="50%"}
-**Price-to-earnings**, a relative valuation measure:
+**3 · Skip the forecast.** Price-to-earnings, a relative measure:
 
 $$PE = \frac{\text{Price}}{\text{Earnings}}$$
 :::
 ::::
 
 ::: keyidea
-The denominator $k_e - g$ governs everything. As $g \to k_e$ the valuation
-diverges, so near that boundary the price is **highly sensitive** to small
-revisions in either parameter. This is not a defect of the model but a property
-of perpetual growth — and it explains why estimates of high-growth firms
-disperse so widely, and why such valuations reprice violently on modest news.
+The denominator $k_e - g$ governs everything — and it is a **small difference
+between two uncertain numbers**. As $g \to k_e$ the price explodes, so a
+half-point revision moves the valuation enormously. Not a defect of the model,
+but a property of perpetual growth.
 :::
 
 ::: notes
+Say the framing line first, because otherwise this looks like three unrelated
+formulas dumped on one slide.
+
+Three formulas, three jobs. The first values a share from your forecasts. The
+second estimates one of the numbers the first one needs. The third values it
+without forecasting anything at all.
+
+Then take them in that order.
+
 A share pays you dividends, forever. So its value is the present value of all of
 them. Write that down and you get the sum on the left.
 
