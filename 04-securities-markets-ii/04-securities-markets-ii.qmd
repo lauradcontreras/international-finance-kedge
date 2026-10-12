@@ -1487,10 +1487,15 @@ ggplot(d, aes(S, profit, colour = who)) +
   theme(strip.text = element_text(colour = IF_COL$teal700, face = "bold"))
 ```
 
-::: ask
-The option line **bends** and the futures line does not. What did you pay for
-that bend, and when is it worth paying for?
-:::
+-   The **future** is a straight line through the strike: gain above it, loss
+    below it, and nothing underneath to stop the fall.
+-   The **option** follows that same line above the strike, then goes **flat**.
+    Below the strike you simply do not exercise, so the loss stops at the
+    premium you paid.
+-   On the right, the option sits **below** the future by exactly that premium.
+    That is what the floor cost you.
+-   So you **buy the bend by giving up part of the upside** — worth paying for
+    when you could not survive the straight line continuing downwards.
 
 ::: notes
 Do not cut this slide. If they understand one picture from the derivatives
