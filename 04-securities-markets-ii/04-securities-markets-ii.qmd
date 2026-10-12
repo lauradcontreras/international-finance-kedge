@@ -1487,19 +1487,33 @@ ggplot(d, aes(S, profit, colour = who)) +
   theme(strip.text = element_text(colour = IF_COL$teal700, face = "bold"))
 ```
 
--   The **future** is a straight line through the strike: gain above it, loss
-    below it, and nothing underneath to stop the fall.
--   The **option** follows that same line above the strike, then goes **flat**.
-    Below the strike you simply do not exercise, so the loss stops at the
-    premium you paid.
--   On the right, the option sits **below** the future by exactly that premium.
-    That is what the floor cost you.
--   So you **buy the bend by giving up part of the upside** — worth paying for
-    when you could not survive the straight line continuing downwards.
+-   The **strike** is the price written into the option — the price at which you
+    may buy (call) or sell (put). It is fixed for the life of the contract while
+    the market price moves. Here it is **115**.
+-   The **future** is a straight line through it: gain above, loss below, and
+    nothing underneath to stop the fall.
+-   The **option** follows that line above the strike, then goes **flat** — below
+    it you simply do not exercise, so the loss stops at the premium.
+-   On the right it sits **below** the future by exactly that premium. That is
+    what the floor cost you.
+-   So you **buy the bend by giving up part of the upside**, which is worth
+    paying for when you could not survive the straight line continuing down.
 
 ::: notes
 Do not cut this slide. If they understand one picture from the derivatives
 section, it is this one.
+
+*[name the strike before anything else]*
+
+The strike is the number written into the contract - the price at which the
+holder may buy or sell. It never changes; the market price does. So it is the
+line in the sand that decides whether exercising is worth anything, and it is
+exactly where the picture bends. On this chart it is 115.
+
+*[ask]* The market ends at 120, strike 115. Do you exercise?
+
+Yes - you buy at 115 something worth 120. And at 110? No, you walk away and buy
+in the market. That switch is the bend.
 
 *[point at the straight line first]*
 
