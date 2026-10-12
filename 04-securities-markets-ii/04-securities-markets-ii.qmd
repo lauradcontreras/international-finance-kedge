@@ -1259,11 +1259,16 @@ trader's position in Nikkei futures. The instruments were not exotic. The
 position was simply unhedged and unsupervised.
 
 ::: incremental
--   A **derivative** is a contract whose value derives from the price of
-    something else.
--   **Hedging** means using a financial transaction to reduce or remove an
-    existing risk.
--   The same instrument that hedges a position can create one many times larger.
+-   A **derivative** is a contract whose value comes from the price of something
+    else — an index, a rate, a currency, a tonne of wheat. You never own the
+    thing itself; you own a claim written on its price.
+-   They exist because **risk can be sold**: one party wants rid of it, another
+    will carry it for a price.
+-   **Hedging** is taking a second position that moves against a risk you
+    already carry, so the two cancel.
+-   Taken on its own, that same contract is a **bet**. A hedge and a speculation
+    are the same instrument — the difference is whether you already hold what it
+    is written on.
 :::
 
 ::: notes
@@ -1279,19 +1284,35 @@ understood?
 No. Index futures. The most standardised, most transparent, most boring
 derivative there is. Nothing about the instrument was the problem.
 
+*[pause, then reveal the bullets one at a time]*
+
+First: derivative means derived. The contract is worth something only because
+something else has a price - an index, a rate, a currency, a tonne of wheat. You
+never own the wheat. You own a piece of paper whose value tracks the wheat.
+
+*[ask]* Why would anyone write such a contract? What is being traded?
+
+Second line, and this is the one that explains why the market exists. What is
+being traded is risk. A farmer wants rid of the risk that the March price
+collapses. Somebody else will carry that risk, for a price. The contract is the
+transfer, and the price of the contract is the price of the risk.
+
+Third: hedging. You already carry a risk, so you take a second position that
+moves the other way, and the two cancel. Note the words *already carry* - they
+are doing all the work in that sentence.
+
 *[pause]*
 
-Now the three lines.
+Fourth line, and this is Barings in one sentence. Strip away the risk you
+already carry, and what is left is the contract on its own - which is a bet.
 
-A derivative derives its value from something else - an index, a rate, a
-currency, a bushel of wheat. It is a claim on a claim.
+*[ask]* So what was Leeson doing - hedging or speculating?
 
-Hedging means taking a financial position to cancel a risk you already have.
-
-And the third line is the one that explains Barings. The same contract that
-cancels your risk, taken on its own, creates an enormous one. A hedge and a
-gamble are the same instrument. The difference is whether you already hold the
-thing it is written on.
+Speculating, and the instrument cannot tell you which. The same futures contract
+is prudent in the hands of someone holding Japanese shares and ruinous in the
+hands of someone who is not. Nothing in the contract distinguishes them, which
+is exactly why supervision rather than the instrument is the subject of that
+story.
 :::
 
 ## 6 · Long, short, and offsetting
