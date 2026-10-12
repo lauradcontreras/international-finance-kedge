@@ -417,12 +417,14 @@ if (is.null(dj)) {
 ```
 
 Under price weighting a USD 400 share counts about **thirteen times** as much as
-a USD 30 share, whatever the two firms are worth. But the price per share is a
-bookkeeping choice: it is market value divided by the number of shares the firm
-decided to issue.
+a USD 30 share, whatever the two firms are worth — and the price per share says
+nothing about size. It is the firm's value divided by however many shares it
+chose to issue.
 
-So a **two-for-one split** turns one USD 400 share into two of USD 200. Same
-firm, same assets, same market value — and **half the weight** in the index.
+A **stock split** makes that visible. Two-for-one: each share becomes two, each
+worth half. **Same pie, twice as many slices** — and **half the weight** in the
+index. Under value weighting nothing happens at all: half the price, twice the
+shares, same market value, same weight.
 
 ::: ask
 Then what is the Dow actually measuring?
@@ -470,13 +472,17 @@ shares. The price per share carries no information about size.
 
 *[pause]*
 
-Which is why the split is damaging. Two-for-one: one four-hundred-dollar share
-becomes two at two hundred. Same firm, same assets, same market value, and its
-weight in the Dow has halved.
+Which is why the split is damaging. Two-for-one: each share becomes two, each
+worth half. Same pie, twice as many slices. Same firm, same assets, same market
+value - and its weight in the Dow has halved.
 
-Be precise about one thing, because a good student will raise it: the divisor is
-adjusted at the split so the index level does not jump. What the adjustment
-cannot fix is the weight - from that day on the company counts half as much.
+Then do the contrast, because it is what proves the point: under value weighting
+the split changes nothing. Half the price, twice the shares, same market value,
+same weight. A sound measuring instrument does not move when the thing it
+measures has not moved.
+
+If someone asks whether the index jumps on the split day: no, the divisor is
+adjusted so the level is continuous. What that cannot fix is the weight.
 
 *[ask]* So what is the Dow measuring?
 
