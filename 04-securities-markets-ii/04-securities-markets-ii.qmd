@@ -1244,7 +1244,7 @@ pays for the loss on the other.
 -   **Credit swaps** exchange payments on loan portfolios, letting lenders
     specialise locally while diversifying.
 -   A **credit default swap** pays off, option-like, when a basket of loans
-    defaults. Remember that one.
+    defaults.
 
 :::
 
