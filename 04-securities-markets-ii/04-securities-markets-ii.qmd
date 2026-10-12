@@ -286,7 +286,7 @@ company.
 *[pause]*
 
 If that sounds familiar, it should. It is the same engineering as the eurodollar
-deposit from an hour ago: take a claim, repackage it so it settles in the
+deposit from last session: take a claim, repackage it so it settles in the
 currency and the legal system the buyer is comfortable with.
 
 Close by saying where this goes next: we have the instruments, so the next
@@ -353,8 +353,29 @@ so I widen the spread against everyone.
 *[ask]* Now, in a crisis, when nobody knows what anything is worth. What happens
 to that second cost, and what happens to the spread?
 
-It widens. Which is the same lesson as this morning. Liquidity disappears
-exactly when you need it.
+It widens - and that is the whole point, because a wider spread *is* less
+liquidity. The spread is what a round trip costs you, so when it doubles,
+getting out has become twice as expensive. Then they cut the size they will
+quote, and in the limit they stop quoting at all. That is what "the market
+stopped" means: not that prices fell, but that there were no prices.
+
+Now make the link explicit, because it is the same mechanism as the BNP Paribas
+story we opened with last session.
+
+Nobody could value the mortgage-related securities those funds held. So the
+adverse-selection cost went through the roof - if you offer to sell me one,
+perhaps you know your pool is the bad one. Dealers widened, then withdrew. With
+no price, the funds could not value their own holdings, and a fund that cannot
+compute what it is worth cannot let investors redeem. Hence the suspension.
+
+And then it spreads, which is the part to leave them with: the same securities
+were collateral for short-term borrowing. Collateral that cannot be priced is
+collateral nobody will lend against, so funding dries up, which forces sales,
+which pushes prices down further.
+
+The sentence to land: liquidity is not a property of an asset. It is a service
+somebody chooses to provide, and they stop providing it exactly when everybody
+needs it.
 :::
 
 ## 3 · Price-weighted versus value-weighted
