@@ -1475,6 +1475,10 @@ d <- rbind(call, futl, put, futs)
 
 ggplot(d, aes(S, profit, colour = who)) +
   geom_hline(yintercept = 0, colour = IF_COL$muted, linewidth = .3) +
+  geom_vline(xintercept = K, colour = IF_COL$muted,
+             linetype = "22", linewidth = .45) +
+  annotate("text", x = K + .5, y = 5400, label = "strike 115",
+           colour = IF_COL$muted, size = 3.4, hjust = 0) +
   geom_line(linewidth = .8) +
   facet_wrap(~panel) +
   scale_colour_manual(values = unname(unlist(
