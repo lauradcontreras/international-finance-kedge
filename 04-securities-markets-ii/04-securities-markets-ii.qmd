@@ -1378,21 +1378,34 @@ pays for the loss on the other.
 
 ### Futures
 
--   The same idea, traded on an **organised exchange** rather than privately.
--   **Standardised**, and therefore far more liquid than forwards.
--   **Marked to market daily**, which is what removes most of the default risk.
--   No need to deliver: positions are netted in cash.
--   Harder to corner, because the deliverable range of securities is wide.
--   Regulated in the United States by the CFTC.
+-   The same agreement as a forward — transact at a future date at a price fixed
+    now — but on an **organised exchange** rather than privately.
+-   **Standardised**: the exchange fixes the contract size, the quality and the
+    delivery dates, so contracts are interchangeable and far more liquid.
+-   A **clearing house** steps between buyer and seller and becomes the
+    counterparty to each of them.
+-   **Marked to market daily** — the day's gain or loss is settled every evening
+    against posted **margin**, which is what removes most of the default risk.
+-   **No delivery needed**: positions are closed out and netted in cash.
+-   At expiry the futures price **converges to the spot price** of the
+    underlying — otherwise there would be an arbitrage.
+-   Harder to **corner**, because the deliverable range of securities is wide.
+    Regulated in the United States by the **CFTC**.
 
 ### Options
 
--   The **right, not the obligation**, to buy (**call**) or sell (**put**) at
-    the strike price.
--   **American** options may be exercised up to expiry; **European** options
-    only on the expiry date.
--   You pay a **premium** for that right. The premium rises with **time to
-    expiry** and with **volatility**, and moves with the strike.
+-   The **right, not the obligation**, to buy (**call**) or sell (**put**) an
+    instrument at the **strike** (exercise) price.
+-   **American**: exercisable at any time up to expiry. **European**: only on
+    the expiry date itself.
+-   Written on many underlyings — **stocks, stock indexes, futures**, currencies
+    and interest rates.
+-   To **hedge** you **buy** the contract: a put against a fall, a call against a
+    rise. For that right you pay a **premium**.
+-   The premium is **higher**:
+    -   the **greater the volatility** of the underlying, and the **longer the
+        time to expiry** — both mean more can happen before it ends;
+    -   for a **put**, and lower for a **call**, the **higher the strike**.
 
 ### Swaps
 
@@ -1427,9 +1440,23 @@ March at a price we fix now. The difference is only where it is done.
 *[ask]* A forward is a private agreement between us. What is the risk that
 creates?
 
-That in March, when the price has moved against you, you do not turn up. The
-exchange solves that - futures are standardised and marked to market every
-single day, so nobody is ever owed more than one day's movement.
+That in March, when the price has moved against you, you do not turn up.
+
+The exchange solves it in three steps, and it is worth naming them separately.
+Standardisation, so every contract is identical and you can sell yours to
+somebody else instead of being stuck with me. A clearing house, which steps in
+between us so neither of us faces the other at all - you face the exchange. And
+daily marking to market against margin, so the day's loss is paid tonight and
+nobody is ever owed more than one day's movement.
+
+One more line they tend to miss: at expiry the futures price and the spot price
+are the same number.
+
+*[ask]* Why must they be?
+
+Because if they were not, you could buy in one market and sell in the other for
+a certain profit. The arbitrage closes the gap, which is exactly why the
+contract tracks the thing it is written on.
 
 *[options tab]*
 
@@ -1438,9 +1465,19 @@ you the right and lets you walk away.
 
 *[ask]* If I am handing you the right to walk away, what do I want in return?
 
-A premium. And the premium goes up with time to expiry and with volatility -
-both of which are just saying the same thing, that more can happen between now
-and then.
+A premium. Two of its three drivers say the same thing: more time to expiry, and
+more volatility, both mean more can happen before the contract ends, so the
+right to choose is worth more.
+
+The third one is the strike, and it is worth doing out loud rather than
+memorising.
+
+*[ask]* I give you the right to sell at 950 or the right to sell at 1,100.
+Which do you pay more for?
+
+The 1,100 - you may sell at a higher price. So a higher strike makes a put dearer
+and a call cheaper, because the call is the right to buy and nobody wants to pay
+more to buy.
 
 *[swaps tab]* Name it and move on. Two streams of interest payments exchanged.
 Enormous market, no balance-sheet change, illiquid, default risk.
