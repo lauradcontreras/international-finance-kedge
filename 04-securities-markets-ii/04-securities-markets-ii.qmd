@@ -1601,13 +1601,14 @@ hedge works in both directions, which is the point students miss.
 
 ## 6 · Problem 2.9
 
-The same portfolio and the same fear. Now the S&P is at **1,000**, and a strike
-of **950** costs a premium of **$200 per contract**.
+The same **$100 million** portfolio tracking the S&P 500, the same fear, the same
+year ahead. The index is at **1,000**, and a strike of **950** costs a premium of
+**$200 per contract**.
 
 ::: ask
 1.  How is the hedge constructed with **options**?
-2.  What happens at **900**?
-3.  What happens at **1,100**?
+2.  What happens if a year later the index is at **900**?
+3.  And if it is at **1,100**?
 :::
 
 ::: {.smaller}
