@@ -1367,106 +1367,93 @@ pays for the loss on the other.
 
 ## 6 · The instruments: five families
 
-Two questions sort all five. **Must you go through with the trade, or may you
-walk away?** And **who is on the other side — one counterparty, or an exchange?**
-
 ::: {.panel-tabset}
 
 ### Forwards
 
-**A promise to trade later, at a price fixed now.**
-
--   The two parties agree the asset, the price and the date. **Long** = agree to
-    buy; **short** = agree to sell.
--   Private and bilateral — so you are exposed to the other side not turning up.
+-   An agreement between two parties to transact at a **future point in time**.
+-   Specifies the exact assets, the price, and the date of exchange.
+-   **Long** = agree to buy later. **Short** = agree to sell later.
+-   Private and bilateral, and therefore exposed to the other party defaulting.
 
 ### Futures
 
-**The same promise, standardised and traded on an exchange.**
-
--   Standardised, therefore liquid: you close the position out instead of
-    delivering anything.
--   **Marked to market daily** — gains and losses settle every evening, which is
-    what removes most of the default risk.
+-   The same idea, traded on an **organised exchange** rather than privately.
+-   **Standardised**, and therefore far more liquid than forwards.
+-   **Marked to market daily**, which is what removes most of the default risk.
+-   No need to deliver: positions are netted in cash.
+-   Harder to corner, because the deliverable range of securities is wide.
 -   Regulated in the United States by the CFTC.
 
 ### Options
 
-**The same promise, except you choose whether to go through with it.**
-
--   A **call** is the right to buy; a **put** is the right to sell, at the
-    **strike** price.
--   You pay a **premium** for that choice. It rises with **time to expiry** and
-    with **volatility** — both say the same thing: more can happen before it ends.
--   **American**: exercisable any time up to expiry. **European**: only on the
-    date itself.
+-   The **right, not the obligation**, to buy (**call**) or sell (**put**) at
+    the strike price.
+-   **American** options may be exercised up to expiry; **European** options
+    only on the expiry date.
+-   You pay a **premium** for that right. The premium rises with **time to
+    expiry** and with **volatility**, and moves with the strike.
 
 ### Swaps
 
-**A string of forwards: one stream of payments exchanged for another.**
-
--   The **plain vanilla** interest-rate swap trades fixed payments for floating
-    on an agreed **notional** amount.
--   Longer-dated than futures or options, but **illiquid** and exposed to
-    **default risk**.
+-   An **interest-rate swap** exchanges one stream of interest payments for
+    another, in the same currency.
+-   The **plain vanilla** version specifies the rates exchanged, the type of
+    payments, and the notional amount.
+-   No balance-sheet change, and longer-dated than futures or options — but
+    **illiquid** and exposed to **default risk**.
 
 ### Credit
 
-**Insurance on somebody's borrowing.**
-
--   A **credit default swap** pays out when a basket of loans defaults.
--   Notional outstanding in the trillions — and you need not own the loans you
-    insure.
+-   **Credit derivatives** pay off on changes in credit events. The notional
+    outstanding is in the trillions.
+-   **Credit options** are tied to ratings or spreads.
+-   **Credit swaps** exchange payments on loan portfolios, letting lenders
+    specialise locally while diversifying.
+-   A **credit default swap** pays off, option-like, when a basket of loans
+    defaults.
 
 :::
 
 ::: notes
-Do not read five tabs out. Put the two questions up first and let them do the
-sorting - it turns five things to memorise into one idea with variations.
+Five tabs. Do not read them. Take forwards and futures together, spend real time
+on options, name swaps, and finish on credit.
 
-Use one example the whole way through so nothing resets. Say: I grow wheat, you
-run a bakery, and we are both worried about the price in March.
+*[forwards and futures tabs]*
 
-*[forwards]*
+Forwards and futures are the same promise. I agree today to buy from you in
+March at a price we fix now. The difference is only where it is done.
 
-We shake hands today: one tonne, in March, at 200 euros. Neither of us knows the
-March price and neither of us cares any more. That is a forward, and it is the
-original derivative - everything else on this slide is a variation on it.
+*[ask]* A forward is a private agreement between us. What is the risk that
+creates?
 
-*[ask]* What is the risk in our handshake?
+That in March, when the price has moved against you, you do not turn up. The
+exchange solves that - futures are standardised and marked to market every
+single day, so nobody is ever owed more than one day's movement.
 
-That in March, when the price has gone against you, you do not turn up. A
-private promise is only as good as the person making it.
+*[options tab]*
 
-*[futures]*
+Now the one that is genuinely different. A future obliges you. An option gives
+you the right and lets you walk away.
 
-So move it to an exchange. Same promise, but standard contracts, and every
-evening the exchange settles the day's movement between us. Nobody is ever owed
-more than one day, which is why default stops being the problem.
+*[ask]* If I am handing you the right to walk away, what do I want in return?
 
-*[options]*
+A premium. And the premium goes up with time to expiry and with volatility -
+both of which are just saying the same thing, that more can happen between now
+and then.
 
-Now change one word. Instead of *must* buy at 200, you *may* buy at 200.
+*[swaps tab]* Name it and move on. Two streams of interest payments exchanged.
+Enormous market, no balance-sheet change, illiquid, default risk.
 
-*[ask]* If I hand you the right to walk away, what do I want in return?
+*[credit tab]*
 
-A premium. And it costs more the longer the option runs and the more the price
-jumps around - both are the same statement, that more can happen before it ends.
+Finish here deliberately. A credit default swap pays you when a basket of loans
+defaults. It is insurance on someone else's borrowing.
 
-*[swaps]*
+*[ask]* And can you buy that insurance on a house that is not yours?
 
-One line: a swap is a string of forwards. Not one exchange in March, but one
-every quarter for five years. If they have the forward, they have the swap.
-
-*[credit]*
-
-And the last one is insurance. A credit default swap pays you when somebody
-else's loans default.
-
-*[ask]* Can you insure a house that is not yours?
-
-With a CDS, yes - and in 2007 people did, in volumes far larger than the loans
-themselves. Leave it there and pick it up in the regulation session.
+Yes. You can, and in 2007 people did, in volumes far larger than the loans
+themselves. Hold that thought for the regulation session.
 :::
 
 ## 6 · Why the payoff diagram is the whole lesson
