@@ -1041,6 +1041,107 @@ formula, then ask how long it takes the saving to repay the $2,000. The answer
 depends entirely on how long you stay in the house.
 :::
 
+## 4 · Getting the rate and the period right
+
+A rate is quoted **per year**. Every formula in this chapter wants it **per
+period** — and the number of periods has to match. The same €150,000 loan at a
+quoted **6% over 25 years**:
+
+| Payments | Rate per period | Periods | Payment | Paid per year |
+|:---|--:|--:|--:|--:|
+| Monthly | 6 ÷ 12 = 0.50% | 300 | 966.45 | 11,597 |
+| Quarterly | 6 ÷ 4 = 1.50% | 100 | 2,905.59 | 11,622 |
+| Semi-annual | 6 ÷ 2 = 3.00% | 50 | 5,829.82 | 11,660 |
+| Annual | 6.00% | 25 | 11,734.01 | 11,734 |
+
+::: keyidea
+Same loan, same quoted rate, four different answers. Divide the rate and
+multiply the periods by the **same** number — and never mix a monthly rate with
+a count of years.
+:::
+
+::: notes
+This is the single most expensive habit in the chapter, so spend five minutes on
+it rather than correcting it in the exam.
+
+The rule is one line: a quoted rate is annual, the formula is per period. Divide
+the rate by the number of payments a year and multiply the term by the same
+number. Both, every time.
+
+*[point at the table]*
+
+One loan, one quoted rate of six percent, four perfectly correct answers
+depending only on how often you pay.
+
+*[ask]* Look down the last column. Paying monthly costs eleven five ninety-seven
+a year, paying annually eleven seven thirty-four. Why is paying more often
+cheaper?
+
+Because every payment knocks down the balance, and interest is charged on the
+balance. Pay twelve times a year and you are reducing the debt all year long;
+pay once and you carry the full balance for twelve months first.
+
+*[pause]*
+
+If someone asks about the effective annual rate, here is the honest answer, and
+it runs the other way: six percent compounded monthly is an effective 6.17% a
+year, compounded annually it is exactly 6.00%. Two different questions - how
+expensive the quoted rate really is, against how fast you are retiring the
+principal. Do not open this unless they ask; it confuses more than it helps.
+:::
+
+## 4 · Problem 2.7b
+
+::: ask
+You borrow **€150,000** over **25 years**. The quoted rate is **6% a year**.
+
+1.  What is the **monthly** payment? And the **quarterly** payment?
+2.  A second lender offers **5.6%** with **1.5 discount points**, paid monthly.
+    How much is the saving each month?
+3.  How long must you keep the loan for the points to be worth buying?
+:::
+
+::: notes
+This is 2.7 again with the rate conversion built in, so they cannot avoid the
+step. Ten minutes.
+
+*[part one]*
+
+Monthly: half a percent per period, three hundred periods, nine hundred and
+sixty-six forty-five. Quarterly: one and a half percent, one hundred periods,
+two thousand nine hundred and five fifty-nine.
+
+*[ask]* Is the quarterly payment three times the monthly one?
+
+Almost, but not quite - it is slightly more than three times, for the reason on
+the previous slide.
+
+*[part two]*
+
+Five point six percent is nought point four six six seven percent a month.
+Payment nine hundred and thirty eleven. So the saving is thirty-six thirty-four
+a month.
+
+And the points: one and a half percent of a hundred and fifty thousand is two
+thousand two hundred and fifty, paid today.
+
+*[part three]*
+
+*[ask]* Same question as before - what has the problem not told you?
+
+How long they stay. Two thousand two hundred and fifty divided by thirty-six
+thirty-four is sixty-two months, a bit over five years, ignoring the time value
+of money. Discount the savings at the loan's own rate and it is seventy-four
+months, just over six.
+
+Same shape as 2.7, bigger numbers, and this time they had to convert the rate to
+get there.
+
+**Worked.** Monthly: i = 0.5%, T = 300, a = €966.45. Quarterly: i = 1.5%, T =
+100, a = €2,905.59. At 5.6%: i = 0.4667%, a = €930.11, saving €36.34 a month
+against €2,250 today. Break-even 62 months undiscounted, 74 discounted.
+:::
+
 # 5 · The foreign exchange market {.divider .center background-color="#06302F"}
 
 ## The biggest market nobody sees {.hook background-color="#FAF7F2"}
