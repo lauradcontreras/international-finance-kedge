@@ -160,6 +160,12 @@ that is the exam.
 go first, in this order: common/preferred/foreign, the mortgage types table, the
 appreciation slide, and long/short in derivatives. Do not cut the Gordon growth
 slides, the payoff diagram, or the reading discussion.
+
+**If you are resuming mid-chapter**, the remaining blocks run about 90 minutes:
+rate conversion and 2.7b 15 · foreign exchange 18 · derivatives 35 · the
+Sartzetakis discussion 20. Put the reading discussion **before the break**
+rather than last - it is the assessed piece, and leaving it at the end is what
+puts it at risk when derivatives overruns.
 :::
 
 # 3 · The stock market {.divider .center background-color="#06302F"}

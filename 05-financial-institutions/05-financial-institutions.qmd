@@ -142,6 +142,26 @@ borrower could in principle arrange between themselves. So for each institution
 we meet, the question is what it does that you cannot do as cheaply alone.
 Today's answer, for the international portfolio, is going to be: almost
 nothing - and yet people still do not do it.
+
+**Timing.** This section needs about 90 minutes of its own:
+
+- hook and roadmap 8
+- correlations and the risk floors 15
+- the Sharpe measure and the optimal portfolio 20
+- Problem 5.1 15
+- the efficient set, composition and the gains 17
+- exchange rate and Problem 5.2 11
+- other routes, Problem 5.3 and home bias 20
+
+If it is sharing a session with the end of the chapter on securities markets,
+you have closer to 80 and need to lose about 25 minutes. Cut in this order:
+**Problem 5.3**, **other ways to get there**, and **what the optimal portfolio
+holds**. The argument still lands without them - hook, correlations, floors,
+Sharpe, optimal portfolio, 5.1, efficient set, gains, exchange rate, 5.2, home
+bias.
+
+Do not cut Problem 5.1 or the home-bias slide. The first is the examinable
+mechanics and the second is the payoff the whole section is built towards.
 :::
 
 # 1 · International portfolio investment {.divider .center background-color="#06302F"}
@@ -538,6 +558,8 @@ home market is already in their portfolio.
 ::::
 
 ::: notes
+*[cuttable - the composition matters less than the fact that a gain exists]*
+
 Three things to draw out, and the third is the one that surprises people.
 
 First, most markets get a weight of zero. The optimiser is not trying to own a
@@ -743,6 +765,8 @@ the risk that entails.
 ::::
 
 ::: notes
+*[cuttable - name international mutual funds in one line and move on]*
+
 Do not read six boxes aloud. Group them and make one point.
 
 Everything here is a different route to the same destination: foreign exposure
@@ -793,6 +817,8 @@ international revenue.
 :::
 
 ::: notes
+*[cuttable - 5.1 already tests the mechanics; this one tests judgement]*
+
 Five minutes in pairs. There is no single number to compute, which is the point
 - this one tests whether they can reason with the measures rather than apply
 them.
