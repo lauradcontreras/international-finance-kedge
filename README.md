@@ -22,9 +22,9 @@ Hi! Welcome to the International Finance course website :wave:
 
 - [Session 4: Securities markets — stocks, mortgages, currencies and derivatives](https://lauradcontreras.github.io/international-finance-kedge/04-securities-markets-ii/04-securities-markets-ii.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/04-securities-markets-ii/04-securities-markets-ii.pdf)]
 
-- Session 5: Financial institutions and firms *(to come)*
+- [Session 5: Financial institutions — international portfolio investment](https://lauradcontreras.github.io/international-finance-kedge/05-financial-institutions/05-financial-institutions.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/05-financial-institutions/05-financial-institutions.pdf)]
 
-- Session 6: Financial institutions and firms *(to come)*
+- Session 6: Financial institutions — funds, insurance, banks and information *(to come)*
 
 - Session 7: Regulation — **individual assignment** *(to come)*
 

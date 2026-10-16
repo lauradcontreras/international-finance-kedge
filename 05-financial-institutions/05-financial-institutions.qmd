@@ -1,0 +1,934 @@
+---
+title: "International Finance"
+subtitle: "Session 5 — Financial Institutions and Firms: International Portfolio Investment"
+author: "Laura Contreras-Portela"
+institute: "KEDGE Business School"
+date: today
+date-format: "MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_theme/theme.scss]
+    width: 1600
+    height: 900
+    title-slide-attributes:
+      data-background-color: "#FAF7F2"
+    slide-number: c/t
+    show-slide-number: all
+    progress: true
+    history: true
+    hash: true
+    controls: true
+    navigation-mode: linear      # right arrow always goes to the next slide
+    preview-links: auto
+    highlight-style: github
+    code-line-numbers: true
+    html-math-method: katex
+    chalkboard:                     # C = draw on the slide, B = blank board
+      buttons: true
+      theme: whiteboard
+      chalk-effect: 0
+    footer: "International Finance · Session 5 · KEDGE"
+    embed-resources: false          # true -> one portable file, no wifi needed
+  beamer:                           # same source -> a real LaTeX PDF handout
+    aspectratio: 169
+    theme: metropolis
+    incremental: false
+    header-includes: |
+      \definecolor{ifteal}{HTML}{0E5250}
+      \definecolor{ifclay}{HTML}{B4573C}
+      \setbeamercolor{frametitle}{bg=ifteal}
+      \setbeamercolor{progress bar}{fg=ifteal}
+      \setbeamercolor{title separator}{fg=ifteal}
+      \setbeamercolor{structure}{fg=ifteal}
+      \setbeamercolor{alerted text}{fg=ifclay}
+execute:
+  echo: false
+  warning: false
+  message: false
+  fig-align: center
+  fig-width: 8
+  fig-height: 4.2
+knitr:
+  opts_chunk:
+    dev: png
+    dpi: 300
+---
+
+```{r setup}
+source("../_R/setup.R")
+```
+
+## One portfolio, twelve countries {.hook background-color="#FAF7F2"}
+
+Over 1980–2007, a US investor holding only US stocks earned **1.11% a month**
+with a standard deviation of **4.25**. The same investor, holding the optimal
+international portfolio, earned **1.40%** with a standard deviation of **4.74**.
+
+::: incremental
+-   More return and more risk — so the comparison needs a measure that handles
+    both at once.
+-   Adjusted for risk, the international portfolio wins in **every one of the
+    twelve countries** studied.
+-   Today is about why that gain exists, how large it is, and what stops
+    investors from taking it.
+:::
+
+::: notes
+Open with the numbers rather than the theory, because the theory is easier to
+accept once they have seen the size of the prize.
+
+A US investor who held only American shares earned one point one one percent a
+month. The same investor holding the best international mix earned one point
+four zero.
+
+*[ask]* Is that better?
+
+Do not accept yes. The standard deviation also rose, from four twenty-five to
+four seventy-four. More return and more risk is not obviously better, and that
+is exactly why we need a measure that puts the two together - which is where
+the Sharpe ratio comes in, in about ten minutes.
+
+Then the second bullet, which is the one worth remembering: once you adjust for
+risk, the international portfolio beat the domestic one in all twelve countries
+in the study. Not most. All.
+
+Last line sets up the session. Why does the gain exist, how big is it, and why
+does almost nobody take it.
+:::
+
+## Where we are {.center}
+
+Sessions 3 and 4 went through the **instruments**. We now turn to the
+**institutions** that hold them, and the first question is how anyone should
+hold a portfolio at all.
+
+:::: columns
+::: {.column width="50%"}
+Today:
+
+1. **International portfolio investment** — risk reduction, the optimal
+   portfolio, exchange-rate effects and the limits
+:::
+
+::: {.column width="50%"}
+Next session:
+
+2. Mutual funds · 3. Muñoz (2020) · 4. Insurance · 5. Investment firms ·
+6. Bank management · 7. Economic efficiency
+:::
+::::
+
+::: keyidea
+One question runs through all of it: **why does an intermediary exist at all?**
+Everything an institution does, an investor could in principle do alone — so
+each institution has to earn its place.
+:::
+
+::: notes
+Put the chapter in context before starting.
+
+Two sessions on instruments: money markets, bonds, stocks, mortgages,
+currencies, derivatives. Today we change the question. Not what is the claim,
+but who holds it and why.
+
+We only do section one today - international portfolio investment. The rest of
+the chapter, from mutual funds onwards, is next session.
+
+*[point at the key idea]*
+
+And give them the thread that runs through the whole chapter. Everything a
+mutual fund does, you could do yourself. Everything a bank does, a lender and a
+borrower could in principle arrange between themselves. So for each institution
+we meet, the question is what it does that you cannot do as cheaply alone.
+Today's answer, for the international portfolio, is going to be: almost
+nothing - and yet people still do not do it.
+:::
+
+# 1 · International portfolio investment {.divider .center background-color="#06302F"}
+
+## 1 · Why diversification works
+
+Portfolio risk falls as you add securities, but only because their returns do
+not move together. **Correlation**, not the number of holdings, does the work.
+
+Average correlation of monthly stock returns, **within** a country (on the
+diagonal) and **between** countries:
+
+| | AU | FR | DE | JP | NL | CH | UK | US |
+|:---|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| **Australia** | **0.586** | | | | | | | |
+| **France** | 0.286 | **0.576** | | | | | | |
+| **Germany** | 0.183 | 0.312 | **0.653** | | | | | |
+| **Japan** | 0.152 | 0.238 | 0.300 | **0.416** | | | | |
+| **Netherlands** | 0.241 | 0.344 | 0.509 | 0.282 | **0.624** | | | |
+| **Switzerland** | 0.358 | 0.368 | 0.475 | 0.281 | 0.517 | **0.664** | | |
+| **United Kingdom** | 0.315 | 0.378 | 0.299 | 0.209 | 0.393 | 0.431 | **0.698** | |
+| **United States** | 0.304 | 0.225 | 0.170 | 0.137 | 0.271 | 0.272 | 0.279 | **0.439** |
+
+::: notes
+Start from the mechanism, not the table.
+
+Adding securities reduces risk only if they do not all move together. If every
+stock in your portfolio rose and fell as one, holding fifty would be no safer
+than holding one. So the thing that matters is correlation, and the number of
+holdings only matters through it.
+
+*[point at the diagonal]*
+
+The bold figures are the correlation between two stocks picked inside the same
+country. Everything below is the correlation between two different countries.
+
+*[ask]* Compare the diagonal with the off-diagonal. What do you notice?
+
+Every off-diagonal number is smaller. Two British stocks move together at
+nought point seven; a British and a Japanese stock at nought point two.
+
+That is the whole case for international diversification in one table. You
+cannot escape the common factor inside one economy - the same interest rate,
+the same recession, the same government. Across economies, you partly can.
+
+One detail if they ask: the US row is low all the way across, and its own
+diagonal is the lowest at nought point four four. A large, diverse economy
+provides more internal diversification than a small one - which also means a US
+investor has less to gain abroad than a Swiss investor does.
+:::
+
+## 1 · How far risk falls
+
+```{r}
+#| fig-width: 11
+#| fig-height: 4.3
+n <- 1:50
+mk <- function(floor_, speed, lab) {
+  data.frame(n = n, risk = floor_ + (1 - floor_) * exp(-(n - 1) / speed),
+             market = lab)
+}
+lv <- c("Swiss stocks only", "U.S. stocks only", "International")
+d <- rbind(mk(.44, 6, lv[1]), mk(.27, 8, lv[2]), mk(.12, 11, lv[3]))
+d$market <- factor(d$market, levels = lv)
+ends <- data.frame(n = 50, risk = c(.44, .27, .12),
+                   market = factor(lv, levels = lv))
+
+ggplot(d, aes(n, risk, colour = market)) +
+  geom_hline(data = ends, aes(yintercept = risk, colour = market),
+             linetype = "22", linewidth = .4) +
+  geom_line(linewidth = 1) +
+  scale_colour_manual(values = c(IF_COL$slate, IF_COL$clay, IF_COL$teal700)) +
+  scale_y_continuous(breaks = c(.12, .27, .44, 1),
+                     labels = c("0.12", "0.27", "0.44", "1.00")) +
+  coord_cartesian(ylim = c(0, 1.02)) +
+  labs(x = "Number of stocks in the portfolio", y = "Portfolio risk", colour = NULL,
+       title = "Diversification stops working at a floor - and the floor is lower abroad",
+       caption = "Schematic, following Solnik. Risk of a single stock set to 1.") +
+  theme_if() +
+  theme(legend.position = "top")
+```
+
+Keep adding stocks and risk falls — but only to a floor. What remains is
+**systematic risk**: the part no amount of diversification removes.
+
+::: notes
+Three curves, same shape, three different floors.
+
+*[trace one curve with a finger]*
+
+Each one starts at the risk of holding a single stock and falls as you add more.
+Steeply at first - the second stock helps enormously - then barely at all. By
+about twenty holdings you have captured most of what is available.
+
+*[ask]* Why does it flatten instead of going to zero?
+
+Because some risk is common to every company in the set. A recession, a rate
+rise, a war. Diversification removes what is specific to one firm; it cannot
+remove what hits all of them. That remainder is systematic risk.
+
+*[point at the three dashed lines]*
+
+Now the point of the slide. The floor is not the same height. A Swiss investor
+diversifying only inside Switzerland stops at nought point four four. An
+American stops at nought point two seven - a bigger, more varied economy. Go
+international and the floor drops to nought point one two.
+
+Say the consequence plainly: the gain from going abroad is largest for
+investors in small economies. A Swiss investor has far more to gain than an
+American one, which is a result you can predict from the correlation table we
+just looked at.
+:::
+
+## 1 · Measuring performance
+
+:::: columns
+::: {.column width="52%"}
+The **world beta** measures how sensitive a national market is to world market
+movements — the systematic part, which diversification cannot remove.
+
+The **Sharpe performance measure** puts return and risk in one number: excess
+return per unit of total risk.
+
+$$SHP_i = \frac{\bar R_i - R_f}{\sigma_i}$$
+
+-   $\bar R_i$ — mean return of market $i$
+-   $\sigma_i$ — standard deviation of those returns
+-   $R_f$ — the risk-free rate (US Treasury bill)
+:::
+
+::: {.column width="48%"}
+Monthly, 1980–2007:
+
+| Market | Mean | SD | β | SHP |
+|:---|--:|--:|--:|--:|
+| Sweden | 1.67 | 7.11 | 1.17 | **0.168** |
+| Netherlands | 1.35 | 5.19 | 0.99 | **0.167** |
+| United States | 1.11 | 4.25 | 0.88 | 0.149 |
+| Hong Kong | 1.54 | 8.77 | 1.06 | 0.121 |
+| France | 1.20 | 6.00 | 1.04 | 0.121 |
+| Japan | 0.92 | 6.53 | 1.10 | **0.067** |
+:::
+::::
+
+::: notes
+Two measures, and they answer different questions.
+
+Beta asks how much of a market's movement comes from the world moving. A beta
+of one point one means that market amplifies world swings; below one, it damps
+them.
+
+The Sharpe ratio asks something more practical: how much extra return did you
+get for each unit of risk you carried? Excess return on top, total risk
+underneath.
+
+*[point at the formula]*
+
+Note what is in the denominator - total risk, the standard deviation, not beta.
+That matters: Sharpe judges you on everything that moved, not only the part
+correlated with the world.
+
+*[point at the table]*
+
+Now read it with them, because the ranking is not the ranking of returns.
+
+*[ask]* Hong Kong returned one point five four a month and the United States
+one point one one. Which was the better investment?
+
+The United States, comfortably. Hong Kong's standard deviation was eight
+seventy-seven against four twenty-five, so its Sharpe ratio is a third lower.
+High returns bought with high volatility are not a free lunch - they are a
+purchase.
+
+And Japan at the bottom: the lowest mean return in the table, with high
+volatility. Nineteen eighty to two thousand and seven covers the bubble and the
+lost decade.
+:::
+
+## 1 · The optimal portfolio
+
+Investors prefer more wealth to less and dislike risk. With a risk-free asset
+available, the best portfolio of risky assets is the one that **maximises the
+Sharpe ratio**:
+
+$$\max (SHP_{op}) = \frac{\bar R_{op} - R_f}{\sigma_{op}}$$
+
+:::: columns
+::: {.column width="46%"}
+With two risky assets A and B:
+
+$$\bar R_{op} = x_A \bar R_A + x_B \bar R_B$$
+
+$$\sigma_{op} = \left[x_A^2\sigma_A^2 + x_B^2\sigma_B^2 + 2x_Ax_B\sigma_{AB}\right]^{1/2}$$
+:::
+
+::: {.column width="54%"}
+Substituting and maximising with respect to the weights gives
+
+$$x_A = \frac{(\bar R_A - R_f)\sigma_B^2 - (\bar R_B - R_f)\sigma_{AB}}
+{(\bar R_A - R_f)\sigma_B^2 + (\bar R_B - R_f)\sigma_A^2 - (\bar R_A - R_f + \bar R_B - R_f)\sigma_{AB}}$$
+
+$$x_B = 1 - x_A$$
+:::
+::::
+
+::: notes
+Do not derive this. Explain what it is doing and then use it.
+
+The investor can always put money in the risk-free asset, so the only question
+left is which mix of risky assets to hold. The answer is the mix with the best
+reward per unit of risk - the highest Sharpe ratio. That mix is the same for
+everybody, regardless of how brave they are; how brave you are only decides how
+much of your money goes into it rather than into Treasury bills.
+
+*[left column]*
+
+The portfolio return is just the weighted average of the two returns. The
+portfolio risk is not - and the third term in that bracket is why. The
+covariance term is what makes the whole thing work: if the two assets move
+against each other, that term is negative and the portfolio is less risky than
+either asset alone.
+
+*[right column]*
+
+This expression is what you get when you maximise the ratio with respect to the
+weights. It looks unpleasant and it is only algebra. In the exam you substitute
+numbers into it, which is what we are about to do.
+
+*[ask]* Before we compute anything: look at the numerator. What makes the weight
+on A large?
+
+A high excess return on A, a high variance on B, and a low covariance between
+them. All three say the same thing - hold more of the asset that contributes
+return and less of the one that duplicates risk you already have.
+:::
+
+## 1 · Problem 5.1
+
+::: ask
+For 1980.1–2001.12, monthly, in percent, for the US and Netherlands indexes:
+
+$\bar R_{US} = 1.26$, $\sigma^2_{US} = 19.62$ · $\bar R_{NL} = 1.38$,
+$\sigma^2_{NL} = 26.52$ · $R_f = 0.55$ · $\sigma_{US,NL} = 14.14$
+
+1.  What is the optimal international portfolio?
+2.  What are its expected return and risk?
+3.  What is its Sharpe performance?
+4.  How does that compare with the US alone?
+:::
+
+::: notes
+Ten minutes in pairs. Calculators out — this one is pure substitution, and it is
+the kind of question that appears on the exam.
+
+Two things to flag before they start, because both cost marks.
+
+The data gives you **variances**, not standard deviations. Nineteen point six
+two is a variance; the standard deviation is its square root, four point four
+three.
+
+And the covariance is given directly, fourteen point one four. They do not need
+to build it from the correlation, although it is worth noting where it comes
+from: four forty-three times five fifteen times nought point six two.
+
+*[let them work, then take it on the board]*
+
+Excess returns first: US nought point seven one, Netherlands nought point eight
+three.
+
+Numerator: nought seven one times twenty-six fifty-two, minus nought eight
+three times fourteen fourteen. Seven point zero nine.
+
+Denominator: thirteen point three four.
+
+So x_US is fifty-three percent and the Netherlands forty-seven.
+
+*[ask]* The Netherlands has the higher return. Why is it not the bigger half?
+
+Because it also has the higher variance, and the two markets are correlated at
+nought point six two, so the extra Dutch return does not buy much extra
+diversification.
+
+Then the portfolio: return one point three two, standard deviation four point
+two nine, Sharpe nought point one seven nine.
+
+And the comparison, which is the real answer to the question: the US alone had a
+Sharpe of nought point one six zero. Both markets individually are below the
+mix. That is diversification - the combination beats both of its parts, and
+nothing about either market changed.
+
+**Worked.** Excess returns 0.71 and 0.83. Numerator = 0.71 x 26.52 - 0.83 x
+14.14 = 7.09. Denominator = 0.71 x 26.52 + 0.83 x 19.62 - 1.54 x 14.14 = 13.34.
+x_US = 0.532, x_NL = 0.468. R_op = 1.316. Var = 18.40, SD = 4.29.
+SHP_op = (1.316 - 0.55)/4.29 = 0.179, against SHP_US = 0.160 and SHP_NL = 0.161.
+:::
+
+## 1 · The efficient set, drawn
+
+```{r}
+#| fig-width: 11
+#| fig-height: 4.6
+mkt <- data.frame(
+  code = c("AU","CN","FR","GM","HK","IT","JP","NL","SD","SW","UK","US"),
+  mean = c(1.26,1.07,1.20,1.19,1.54,1.29,0.92,1.35,1.67,1.15,1.19,1.11),
+  sd   = c(6.29,5.55,6.00,6.29,8.77,7.08,6.53,5.19,7.11,5.11,5.20,4.25))
+rf  <- 0.55
+oip <- data.frame(sd = 4.74, mean = 1.40)
+slope <- (oip$mean - rf) / oip$sd
+
+ggplot(mkt, aes(sd, mean)) +
+  geom_abline(intercept = rf, slope = slope,
+              colour = IF_COL$teal700, linewidth = .9) +
+  geom_point(size = 2.4, colour = IF_COL$slate, shape = 4, stroke = 1.1) +
+  geom_text(aes(label = code), vjust = -1, size = 3.4, colour = IF_COL$slate) +
+  geom_point(data = oip, size = 3.6, colour = IF_COL$clay) +
+  annotate("text", x = oip$sd, y = oip$mean + .13, label = "OIP",
+           colour = IF_COL$clay, size = 4.4, fontface = "bold") +
+  annotate("point", x = 0, y = rf, size = 2.6, colour = IF_COL$teal700) +
+  annotate("text", x = .25, y = rf - .08, label = "risk-free 0.55",
+           colour = IF_COL$teal700, size = 3.3, hjust = 0) +
+  coord_cartesian(xlim = c(0, 9.5), ylim = c(0.4, 1.9)) +
+  labs(x = "Standard deviation, % per month", y = "Mean return, % per month",
+       title = "Twelve national markets, and the portfolio that beats all of them",
+       caption = "Monthly returns 1980-2007. OIP for a US investor: 1.40% return, 4.74% risk.") +
+  theme_if()
+```
+
+::: notes
+This is the picture the algebra was building towards, so take a minute on it.
+
+*[point at the crosses]*
+
+Each cross is one national market: its average monthly return against its
+standard deviation. Hong Kong far out on the right, high return and high risk.
+The United States bottom left, modest return and the lowest risk of the twelve.
+
+*[point at the OIP dot]*
+
+The dot is the optimal international portfolio for a US investor. One point four
+zero percent a month at a standard deviation of four point seven four.
+
+*[ask]* Find a single country that is above and to the left of that dot.
+
+There is none. Every individual market is worse - either less return for the
+same risk, or more risk for the same return. A combination of twelve things is
+better than any one of them.
+
+*[trace the line from the risk-free point]*
+
+The line starts at the risk-free rate and passes through the OIP. Its slope *is*
+the Sharpe ratio, which is the cleanest way to see what that formula was doing:
+of all the lines you could draw from the risk-free rate to some portfolio, the
+optimal one is the steepest.
+
+*[ask]* And what are the points on the line between the risk-free rate and the
+dot?
+
+Mixtures of Treasury bills and the optimal portfolio. Beyond the dot you are
+borrowing at the risk-free rate to hold more of it. Which is why the mix is the
+same for everyone and only the position along the line differs.
+:::
+
+## 1 · What the optimal portfolio holds
+
+:::: columns
+::: {.column width="46%"}
+For a **US investor**, the optimal international portfolio over 1980–2007:
+
+| Market | Weight |
+|:---|--:|
+| Netherlands | 31.11% |
+| Sweden | 28.01% |
+| United States | 20.70% |
+| Hong Kong | 8.76% |
+| Italy | 6.60% |
+| Australia | 4.82% |
+| **Total** | **100%** |
+:::
+
+::: {.column width="54%"}
+Three things to notice:
+
+-   Only **six** of the twelve markets appear at all. The others add nothing
+    once these are held.
+-   The investor's **own market is a fifth** of the portfolio, not the whole of
+    it.
+-   The weights are **not** proportional to market size. Sweden is a small
+    market with a large weight, because its returns were high and only loosely
+    correlated with the rest.
+
+The composition differs by the investor's **domicile**, because each investor's
+home market is already in their portfolio.
+:::
+::::
+
+::: notes
+Three things to draw out, and the third is the one that surprises people.
+
+First, most markets get a weight of zero. The optimiser is not trying to own a
+bit of everything - it drops any market whose risk and return are already
+delivered by the ones it has kept.
+
+Second, the US investor's own market is one fifth of the portfolio. Remember
+that number, because at the end of the session we will see what investors
+actually hold, and it is nothing like twenty percent.
+
+Third, and this is worth pausing on.
+
+*[ask]* Sweden is a small economy. Why is it twenty-eight percent of the
+portfolio?
+
+Not because it is big - weights here have nothing to do with market
+capitalisation. Sweden had the highest Sharpe ratio in the table and its returns
+were not closely tied to the others. High reward per unit of risk, and risk that
+does not duplicate what you already carry.
+
+Last line: the table on the original slide has a different column for each
+investor's country, because a Dutch investor already holds Dutch assets in a way
+an American does not. The optimal portfolio depends on where you start.
+:::
+
+## 1 · The size of the gain
+
+```{r}
+#| fig-width: 11
+#| fig-height: 4.4
+g <- data.frame(
+  country = c("Japan","Canada","Italy","Germany","Australia","France",
+              "Hong Kong","United Kingdom","United States","Switzerland",
+              "Sweden","Netherlands"),
+  dp  = c(.065,.081,.088,.109,.089,.103,.108,.112,.149,.152,.184,.160),
+  oip = c(.177,.167,.152,.177,.152,.163,.171,.156,.194,.192,.215,.178))
+g$country <- factor(g$country, levels = g$country[order(g$oip - g$dp)])
+
+ggplot(g) +
+  geom_segment(aes(y = country, yend = country, x = dp, xend = oip),
+               colour = IF_COL$muted, linewidth = 1.1) +
+  geom_point(aes(y = country, x = dp), size = 2.8, colour = IF_COL$slate) +
+  geom_point(aes(y = country, x = oip), size = 2.8, colour = IF_COL$clay) +
+  annotate("text", x = .062, y = 12.4, label = "domestic only",
+           colour = IF_COL$slate, size = 3.6, hjust = 0, fontface = "bold") +
+  annotate("text", x = .205, y = 12.4, label = "optimal international",
+           colour = IF_COL$clay, size = 3.6, hjust = 1, fontface = "bold") +
+  coord_cartesian(xlim = c(.05, .23), clip = "off") +
+  labs(x = "Sharpe performance measure", y = NULL,
+       title = "Every country gains - and the ones that gain most start furthest behind",
+       caption = "Monthly returns 1980-2007, by investor's domicile.") +
+  theme_if() +
+  theme(panel.grid.major.y = element_blank())
+```
+
+::: notes
+One line per country. The grey dot is what that country's investors got holding
+only their own market; the orange dot is the optimal international portfolio for
+them. The gap is the gain.
+
+*[ask]* Which country gains the most, and can anyone say why before I tell you?
+
+Japan, by a long way - from nought point zero six five to nought point one seven
+seven, nearly three times. Japanese investors spent this period in a market with
+poor returns and high volatility, so almost anything else was an improvement.
+
+*[point at the top of the chart]*
+
+And the smallest gain is the Netherlands, which already had one of the best
+domestic Sharpe ratios in the sample. The pattern is general: the worse your own
+market, the more you gain by leaving it.
+
+*[pause]*
+
+Now the line that matters more than any individual country.
+
+Every single bar points the same way. Twelve countries, twelve gains, no
+exceptions. Whatever your starting point, the risk-adjusted performance improved
+by going international.
+
+*[ask]* So why is this not what everybody does?
+
+Hold that - it is the last slide of the session.
+:::
+
+## 1 · The exchange rate comes with it
+
+A US resident investing abroad earns the foreign return **and** whatever the
+currency does:
+
+$$R_{i\$} = R_i + e_i + R_i e_i \qquad \text{since} \qquad 1 + R_{i\$} = (1+R_i)(1+e_i)$$
+
+where $R_i$ is the local-currency return and $e_i$ the change in the exchange
+rate — positive when the foreign currency **appreciates** against the dollar.
+
+::: keyidea
+The currency affects **risk** through three separate channels:
+
+$$Var(R_{i\$}) = Var(R_i) + Var(e_i) + 2\,Cov(R_i, e_i) + \Delta Var$$
+
+its own volatility, its **covariance** with the local market, and the
+cross-product term.
+:::
+
+::: notes
+The point of this slide is that a foreign investment is two bets, not one, and
+students routinely forget the second.
+
+You buy Japanese shares. Two things then determine what you end up with: what
+the shares do in yen, and what the yen does against your currency.
+
+*[point at the formula]*
+
+The multiplicative version on the right is the honest one - one plus the dollar
+return equals one plus the local return, times one plus the currency change.
+Expand it and you get the three terms on the left, of which the last is small
+and the one people drop.
+
+*[ask]* If the exchange rate adds a second source of randomness, does foreign
+investing have to be riskier?
+
+Not necessarily, and the key idea explains why. Look at the covariance term. If
+the currency tends to rise when the local market falls, that covariance is
+negative and the currency is partly cancelling the market - the two risks offset
+rather than add.
+
+So currency risk is not automatically bad news. It is an extra term that can
+have either sign, and which sign it has is an empirical question for each
+market.
+
+Worth adding: this is also why the bond slide later says exchange risk makes
+international bond diversification hard. In a bond portfolio the local return is
+small and steady, so the currency term dominates everything.
+:::
+
+## 1 · Problem 5.2
+
+::: ask
+A US resident has just sold shares in a British firm. The shares returned
+**15%** in pounds, over a period in which the pound **depreciated 5%** against
+the dollar.
+
+What is the dollar return, in percentage terms?
+:::
+
+::: notes
+Two minutes. It is a one-line calculation and the point is the third term.
+
+*[ask]* First, without computing: will the dollar return be above or below
+fifteen percent?
+
+Below. The pound fell, so each pound you bring home buys fewer dollars.
+
+*[ask]* And is it exactly ten percent?
+
+That is the trap, and most of the room will say yes. Fifteen minus five is ten,
+and ten is wrong.
+
+*[do it on the board]*
+
+One plus fifteen percent, times one minus five percent. One point one five times
+nought point nine five is one point zero nine two five. So nine point two five
+percent.
+
+Or in the additive form: fifteen, minus five, minus nought point seven five. That
+last term is the cross-product - the currency loss applies to your investment
+gains as well as to your original stake.
+
+*[pause]*
+
+Three quarters of a percent sounds trivial. Make the numbers bigger and it is
+not: a fifty percent return with a thirty percent currency fall loses you fifteen
+points to the cross term alone.
+
+**Worked.** R$ = (1.15)(0.95) - 1 = 9.25%. Additive: 0.15 - 0.05 + (0.15)(-0.05)
+= 0.15 - 0.05 - 0.0075 = 9.25%.
+:::
+
+## 1 · Other ways to get there
+
+:::: columns
+::: {.column width="50%"}
+**International bonds.** Less studied than equities, and exchange risk makes the
+gains hard to realise — though **currency forwards** can hedge most of it away.
+
+**International mutual funds.** Diversification bought at home: no extra
+transaction or information costs, no legal barriers, and professional managers.
+
+**Country funds.** Invest in a single foreign market — useful for building your
+own allocation, or for reaching markets otherwise closed.
+:::
+
+::: {.column width="50%"}
+**ADRs.** Foreign shares repackaged to trade on a US exchange, in dollars.
+
+**ETFs.** Track a foreign index and trade like a single stock.
+
+**Hedge funds.** Privately pooled, aggressive and flexible — leverage, short
+positions, derivatives, across currencies, bonds, stocks, commodities and
+property. Sought for **absolute** returns, whether markets rise or fall, with
+the risk that entails.
+:::
+::::
+
+::: notes
+Do not read six boxes aloud. Group them and make one point.
+
+Everything here is a different route to the same destination: foreign exposure
+without personally opening a brokerage account in Tokyo.
+
+*[left column, briefly]*
+
+Bonds first, and note the honest caveat - with bonds the currency term swamps
+the return term, so the diversification gain is harder to collect unless you
+hedge it with the forwards from last session.
+
+Then funds, which are the practical answer for almost everybody: one purchase,
+at home, in your own currency.
+
+*[right column]*
+
+ADRs they have already met, in the stock market section. ETFs are the modern
+version of the same idea - buy an index as if it were one share.
+
+Hedge funds are the odd one out and worth flagging as such. The others buy
+diversification. Hedge funds promise absolute return, which is a different
+product with a different risk, and we come back to them next session.
+
+*[ask]* If international mutual funds make this so easy, what is left of the
+excuse for not diversifying?
+
+Nothing - which is exactly the puzzle of the next slide.
+:::
+
+## 1 · Problem 5.3
+
+::: ask
+US-based international mutual funds, against the S&P 500 and the US MNC index,
+monthly over 1977–1986:
+
+| | Mean return | SD | $\beta_{US}$ |
+|:---|--:|--:|--:|
+| US-based international mutual funds | 1.58 | 5.78 | 0.69 |
+| S&P 500 | 1.17 | 4.25 | 1.00 |
+| US MNC index | 1.34 | 4.38 | 0.98 |
+
+What is your analysis of their relative performance?
+:::
+
+::: {.smaller}
+The US MNC index holds the 60 US multinationals with the highest share of
+international revenue.
+:::
+
+::: notes
+Five minutes in pairs. There is no single number to compute, which is the point
+- this one tests whether they can reason with the measures rather than apply
+them.
+
+*[ask]* Start with the easy observation. Which has the highest return?
+
+The international funds, one fifty-eight against one seventeen. But by now they
+should not stop there.
+
+*[ask]* So divide by risk. Return per unit of standard deviation?
+
+Funds, nought point two seven three. S&P, nought point two seven five. MNC
+index, nought point three zero six. The funds' advantage in raw return almost
+exactly disappears once you account for how much more they moved - and the MNC
+index beats both.
+
+*[point at the beta column]*
+
+Now the interesting column. The funds have a beta of nought point six nine
+against the US market, while both US portfolios sit at about one.
+
+*[ask]* What does that tell you?
+
+That the funds really did hold something different. They were genuinely less
+exposed to US market movements - that is international diversification showing
+up in the data.
+
+*[pause]*
+
+Then the conclusion worth writing down, and it has two halves.
+
+The funds delivered real diversification, visible in the beta. But they did not
+deliver better risk-adjusted performance than simply holding American
+multinationals - firms that earn abroad and so carry foreign exposure inside a
+domestic share.
+
+*[ask]* So is buying an international fund worth the fees?
+
+On this evidence, debatable. You can get part of the exposure at home. It is a
+genuinely open question and a good one to leave with them.
+:::
+
+## 1 · Why almost nobody does it
+
+:::: columns
+::: {.column width="52%"}
+**Home bias.** Investors hold far more domestic equity than any model
+recommends. Four explanations are offered:
+
+-   Domestic securities provide services foreign ones do not, such as
+    **hedging domestic inflation**.
+-   **Barriers**, formal and informal — legal, administrative, transaction and
+    information costs, taxes.
+-   The **prudent man rule**: institutions may simply be forbidden to hold more
+    than a set fraction abroad.
+-   It may be fading, as markets integrate and country funds and international
+    mutual funds spread.
+:::
+
+::: {.column width="48%"}
+**Large-cap bias.** Portfolios that do go abroad concentrate in large firms —
+and large firms are the worst vehicle for the job.
+
+-   Large caps are typically **multinationals**, with foreign customers and
+    investors, so their returns are driven by **common global factors** and are
+    highly correlated.
+-   **Small-cap** firms are driven by **local** factors, so they are the more
+    effective instrument for international diversification.
+:::
+::::
+
+::: notes
+Close the session on the puzzle.
+
+We have spent an hour establishing that international diversification improves
+risk-adjusted performance in every country studied, and that it is easy and
+cheap to obtain. So:
+
+*[ask]* Why does the average investor hold ninety percent of their money at home?
+
+Let them try before you give the list. The four explanations are on the slide
+and none of them is fully convincing, which is worth admitting - home bias is
+still an open puzzle in the literature.
+
+Take the second and third seriously, because they are the testable ones.
+Barriers are real but have fallen enormously, and home bias has not fallen
+nearly as fast. The prudent man rule is real and binding for pension funds, but
+it does not explain household behaviour.
+
+*[right column]*
+
+Then the second bias, which is subtler and a nice one to finish on.
+
+Suppose you do invest abroad. You will almost certainly buy large, familiar,
+listed companies - Toyota, Siemens, Nestlé.
+
+*[ask]* What is wrong with that?
+
+Those are exactly the firms whose returns are driven by the same global factors
+as your own large caps. You have bought a foreign label on a correlated asset.
+
+The firms that would actually diversify you are the small, locally oriented
+ones you have never heard of - and those are the hardest to buy.
+
+Leave them with that: the easiest foreign investment to make is the one that
+diversifies you least.
+:::
+
+## Next session {.center}
+
+Session 6 continues the chapter: **mutual funds**, the **Muñoz (2020)** reading,
+**insurance companies**, **investment firms**, **bank management** and
+**economic efficiency**.
+
+::: keyidea
+Read **Muñoz (2020)** on the boards of socially responsible mutual funds before
+the session. The discussion is assessed.
+:::
+
+::: {.source}
+Press **`O`** for the slide overview · **`C`** to draw · **`S`** for speaker notes · **`F`** for fullscreen · **`E`** then print for a PDF of the slides.
+:::
+
+::: notes
+That is the whole of international portfolio investment.
+
+Next session is the rest of the chapter, and it is mostly institutions: mutual
+funds, insurance companies, investment banks and brokers, how a bank actually
+manages its balance sheet, and then the asymmetric-information material -
+adverse selection, moral hazard, conflicts of interest.
+
+One thing to bring. Read Muñoz. It is on socially responsible mutual funds and
+how their boards affect performance, and it picks up directly from today's
+material, since a mutual fund is how most people will ever hold the portfolio we
+spent today constructing.
+
+Say plainly that the discussion is assessed, the same way the green bonds one
+was.
+:::

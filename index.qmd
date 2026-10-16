@@ -50,8 +50,13 @@ for an overview. A PDF version is available next to each session.
 :::
 
 ::: {.session}
-[5–6 · Financial institutions and firms]{.title}
-[To come]{.soon}
+[5 · Financial institutions — international portfolio investment]{.title}
+[[Slides](05-financial-institutions/05-financial-institutions.html) · [PDF](05-financial-institutions/05-financial-institutions.pdf)]{.links}
+:::
+
+::: {.session}
+[6 · Financial institutions — funds, insurance, banks and information]{.title}
+[[Paper](https://onlinelibrary.wiley.com/doi/10.1002/csr.1829)]{.links}
 :::
 
 ::: {.session}
