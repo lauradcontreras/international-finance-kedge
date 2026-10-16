@@ -487,6 +487,8 @@ Because it dates from 1896 and people recognise the number. That is a reason
 from journalism, not from finance.
 :::
 
+## 3 · What a share is worth
+
 Three formulas, three jobs: **value** the share from forecasts, **estimate** one
 of the inputs, or value it **without forecasting at all**.
 
