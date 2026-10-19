@@ -1620,7 +1620,106 @@ themselves. Hold that thought for the regulation session.
 
 ## 6 · Why the payoff diagram is the whole lesson
 
+::: {.content-visible unless-format="beamer"}
+
+```{=html}
+<div class="payoff">
+<svg viewBox="0 0 1520 490" role="img" aria-labelledby="pfT pfD"
+     style="width:100%;height:auto;max-height:440px;display:block;margin:0 auto;font-family:inherit" preserveAspectRatio="xMidYMid meet">
+<title id="pfT">Payoff diagrams: option against future</title>
+<desc id="pfD">Left panel: a long futures position is a straight line through the strike of 115; a bought call follows that line above the strike and goes flat at minus 2 000 below it, so it ends 2 000 below the future on the upside. Right panel: the mirror image, a short future and a bought put.</desc>
+<style>
+.pf-grid{stroke:#E8EDEC;stroke-width:1}
+.pf-zero{stroke:#9AA7A4;stroke-width:1.3}
+.pf-strike{stroke:#63716E;stroke-width:1.4;stroke-dasharray:6 5}
+.pf-fut{fill:none;stroke:#40607D;stroke-width:3.6;stroke-linejoin:round;stroke-linecap:round}
+.pf-opt{fill:none;stroke:#B4573C;stroke-width:3.6;stroke-linejoin:round;stroke-linecap:round}
+.pf-title{fill:#0E5250;font-size:25px;font-weight:700}
+.pf-ptitle{fill:#0E5250;font-size:20px;font-weight:700}
+.pf-tick{fill:#63716E;font-size:15px}
+.pf-axis{fill:#63716E;font-size:16px}
+.pf-lfut{fill:#40607D;font-size:19px;font-weight:600}
+.pf-lopt{fill:#B4573C;font-size:19px;font-weight:600}
+.pf-note{fill:#63716E;font-size:15px}
+.pf-brk{stroke:#63716E;stroke-width:1.2;fill:none}
+.pf-dot{fill:#B4573C}
+</style>
+<text class="pf-title" x="86" y="32">The option has a floor. The future does not.</text>
+<text class="pf-ptitle" x="86" y="68">Call option and long future</text>
+<line class="pf-grid" x1="86" y1="382" x2="646" y2="382"/>
+<line class="pf-grid" x1="86" y1="332" x2="646" y2="332"/>
+<line class="pf-grid" x1="86" y1="282" x2="646" y2="282"/>
+<line class="pf-zero" x1="86" y1="232" x2="646" y2="232"/>
+<line class="pf-grid" x1="86" y1="182" x2="646" y2="182"/>
+<line class="pf-grid" x1="86" y1="132" x2="646" y2="132"/>
+<line class="pf-grid" x1="86" y1="82" x2="646" y2="82"/>
+<line class="pf-strike" x1="310" y1="82" x2="310" y2="382"/>
+<text class="pf-note" x="318" y="97">strike 115</text>
+<text class="pf-tick" x="76" y="387" text-anchor="end">−6 000</text>
+<text class="pf-tick" x="76" y="337" text-anchor="end">−4 000</text>
+<text class="pf-tick" x="76" y="287" text-anchor="end">−2 000</text>
+<text class="pf-tick" x="76" y="237" text-anchor="end">0</text>
+<text class="pf-tick" x="76" y="187" text-anchor="end">2 000</text>
+<text class="pf-tick" x="76" y="137" text-anchor="end">4 000</text>
+<text class="pf-tick" x="76" y="87" text-anchor="end">6 000</text>
+<text class="pf-tick" x="86" y="408" text-anchor="middle">105</text>
+<text class="pf-tick" x="198" y="408" text-anchor="middle">110</text>
+<text class="pf-tick" x="310" y="408" text-anchor="middle">115</text>
+<text class="pf-tick" x="422" y="408" text-anchor="middle">120</text>
+<text class="pf-tick" x="534" y="408" text-anchor="middle">125</text>
+<text class="pf-tick" x="646" y="408" text-anchor="middle">130</text>
+<text class="pf-axis" x="366" y="436" text-anchor="middle">Price at expiration</text>
+<text class="pf-axis" x="22" y="232" text-anchor="middle" transform="rotate(-90 22 232)">Profit</text>
+<text class="pf-ptitle" x="880" y="68">Put option and short future</text>
+<line class="pf-grid" x1="880" y1="382" x2="1440" y2="382"/>
+<line class="pf-grid" x1="880" y1="332" x2="1440" y2="332"/>
+<line class="pf-grid" x1="880" y1="282" x2="1440" y2="282"/>
+<line class="pf-zero" x1="880" y1="232" x2="1440" y2="232"/>
+<line class="pf-grid" x1="880" y1="182" x2="1440" y2="182"/>
+<line class="pf-grid" x1="880" y1="132" x2="1440" y2="132"/>
+<line class="pf-grid" x1="880" y1="82" x2="1440" y2="82"/>
+<line class="pf-strike" x1="1104" y1="82" x2="1104" y2="382"/>
+<text class="pf-note" x="1112" y="97">strike 115</text>
+<text class="pf-tick" x="870" y="387" text-anchor="end">−6 000</text>
+<text class="pf-tick" x="870" y="337" text-anchor="end">−4 000</text>
+<text class="pf-tick" x="870" y="287" text-anchor="end">−2 000</text>
+<text class="pf-tick" x="870" y="237" text-anchor="end">0</text>
+<text class="pf-tick" x="870" y="187" text-anchor="end">2 000</text>
+<text class="pf-tick" x="870" y="137" text-anchor="end">4 000</text>
+<text class="pf-tick" x="870" y="87" text-anchor="end">6 000</text>
+<text class="pf-tick" x="880" y="408" text-anchor="middle">105</text>
+<text class="pf-tick" x="992" y="408" text-anchor="middle">110</text>
+<text class="pf-tick" x="1104" y="408" text-anchor="middle">115</text>
+<text class="pf-tick" x="1216" y="408" text-anchor="middle">120</text>
+<text class="pf-tick" x="1328" y="408" text-anchor="middle">125</text>
+<text class="pf-tick" x="1440" y="408" text-anchor="middle">130</text>
+<text class="pf-axis" x="1160" y="436" text-anchor="middle">Price at expiration</text>
+<text class="pf-axis" x="816" y="232" text-anchor="middle" transform="rotate(-90 816 232)">Profit</text>
+<polyline class="pf-fut" points="86,332 646,82"/>
+<polyline class="pf-opt" points="86,282 310,282 646,132"/>
+<circle class="pf-dot" cx="310" cy="282" r="5"/>
+<text class="pf-lfut" x="444.4" y="159" text-anchor="middle" transform="rotate(-24.1 444.4 172)">Long future</text>
+<text class="pf-lopt" x="534" y="206" text-anchor="middle" transform="rotate(-24.1 534 182)">Bought call</text>
+<path class="pf-brk" d="M664 82 H658 V132 H664"/>
+<text class="pf-note" x="670" y="112">premium 2 000</text>
+<polyline class="pf-fut" points="880,132 1440,382"/>
+<polyline class="pf-opt" points="880,182 1104,282 1440,282"/>
+<circle class="pf-dot" cx="1104" cy="282" r="5"/>
+<text class="pf-lfut" x="1305.6" y="346" text-anchor="middle" transform="rotate(24.1 1305.6 322)">Short future</text>
+<text class="pf-lopt" x="1249.6" y="268">Bought put</text>
+<path class="pf-brk" d="M896.4 142 H902.4 V192 H896.4"/>
+<text class="pf-note" x="894.4" y="128">premium 2 000</text>
+<text class="pf-note" x="86" y="472">Strike 115, premium 2 000 per contract, multiplier 400. Profit at expiration, before transaction costs.</text>
+</svg>
+</div>
+```
+
+:::
+
+::: {.content-visible when-format="beamer"}
+
 ```{r}
+#| eval: !expr knitr::is_latex_output()
 #| fig-width: 12
 #| fig-height: 4.2
 S <- seq(105, 130, length.out = 300)
@@ -1652,6 +1751,8 @@ ggplot(d, aes(S, profit, colour = who)) +
   theme_if() +
   theme(strip.text = element_text(colour = IF_COL$teal700, face = "bold"))
 ```
+
+:::
 
 -   The **strike** (here **115**) is the price written into the option: the
     price at which the holder may buy (call) or sell (put). The market price
