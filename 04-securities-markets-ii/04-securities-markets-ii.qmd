@@ -1979,39 +1979,45 @@ a different part of it closely.
 [Sections: 1 → §2 · 2 → §4 · 3 → §4.1 · 4 → §5.1 and §6 · 5 → §3.1 · 6 → §5.2
 and §6]{.source}
 
-### The running example
+### How to structure it
+
+Four parts, in this order, with these headings. The first three are about your
+question. The fourth is the same for everyone.
+
+1.  **The claim** — what the paper argues on your question, in your own words,
+    with the section. Not a summary of the paper. *(~150 words)*
+2.  **Why, and why not** — the argument for it, and the strongest objection to
+    it. This is the core. *(~350 words)*
+3.  **What could be done next** — one concrete proposal, and who would have to
+    act on it. *(~200 words)*
+4.  **And now AI** — your own view. *(~200 words)*
+
+[Two pages maximum. Names and question number on the first line. An answer with
+no counter-argument is half an answer, and padding is visible.]{.source}
+
+### The last section
 
 ::: keyidea
-The paper was written in 2019. Your example is **now** — the AI build-out: the
-capital it is absorbing, the electricity it is consuming, and the claims being
-made for what it will solve.
+Whatever your question, the fourth section is the same: **does the rise of AI
+change your answer?**
 :::
 
-Sartzetakis could not have had this case in mind, so you will not find the
-answer in the text. Taking his argument and running it on the current situation
-is the point of the exercise.
+The paper is from 2019 and says nothing about AI. This section is not in the
+text and cannot be looked up. It is your own judgement, and it is the part I
+will read most carefully.
 
-### What a good answer does
-
--   **Develops the idea** — the mechanism, not the opinion. What is being
-    claimed, and by whom?
--   **Says why** — the argument *and* its strongest objection. An answer with no
-    counter-argument is half an answer.
--   **Says what could be done next** — one concrete proposal: a rule, a
-    standard, a change in who verifies, or a defended reason to do nothing. Name
-    who would have to act.
--   **Two pages maximum.** Shorter is fine. Padding is visible.
-
+Start from what is actually happening now: the capital going into data centres,
+the electricity they need, and the claims being made about what AI will solve.
 :::
 
 ::: notes
 This is the assessed piece, so protect the time for it and do not let the
 derivatives section eat it.
 
-Open the tabs in order: the questions, then the running example, then what a
-good answer does. Do not skip the middle tab - the AI example is the part that
-separates a good answer from a summary of the paper, and it is also the part
-they cannot look up.
+Open the tabs in order: the questions, the structure, then the last section.
+Spend real time on the third tab - the AI section is the part that separates a
+good answer from a summary of the paper, and it is the only part they cannot
+look up.
 
 *[on the questions]*
 
@@ -2030,10 +2036,17 @@ exercise.
 Tell them to choose the question they disagree with something in, not the one
 that looks easiest.
 
-*[on the running example]*
+*[on the structure]*
 
-Be concrete about what the AI example gives them, because this is where they
-will flounder.
+Four parts, four headings, and tell them to actually use the headings - it makes
+the structure visible to them while they write and to you while you mark. Say
+that the word counts are a shape, not a rule.
+
+*[on the last section]*
+
+This is the one that is the same for all six, and it is where they will
+flounder, so be concrete. If a group is stuck, here is a handle for each
+question.
 
 Question one: if the central bank is steering credit towards the transition,
 does it also steer credit towards or away from data centres? Who decided that?
@@ -2061,9 +2074,9 @@ label. So what would actually have to change - and is a bond any part of it?
 
 *[on what a good answer does]*
 
-The three-part structure is the whole marking scheme: the idea, the why, and
-what could be done next. Say that an answer missing the third part cannot get
-the top mark, however well written the first two are.
+The four sections are the whole marking scheme. Say that an answer missing
+section three cannot get the top mark however well written the first two are,
+and an answer missing section four has not done the assignment at all.
 
 *[then go to the marking slide and read it out]*
 :::
