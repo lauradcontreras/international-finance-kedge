@@ -1954,59 +1954,153 @@ a signalling device, a marketing device, or a commitment device. The paper is
 largely an argument about which of the three it actually is.
 :::
 
-## 7 · Sartzetakis (2021), green bonds and the low-carbon transition
+## 7 · Sartzetakis (2021), green bonds and the low-carbon transition {.smaller}
 
 ::: {.panel-tabset}
 
-### The questions
+### The six questions
 
-Come with an answer to each of these. I will ask.
+Choose **one**. Every answer carries the same running example: **the rise of
+AI**.
 
-1.  What are the **advantages and disadvantages of enlarging the mandate of the
-    central bank**?
-2.  Which projects can be considered **"green"** and financed by green bonds?
-3.  What is the process for **project evaluation and selection**?
-4.  What are the **positive developments** in the green bond market, and the
-    **limits** to its development?
+1.  **The central bank's mandate.** Should it be enlarged to cover the climate
+    transition? State both cases and say which is the stronger.
+2.  **What counts as green.** Who should define the category, and on what
+    criteria, when the issuer writes the definition and also benefits from it?
+3.  **Evaluation and verification.** How should projects be selected and
+    checked, given that the issuer appoints and pays the verifier?
+4.  **Growth against effect.** The market has grown quickly. Has it financed
+    anything that would not have been financed anyway?
+5.  **The price of the label.** Identical cash flows, identical credit risk — so
+    why would the yield differ, and what would a persistent difference tell you
+    about investors?
+6.  **What else is needed.** Carbon pricing, disclosure rules, mandatory
+    standards: what makes the label bite, and is a bond the right instrument at
+    all?
 
-### How to prepare
+### The running example
 
--   Question 1 is the contested one. A central bank with a climate mandate is
-    making distributional choices it was not elected to make — against the
-    argument that climate risk is financial risk and therefore already within
-    its remit.
--   Questions 2 and 3 are where **greenwashing** lives. If the issuer defines
-    "green" and the issuer appoints the verifier, what is the label worth?
--   For question 4, separate market **growth** from market **effect**. A market
-    can grow quickly and still finance nothing that would not have been financed
-    anyway.
+::: keyidea
+Whichever question you take, work it through **the rise of AI** — the capital it
+is absorbing, the electricity it consumes, and the claims made for what it can
+solve.
+:::
+
+The question is about green bonds. The example is what shows me you can carry an
+argument from the paper to a case the paper was not written about.
+
+### What a good answer does
+
+-   **Develops the idea** — the mechanism, not the opinion. What is being
+    claimed, and by whom?
+-   **Says why** — the argument *and* its strongest objection. An answer with no
+    counter-argument is half an answer.
+-   **Says what could be done next** — one concrete proposal: a rule, a
+    standard, a change in who verifies, or a defended reason to do nothing. Name
+    who would have to act.
+-   **Two pages maximum.** Shorter is fine. Padding is visible.
 
 :::
 
 ::: notes
-Run this as a discussion, not a lecture. If you are talking for more than two
-minutes at a stretch, stop.
+This is the assessed piece, so protect the time for it and do not let the
+derivatives section eat it.
 
-Structure: ten minutes in pairs on questions two and three, then open the floor
-on question one, then close on four.
+Open the tabs in order: the questions, then the running example, then what a
+good answer does. Do not skip the middle tab - the AI example is the part that
+separates a good answer from a summary of the paper.
 
-On question one, make sure both sides get stated. For: climate risk is financial
-risk, so it is already the central bank's job. Against: deciding which sectors
-get cheap funding is fiscal policy, and nobody voted for the central bank.
+*[on the questions]*
 
-*[ask, if the room is quiet]* Who should decide which industries get cheap
-credit - a parliament, or a committee of unelected economists?
+Read the six out loud, slowly. They are deliberately uneven in difficulty. One
+and six are the open ones. Two, three and four are the ones where the paper
+gives them most to work with. Five is the one that connects back to the hook at
+the start of the session.
 
-On two and three, push them to the mechanism rather than the opinion. Who writes
-the definition of green? Who checks it? Who pays the person who checks it?
+Tell them to choose the question they disagree with something in, not the one
+that looks easiest.
 
-On four, hold them to the distinction between growth and effect, and then close
-the loop with the start of the session:
+*[on the running example]*
 
-If the green label does not move the yield, the issuer gets no cheaper funding
-from it. And if they get no cheaper funding, the only reason to issue one is
-reputation. That is the paper's problem in one sentence, and it is the sentence
-I want back in the exam.
+Be concrete about what the AI example gives them, because this is where they
+will flounder.
+
+Question one: if the central bank is steering credit towards the transition,
+does it also steer credit towards or away from data centres? Who decided that?
+
+Question two: a data centre running on contracted renewables - green or not? AI
+used to cut losses on the grid - green or not? Who gets to say?
+
+Question three: verification reports written with AI, at scale. Does that fix
+the verifier problem or industrialise it?
+
+Question four: AI capital expenditure is enormous and it is being financed
+anyway. What exactly would a green label change?
+
+Question five: would investors accept a lower yield on debt labelled
+responsible AI, and would that be a price signal or a fashion?
+
+Question six: there is no carbon price on compute and no disclosure standard for
+model training. What architecture would you build, and is a bond part of it?
+
+*[on what a good answer does]*
+
+The three-part structure is the whole marking scheme: the idea, the why, and
+what could be done next. Say that an answer missing the third part cannot get
+the top mark, however well written the first two are.
+
+*[then go to the marking slide and read it out]*
+:::
+
+## 7 · Submission and marking
+
+:::: columns
+::: {.column width="46%"}
+**One PDF, your name on it, by 19:15.**
+
+Two pages maximum, on **one** of the six questions.
+
+Write it yourself. Submissions are checked with **Pangram**.
+:::
+
+::: {.column width="54%"}
+| Outcome | Mark |
+|:-----------------------|:----------------------|
+| Nothing received | **−2** on the grade |
+| Received, poorly done | **0** |
+| Received, well done | **+2** on the exam |
+| Written with AI | **−1**, on top of the above |
+:::
+::::
+
+::: notes
+Read this slide out. Do not summarise it - read it, because every line of it is
+a rule they will hold you to later.
+
+The deadline is 19:15. One PDF. A name on it.
+
+Say the arithmetic plainly so nobody can claim they misheard: nothing arrives
+and you lose two points. Something arrives and it is thin, you get nothing -
+no penalty, but nothing. Something arrives and it is good, two points on the
+exam.
+
+And the last line: if it is written by AI, minus one, applied on top of whatever
+the work itself earns. So a good essay written by a machine is worth less than a
+mediocre essay written by you.
+
+*[ask]* Why do you think I am asking you to write two pages by hand when the
+machine can do it in four seconds?
+
+The honest answer, and give it to them: because the exam is not open to the
+machine, and because the thing being assessed is whether you can hold an
+argument, not whether you can obtain one.
+
+*[if someone asks about the detector]*
+
+Say that submissions are checked, that no checker is perfect, and that a flag
+starts a conversation rather than ending one - you will ask them to talk through
+their own argument. That is a fairer rule than the detector alone, and it is
+also a more frightening one, which is the point.
 :::
 
 ## Next session {.center}
