@@ -1189,37 +1189,22 @@ actually made.
 
 ## 5 · Purchasing power parity
 
-Both versions rest on the **law of one price**: identical goods priced in a
-common currency should sell for the same amount, because arbitrage in goods
-removes any gap.
+Write $E$ for the dollar price of a euro. Both versions rest on the **law of one
+price**: identical goods priced in a common currency should sell for the same
+amount, because arbitrage in goods removes any gap.
 
-:::: columns
-::: {.column width="50%"}
-**Absolute PPP** — a proposition about **levels**. The nominal rate equals the
-ratio of the two price levels, so the real exchange rate
-$Q = E\,P_{EUR}/P_{US}$ equals one:
-
-$$E_{\$/\mathrm{EUR}} = \frac{P_{US}}{P_{EUR}}$$
-
-Requires identical consumption baskets and frictionless trade in every good —
-including non-tradables, which never arbitrage.
-:::
-
-::: {.column width="50%"}
-**Relative PPP** — a proposition about **rates of change**. Depreciation
-equals the inflation differential:
-
-$$\frac{\Delta E_{\$/\mathrm{EUR}}}{E_{\$/\mathrm{EUR}}} = \pi_{US} - \pi_{EUR}$$
-
-Requires only that frictions be **constant**, so they cancel in differences.
-This is the testable version.
-:::
-::::
-
-Absolute PPP is rejected in the data: deviations from $Q = 1$ are large and
-**persistent**, because goods are differentiated — firms hold pricing power — and
-nominal prices are **sticky**. Both break the arbitrage. PPP is therefore a
-**long-run** proposition: deviations decay slowly rather than not at all.
+-   **Absolute PPP, a proposition about levels.** $E = P_{US}/P_{EUR}$ —
+    equivalently, the real exchange rate $Q = E\,P_{EUR}/P_{US}$ equals one. It
+    requires identical consumption baskets and frictionless trade in every good,
+    including non-tradables, which never arbitrage.
+-   **Relative PPP, a proposition about rates of change.**
+    $\Delta E/E = \pi_{US} - \pi_{EUR}$. It requires only that frictions be
+    **constant**, so they cancel in differences. This is the testable version.
+-   **Why absolute PPP is rejected in the data.** Deviations from $Q = 1$ are
+    large and **persistent**: goods are differentiated, so firms hold pricing
+    power, and nominal prices are **sticky**. Both break the arbitrage.
+-   **What survives is a long-run proposition.** Deviations decay slowly rather
+    than not at all.
 
 ::: notes
 Start with the intuition, not the formula, because the formula is only the
@@ -1229,13 +1214,13 @@ The idea is the law of one price. If the identical good costs more in one
 country than another, someone buys it where it is cheap, sells it where it is
 dear, and the trade pushes the prices together.
 
-*[left column]*
+*[first item]*
 
 Do that for every good at once and you get absolute PPP. The exchange rate is
 the ratio of the two price levels. Say plainly that it almost never holds
 exactly - identical baskets and frictionless trade are a lot to ask.
 
-*[right column]*
+*[second item]*
 
 Relative PPP is the same statement in rates of change, and the difference is
 what makes it usable. If American inflation runs two points above European
@@ -1246,7 +1231,7 @@ retail margin - shifts the level but not the rate of change, so it cancels. That
 is why absolute PPP fails on the data and relative PPP is the one that gets
 tested.
 
-*[the paragraph below]*
+*[third and fourth items]*
 
 Two reasons it fails in the short run, and both are failures of the arbitrage.
 
@@ -2088,12 +2073,11 @@ and an answer missing section four has not done the assignment at all.
 **In your groups — maximum five.** One of the six questions, one document per
 group.
 
-Write it in the **Google Doc I share with you**. Two pages maximum, every name
-on the first line.
+Two pages maximum, every name on the first line.
 
 **Due 19:15.**
 
-I can see the document's full history, and the text is checked with **Pangram**.
+Write it yourselves. Submissions are checked with **Pangram**.
 :::
 
 ::: {.column width="52%"}
@@ -2107,21 +2091,6 @@ I can see the document's full history, and the text is checked with **Pangram**.
 ::::
 
 ::: notes
-*[before class - set this up]*
-
-Create the six documents yourself, from your own account, and share each one
-with edit access to its group. Do not let them create their own and send you a
-link. The owner of a Google document can delete its version history
-permanently, so if they own it, the evidence is theirs to destroy. If you own
-it, it is not. And version history needs edit access to view at all - a viewer
-or a commenter sees nothing - so you need to be inside the document, not looking
-at a PDF of it.
-
-One more reason not to accept a PDF: exporting strips the history entirely. The
-document is the submission.
-
-*[reading the slide]*
-
 Read this slide out. Do not summarise it - read it, because every line is a rule
 they will hold you to later.
 
@@ -2139,16 +2108,6 @@ And the last line: if it is written by AI, minus one, applied on top of whatever
 the work itself earns. So a good essay written by a machine is worth less than a
 mediocre essay written by them.
 
-*[on the document history - say this once, plainly, and then stop]*
-
-Tell them you can see the history of the document: when it was written, in what
-order, and what arrived in one piece. You are not trying to catch anyone. You
-are removing the temptation, which is a kinder thing to do.
-
-Do not oversell it. Someone in that room knows that a determined person can
-retype anything, and if you claim it is foolproof you lose them. What it does
-is make the lazy version visible, which is the version you actually get.
-
 *[ask]* Why am I asking you to write two pages yourselves when the machine can
 do it in four seconds?
 
@@ -2156,12 +2115,17 @@ The honest answer, and give it to them: because the exam is not open to the
 machine, and because what is being assessed is whether you can hold an argument,
 not whether you can obtain one.
 
+Add the practical reason too, because it lands harder than the principle: the
+fourth section asks what they think, and that is the section the machine cannot
+write for them. If they have outsourced the first three they will have nothing
+to say in the fourth, and it will show.
+
 *[if someone asks about the checker]*
 
-Say that no checker is perfect, that a flag starts a conversation rather than
-ending one, and that the conversation is you asking them to talk through their
-own argument. That is fairer than the detector alone, and more frightening,
-which is the point.
+Say that submissions are checked, that no checker is perfect, and that a flag
+starts a conversation rather than ending one - the conversation being you asking
+them to talk through their own argument. That is fairer than the detector alone,
+and more frightening, which is the point.
 :::
 
 ## Next session {.center}
