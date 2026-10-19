@@ -1960,34 +1960,36 @@ largely an argument about which of the three it actually is.
 
 ### The six questions
 
-Choose **one**. Every answer carries the same running example: **the rise of
-AI**.
+Choose **one**. One question per section of the paper, so each of you is reading
+a different part of it closely.
 
-1.  **The central bank's mandate.** Should it be enlarged to cover the climate
-    transition? State both cases and say which is the stronger.
-2.  **What counts as green.** Who should define the category, and on what
-    criteria, when the issuer writes the definition and also benefits from it?
-3.  **Evaluation and verification.** How should projects be selected and
-    checked, given that the issuer appoints and pays the verifier?
-4.  **Growth against effect.** The market has grown quickly. Has it financed
-    anything that would not have been financed anyway?
-5.  **Who pays, and when.** The paper's case for bonds rests on spreading the
-    cost of the transition across generations. Does debt share that burden, or
-    only move it?
-6.  **What else is needed.** Carbon pricing, disclosure rules, mandatory
-    standards: what makes the label bite, and is a bond the right instrument at
-    all?
+1.  Should the central bank's **mandate** be enlarged to cover the climate
+    transition — and if it is, who decides which sectors get cheap credit?
+2.  Who should decide **what counts as green**, when the issuer writes the
+    definition and also profits from it?
+3.  If the issuer appoints and pays the verifier, what is an **external review**
+    actually worth?
+4.  Why should a green bond yield **less** than an identical conventional one —
+    and why does the paper report a premium in §5.1 and deny one in §6?
+5.  Does debt genuinely **share** the cost of the transition across generations,
+    or does it only move the bill?
+6.  What would have to change for the green label to **bite** — and is a bond
+    the right instrument at all?
+
+[Sections: 1 → §2 · 2 → §4 · 3 → §4.1 · 4 → §5.1 and §6 · 5 → §3.1 · 6 → §5.2
+and §6]{.source}
 
 ### The running example
 
 ::: keyidea
-Whichever question you take, work it through **the rise of AI** — the capital it
-is absorbing, the electricity it consumes, and the claims made for what it can
-solve.
+The paper was written in 2019. Your example is **now** — the AI build-out: the
+capital it is absorbing, the electricity it is consuming, and the claims being
+made for what it will solve.
 :::
 
-The question is about green bonds. The example is what shows me you can carry an
-argument from the paper to a case the paper was not written about.
+Sartzetakis could not have had this case in mind, so you will not find the
+answer in the text. Taking his argument and running it on the current situation
+is the point of the exercise.
 
 ### What a good answer does
 
@@ -2008,14 +2010,22 @@ derivatives section eat it.
 
 Open the tabs in order: the questions, then the running example, then what a
 good answer does. Do not skip the middle tab - the AI example is the part that
-separates a good answer from a summary of the paper.
+separates a good answer from a summary of the paper, and it is also the part
+they cannot look up.
 
 *[on the questions]*
 
-Read the six out loud, slowly. They are deliberately uneven in difficulty. One
-and six are the open ones. Two, three and four are the ones where the paper
-gives them most to work with. Five is the one that connects back to the hook at
-the start of the session.
+Read the six out loud, slowly. There is one per section of the paper, so no two
+groups are reading the same pages closely - say that, because it is the reason
+they cannot all take the easy one.
+
+One and six are the open ones. Two and three are where the paper gives them most
+to work with. Four is the one that connects back to the hook at the start of the
+session, and it has a trap in it worth flagging: the paper reports greenium
+estimates in 5.1 - seventeen basis points, eighteen, six, two - and then states
+in the epilogue that there is no significant premium in the primary market. That
+is a contradiction in a published paper. A group that spots it has done the
+exercise.
 
 Tell them to choose the question they disagree with something in, not the one
 that looks easiest.
@@ -2034,8 +2044,9 @@ used to cut losses on the grid - green or not? Who gets to say?
 Question three: verification reports written with AI, at scale. Does that fix
 the verifier problem or industrialise it?
 
-Question four: AI capital expenditure is enormous and it is being financed
-anyway. What exactly would a green label change?
+Question four: would investors accept a lower yield on debt labelled
+responsible AI, or green data centre? And if they would, is that a price signal
+or a fashion? Then send them back to 5.1 against the epilogue.
 
 Question five: the data centres being built now are long-lived and
 debt-financed. Who gets the productivity, and who is left with the electricity
@@ -2045,7 +2056,8 @@ Question five is the paper's own theoretical claim, so it is the one where they
 have least excuse for not citing it.
 
 Question six: there is no carbon price on compute and no disclosure standard for
-model training. What architecture would you build, and is a bond part of it?
+model training, and the capital expenditure is happening anyway, label or no
+label. So what would actually have to change - and is a bond any part of it?
 
 *[on what a good answer does]*
 
