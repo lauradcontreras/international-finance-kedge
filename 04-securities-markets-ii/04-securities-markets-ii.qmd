@@ -1190,7 +1190,9 @@ actually made.
 ## 5 · Purchasing power parity
 
 Both versions rest on the **law of one price**: identical goods priced in a
-common currency should sell for the same amount.
+common currency should sell for the same amount, because arbitrage in goods
+moves the two prices together until the gap closes. PPP is that law applied to
+the basket rather than to the good.
 
 -   **Absolute PPP — a proposition about levels.** The nominal exchange rate
     equals the ratio of the two price levels; equivalently, the real exchange
