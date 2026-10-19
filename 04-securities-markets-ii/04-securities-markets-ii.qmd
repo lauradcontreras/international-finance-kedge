@@ -2069,7 +2069,7 @@ and an answer missing section four has not done the assignment at all.
 ## 7 · Submission and marking
 
 :::: columns
-::: {.column width="48%"}
+::: {.column width="42%"}
 **In your groups — maximum five.** One of the six questions, one document per
 group.
 
@@ -2080,13 +2080,17 @@ Two pages maximum, every name on the first line.
 Write it yourselves. Submissions are checked with **Pangram**.
 :::
 
-::: {.column width="52%"}
-| Outcome | Mark |
-|:-----------------------|:----------------------|
-| Nothing received | **−2** on the grade |
-| Received, poorly done | **0** |
-| Received, well done | **+2** on the exam |
-| Written with AI | **−1**, on top of the above |
+::: {.column width="58%"}
+| What you hand in | On the exam |
+|:----------------------------------------|:--------|
+| Nothing | **−2** |
+| Something, but not really attempted | **0** |
+| All four sections, done honestly | **+1** |
+| A real counter-argument and a concrete proposal | **+2** |
+| A fourth section that tells me something | **+3** |
+| Written with AI | **−1** on top |
+
+[The ladder is cumulative: each line assumes the one above it.]{.source}
 :::
 ::::
 
@@ -2096,17 +2100,28 @@ they will hold you to later.
 
 Groups of five, same as the security analysis. One question per group. One
 document. Every name on the first line, because the mark goes to all of them.
-
 The deadline is 19:15.
 
-Say the arithmetic plainly so nobody can claim they misheard: nothing arrives
-and the group loses two points. Something arrives and it is thin, they get
-nothing - no penalty, but nothing. Something arrives and it is good, two points
-on the exam.
+*[on the ladder - this is the part that matters, so slow down]*
 
-And the last line: if it is written by AI, minus one, applied on top of whatever
-the work itself earns. So a good essay written by a machine is worth less than a
-mediocre essay written by them.
+The point of six lines rather than three is that effort always pays. There is no
+cliff where a group decides it cannot reach the top band and stops trying.
+
+Walk down it. Hand in nothing and you lose two. Hand in something you wrote on
+the tram and you get nothing - no penalty, but nothing. Do all four sections
+properly and you are already a point up. Make the counter-argument a real one
+and the proposal a concrete one, and that is two.
+
+Then the top line, and say this one slowly, because it is the whole design: the
+third point is for the fourth section. Not for length, not for polish - for
+telling me something about AI and this question that I had not thought of. Some
+groups will get it. Most will not, and that is what makes it worth chasing.
+
+*[be straight about the arithmetic]*
+
+Three points up, two points down, and one more off if a machine wrote it. That
+is a five-point spread on a two-page piece of work, which is why it is worth two
+evenings and not one.
 
 *[ask]* Why am I asking you to write two pages yourselves when the machine can
 do it in four seconds?
@@ -2116,9 +2131,9 @@ machine, and because what is being assessed is whether you can hold an argument,
 not whether you can obtain one.
 
 Add the practical reason too, because it lands harder than the principle: the
-fourth section asks what they think, and that is the section the machine cannot
-write for them. If they have outsourced the first three they will have nothing
-to say in the fourth, and it will show.
+fourth section is the one worth the third point, and it is the section the
+machine cannot write for them. If they have outsourced the first three they will
+have nothing to say in the fourth, and it will show.
 
 *[if someone asks about the checker]*
 
