@@ -1618,7 +1618,7 @@ Yes. You can, and in 2007 people did, in volumes far larger than the loans
 themselves. Hold that thought for the regulation session.
 :::
 
-## 6 · Why the payoff diagram is the whole lesson
+## 6 · Payoff profiles at expiration
 
 ::: {.content-visible unless-format="beamer"}
 
