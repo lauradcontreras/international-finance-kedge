@@ -1189,34 +1189,37 @@ actually made.
 
 ## 5 · Purchasing power parity
 
-Both versions rest on the **law of one price**: if the same good is cheaper in
-one country, arbitrage moves goods until the two prices converge.
+Both versions rest on the **law of one price**: identical goods priced in a
+common currency should sell for the same amount, because arbitrage in goods
+removes any gap.
 
 :::: columns
 ::: {.column width="50%"}
-**Absolute PPP** — about **levels**. The exchange rate equals the ratio of the
-two price levels:
+**Absolute PPP** — a proposition about **levels**. The nominal rate equals the
+ratio of the two price levels, so the real exchange rate
+$Q = E\,P_{EUR}/P_{US}$ equals one:
 
 $$E_{\$/\mathrm{EUR}} = \frac{P_{US}}{P_{EUR}}$$
 
-Needs identical baskets and no trade frictions, so it rarely holds exactly.
+Requires identical consumption baskets and frictionless trade in every good —
+including non-tradables, which never arbitrage.
 :::
 
 ::: {.column width="50%"}
-**Relative PPP** — about **changes**. Depreciation equals the inflation
-differential:
+**Relative PPP** — a proposition about **rates of change**. Depreciation
+equals the inflation differential:
 
 $$\frac{\Delta E_{\$/\mathrm{EUR}}}{E_{\$/\mathrm{EUR}}} = \pi_{US} - \pi_{EUR}$$
 
-Constant frictions cancel out, so this is the version that can be tested.
+Requires only that frictions be **constant**, so they cancel in differences.
+This is the testable version.
 :::
 ::::
 
-It **fails in the short run** on two counts: goods are differentiated, so firms
-hold pricing power and identical goods do not carry identical prices; and prices
-are **sticky**, so they do not adjust quickly. Both break the arbitrage. It
-**holds in the long run** because sticky prices eventually unstick — PPP
-describes the destination, not the journey.
+Absolute PPP is rejected in the data: deviations from $Q = 1$ are large and
+**persistent**, because goods are differentiated — firms hold pricing power — and
+nominal prices are **sticky**. Both break the arbitrage. PPP is therefore a
+**long-run** proposition: deviations decay slowly rather than not at all.
 
 ::: notes
 Start with the intuition, not the formula, because the formula is only the
@@ -1256,24 +1259,32 @@ quickly, so the gap persists for years.
 Then the long run, in one line: sticky prices eventually unstick. PPP is a
 statement about where things end up, not about next quarter - which is exactly
 why it is useless for forecasting and still worth knowing.
+
+If they ask what the real exchange rate on the slide is: take the European price
+level, convert it into dollars at the market rate, and divide by the American
+price level. Absolute PPP is the claim that this number equals one. In the data
+it is not one, and the deviations die away with a half-life of something like
+three to five years - slow, but not never. That is all "long run" means here.
 :::
 
 ## 5 · The instruments: spot and forward
 
 :::: columns
 ::: {.column width="46%"}
-**Spot rate** — near-immediate exchange of bank deposits.
+**Spot rate** — the price for near-immediate delivery of bank deposits,
+settling two business days forward.
 
-**Forward rate** — exchange at an agreed future date, at a price agreed now.
+**Forward rate** — the price, agreed today, for delivery at a fixed future
+date. Quoted at a **premium** or **discount** to spot, not as a forecast.
 :::
 
 ::: {.column width="54%"}
-Rates move when the demand for or supply of a currency moves, which happens on
-expected changes in:
+The rate is the price that clears the market for the currency, so it moves with
+anything that shifts demand or supply. The standard fundamentals:
 
--   **relative price levels**
+-   **relative price levels** — the PPP channel
 -   **trade barriers** — tariffs and quotas
--   **preferences** for domestic versus foreign goods
+-   **preferences** over domestic and foreign goods
 -   **relative productivity**
 :::
 ::::
@@ -1281,13 +1292,18 @@ expected changes in:
 . . .
 
 ::: keyidea
-Every item on that list is an **expected** change. Today's spot rate is mostly a
-statement about tomorrow.
+Each fundamental enters as an **expected** change. The spot rate therefore
+already impounds the forecast, and moves only on news.
 :::
 
 ::: notes
-Two rates, and the difference is only timing. Spot: we exchange now. Forward: we
-agree the price now and exchange in three months.
+Two rates, and the difference is only timing. Spot: we exchange now - two
+business days, in practice. Forward: we agree the price now and exchange in
+three months.
+
+The forward is quoted as a premium or a discount on the spot rate. Say once that
+it is not a forecast - it is a price, pinned by the interest rate difference
+between the two currencies - and move on unless someone pushes.
 
 *[ask]* Who needs the forward one? Give me a firm and a reason.
 
@@ -1637,17 +1653,12 @@ ggplot(d, aes(S, profit, colour = who)) +
   theme(strip.text = element_text(colour = IF_COL$teal700, face = "bold"))
 ```
 
--   The **strike** is the price written into the option — the price at which you
-    may buy (call) or sell (put). It is fixed for the life of the contract while
-    the market price moves. Here it is **115**.
--   The **future** is a straight line through it: gain above, loss below, and
-    nothing underneath to stop the fall.
--   The **option** follows that line above the strike, then goes **flat** — below
-    it you simply do not exercise, so the loss stops at the premium.
--   On the right it sits **below** the future by exactly that premium. That is
-    what the floor cost you.
--   So you **buy the bend by giving up part of the upside**, which is worth
-    paying for when you could not survive the straight line continuing down.
+-   The **strike** (here **115**) is the price written into the option: the
+    price at which the holder may buy (call) or sell (put). The market price
+    moves; the strike does not.
+-   The **future** is a straight line through it. The **option** follows that
+    line, then goes **flat** at the premium — you buy the bend by giving up part
+    of the upside.
 
 ::: notes
 Do not cut this slide. If they understand one picture from the derivatives
