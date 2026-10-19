@@ -1189,26 +1189,28 @@ actually made.
 
 ## 5 · Purchasing power parity
 
-Write $E$ for the dollar price of a euro. Both versions rest on the **law of one
-price**: identical goods priced in a common currency should sell for the same
-amount, because arbitrage in goods removes any gap.
+Both versions rest on the **law of one price**: identical goods priced in a
+common currency should sell for the same amount.
 
--   **Absolute PPP, a proposition about levels.** $E = P_{US}/P_{EUR}$ —
-    equivalently, the real exchange rate $Q = E\,P_{EUR}/P_{US}$ equals one. It
-    requires identical consumption baskets and frictionless trade in every good,
-    including non-tradables, which never arbitrage.
--   **Relative PPP, a proposition about rates of change.**
-    $\Delta E/E = \pi_{US} - \pi_{EUR}$. It requires only that frictions be
-    **constant**, so they cancel in differences. This is the testable version.
--   **Why absolute PPP is rejected in the data.** Deviations from $Q = 1$ are
-    large and **persistent**: goods are differentiated, so firms hold pricing
-    power, and nominal prices are **sticky**. Both break the arbitrage.
+-   **Absolute PPP — a proposition about levels.** The nominal exchange rate
+    equals the ratio of the two price levels; equivalently, the real exchange
+    rate equals one. Requires identical baskets and frictionless trade in every
+    good, including non-tradables.
+-   **Relative PPP — a proposition about rates of change.** The rate of
+    depreciation equals the inflation differential,
+    $\pi_{US} - \pi_{EUR}$. Requires only that frictions be **constant**, so
+    they cancel in differences. This is the testable version.
+-   **Absolute PPP is rejected in the data.** Deviations are large and
+    **persistent**: goods are differentiated, so firms hold pricing power, and
+    nominal prices are **sticky**. Both break the arbitrage.
 -   **What survives is a long-run proposition.** Deviations decay slowly rather
     than not at all.
 
 ::: notes
-Start with the intuition, not the formula, because the formula is only the
-intuition written down.
+Start with the intuition. The slide states the two propositions and leaves the
+algebra off, so put it on the board if they want it: absolute PPP is the
+exchange rate equal to the ratio of the two price levels, relative PPP is the
+change in the exchange rate equal to the inflation differential.
 
 The idea is the law of one price. If the identical good costs more in one
 country than another, someone buys it where it is cheap, sells it where it is
