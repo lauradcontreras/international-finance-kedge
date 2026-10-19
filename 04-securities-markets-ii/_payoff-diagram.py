@@ -34,7 +34,7 @@ put   = [(xb(SMIN), yp((K - SMIN) * MULT - PREM)), (xb(K), yp(-PREM)), (xb(SMAX)
 o = []
 a = o.append
 a('<div class="payoff">')
-a('<svg viewBox="0 0 1520 490" role="img" aria-labelledby="pfT pfD"')
+a('<svg viewBox="4 0 1456 490" role="img" aria-labelledby="pfT pfD"')
 a('     style="width:100%;height:auto;max-height:440px;display:block;margin:0 auto;'
   'font-family:inherit" preserveAspectRatio="xMidYMid meet">')
 a('<title id="pfT">Payoff diagrams: option against future</title>')
@@ -59,7 +59,7 @@ a('.pf-brk{stroke:#63716E;stroke-width:1.2;fill:none}')
 a('.pf-dot{fill:#B4573C}')
 a('</style>')
 
-a('<text class="pf-title" x="%d" y="32">The option has a floor. The future does not.</text>' % X0A)
+a('<text class="pf-title" x="732" y="32" text-anchor="middle">The option has a floor. The future does not.</text>')
 
 for x0, x1, ttl in ((X0A, X1A, "Call option and long future"),
                     (X0B, X1B, "Put option and short future")):
@@ -111,8 +111,8 @@ bracket(xb(106), yp((K - 106) * MULT), yp((K - 106) * MULT - PREM))
 a('<text class="pf-note" x="%s" y="%s">premium 2 000</text>'
   % (n(xb(106) - 8), n(yp((K - 106) * MULT) - 14)))
 
-a('<text class="pf-note" x="%d" y="472">Strike 115, premium 2 000 per contract, '
-  'multiplier 400. Profit at expiration, before transaction costs.</text>' % X0A)
+a('<text class="pf-note" x="732" y="472" text-anchor="middle">Strike 115, premium 2\u2009000 per contract, '
+  'multiplier 400. Profit at expiration, before transaction costs.</text>')
 a('</svg>')
 a('</div>')
 

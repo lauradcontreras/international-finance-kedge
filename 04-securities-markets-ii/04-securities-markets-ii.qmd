@@ -1624,7 +1624,7 @@ themselves. Hold that thought for the regulation session.
 
 ```{=html}
 <div class="payoff">
-<svg viewBox="0 0 1520 490" role="img" aria-labelledby="pfT pfD"
+<svg viewBox="4 0 1456 490" role="img" aria-labelledby="pfT pfD"
      style="width:100%;height:auto;max-height:440px;display:block;margin:0 auto;font-family:inherit" preserveAspectRatio="xMidYMid meet">
 <title id="pfT">Payoff diagrams: option against future</title>
 <desc id="pfD">Left panel: a long futures position is a straight line through the strike of 115; a bought call follows that line above the strike and goes flat at minus 2 000 below it, so it ends 2 000 below the future on the upside. Right panel: the mirror image, a short future and a bought put.</desc>
@@ -1644,7 +1644,7 @@ themselves. Hold that thought for the regulation session.
 .pf-brk{stroke:#63716E;stroke-width:1.2;fill:none}
 .pf-dot{fill:#B4573C}
 </style>
-<text class="pf-title" x="86" y="32">The option has a floor. The future does not.</text>
+<text class="pf-title" x="732" y="32" text-anchor="middle">The option has a floor. The future does not.</text>
 <text class="pf-ptitle" x="86" y="68">Call option and long future</text>
 <line class="pf-grid" x1="86" y1="382" x2="646" y2="382"/>
 <line class="pf-grid" x1="86" y1="332" x2="646" y2="332"/>
@@ -1709,7 +1709,7 @@ themselves. Hold that thought for the regulation session.
 <text class="pf-lopt" x="1249.6" y="268">Bought put</text>
 <path class="pf-brk" d="M896.4 142 H902.4 V192 H896.4"/>
 <text class="pf-note" x="894.4" y="128">premium 2 000</text>
-<text class="pf-note" x="86" y="472">Strike 115, premium 2 000 per contract, multiplier 400. Profit at expiration, before transaction costs.</text>
+<text class="pf-note" x="732" y="472" text-anchor="middle">Strike 115, premium 2 000 per contract, multiplier 400. Profit at expiration, before transaction costs.</text>
 </svg>
 </div>
 ```
