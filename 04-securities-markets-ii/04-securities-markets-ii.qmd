@@ -1798,52 +1798,90 @@ that follow.
 ## 6 · Problem 2.8
 
 Rock Solid holds a **$100 million** stock portfolio that tracks the S&P 500.
-The manager fears a decline and wants to hedge the downside completely.
+The manager fears a decline and wants to hedge the downside **completely**.
 
 ::: ask
-1.  The S&P is at **1,000**. How is the hedge constructed with **futures**?
+1.  The S&P is at **1,000**. Which way does the hedge point, and **how many
+    contracts**?
 2.  What happens if a year later the index is at **900**?
 3.  And if it is at **1,100**?
+4.  Did the manager get what they asked for?
 :::
 
 ::: {.smaller}
 An index futures contract has a multiplier of **250**, so one contract is worth
-$250 \times 1000 = \$250{,}000$.
+$250 \times 1000 = \$250{,}000$. Assume the portfolio tracks the index exactly.
 :::
 
 ::: notes
-Five minutes in pairs, then take it apart on the board.
+Five minutes in pairs on the first three, then take it apart on the board. Hold
+question four back until the arithmetic is up - it only bites once they have
+seen both states.
 
 *[ask]* The portfolio is long the index. Which way does the hedge point?
 
-Short. Sell futures.
+Short. They sell futures. Selling does not mean selling the portfolio - it means
+agreeing now on the price at which the index will be exchanged later.
 
-*[ask]* How many contracts?
+*[how many contracts - do it both ways, the second way is the one that lasts]*
 
-One hundred million divided by two hundred and fifty thousand. Four hundred
-contracts, sold short.
+The quick way: one hundred million divided by two hundred and fifty thousand.
+Four hundred contracts.
 
-Now the two states of the world, and do them both.
+The way that generalises: ask what one index point is worth to each side. The
+portfolio is a hundred million at an index of a thousand, so one point is a
+hundred thousand dollars to them. One contract is two hundred and fifty dollars
+a point. A hundred thousand divided by two hundred and fifty is four hundred.
+Match the sensitivities, not the values. That is the version that still works
+when the portfolio is not an exact tracker.
 
-At nine hundred: the index has fallen ten percent, so the portfolio loses ten
-million. The short futures position gains ten million. Net zero.
+*[the two states - put this on the board as a table]*
 
-At eleven hundred: the portfolio gains ten million, and the futures lose ten
-million. Net zero.
+Index falls to nine hundred, a hundred points down.
+Portfolio: minus a hundred points times a hundred thousand - minus ten million.
+Futures: short four hundred, so plus a hundred times two fifty times four
+hundred - plus ten million. Net zero.
 
-*[pause]*
+Index rises to eleven hundred, a hundred points up.
+Portfolio: plus ten million. Futures: minus ten million. Net zero.
 
-This is where the misunderstanding lives, so put the question to them directly.
+Either way the fund still has a hundred million.
 
-*[ask]* Is that what the manager wanted?
+*[now question four, and let the silence do the work]*
 
-They wanted protection on the way down. What they bought was no exposure at all,
-in either direction. A futures hedge is symmetric - it does not know which way
-you were hoping the market would go.
+*[ask]* Is that what the manager asked for?
+
+They asked to hedge the downside. What they built has no exposure at all, in
+either direction. A futures hedge is symmetric - it does not know which way you
+were hoping the market would go. Say that the sentence they should write down is
+the one from the payoff diagram: the future cancels both directions.
+
+And then say the obvious thing out loud, because they will be too polite to:
+a manager who is certain the market will fall and hedges completely has, in
+effect, sold the portfolio and kept the paperwork.
+
+*[three realities to mention only if the room is strong - each is one line]*
+
+Beta. The problem says the portfolio tracks the index exactly. If its beta were
+1.2 they would need four hundred and eighty contracts, because each index point
+moves their portfolio by more.
+
+Margin. The ten million is not settled in a year, it is settled daily. In the
+rising case the fund pays out ten million in cash over the year while its gain
+sits unrealised in the portfolio. Hedges fail on liquidity far more often than
+on arithmetic.
+
+Basis. The futures price and the index are not the same number until expiry, so
+a hedge closed early is never exactly perfect.
+
+*[bridge to 2.9]*
+
+Leave them with the question 2.9 answers: if symmetric is not what they wanted,
+what would they have to buy instead, and what would it cost?
 
 **Worked.** 400 contracts sold short. At 900 the portfolio loses 10m and the
-futures gain 10m. At 1100 the portfolio gains 10m and the futures lose 10m. The
-hedge works in both directions, which is the point students miss.
+futures gain 10m; at 1100 the portfolio gains 10m and the futures lose 10m. Net
+zero in both states - the hedge is symmetric, which is the point students miss.
 :::
 
 ## 6 · Problem 2.9
