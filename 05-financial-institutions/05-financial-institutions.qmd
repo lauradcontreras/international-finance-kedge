@@ -155,8 +155,8 @@ nothing - and yet people still do not do it.
 
 If it is sharing a session with the end of the chapter on securities markets,
 you have closer to 80 and need to lose about 25 minutes. Cut in this order:
-**Problem 5.3**, **other ways to get there**, and **what the optimal portfolio
-holds**. The argument still lands without them - hook, correlations, floors,
+**Problem 5.3**, **alternative vehicles**, and **composition of the optimal
+portfolio**. The argument still lands without them - hook, correlations, floors,
 Sharpe, optimal portfolio, 5.1, efficient set, gains, exchange rate, 5.2, home
 bias.
 
@@ -166,7 +166,7 @@ mechanics and the second is the payoff the whole section is built towards.
 
 # 1 · International portfolio investment {.divider .center background-color="#06302F"}
 
-## 1 · Why diversification works
+## 1 · Correlation and the gains from diversification
 
 Portfolio risk falls as you add securities, but only because their returns do
 not move together. **Correlation**, not the number of holdings, does the work.
@@ -213,7 +213,7 @@ provides more internal diversification than a small one - which also means a US
 investor has less to gain abroad than a Swiss investor does.
 :::
 
-## 1 · How far risk falls
+## 1 · Systematic risk and the diversification floor
 
 ```{r}
 #| fig-width: 11
@@ -238,7 +238,7 @@ ggplot(d, aes(n, risk, colour = market)) +
                      labels = c("0.12", "0.27", "0.44", "1.00")) +
   coord_cartesian(ylim = c(0, 1.02)) +
   labs(x = "Number of stocks in the portfolio", y = "Portfolio risk", colour = NULL,
-       title = "Diversification stops working at a floor - and the floor is lower abroad",
+       title = "Portfolio risk falls to a floor, and the floor is lower internationally",
        caption = "Schematic, following Solnik. Risk of a single stock set to 1.") +
   theme_if() +
   theme(legend.position = "top")
@@ -275,7 +275,7 @@ American one, which is a result you can predict from the correlation table we
 just looked at.
 :::
 
-## 1 · Measuring performance
+## 1 · Measuring risk-adjusted performance
 
 :::: columns
 ::: {.column width="52%"}
@@ -458,7 +458,7 @@ x_US = 0.532, x_NL = 0.468. R_op = 1.316. Var = 18.40, SD = 4.29.
 SHP_op = (1.316 - 0.55)/4.29 = 0.179, against SHP_US = 0.160 and SHP_NL = 0.161.
 :::
 
-## 1 · The efficient set, drawn
+## 1 · The efficient set and the capital market line
 
 ```{r}
 #| fig-width: 11
@@ -484,7 +484,7 @@ ggplot(mkt, aes(sd, mean)) +
            colour = IF_COL$teal700, size = 3.3, hjust = 0) +
   coord_cartesian(xlim = c(0, 9.5), ylim = c(0.4, 1.9)) +
   labs(x = "Standard deviation, % per month", y = "Mean return, % per month",
-       title = "Twelve national markets, and the portfolio that beats all of them",
+       title = "Twelve national markets and the optimal international portfolio",
        caption = "Monthly returns 1980-2007. OIP for a US investor: 1.40% return, 4.74% risk.") +
   theme_if()
 ```
@@ -524,7 +524,7 @@ borrowing at the risk-free rate to hold more of it. Which is why the mix is the
 same for everyone and only the position along the line differs.
 :::
 
-## 1 · What the optimal portfolio holds
+## 1 · Composition of the optimal portfolio
 
 :::: columns
 ::: {.column width="46%"}
@@ -542,7 +542,7 @@ For a **US investor**, the optimal international portfolio over 1980–2007:
 :::
 
 ::: {.column width="54%"}
-Three things to notice:
+Three features of the composition:
 
 -   Only **six** of the twelve markets appear at all. The others add nothing
     once these are held.
@@ -585,7 +585,7 @@ investor's country, because a Dutch investor already holds Dutch assets in a way
 an American does not. The optimal portfolio depends on where you start.
 :::
 
-## 1 · The size of the gain
+## 1 · The magnitude of the gain, by domicile
 
 ```{r}
 #| fig-width: 11
@@ -609,7 +609,7 @@ ggplot(g) +
            colour = IF_COL$clay, size = 3.6, hjust = 1, fontface = "bold") +
   coord_cartesian(xlim = c(.05, .23), clip = "off") +
   labs(x = "Sharpe performance measure", y = NULL,
-       title = "Every country gains - and the ones that gain most start furthest behind",
+       title = "Sharpe performance by domicile: domestic against optimal international",
        caption = "Monthly returns 1980-2007, by investor's domicile.") +
   theme_if() +
   theme(panel.grid.major.y = element_blank())
@@ -645,7 +645,7 @@ by going international.
 Hold that - it is the last slide of the session.
 :::
 
-## 1 · The exchange rate comes with it
+## 1 · Exchange rate exposure in foreign returns
 
 A US resident investing abroad earns the foreign return **and** whatever the
 currency does:
@@ -738,18 +738,19 @@ points to the cross term alone.
 = 0.15 - 0.05 - 0.0075 = 9.25%.
 :::
 
-## 1 · Other ways to get there
+## 1 · Alternative vehicles for international diversification
 
 :::: columns
 ::: {.column width="50%"}
 **International bonds.** Less studied than equities, and exchange risk makes the
 gains hard to realise — though **currency forwards** can hedge most of it away.
 
-**International mutual funds.** Diversification bought at home: no extra
-transaction or information costs, no legal barriers, and professional managers.
+**International mutual funds.** Diversification obtained domestically: no
+additional transaction or information costs, no legal barriers, and
+professional management.
 
-**Country funds.** Invest in a single foreign market — useful for building your
-own allocation, or for reaching markets otherwise closed.
+**Country funds.** Invest in a single foreign market — used to construct a
+custom allocation, or to reach markets otherwise closed to the investor.
 :::
 
 ::: {.column width="50%"}
@@ -861,7 +862,7 @@ On this evidence, debatable. You can get part of the exposure at home. It is a
 genuinely open question and a good one to leave with them.
 :::
 
-## 1 · Why almost nobody does it
+## 1 · Home bias and large-cap bias
 
 :::: columns
 ::: {.column width="52%"}
@@ -879,8 +880,8 @@ recommends. Four explanations are offered:
 :::
 
 ::: {.column width="48%"}
-**Large-cap bias.** Portfolios that do go abroad concentrate in large firms —
-and large firms are the worst vehicle for the job.
+**Large-cap bias.** Portfolios that do go abroad concentrate in large firms,
+which are a poor instrument for the purpose.
 
 -   Large caps are typically **multinationals**, with foreign customers and
     investors, so their returns are driven by **common global factors** and are
