@@ -24,7 +24,7 @@ Hi! Welcome to the International Finance course website :wave:
 
 - [Session 5: Financial institutions — international portfolio investment](https://lauradcontreras.github.io/international-finance-kedge/05-financial-institutions/05-financial-institutions.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/05-financial-institutions/05-financial-institutions.pdf)]
 
-- Session 6: Financial institutions — funds, insurance, banks and information *(to come)*
+- [Session 6: Financial institutions — funds, insurance, banks and information](https://lauradcontreras.github.io/international-finance-kedge/06-financial-institutions-ii/06-financial-institutions-ii.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/06-financial-institutions-ii/06-financial-institutions-ii.pdf)]
 
 - Session 7: Regulation — **individual assignment** *(to come)*
 

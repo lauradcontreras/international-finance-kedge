@@ -1,0 +1,1705 @@
+---
+title: "International Finance"
+subtitle: "Session 6 — Financial Institutions and Firms: Funds, Intermediaries and Information"
+author: "Laura Contreras-Portela"
+institute: "KEDGE Business School"
+date: today
+date-format: "MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_theme/theme.scss]
+    width: 1600
+    height: 900
+    title-slide-attributes:
+      data-background-color: "#FAF7F2"
+    slide-number: c/t
+    show-slide-number: all
+    progress: true
+    history: true
+    hash: true
+    controls: true
+    navigation-mode: linear      # right arrow always goes to the next slide
+    preview-links: auto
+    highlight-style: github
+    code-line-numbers: true
+    html-math-method: katex
+    chalkboard:                     # C = draw on the slide, B = blank board
+      buttons: true
+      theme: whiteboard
+      chalk-effect: 0
+    footer: "International Finance · Session 6 · KEDGE"
+    embed-resources: false          # true -> one portable file, no wifi needed
+  beamer:                           # same source -> a real LaTeX PDF handout
+    aspectratio: 169
+    theme: metropolis
+    incremental: false
+    header-includes: |
+      \definecolor{ifteal}{HTML}{0E5250}
+      \definecolor{ifclay}{HTML}{B4573C}
+      \setbeamercolor{frametitle}{bg=ifteal}
+      \setbeamercolor{progress bar}{fg=ifteal}
+      \setbeamercolor{title separator}{fg=ifteal}
+      \setbeamercolor{structure}{fg=ifteal}
+      \setbeamercolor{alerted text}{fg=ifclay}
+execute:
+  echo: false
+  warning: false
+  message: false
+  fig-align: center
+  fig-width: 8
+  fig-height: 4.2
+knitr:
+  opts_chunk:
+    dev: png
+    dpi: 300
+---
+
+```{r setup}
+source("../_R/setup.R")
+```
+
+## Nobody builds the portfolio {.hook background-color="#FAF7F2"}
+
+Last session we constructed the optimal international portfolio: six markets,
+specific weights, a Sharpe ratio that beat every country on its own.
+
+::: incremental
+-   Almost no household does any of that. They **buy** a portfolio someone else
+    assembled — around **$13 trillion** of it, in US mutual funds alone.
+-   Which replaces one question with another: the fund charges a fee and makes
+    the choices. What exactly is it selling you?
+-   Today is the institutions themselves — what they do, what they charge for,
+    and why they exist at all.
+:::
+
+::: notes
+This is the bridge from last session, so make the bridge explicit rather than
+starting a new topic cold.
+
+Remind them what they built: the optimal international portfolio, six markets
+out of twelve, a Sharpe ratio of 0.179 against 0.160 for the US alone.
+
+*[reveal the first bullet]*
+
+Then the deflating fact. Essentially nobody constructs that themselves. They buy
+a fund. Thirteen trillion dollars sits in American mutual funds and the people
+who own it did not choose a single holding.
+
+*[ask]* Is that irrational?
+
+No - and that is the point of the whole session. Doing it yourself means
+transaction costs, information costs, and a portfolio too small to diversify.
+The fund exists because those costs are real.
+
+*[reveal the second and third bullets]*
+
+But the fund charges for solving them, and the manager, not the investor, makes
+the choices. Every institution in this chapter is the same bargain in a
+different form: it solves a real problem, it takes a fee, and it introduces a
+conflict. Tell them to watch for that pattern - it is what section seven is
+about, and it is the spine of the session.
+:::
+
+## Where we are {.center}
+
+Session 5 took the chapter's first section, **international portfolio
+investment**. The rest of the chapter is the institutions that hold those
+portfolios, and the reason intermediaries exist at all.
+
+:::: columns
+::: {.column width="50%"}
+Today:
+
+2. **Mutual funds** · 3. **Muñoz (2020)** · 4. **Insurance companies**
+:::
+
+::: {.column width="50%"}
+and then:
+
+5. **Investment firms** · 6. **Bank management** · 7. **Economic efficiency and
+asymmetric information**
+:::
+::::
+
+::: keyidea
+The question from last session, still open: **why does an intermediary exist at
+all?** Section 7 finally answers it — everything before is evidence.
+:::
+
+::: notes
+Thirty seconds on the map, no more.
+
+Say what the shape of the session is: five kinds of institution, then one
+section of theory that explains why any of them exist. The theory is last on
+purpose. They will have met six examples of asymmetric information before anyone
+names it.
+
+*[Timing - three hours]*
+
+Hook and roadmap 8 · mutual funds 35 · Muñoz discussion 25 · insurance 20 ·
+investment firms 25 · bank management 35 · economic efficiency 30. That is 178
+of 180, so there is no slack at all.
+
+If you are losing time, cut in this order: **brokers and dealers**, **private
+equity returns**, **too much or too little capital**, and the **four fund
+classes in detail**. Each is marked on its slide.
+
+Do not cut: the NAV problem, the two bank management problems, the minicases, or
+the reading discussion. Those are the assessed and examinable parts.
+
+Protect the reading discussion by putting it before the break, the same way you
+did in session 4. It is the piece that gets eaten otherwise.
+:::
+
+# 2 · Mutual funds {.divider .center background-color="#06302F"}
+
+## 2 · What a mutual fund is
+
+A mutual fund **pools the resources of many small investors** by selling them
+shares and using the proceeds to buy securities.
+
+:::: columns
+::: {.column width="52%"}
+**Five benefits**, and each one is a cost the investor would otherwise bear:
+
+-   **Liquidity** intermediation — investments convert to cash
+-   **Denomination** intermediation — participate in offerings that individually
+    require more capital than you have
+-   **Diversification**
+-   **Cost advantages** — negotiated transaction fees
+-   **Managerial expertise**
+:::
+
+::: {.column width="48%"}
+**Structure.** Investors are the shareholders. A **board of directors** oversees
+the fund, hires the investment advisor and the underwriter, and in principle can
+dismiss the manager and appoint anyone it chooses.
+:::
+::::
+
+::: {.source}
+Hold on to the board. It is what the Muñoz reading is about.
+:::
+
+::: notes
+Start from the definition, then immediately turn it into the five benefits,
+because the definition on its own is inert.
+
+*[the five benefits - do not read them as a list]*
+
+Pair each one with what it would cost the investor alone. Liquidity: you can get
+out on a Tuesday. Denomination: a bond issue with a hundred thousand minimum is
+simply closed to you otherwise. Diversification: the thing we spent last session
+constructing. Cost: the fund trades in size and pays less per trade.
+Expertise: someone whose job this is.
+
+*[ask]* Which of those five could you replicate on your own, with enough money?
+
+All of them except denomination - and that is the honest answer. Most of what a
+fund sells is a solution to being small.
+
+*[the structure, and point at the source line]*
+
+Flag the board now and tell them to remember it. Investors are shareholders; a
+board oversees; the board hires and can fire the advisor. That is the formal
+position. Whether it works that way is exactly what they are reading for next
+week.
+:::
+
+## 2 · Closed-end and open-end
+
+:::: columns
+::: {.column width="50%"}
+**Closed-end.** A fixed number of **non-redeemable** shares, sold at an initial
+offering and then traded over the counter.
+
+The price is set by **supply and demand** — so it can diverge from the value of
+the holdings, trading at a premium or a discount.
+:::
+
+::: {.column width="50%"}
+**Open-end.** Investors buy or redeem **at any point**, at the net asset value.
+
+The price is **computed**, not bid. The fund issues and retires shares on
+demand, so the share count moves rather than the price.
+:::
+::::
+
+::: keyidea
+Only the **closed-end** price can diverge from net asset value, because only the
+closed-end price is set by a market rather than by arithmetic.
+:::
+
+::: notes
+This distinction is examinable and it is the one they mix up, so spend the three
+minutes.
+
+The whole difference is where the price comes from.
+
+Open-end: the fund works out what it owns, divides by the shares, and that is
+the price. Supply and demand never enter. If you want in, the fund makes a new
+share; if you want out, it retires yours.
+
+Closed-end: a fixed pool of shares traded between investors, like any other
+share. The price is whatever someone will pay.
+
+*[ask]* So which of the two can trade below the value of what it owns?
+
+Only the closed-end one - and empirically they very often do, which is a
+longstanding puzzle. If a fund holding a hundred of assets trades at ninety,
+why does nobody buy it and liquidate it? Leave the question open; it is a good
+one and the chapter does not answer it.
+:::
+
+## 2 · The four classes, by assets
+
+| Class | Assets | Share |
+|:------------------|-------------:|------:|
+| Equity | $5.9 trillion | 45% |
+| Bond | $3.4 trillion | 26% |
+| Money market | $2.7 trillion | 21% |
+| Hybrid | $1.0 trillion | 8% |
+
+::: {.smaller}
+**Index funds** sit outside this classification: they hold the stocks of the
+index being mimicked, giving the benefits of a mutual fund without paying for an
+active manager.
+:::
+
+::: notes
+*[cuttable - the four numbers matter, the sub-classes do not]*
+
+Do not read the table. Make two points from it and move.
+
+Equity is the largest at forty-five percent, which is what you would expect.
+Money market funds at twenty-one percent is the number worth pausing on, because
+most people think of those as a bank account.
+
+*[on index funds - this is the part to keep if you cut the rest]*
+
+Index funds are the direct application of last session. If the gain comes from
+holding the market rather than from picking within it, you do not need a manager
+and you should not pay for one. The entire active-versus-passive argument is one
+sentence long and they have already done the analysis behind it.
+
+*[ask]* After last session, which would you buy?
+:::
+
+## 2 · Inside the classes
+
+::: {.panel-tabset}
+
+### Stock funds
+
+**Capital appreciation** — rapid share-price growth, unconcerned with dividends.
+
+**Total return** — a balance of income and appreciation.
+
+**World equity** — primarily foreign firms.
+
+Plus **value**, **growth** and **sector** funds.
+
+### Bond funds
+
+**Strategic income** — US corporate bonds, high current income; 42% of bond fund
+assets.
+
+**Government** — Treasury, state and local.
+
+**World bond** funds.
+
+Shares of bond fund assets: corporate 15% · national municipal 12% · world 9% ·
+government 9% · high yield 8% · state municipal 5%.
+
+### Hybrid and money market
+
+**Hybrid.** Stocks and bonds in one fund; about 5% of all mutual fund accounts.
+
+**Money market mutual funds.** Open-end, holding money market securities only,
+usually with check-writing privileges. Higher returns than bank deposits —
+and **not federally insured**.
+
+Assets: repos 33% · agency issues 26.7% · Treasury bills 25.6% · other US
+securities 12.6%.
+
+:::
+
+::: notes
+*[cuttable - if time is short, open only the third tab]*
+
+Three tabs, and only the third contains something they must leave with.
+
+*[tabs one and two]*
+
+Name the categories, do not drill the percentages. The only thing to say is that
+the names describe an objective, not a legal category - a fund called "growth"
+is making a promise about style, not accepting a constraint.
+
+*[tab three, and slow down here]*
+
+Money market funds. Open-end, short paper, cheque book. They look exactly like a
+bank account and they are not one: no federal insurance.
+
+*[ask]* So why does anyone hold one?
+
+Higher yield. And then the obvious follow-up: what happens when a money market
+fund's assets fall below a dollar a share? It happened in 2008, it was called
+breaking the buck, and it caused a run - on something most holders believed was
+a deposit. That is the one fact from this slide worth examining them on.
+:::
+
+## 2 · Net asset value
+
+$$\text{NAV} = \frac{\text{stocks} + \text{bonds} + \text{cash} + \text{other assets} - \text{liabilities}}{\text{shares outstanding}}$$
+
+::: ask
+A fund holds **$35 million** of stocks, **$15 million** of bonds and
+**$3 million** of cash. It has liabilities of **$0.8 million** and
+**15 million** shares outstanding.
+
+1.  What is the net asset value per share?
+2.  What are those liabilities, in a fund that holds only securities?
+3.  If this were a **closed-end** fund, would it trade at that price?
+:::
+
+::: notes
+Two minutes on their own, then take it.
+
+*[part one]*
+
+Assets: thirty-five plus fifteen plus three, fifty-three million. Less
+liabilities of eight hundred thousand, fifty-two point two. Divided by fifteen
+million shares.
+
+Three dollars and forty-eight cents.
+
+*[part two - this is the part they skip]*
+
+Ask it before you answer it. A fund holds securities; what can it possibly owe?
+
+Accrued but unpaid management fees, mostly, plus pending settlements. It is a
+small number and dropping it gives three dollars fifty-three - five cents, which
+sounds trivial until you multiply by fifteen million shares. Seven hundred and
+fifty thousand dollars of someone's money.
+
+*[part three - the callback]*
+
+No. The NAV is what it is worth; the closed-end price is what someone will pay.
+Those are different numbers and the gap is the puzzle from two slides ago.
+
+**Worked.** 35 + 15 + 3 = 53; less 0.8 = 52.2; divided by 15 = $3.48 per share.
+Liabilities are mostly accrued management fees. Dropping them gives 3.53.
+:::
+
+## 2 · Hedge funds
+
+:::: columns
+::: {.column width="52%"}
+**How they differ from mutual funds**
+
+-   High minimum investment, averaging around **$1 million**
+-   A long-term commitment is required
+-   High fees — typically **1% of assets plus 20% of profits**
+-   Highly **levered**
+-   Very little regulation
+:::
+
+::: {.column width="48%"}
+**Strategy.** Exploit unusual spreads between the prices of similar securities —
+two things that should trade together and do not.
+
+**Since 2006.** The SEC requires hedge fund advisors to register, prompted by
+fraud concerns, and hedge funds reached the average investor through
+"retailization".
+:::
+::::
+
+::: notes
+Keep this short and resist the glamour.
+
+The five differences are all one difference: hedge funds are sold to people the
+regulator assumes can look after themselves, so the rules are lighter and the
+fees are higher.
+
+*[on the fee]*
+
+One and twenty. Say what that means in money: on a hundred million, a million a
+year regardless of performance, plus a fifth of any gain. Then the asymmetry
+worth naming - the manager takes twenty percent of the upside and none of the
+downside, which is an option, and options are worth more when things are
+volatile. That is a structural reason to expect risk-taking, quite apart from
+anybody's character.
+
+*[on the strategy]*
+
+Convergence trading. Two securities that should trade together have drifted
+apart, so you buy one and sell the other and wait. Note what it needs to work:
+leverage, because the spreads are small, and time, because convergence can take
+longer than your funding lasts. That is Long-Term Capital Management in two
+sentences, if anyone asks.
+:::
+
+# 3 · Reading discussion {.divider .center background-color="#06302F"}
+
+## Who is watching the manager? {.hook background-color="#FAF7F2"}
+
+A mutual fund's board hires the investment advisor, sets its fee, and can
+dismiss it.
+
+::: incremental
+-   The advisor is usually the firm that **created the fund** in the first place.
+-   So the body that polices the manager was, in most cases, appointed by the
+    manager. Does the board's **size** or its **independence** change what the
+    fund actually does?
+:::
+
+::: notes
+Open the discussion with the structure, not with the paper.
+
+Restate the formal position from the first mutual funds slide: investors are
+shareholders, a board oversees, the board hires and can fire the advisor.
+
+*[reveal the first bullet]*
+
+Now the awkward fact. The advisor is typically the management company that
+founded the fund and assembled the board. So the watchdog was chosen by the
+thing it watches.
+
+*[ask]* Does that make the board useless?
+
+Let them argue before the second bullet. Both sides are respectable: a board
+with reputational exposure behaves differently from no board at all, against the
+view that structural dependence beats good intentions every time.
+
+*[reveal the second bullet]*
+
+And that is the paper's question, in the specific form it tests it: does board
+size and board independence show up in what the fund does - its sustainability
+score and its financial performance.
+:::
+
+## 3 · Muñoz (2020), boards of socially responsible mutual funds {.smaller}
+
+::: {.panel-tabset}
+
+### The four questions
+
+Come with an answer to each. I will ask.
+
+1.  What are **socially responsible mutual funds**?
+2.  What is the **role of the board of trustees**?
+3.  Which **indicator measures sustainability**?
+4.  What **strategies** incorporate non-financial issues into investment?
+
+### How to prepare
+
+-   On question 1, the definition is easy; the difficulty is that the criteria
+    are **chosen by the fund**, which is the same problem green bonds had.
+-   On question 2, separate the board's **formal powers** from its **actual
+    independence**. Size and independence are what the paper tests.
+-   On question 3, ask who produces the score and who pays them.
+-   On question 4, the strategies differ enormously in how much they constrain a
+    manager. Rank them.
+
+:::
+
+::: notes
+This is assessed, so protect the time and do not let the institutions sections
+eat it. Run it as a discussion - if you are talking for more than two minutes at
+a stretch, stop.
+
+Structure: ten minutes in pairs on questions one and four, then open the floor
+on two, then close on three.
+
+*[question 1]*
+
+Funds that apply non-financial criteria - environmental, social, governance -
+alongside financial ones when selecting holdings. Then push: who writes the
+criteria? The fund does. They met this exact structure with green bonds in
+session four, so make them say the parallel out loud rather than saying it
+yourself.
+
+*[question 2]*
+
+The oversight body. It hires and can dismiss the investment advisor, approves
+fees, and is meant to act for shareholders rather than for the management
+company. Size and independence are the two features the paper tests.
+
+*[question 3]*
+
+A sustainability or ESG score assigned to the fund, built up from ratings of the
+holdings - Morningstar's globe rating is the usual one in this literature. Then
+the question that matters: the rater is paid by whom, and rates what?
+
+*[question 4]*
+
+Negative or exclusionary screening; positive or best-in-class screening;
+norms-based screening; ESG integration into valuation; engagement and voting;
+impact investing. Make them rank these by how much each actually binds the
+manager. Exclusion binds; integration barely does.
+
+*[a caution for you, not for them]*
+
+These are framing notes rather than the paper's findings - check them against
+your own reading before class.
+
+*[the connection worth making explicit at the close]*
+
+A mutual fund is how most people will ever hold the portfolio we spent last
+session constructing. So who governs the fund is not a side issue; it is the
+only governance most investors will ever have.
+:::
+
+# 4 · Insurance companies {.divider .center background-color="#06302F"}
+
+## 4 · The principle, and the two forms
+
+**The principle.** Insurers assume their clients' risk in return for a fee, the
+premium. People buy insurance because they are **risk-averse** — they will pay
+more than the expected loss to be rid of the variance.
+
+:::: columns
+::: {.column width="50%"}
+**Stock company** — owned by shareholders, with a profit motive.
+
+**Mutual company** — owned by the policyholders, aiming to provide insurance at
+the lowest cost.
+
+**Types.** Life · health · property · credit default swaps · pension plans.
+:::
+
+::: {.column width="50%"}
+**Where life insurers put the money** (2011)
+
+| Asset | Share |
+|:---------------------|------:|
+| Bonds | 52.4% |
+| Stocks | 28.1% |
+| Miscellaneous | 10.4% |
+| Loans and mortgages | 9.1% |
+:::
+::::
+
+::: notes
+The principle is one sentence and it is worth making them state it precisely.
+
+*[ask]* If the premium is more than the expected loss, why does anyone buy?
+
+Because they are risk-averse. The premium exceeds the expected payout - it has
+to, or the insurer could not exist - and people pay it anyway to remove the
+variance. That is the definition of risk aversion with money attached, and it is
+the same preference that drove the whole of last session.
+
+*[the two forms]*
+
+Stock company: shareholders, profit motive. Mutual: owned by the policyholders,
+so in principle no conflict between insurer and insured. Note that this is the
+second time in one session that ownership structure has been offered as a
+solution to a conflict of interest - the first was the mutual fund board. Hold
+that thought until section seven.
+
+*[the asset table]*
+
+Over half in bonds.
+
+*[ask]* Why bonds rather than equities, when equities return more?
+
+Because the liabilities are long-dated and fairly predictable. An insurer knows
+roughly when it will pay and how much, so it buys assets that pay then. That is
+duration matching, and it is the opposite of the maturity mismatch a bank runs.
+:::
+
+## 4 · Credit default swaps
+
+::: {.content-visible unless-format="beamer"}
+
+```{=html}
+<div class="cdsflow">
+<svg viewBox="0 0 1440 470" role="img" aria-labelledby="cdsT cdsD"
+     style="width:100%;height:auto;max-height:420px;display:block;margin:0 auto;font-family:inherit" preserveAspectRatio="xMidYMid meet">
+<title id="cdsT">How a credit default swap works</title>
+<desc id="cdsD">Top row: Bank A lends ten million euros to Company C for five years and pays an annual premium to Bank B. Bottom row: if Company C defaults, the debt transfers to Bank B, Bank B pays Bank A ten million euros, and Bank B is left to recover what it can from Company C.</desc>
+<style>
+.dg-box{fill:#FFFFFF;stroke:#63716E;stroke-width:1.8;rx:6}
+.dg-box2{fill:#EAF2F1;stroke:#0E5250;stroke-width:1.8;rx:6}
+.dg-name{fill:#0E5250;font-size:21px;font-weight:700;text-anchor:middle}
+.dg-sub{fill:#63716E;font-size:15px;text-anchor:middle}
+.dg-ptitle{fill:#0E5250;font-size:19px;font-weight:700}
+.dg-arr{fill:none;stroke:#40607D;stroke-width:2.2}
+.dg-arrd{fill:none;stroke:#B4573C;stroke-width:2.2;stroke-dasharray:7 5}
+.dg-lab{fill:#63716E;font-size:16px;text-anchor:middle}
+.dg-labc{fill:#B4573C;font-size:16px;text-anchor:middle;font-weight:600}
+.dg-note{fill:#63716E;font-size:15px}
+.dg-rule{stroke:#E8EDEC;stroke-width:1}
+</style>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#40607D"/></marker>
+<marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B4573C"/></marker>
+</defs>
+<text class="dg-ptitle" x="40" y="34">In the normal course</text>
+<rect class="dg-box" x="85.0" y="87.0" width="250" height="62" rx="6"/>
+<text class="dg-name" x="210" y="116">Company C</text>
+<text class="dg-sub" x="210" y="137">borrower</text>
+<rect class="dg-box2" x="595.0" y="87.0" width="250" height="62" rx="6"/>
+<text class="dg-name" x="720" y="116">Bank A</text>
+<text class="dg-sub" x="720" y="137">lender, buys protection</text>
+<rect class="dg-box" x="1105.0" y="87.0" width="250" height="62" rx="6"/>
+<text class="dg-name" x="1230" y="116">Bank B</text>
+<text class="dg-sub" x="1230" y="137">sells protection</text>
+<path class="dg-arr" d="M583.0 118 L347.0 118" marker-end="url(#ah)"/>
+<text class="dg-lab" x="465.0" y="108.0">€10m loan, five years</text>
+<path class="dg-arr" d="M857.0 118 L1093.0 118" marker-end="url(#ah)"/>
+<text class="dg-lab" x="975.0" y="108.0">annual premium</text>
+<line class="dg-rule" x1="40" y1="196" x2="1400" y2="196"/>
+<text class="dg-ptitle" x="40" y="236">If the credit event occurs</text>
+<rect class="dg-box" x="85.0" y="293.0" width="250" height="62" rx="6"/>
+<text class="dg-name" x="210" y="322">Company C</text>
+<text class="dg-sub" x="210" y="343">defaults</text>
+<rect class="dg-box2" x="595.0" y="293.0" width="250" height="62" rx="6"/>
+<text class="dg-name" x="720" y="322">Bank A</text>
+<text class="dg-sub" x="720" y="343">made whole</text>
+<rect class="dg-box" x="1105.0" y="293.0" width="250" height="62" rx="6"/>
+<text class="dg-name" x="1230" y="322">Bank B</text>
+<text class="dg-sub" x="1230" y="343">now holds the loss</text>
+<path class="dg-arrd" d="M857.0 310 L1093.0 310" marker-end="url(#ahc)"/>
+<text class="dg-labc" x="975.0" y="299.0">the defaulted debt</text>
+<path class="dg-arrd" d="M1093.0 340 L857.0 340" marker-end="url(#ahc)"/>
+<text class="dg-labc" x="975.0" y="366.0">€10 million</text>
+<path class="dg-arrd" d="M1230 355.0 V418 H210 V359.0" marker-end="url(#ahc)" stroke="#B4573C"/>
+<text class="dg-labc" x="720" y="410">and recovers what it can from Company C</text>
+<text class="dg-note" x="40" y="454">Dashed flows happen only on a credit event. The loan never moves; only the credit risk does.</text>
+</svg>
+</div>
+```
+
+:::
+
+::: {.content-visible when-format="beamer"}
+
+**In the normal course.** Bank A lends €10m to Company C for five years, and
+pays an annual premium to Bank B.
+
+**If the credit event occurs.** The defaulted debt transfers to Bank B, Bank B
+pays Bank A €10 million, and Bank B recovers what it can from Company C.
+
+The loan never moves; only the credit risk does.
+
+:::
+
+::: notes
+Walk the picture rather than defining the instrument first. Definitions land
+badly here; the flow does not.
+
+*[the top row]*
+
+Bank A lends ten million to Company C for five years. Ordinary lending. Then
+Bank A pays an annual premium to Bank B. Nothing else happens.
+
+*[ask]* What has Bank A bought?
+
+Insurance on the loan.
+
+*[the bottom row]*
+
+Company C defaults. The debt transfers to Bank B, Bank B pays Bank A the ten
+million, and Bank B is left to recover whatever it can from Company C.
+
+*[the point, and say it slowly]*
+
+The loan never moved. Bank A still made it and still holds the relationship. All
+that moved is the credit risk. That is the whole invention.
+
+*[then the part that matters for 2007]*
+
+A CDS is insurance in everything but name - and it is not called insurance,
+which means it was not regulated as insurance.
+
+*[ask]* With fire insurance, what do you need in order to buy a policy?
+
+You have to own the house. With a credit default swap, you do not. You can buy
+protection on a loan you did not make, which is not insurance at all - it is a
+bet on someone else's default, and there is no limit to how many people can
+place it on the same loan. That is why the exposures in 2007 were so much larger
+than the debts underneath them.
+:::
+
+# 5 · Investment firms {.divider .center background-color="#06302F"}
+
+## 5 · Investment banks
+
+**What they do**
+
+-   **Underwrite** the initial sale of stocks and bonds
+-   Make deals in **mergers, acquisitions and spin-offs**
+-   Act as **middleman** in the buying and selling of companies
+-   **Broker privately** for the very wealthy
+
+::: {.smaller}
+**Context.** The line between investment and commercial banking has blurred
+again, since legal separation is no longer required.
+:::
+
+::: notes
+Four activities, and the first one is the one everything else grew out of.
+
+Underwriting is the core: bringing a security to market for the first time.
+Everything else - the deal-making, the private brokerage - is the same
+relationship sold again.
+
+*[on the context line]*
+
+Worth thirty seconds of history. The separation of investment and commercial
+banking was a response to the 1930s, on the view that a bank should not both
+hold deposits and underwrite securities. That separation was removed. Whether
+the removal mattered is argued about to this day, and it is the backdrop to
+every conflict of interest in section seven.
+
+Do not run the argument now. Plant it.
+:::
+
+## 5 · Underwriting
+
+::: {.panel-tabset}
+
+### Advice and filing
+
+**Advice.** On market conditions and which security to offer; on when to issue,
+how many, and at what price — critical for an IPO.
+
+**Filing.** SEC registration is required for issues above **$1.5 million** with
+maturity over **270 days**. The prospectus is made public. Debt issues also need
+a credit rating and counsel.
+
+### Firm commitment
+
+The banker **buys the entire offering** at a fixed price and resells it. A
+**syndicate** may be formed to spread the underwriting risk. A **tombstone** is
+placed in the financial press.
+
+**Three outcomes**
+
+-   **Fully subscribed** — all shares spoken for
+-   **Undersubscribed** — the syndicate could not generate interest in all of
+    them
+-   **Oversubscribed** — more interest than shares, which may lead to rationing
+
+### Alternatives
+
+**Best efforts.** The underwriter does not buy the issue, but makes its best
+effort to sell it.
+
+**Private placement.** The entire issue goes to a small, select group — rarely
+with equity.
+
+**Equity sales.** Selling a whole division or company: value it, find buyers,
+develop confidential financial statements, prepare a letter of intent, assist
+with due diligence, reach a definitive agreement.
+
+:::
+
+::: notes
+The examinable content is in the second tab. Move through the first and third.
+
+*[tab two - firm commitment, and this is the one to drill]*
+
+Firm commitment means the bank buys the whole issue at a fixed price and then
+resells it.
+
+*[ask]* Who carries the risk that nobody wants the shares?
+
+The bank. It has already paid. That is why the syndicate exists - not to raise
+more money, but to spread that risk across several banks.
+
+*[the three outcomes]*
+
+Now the question that makes the pricing problem real.
+
+*[ask]* The issue is oversubscribed and the price jumps thirty percent on day
+one. Did the bank do a good job?
+
+Let them fight about it. The issuer sold too cheaply and left money on the
+table; the bank's buying clients did very well out of it. Oversubscription is
+not obviously a success, and whose success it is depends on who the bank was
+working for. That is the conflict of interest in section seven, arriving early.
+
+*[tab three]*
+
+Best efforts shifts the risk back to the issuer. Private placement avoids the
+registration burden by never going public. Name them and move.
+:::
+
+## 5 · Brokers and dealers
+
+:::: columns
+::: {.column width="52%"}
+**Order types**
+
+-   **Market order** — buy or sell at the current price
+-   **Limit order** — you specify the most you will pay or the least you will
+    accept
+-   **Short sale** — sell a security you do not own, intending to buy it back
+    later, hopefully cheaper
+
+**Brokers.** Full service: research and advice, higher commission. Discount:
+execution only.
+:::
+
+::: {.column width="48%"}
+**Dealers** hold inventory on their own account and stand ready to buy or sell
+— **market makers**, and especially important for thinly traded securities.
+
+**Other services.** Insurance against loss of security documents; **margin
+credit** for buying equity with borrowed funds.
+:::
+::::
+
+::: notes
+*[cuttable - they met brokers and dealers in session 3; this is revision]*
+
+If you are running late this is the slide to drop. If you keep it, keep it to
+two points.
+
+*[the broker-dealer distinction, which is the one they confuse]*
+
+A broker acts for you and takes a commission. A dealer trades against you from
+its own book and makes the spread. Different business, different incentive. They
+met this in session three with auction and dealer markets - this is the same
+distinction from the firm's side.
+
+*[the short sale, if anyone looks puzzled]*
+
+You borrow the security, sell it, and buy it back later to return it. The loss
+is unbounded, which is the only thing about it worth remembering at this stage.
+:::
+
+## 5 · Private equity and venture capital
+
+:::: columns
+::: {.column width="54%"}
+**What it is.** A limited partnership raises funds to invest in new companies or
+to buy out existing divisions. The common types are **venture funds** and
+**capital buyouts**. It got a boost in **1978**, when pension funds were
+permitted to invest.
+
+**Venture capital firms** provide funds for start-ups and often become closely
+involved in management, supplying expertise as well as money.
+:::
+
+::: {.column width="46%"}
+**Structure.** Mostly limited partnerships, funded by wealthy individuals,
+pension funds and corporations, whose investors must wait years before
+withdrawing.
+
+**Returns**, 20-year average
+
+| Stage | Return |
+|:-------------|-------:|
+| Seed | 20.4% |
+| All stages | 16.5% |
+| Later stage | 13.9% |
+:::
+::::
+
+::: notes
+*[cuttable - the returns table is the droppable half]*
+
+Two things, and the second is the interesting one.
+
+*[the structure]*
+
+Locked up for years. That is not a defect, it is the product: you cannot fund a
+company that needs seven years to work with money that can leave in a month. The
+illiquidity is what makes the investment possible.
+
+*[the returns - if you keep the table]*
+
+*[ask]* Seed investing returns the most and later-stage the least. Why would
+anyone do later-stage?
+
+Because the returns are not risk-adjusted. Seed pays more because most seed
+investments are worth nothing. Hold them to the discipline from last session:
+a mean return without a standard deviation beside it is not a performance
+number. They made exactly this mistake with Hong Kong, and here is the same
+trap wearing different clothes.
+
+*[the note the textbook adds, worth being honest about]*
+
+These averages are flattered by exceptional years such as 1999, and the recent
+record is much worse. Averages over twenty years hide that.
+
+*[the link to venture capital as a solution, which pays off later]*
+
+One sentence to plant: a venture capitalist sits on the board and is closely
+involved in management. Remember that in section seven, when we ask how anyone
+solves the principal-agent problem.
+:::
+
+# 6 · Bank management {.divider .center background-color="#06302F"}
+
+## 6 · Asset transformation
+
+A bank takes **savings deposits** and uses the funds to make **loans** —
+borrowing short and lending long. This is the **maturity mismatch** that has
+appeared in every session so far.
+
+:::: columns
+::: {.column width="46%"}
+**The basic T-account.** A $100 deposit with a 10% reserve requirement:
+
+| Assets | | Liabilities | |
+|:---------|-----:|:------------|-----:|
+| Reserves | +10 | Deposits | +100 |
+| Loans | +90 | | |
+:::
+
+::: {.column width="54%"}
+**Four concerns**, which are the next four slides:
+
+1.  **Liquidity** management
+2.  **Asset** management
+3.  **Liability** management
+4.  **Capital adequacy**
+:::
+::::
+
+::: notes
+Asset transformation is the phrase to get them using. A bank turns one kind of
+claim into another: short, safe, liquid deposits on one side; long, risky,
+illiquid loans on the other.
+
+*[ask]* Who wants to lend for twenty years at a fixed rate? And who wants their
+money available on Saturday?
+
+Nobody is the same person. The bank stands between two sets of preferences that
+cannot meet directly, and it is paid for standing there. That is the whole
+business, and it is the maturity mismatch they have met in every session since
+the first.
+
+*[the T-account]*
+
+Deposit of a hundred. Ten percent must be held as reserves, so ten in reserves
+and ninety out as loans. Draw it on the board rather than reading it.
+
+*[then the four concerns]*
+
+Say that each of the next four slides is a different way this arrangement can
+kill you: you run out of cash, you lend to the wrong people, your funding
+disappears, or you have too thin a cushion when losses arrive.
+:::
+
+## 6 · Liquidity management
+
+::: ask
+Two banks, each facing a **$10 million deposit outflow**.
+
+| | Reserves | Loans | Securities | Deposits | Capital |
+|:--------|------:|-----:|------:|------:|-----:|
+| **Bank 1** | 20 | 80 | 10 | 100 | 10 |
+| **Bank 2** | 10 | 90 | 10 | 100 | 10 |
+
+The reserve requirement is **10%**.
+
+1.  What must each bank do after the outflow?
+2.  What are the ways to fill a shortfall, and what does each cost?
+:::
+
+::: notes
+Five minutes in pairs. This one rewards drawing the T-account, so make them
+draw it.
+
+*[bank 1 - excess reserves]*
+
+Reserves fall from twenty to ten, deposits from a hundred to ninety. The
+requirement is ten percent of ninety, which is nine. They hold ten.
+
+Nothing needs to happen anywhere. No asset is sold, no loan is called, nobody is
+telephoned.
+
+*[bank 2 - no excess reserves]*
+
+Reserves fall from ten to zero, deposits to ninety. The requirement is nine.
+They hold nothing.
+
+A nine million shortfall, and it has to be filled today.
+
+*[part two - the four remedies, and the cost of each]*
+
+Sell securities - you give up their return. Borrow from other banks or
+corporations - you pay interest, and the rate is highest exactly when everyone
+needs it. Borrow from the central bank - cheaper, but there may be a stigma to
+being seen there. Call in or sell off loans - the most expensive of all, because
+you destroy the customer relationship that was the point of making the loan.
+
+*[the lesson, and this is the sentence to get them to write]*
+
+Excess reserves are insurance against deposit outflows, and the premium is the
+return the bank gives up by holding them. Bank 1 paid that premium. Bank 2 saved
+it and is now making phone calls.
+
+**Worked.** Bank 1: reserves 10 against deposits 90, requirement 9 - no action
+needed. Bank 2: reserves 0 against deposits 90, a $9m shortfall, filled by
+selling securities, borrowing from banks or the central bank, or calling in
+loans - each with a cost.
+:::
+
+## 6 · Asset and liability management
+
+:::: columns
+::: {.column width="50%"}
+**Asset management.** Earn the highest return on assets while minimising risk:
+find borrowers with low default risk paying high rates; buy securities with high
+return and low risk; diversify; and manage liquidity.
+:::
+
+::: {.column width="50%"}
+**Liability management.** Manage the **sources** of funds — deposits,
+certificates of deposit, other debt.
+
+Important since the **1960s**: banks no longer depend primarily on deposits, and
+when they see loan opportunities they borrow or issue CDs to fund them.
+:::
+::::
+
+::: keyidea
+Both sides are now managed **jointly**, through an asset–liability committee —
+which is why CDs and borrowing have displaced checkable deposits over recent
+decades.
+:::
+
+::: notes
+The content here is thin; the change over time is the interesting part, so lead
+with that.
+
+Asset management is the obvious half: lend well, invest well, diversify, stay
+liquid.
+
+*[liability management - this is the shift worth explaining]*
+
+Until the 1960s, the liability side was not managed at all. Deposits arrived or
+they did not, and the bank lent whatever showed up. Funding was a constraint,
+not a choice.
+
+Then banks discovered they could go and buy funding - issue a certificate of
+deposit, borrow in the interbank market - which reverses the logic entirely. You
+find the loan first and fund it afterwards.
+
+*[ask]* What does that change about how risky a bank is?
+
+Growth is no longer limited by how much the public wants to deposit. A bank can
+expand as fast as someone will lend to it, and wholesale funding leaves far
+faster than retail deposits when confidence goes. Every bank that failed quickly
+in 2008 was funded this way.
+:::
+
+## 6 · Capital adequacy
+
+::: ask
+Two banks, each with **reserves 10** and **loans 90**.
+
+| | Deposits | Capital |
+|:-----------------------|------:|-----:|
+| **High capital bank** | 90 | 10 |
+| **Low capital bank** | 96 | 4 |
+
+Both now suffer a **$5 million loan loss**.
+
+1.  What happens to each?
+2.  So why does any bank hold **low** capital?
+:::
+
+::: notes
+This is the most important slide in the section. Three minutes in pairs, then
+board work.
+
+*[part one - do it as a T-account, not as a sentence]*
+
+Loans fall from ninety to eighty-five in both banks. The loss has to land
+somewhere, and it lands on capital, because capital is what absorbs losses
+before depositors do.
+
+High capital bank: capital ten, less five, equals five. Still solvent.
+
+Low capital bank: capital four, less five, equals minus one. Insolvent. Assets
+are worth less than what it owes.
+
+Same loss. Same loans. One bank survives and the other does not, and the only
+difference was the cushion.
+
+*[part two - the question that makes it interesting]*
+
+*[ask]* So why would any bank hold low capital?
+
+Push them to answer with arithmetic, not with greed.
+
+Return on equity is return on assets times the equity multiplier, where the
+multiplier is assets over equity capital. More capital means a bigger
+denominator, a smaller multiplier, and a lower return on equity. The same
+profit, spread over more equity, is a worse number for shareholders.
+
+So safety and return on equity pull against each other, directly. The low
+capital bank is not being reckless by accident - it is maximising the thing its
+shareholders are watching. That is why capital requirements are imposed rather
+than left to judgement.
+
+**Worked.** A $5m loss leaves the high capital bank with capital of +5, solvent;
+the low capital bank at −1, insolvent. Banks hold low capital because
+ROE = ROA × EM, so more capital lowers return on equity.
+:::
+
+## 6 · Managing the capital position
+
+$$ROE = ROA \times EM \qquad EM = \frac{\text{assets}}{\text{equity capital}}$$
+
+:::: columns
+::: {.column width="50%"}
+**Too much capital** — raise the multiplier:
+
+-   sell or retire stock
+-   raise dividends, reducing retained earnings
+-   grow assets by issuing debt such as CDs
+:::
+
+::: {.column width="50%"}
+**Too little capital** — lower the multiplier:
+
+-   issue stock
+-   cut dividends, retaining earnings
+-   slow asset growth by retiring debt
+:::
+::::
+
+::: notes
+*[cuttable - the previous slide carries the idea; this is the mechanics]*
+
+Six levers, three each way, and they are mirror images. Do not read all six.
+
+Make one observation and leave it.
+
+*[ask]* Look at the two lists. What happens to a banking system where every bank
+is simultaneously told it has too little capital?
+
+They all issue stock at once into a falling market, they all cut dividends, and
+they all shrink their assets - which means calling in loans, from businesses, in
+the middle of whatever crisis prompted the instruction. Individually prudent and
+collectively destructive. That is the argument about procyclical capital
+regulation in one question, and it is worth more than the six bullet points.
+:::
+
+# 7 · Economic efficiency and asymmetric information {.divider .center background-color="#06302F"}
+
+## Why is almost no finance direct? {.hook background-color="#FAF7F2"}
+
+Firms need money. Savers have money. The obvious arrangement is for savers to
+buy the firms' stocks and bonds.
+
+::: incremental
+-   **That is not how it works.** Issuing marketable debt and equity is not the
+    primary way businesses are financed; indirect finance is many times larger
+    than direct, and **banks are the most important source of external funds**.
+-   Only large, well-established corporations have easy access to securities
+    markets at all.
+-   Something is stopping the obvious arrangement from working. The rest of this
+    session is what.
+:::
+
+::: notes
+This is the payoff of the whole chapter, so set it up as a puzzle and let it sit
+before you resolve it.
+
+State the obvious arrangement first, and make it sound sensible, because it is.
+Firms need capital. Households have savings. Stocks and bonds exist precisely to
+connect them.
+
+*[reveal the first bullet, and let it land]*
+
+It is not how it works. Direct finance is a small part of the picture. The
+dominant route is indirect - through a bank - and that has been true across
+countries and across decades.
+
+*[ask]* Why pay a bank to stand in the middle? The bank takes a margin. Going
+direct is cheaper.
+
+Let them try. The answers they give will be about convenience or ignorance.
+
+*[reveal the second bullet]*
+
+Then narrow it. It is not that nobody uses securities markets - it is that only
+large, established firms can. Size is the thing that predicts access.
+
+*[ask]* What do large firms have that small ones do not, apart from money?
+
+A reputation. A public record. Audited accounts going back years. People know
+what they are.
+
+That is information, and the rest of the section is about what happens when it
+is missing.
+:::
+
+## 7 · Facts about financial structure
+
+::: incremental
+-   **Stocks are not the main source of external finance.** Indirect finance is
+    many times more important than direct, and banks are the most important
+    source of external funds.
+-   **The system is heavily regulated**, and only large, well-established
+    corporations have easy access to securities markets.
+-   **Collateral is prevalent** in debt contracts, for households and businesses
+    alike, and debt contracts are complicated legal documents placing
+    substantial restrictions on borrowers.
+-   **Transactions costs** hinder the flow of funds to people with productive
+    investment opportunities, and leave small investors unable to diversify.
+:::
+
+::: {.source}
+Intermediaries profit by reducing those costs — economies of scale, as with
+mutual funds, and developed expertise.
+:::
+
+::: notes
+Four facts, revealed one at a time, and each one is a clue. Tell them that:
+these are the observations any theory of financial structure has to explain.
+
+*[fact one]* Banks dominate. Already established on the hook slide.
+
+*[fact two]* Heavy regulation, and access restricted to the large and
+well-known.
+
+*[fact three - the one they underrate]*
+
+Collateral everywhere, and contracts full of restrictions. Ask why a lender
+would want a covenant that stops a borrower doing things. The answer is coming
+in two slides.
+
+*[fact four]*
+
+Transactions costs, and the specific consequence: a small investor cannot
+diversify. Last session they built a twelve-market portfolio. With two thousand
+euros you cannot.
+
+*[the source line]*
+
+Which is the first answer to the chapter's question. The intermediary exists
+because it has economies of scale and expertise that an individual cannot have.
+
+Then say plainly: that is a real answer and it is not sufficient. Transactions
+costs do not explain why collateral is everywhere or why contracts are so
+restrictive. Something else is going on, and it is on the next slide.
+:::
+
+## 7 · The two problems
+
+**Asymmetric information** — the parties to a transaction do not have the same
+information.
+
+:::: columns
+::: {.column width="50%"}
+**Adverse selection**
+
+Occurs **before** the transaction. One party has better information than the
+other about what is being traded.
+
+*Hidden information.*
+:::
+
+::: {.column width="50%"}
+**Moral hazard**
+
+Occurs **after** the agreement. One party has an incentive to behave differently
+once the deal is struck.
+
+*Hidden action.*
+:::
+::::
+
+::: keyidea
+**Agency theory** is the analysis of how these two problems affect behaviour.
+The distinction between them is **timing**: before the deal, or after it.
+:::
+
+::: notes
+This is the distinction they must leave with, and the only reliable way to teach
+it is the timing test. Drill the timing, not the definitions.
+
+Before or after. That is the whole thing.
+
+Adverse selection is hidden information before the deal: you cannot tell what
+you are buying. Moral hazard is hidden action after it: behaviour changes once
+the money has moved.
+
+*[ask]* Insurance. Someone who already knows they are ill buys health cover -
+which is it?
+
+Adverse selection. The information existed before the contract.
+
+*[ask]* And someone who takes up smoking because they now have health cover?
+
+Moral hazard. The behaviour changed after it.
+
+Run two or three more of these out loud. It takes two minutes and it is worth
+more than any definition, because the minicases at the end of the session are
+exactly this test, and so is the exam question.
+:::
+
+## 7 · Adverse selection: the lemons problem
+
+::: {.content-visible unless-format="beamer"}
+
+```{=html}
+<div class="lemons">
+<svg viewBox="0 0 1440 400" role="img" aria-labelledby="lemT lemD"
+     style="width:100%;height:auto;max-height:380px;display:block;margin:0 auto;font-family:inherit" preserveAspectRatio="xMidYMid meet">
+<title id="lemT">The lemons problem in securities markets</title>
+<desc id="lemD">Buyers who cannot tell good securities from bad pay the average value. Good issuers, underpaid, withdraw; bad issuers, overpaid, issue more. The mix worsens, the average falls, and the argument repeats until the market thins out.</desc>
+<style>
+.dg-box{fill:#FFFFFF;stroke:#63716E;stroke-width:1.8;rx:6}
+.dg-box2{fill:#EAF2F1;stroke:#0E5250;stroke-width:1.8;rx:6}
+.dg-name{fill:#0E5250;font-size:21px;font-weight:700;text-anchor:middle}
+.dg-sub{fill:#63716E;font-size:15px;text-anchor:middle}
+.dg-ptitle{fill:#0E5250;font-size:19px;font-weight:700}
+.dg-arr{fill:none;stroke:#40607D;stroke-width:2.2}
+.dg-arrd{fill:none;stroke:#B4573C;stroke-width:2.2;stroke-dasharray:7 5}
+.dg-lab{fill:#63716E;font-size:16px;text-anchor:middle}
+.dg-labc{fill:#B4573C;font-size:16px;text-anchor:middle;font-weight:600}
+.dg-note{fill:#63716E;font-size:15px}
+.dg-rule{stroke:#E8EDEC;stroke-width:1}
+</style>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#40607D"/></marker>
+<marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B4573C"/></marker>
+</defs>
+<text class="dg-ptitle" x="40" y="40">What a buyer who cannot tell them apart will pay</text>
+<line class="dg-rule" x1="190" y1="232" x2="1270" y2="232" stroke="#63716E" stroke-width="1.6"/>
+<line x1="325.0" y1="223" x2="325.0" y2="241" stroke="#40607D" stroke-width="2"/>
+<text class="dg-lab" x="325.0" y="264" fill="#40607D">a bad security, worth 40</text>
+<line x1="1135.0" y1="223" x2="1135.0" y2="241" stroke="#40607D" stroke-width="2"/>
+<text class="dg-lab" x="1135.0" y="264" fill="#40607D">a good security, worth 100</text>
+<circle cx="730.0" cy="232" r="8" fill="#B4573C"/>
+<text class="dg-labc" x="730.0" y="210">buyers pay the average, 70</text>
+<line x1="1135.0" y1="222" x2="1135.0" y2="172" stroke="#63716E" stroke-width="1" stroke-dasharray="3 3"/>
+<path class="dg-arr" d="M1135.0 172 L757.0 172" marker-end="url(#ahc)"/>
+<text class="dg-lab" x="946.0" y="158" fill="#40607D">paid 70 for something worth 100 — the good issuer withdraws</text>
+<line x1="325.0" y1="276" x2="325.0" y2="300" stroke="#63716E" stroke-width="1" stroke-dasharray="3 3"/>
+<path class="dg-arr" d="M325.0 300 L703.0 300" marker-end="url(#ahc)"/>
+<text class="dg-lab" x="514.0" y="322" fill="#40607D">paid 70 for something worth 40 — the bad issuer sells more</text>
+<text class="dg-note" x="40" y="382">The mix left in the market worsens, so the average falls, so more good issuers leave. Buyers anticipate all of this and stop bidding at all.</text>
+</svg>
+</div>
+```
+
+:::
+
+::: {.content-visible when-format="beamer"}
+
+A buyer who cannot tell a good security (worth 100) from a bad one (worth 40)
+pays the average, 70. The good issuer, paid 70 for something worth 100,
+withdraws. The bad issuer, paid 70 for something worth 40, sells more. The mix
+worsens, the average falls, and buyers anticipate all of it and stop bidding.
+
+:::
+
+::: {.smaller}
+**Where it bites least.** Well-known firms have less asymmetric information, so
+a smaller lemons problem — which is why large firms can use direct finance and
+small ones cannot.
+:::
+
+::: notes
+Use the picture and walk it left to right; the argument is a sequence, not a
+state.
+
+*[set it up]*
+
+A buyer faces two kinds of security and cannot tell them apart. Good ones are
+worth a hundred, bad ones forty.
+
+*[ask]* What will they pay?
+
+Something in between. Call it seventy - the average, weighted by how many of
+each they think are out there.
+
+*[now the two arrows]*
+
+Look what that price does to each issuer.
+
+The good issuer is offered seventy for something worth a hundred. They withdraw.
+Why would they sell at a thirty percent discount?
+
+The bad issuer is offered seventy for something worth forty. They issue as much
+as they can.
+
+*[the loop - this is the part that makes it a mechanism rather than an anecdote]*
+
+So the mix left in the market gets worse. Which means the average falls. Which
+drives out the next tier of good issuers. And buyers, who are not stupid, work
+all of this out in advance and decline to bid at all.
+
+The market does not clear badly. It can fail to exist.
+
+*[then the payoff line, pointing at the smaller text]*
+
+And now the fact from the hook slide is explained. Large well-known firms have
+less asymmetric information, so a smaller lemons problem, so they can sell
+securities directly. Small firms cannot, and go to a bank instead.
+
+*[ask]* Why does the bank not have the same problem?
+
+Hold the question - it is the next slide.
+:::
+
+## 7 · Four solutions to adverse selection
+
+::: incremental
+1.  **Private production and sale of information** — undermined by the
+    **free-rider problem**: whoever pays for the research cannot stop others
+    acting on it.
+2.  **Government regulation to increase information** — mandatory audits,
+    disclosure requirements.
+3.  **Financial intermediation** — a bank makes **private** loans, so nobody
+    free-rides on what it learns. The used-car-dealer analogy.
+4.  **Collateral and net worth** — which make the lemons problem matter less,
+    because the lender is protected whether or not the borrower was a lemon.
+:::
+
+::: notes
+Four solutions, revealed one at a time, and the third is the answer to the
+chapter's question.
+
+*[one]*
+
+Sell information to investors. Then the objection: if you buy my research and
+act on it, the price moves, and everyone who did not pay observes the price and
+free-rides. The information business is hard to do well for exactly this reason.
+
+*[two]*
+
+Make firms disclose. Audits, filings, prospectuses. It helps and it does not
+eliminate the problem - firms still choose how to present what they disclose.
+
+*[three - stop here and make it land]*
+
+The bank's loans are private. It learns about the borrower and nobody else gets
+to use what it learns, because the loan is not traded. The free-rider problem
+simply does not arise.
+
+*[ask]* So what is a bank, in one sentence?
+
+An institution that profits from producing information about borrowers that
+nobody else can copy. The used-car dealer is the same business: it knows which
+cars are lemons, it buys and resells on its own account, and its reputation is
+the asset.
+
+That is the answer to the question this chapter opened with. Say it as the
+answer: the intermediary exists because information is expensive to produce and
+impossible to keep once it is public.
+
+*[four]*
+
+Collateral and net worth make the whole question less urgent. If the loan is
+secured, the lender's downside is covered whether or not the borrower turned out
+to be a lemon. And now fact three from two slides ago - collateral is everywhere
+- is explained rather than merely observed.
+:::
+
+## 7 · Moral hazard
+
+:::: columns
+::: {.column width="50%"}
+**In equity — the principal-agent problem**
+
+Ownership by stockholders is separated from control by managers, and managers
+may act in their own interest rather than the owners'.
+
+*Solutions:* monitoring; government regulation to increase information;
+financial intermediation such as **venture capital**; and using **debt**
+contracts instead.
+:::
+
+::: {.column width="50%"}
+**In debt**
+
+Debt creates an incentive to take on **very risky projects**: the upside accrues
+to the borrower, while the downside falls partly on the lender.
+
+*Solutions:* net worth and collateral; monitoring and enforcement of
+**restrictive covenants**; and financial intermediation, since banks have
+special advantages in monitoring.
+:::
+::::
+
+::: {.source}
+**What covenants do.** Discourage undesirable behaviour · encourage desirable
+behaviour · keep collateral valuable · provide information.
+:::
+
+::: notes
+Two forms, and the neat thing is that the cure for one is the cause of the
+other. Make sure that lands.
+
+*[equity - the principal-agent problem]*
+
+Owners are not managers. Managers may build empires, take comfortable decisions,
+or simply not work very hard, and the owners cannot see which.
+
+*[ask]* You own ten percent of a business and manage it. You can work very hard
+and add a hundred thousand of value. How much of that do you get?
+
+Ten thousand. So you work a tenth as hard as the owner of the whole thing would.
+Nothing dishonest has happened; the incentive is simply diluted.
+
+Then connect it back: this is why a venture capitalist sits on the board and
+involves themselves in management. It is monitoring, bought at the price of the
+investor's own time.
+
+*[debt]*
+
+Now the fix. Give the firm debt instead of equity and the manager keeps the
+whole upside, so the incentive is restored.
+
+*[ask]* What have we just created?
+
+The opposite problem. With debt, the borrower keeps all the gain above the
+repayment and the lender eats the loss below it. So the borrower wants risk -
+the riskier the better, once things are tight. This is minicase two, and it is
+also every bank in 2008.
+
+*[covenants]*
+
+Which is why debt contracts are not one line long. Covenants stop the borrower
+doing the things the contract made attractive. And fact three from three slides
+ago - contracts are complicated legal documents with substantial restrictions -
+is now explained too.
+:::
+
+## 7 · Conflicts of interest
+
+A **type of moral hazard**: a person or institution has multiple interests, and
+serving one is detrimental to another.
+
+::: incremental
+-   **Underwriting and research** in investment banking. The bank researches
+    companies and underwrites their securities. Research is supposed to be
+    unbiased — yet underwriting is easier when research is positive.
+-   **Auditing and consulting** in accounting firms. The auditor gives an
+    unbiased opinion on financial health while the consulting arm earns fees from
+    the same client — especially compromising when consulting fees exceed audit
+    fees.
+-   **Credit assessment and consulting** in rating agencies. The same structure:
+    rating a security while being paid to advise the issuer.
+:::
+
+::: notes
+Lead with the classification, because it is the thing they get wrong in the
+exam: a conflict of interest is a species of moral hazard, not a third category
+beside it.
+
+The structure is identical in all three cases, so say the structure once and
+then let the three examples be variations.
+
+One institution, two jobs, and doing the second one well makes the first one
+worse.
+
+*[the three, revealed one at a time]*
+
+Research and underwriting. Audit and consulting. Rating and advising.
+
+*[ask]* In each case, who is paying, and who is relying on the output?
+
+That is the whole diagnosis. The issuer pays; the public relies. Every time
+those two are different people, the conflict is structural rather than personal.
+
+*[and the honest complication, if the room is good]*
+
+Ask why we do not simply ban the combinations. Because the information is cheaper
+to produce when one firm does both - the analyst who researches a company
+understands it well enough to bring it to market. The synergy is real. That is
+what makes this a genuine problem rather than an obvious one.
+:::
+
+## 7 · The six minicases
+
+::: ask
+For each, name the problem — **adverse selection**, **moral hazard**, or a
+**conflict of interest** — and say **why**.
+
+1.  Rating agencies help structure debt so that it attains high ratings.
+2.  A firm owes $100 in interest, has $90, and starts looking for risky projects.
+3.  An Apple lawyer trades on confidential earnings information.
+4.  A silent partner funds 90%; Steve manages the business and goes to the beach.
+5.  Enron hides its problems; Arthur Andersen pleads guilty.
+6.  Tech-boom research is distorted to please issuers.
+:::
+
+::: notes
+Ten minutes in pairs, then take them one by one. Make them say "before" or
+"after" before they name the category.
+
+One. Conflict of interest. The agency rates and consults for the same issuer,
+and the fees compromise the rating.
+
+Two. Moral hazard in debt. The firm has nothing left to lose, so the incentive
+is to gamble with the lender's money. Ninety against a hundred owed - a safe
+project leaves them bankrupt anyway, so only a risky one can save them, and the
+lender pays for the attempt.
+
+Three. Adverse selection. One party to the trade has better information than the
+other about what is being traded. Note it is also illegal, but the category is
+adverse selection.
+
+Four. Moral hazard in equity - the principal-agent problem. Steve keeps only
+five thousand of every hundred thousand of value he creates, so he does not
+create it.
+
+Five. Conflict of interest. The auditor was also a paid consultant to the firm
+it audited.
+
+Six. Conflict of interest. Research and underwriting in the same bank;
+favourable coverage bought banking business.
+
+*[the distinction to drill, and close the session on it]*
+
+Before or after. Adverse selection is hidden information before the deal - you
+cannot tell what you are buying. Moral hazard is hidden action after it -
+behaviour changes once the money has changed hands.
+
+Minicase three is before. Two and four are after. And conflicts of interest are
+a species of moral hazard, not a third category - which is the single most
+common error in the exam.
+
+**Worked.** 1 conflict of interest · 2 moral hazard in debt · 3 adverse
+selection · 4 principal-agent · 5 conflict of interest · 6 conflict of interest.
+:::
+
+## Next session {.center}
+
+That completes **Financial Institutions and Firms**. What remains is the group
+work and the exam.
+
+::: keyidea
+**Group presentations** next session: one security, twelve minutes, maximum five
+per group. Bring the data you are presenting from — not slides about a company,
+an analysis of a security.
+:::
+
+::: {.source}
+Press **`O`** for the slide overview · **`C`** to draw · **`S`** for speaker notes · **`F`** for fullscreen · **`E`** then print for a PDF of the slides.
+:::
+
+::: notes
+Close by pulling the chapter together rather than listing what is next.
+
+The question we opened session 5 with was why an intermediary exists at all.
+They now have the answer in three parts: scale and transactions costs; the
+production of information that cannot be free-ridden; and the monitoring of
+behaviour after the money has moved.
+
+Every institution in this session was one of those three, sold at a price, with
+a conflict attached.
+
+*[then the practical items]*
+
+Group presentations next session. Five per group, twelve minutes, one security.
+Remind them that the analysis is the deliverable - we have spent two sessions on
+what an analysis of a security looks like, and a company profile is not one.
+
+Tell them what the exam covers, if you have settled it.
+:::
