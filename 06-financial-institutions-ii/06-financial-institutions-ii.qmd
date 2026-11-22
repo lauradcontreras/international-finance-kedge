@@ -165,13 +165,21 @@ minutes back and means nothing has to be skipped today.
 Lecture: hook and roadmap 5 · mutual funds 24 · insurance 11 · investment firms
 15 · bank management 24 · economic efficiency 31.
 
-Every slide in the deck is in play, but the margins are thin, so if you do fall
-behind these are the four to lose, in order: composition of the classes · the
-four classes · brokers and dealers · managing the capital position. Each is
-flagged on its own slide.
+Every slide is in play, but the margins are thin, so decide in advance what
+gives. The rule is the same every session: **the theory and the exercises
+survive; the description goes.**
 
-Do not cut the NAV problem, either bank management problem, or the six cases.
-Those are the examinable parts.
+What never goes: the two problems of asymmetric information, adverse selection
+and the lemons mechanism, moral hazard in equity and in debt, asset
+transformation, and all four exercises - NAV, liquidity, capital adequacy, the
+six cases. That is the examinable spine of the chapter.
+
+What goes first, in order: composition of the classes · the four classes ·
+brokers and dealers · private equity and venture capital · managing the capital
+position. All five are institutional description. Each is flagged on its slide.
+
+If you cut the last of those, give the ROE identity out loud on the capital
+adequacy slide - it is theory and it belongs to the exercise above it.
 
 Say at the end that the reading discussion is next session and assessed, so they
 must come having read Muñoz. Moving it is not dropping it, and they will assume
@@ -941,6 +949,8 @@ withdrawing.
 ::::
 
 ::: notes
+*[first to cut if you are behind]*
+
 *[the structure matters more than the returns table]*
 
 Two things, and the second is the interesting one.
