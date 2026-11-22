@@ -108,13 +108,13 @@ portfolios, and the reason intermediaries exist at all.
 
 :::: columns
 ::: {.column width="50%"}
-Today:
+This session:
 
 2. **Mutual funds** · 3. **Muñoz (2020)** · 4. **Insurance companies**
 :::
 
 ::: {.column width="50%"}
-and then:
+Then:
 
 5. **Investment firms** · 6. **Bank management** · 7. **Economic efficiency and
 asymmetric information**
@@ -123,7 +123,7 @@ asymmetric information**
 
 ::: keyidea
 The question from last session, still open: **why does an intermediary exist at
-all?** Section 7 finally answers it — everything before is evidence.
+all?** Section 7 answers it; the sections before it are the evidence.
 :::
 
 ::: notes
@@ -153,14 +153,15 @@ did in session 4. It is the piece that gets eaten otherwise.
 
 # 2 · Mutual funds {.divider .center background-color="#06302F"}
 
-## 2 · What a mutual fund is
+## 2 · The mutual fund: definition and structure
 
 A mutual fund **pools the resources of many small investors** by selling them
 shares and using the proceeds to buy securities.
 
 :::: columns
 ::: {.column width="52%"}
-**Five benefits**, and each one is a cost the investor would otherwise bear:
+**Five benefits**, each corresponding to a cost the investor would otherwise
+bear:
 
 -   **Liquidity** intermediation — investments convert to cash
 -   **Denomination** intermediation — participate in offerings that individually
@@ -178,7 +179,8 @@ dismiss the manager and appoint anyone it chooses.
 ::::
 
 ::: {.source}
-Hold on to the board. It is what the Muñoz reading is about.
+The board of directors is the subject of the Muñoz (2020) reading in the next
+section.
 :::
 
 ::: notes
@@ -285,7 +287,7 @@ sentence long and they have already done the analysis behind it.
 *[ask]* After last session, which would you buy?
 :::
 
-## 2 · Inside the classes
+## 2 · Composition of the classes
 
 ::: {.panel-tabset}
 
@@ -552,7 +554,7 @@ only governance most investors will ever have.
 
 # 4 · Insurance companies {.divider .center background-color="#06302F"}
 
-## 4 · The principle, and the two forms
+## 4 · The principle and the organisational forms
 
 **The principle.** Insurers assume their clients' risk in return for a fee, the
 premium. People buy insurance because they are **risk-averse** — they will pay
@@ -569,7 +571,7 @@ the lowest cost.
 :::
 
 ::: {.column width="50%"}
-**Where life insurers put the money** (2011)
+**Life insurer asset allocation** (2011)
 
 | Asset | Share |
 |:---------------------|------:|
@@ -837,8 +839,8 @@ registration burden by never going public. Name them and move.
 -   **Market order** — buy or sell at the current price
 -   **Limit order** — you specify the most you will pay or the least you will
     accept
--   **Short sale** — sell a security you do not own, intending to buy it back
-    later, hopefully cheaper
+-   **Short sale** — sell a security you do not own, intending to repurchase it
+    later at a lower price
 
 **Brokers.** Full service: research and advice, higher commission. Discount:
 execution only.
@@ -878,7 +880,7 @@ is unbounded, which is the only thing about it worth remembering at this stage.
 ::: {.column width="54%"}
 **What it is.** A limited partnership raises funds to invest in new companies or
 to buy out existing divisions. The common types are **venture funds** and
-**capital buyouts**. It got a boost in **1978**, when pension funds were
+**capital buyouts**. The sector expanded after **1978**, when pension funds were
 permitted to invest.
 
 **Venture capital firms** provide funds for start-ups and often become closely
@@ -953,7 +955,7 @@ appeared in every session so far.
 :::
 
 ::: {.column width="54%"}
-**Four concerns**, which are the next four slides:
+**Four concerns**, taken in turn:
 
 1.  **Liquidity** management
 2.  **Asset** management
@@ -1104,7 +1106,7 @@ Two banks, each with **reserves 10** and **loans 90**.
 Both now suffer a **$5 million loan loss**.
 
 1.  What happens to each?
-2.  So why does any bank hold **low** capital?
+2.  Why, then, would any bank hold **low** capital?
 :::
 
 ::: notes
@@ -1198,8 +1200,8 @@ buy the firms' stocks and bonds.
     than direct, and **banks are the most important source of external funds**.
 -   Only large, well-established corporations have easy access to securities
     markets at all.
--   Something is stopping the obvious arrangement from working. The rest of this
-    session is what.
+-   Something prevents the obvious arrangement from working. The remainder of the
+    session identifies what.
 :::
 
 ::: notes
@@ -1286,7 +1288,7 @@ costs do not explain why collateral is everywhere or why contracts are so
 restrictive. Something else is going on, and it is on the next slide.
 :::
 
-## 7 · The two problems
+## 7 · Asymmetric information: the two problems
 
 **Asymmetric information** — the parties to a transaction do not have the same
 information.
@@ -1367,7 +1369,7 @@ exactly this test, and so is the exam question.
 <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#40607D"/></marker>
 <marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B4573C"/></marker>
 </defs>
-<text class="dg-ptitle" x="40" y="40">What a buyer who cannot tell them apart will pay</text>
+<text class="dg-ptitle" x="40" y="40">Pricing when quality is unobservable</text>
 <line class="dg-rule" x1="190" y1="232" x2="1270" y2="232" stroke="#63716E" stroke-width="1.6"/>
 <line x1="325.0" y1="223" x2="325.0" y2="241" stroke="#40607D" stroke-width="2"/>
 <text class="dg-lab" x="325.0" y="264" fill="#40607D">a bad security, worth 40</text>
@@ -1381,7 +1383,7 @@ exactly this test, and so is the exam question.
 <line x1="325.0" y1="276" x2="325.0" y2="300" stroke="#63716E" stroke-width="1" stroke-dasharray="3 3"/>
 <path class="dg-arr" d="M325.0 300 L703.0 300" marker-end="url(#ahc)"/>
 <text class="dg-lab" x="514.0" y="322" fill="#40607D">paid 70 for something worth 40 — the bad issuer sells more</text>
-<text class="dg-note" x="40" y="382">The mix left in the market worsens, so the average falls, so more good issuers leave. Buyers anticipate all of this and stop bidding at all.</text>
+<text class="dg-note" x="40" y="382">The remaining mix worsens, the average falls, and further good issuers withdraw. Buyers anticipate this and withdraw their bids.</text>
 </svg>
 </div>
 ```
@@ -1455,9 +1457,9 @@ Hold the question - it is the next slide.
 2.  **Government regulation to increase information** — mandatory audits,
     disclosure requirements.
 3.  **Financial intermediation** — a bank makes **private** loans, so nobody
-    free-rides on what it learns. The used-car-dealer analogy.
-4.  **Collateral and net worth** — which make the lemons problem matter less,
-    because the lender is protected whether or not the borrower was a lemon.
+    free-rides on what it learns; the used-car dealer is the standard analogy.
+4.  **Collateral and net worth** — which reduce the consequence of the problem:
+    the lender is protected whether or not the borrower proves to be a lemon.
 :::
 
 ::: notes
@@ -1615,7 +1617,7 @@ understands it well enough to bring it to market. The synergy is real. That is
 what makes this a genuine problem rather than an obvious one.
 :::
 
-## 7 · The six minicases
+## 7 · Identifying the problem: six cases
 
 ::: ask
 For each, name the problem — **adverse selection**, **moral hazard**, or a
