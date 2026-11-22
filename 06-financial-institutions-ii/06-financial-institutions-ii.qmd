@@ -60,8 +60,12 @@ source("../_R/setup.R")
 
 ## Nobody builds the portfolio {.hook background-color="#FAF7F2"}
 
-Last session we constructed the optimal international portfolio: six markets,
-specific weights, a Sharpe ratio that beat every country on its own.
+Last session we constructed the optimal international portfolio. For a US
+investor adding the Netherlands: **53.2% / 46.8%**, a return of **1.32%** a
+month at a risk of **4.29** — a Sharpe measure of **0.179**, against **0.160**
+for the US alone and **0.161** for the Netherlands alone.
+
+The mix beat both of its parts, and nothing about either market changed.
 
 ::: incremental
 -   Almost no household does any of that. They **buy** a portfolio someone else
@@ -76,8 +80,24 @@ specific weights, a Sharpe ratio that beat every country on its own.
 This is the bridge from last session, so make the bridge explicit rather than
 starting a new topic cold.
 
-Remind them what they built: the optimal international portfolio, six markets
-out of twelve, a Sharpe ratio of 0.179 against 0.160 for the US alone.
+*[the recap - one minute, and use the numbers, not the words]*
+
+Walk Problem 5.1 across the slide rather than describing it. Two markets, the
+United States and the Netherlands. Optimal weights fifty-three and forty-seven.
+The portfolio returns 1.32 a month at a risk of 4.29 - and the risk is below
+both components, 4.43 and 5.15, which is the whole of diversification in one
+number.
+
+Sharpe 0.179 against 0.160 and 0.161.
+
+*[ask]* What changed about the American market or the Dutch market to produce
+that?
+
+Nothing. Only the fact that they do not move together. That is the sentence from
+last session, and it is the foundation for everything today.
+
+They also did it for twelve markets, where the optimal portfolio held only six
+of them and put a fifth in the investor's home market.
 
 *[reveal the first bullet]*
 
