@@ -134,21 +134,33 @@ section of theory that explains why any of them exist. The theory is last on
 purpose. They will have met six examples of asymmetric information before anyone
 names it.
 
-*[Timing - three hours]*
+*[Timing - three hours fifteen, shared with the group presentations]*
 
-Hook and roadmap 8 · mutual funds 35 · Muñoz discussion 25 · insurance 20 ·
-investment firms 25 · bank management 35 · economic efficiency 30. That is 178
-of 180, so there is no slack at all.
+195 minutes in total: 110 of lecture, a 10-minute break, then 75 for five
+presentations - twelve minutes each plus changeover and questions.
 
-If you are losing time, cut in this order: **brokers and dealers**, **private
-equity returns**, **too much or too little capital**, and the **four fund
-classes in detail**. Each is marked on its slide.
+Lecture first, while attention is fresh. The reading discussion sits before the
+break.
 
-Do not cut: the NAV problem, the two bank management problems, the minicases, or
-the reading discussion. Those are the assessed and examinable parts.
+Lecture: hook and roadmap 5 · mutual funds 16 · Muñoz discussion 25 · insurance
+10 · investment firms 9 · bank management 22 · economic efficiency 23.
 
-Protect the reading discussion by putting it before the break, the same way you
-did in session 4. It is the piece that gets eaten otherwise.
+That is 68 minutes less than this deck was built for, so nine slides are being
+skipped rather than hurried. Each says so on its first line of notes: the four
+classes · composition of the classes · hedge funds · brokers and dealers ·
+private equity and venture capital · asset and liability management · managing
+the capital position · facts about financial structure · conflicts of interest.
+
+All nine are in the handout, so nothing is lost for the exam - only for the
+hour. Say that out loud, once, so nobody thinks skipped means not examinable.
+
+What survives is everything assessed or examinable: the NAV problem, both bank
+management problems, the six cases, and the reading discussion.
+
+One consequence to watch. Conflicts of interest no longer has a slide of its
+own, so make the point while doing cases one, five and six: a conflict of
+interest is a species of moral hazard, not a third category. That is the
+sentence they lose marks for not knowing.
 :::
 
 # 2 · Mutual funds {.divider .center background-color="#06302F"}
@@ -269,7 +281,9 @@ active manager.
 :::
 
 ::: notes
-*[cuttable - the four numbers matter, the sub-classes do not]*
+*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
+
+*[if you do show it - the four numbers matter, the sub-classes do not]*
 
 Do not read the table. Make two points from it and move.
 
@@ -327,7 +341,9 @@ securities 12.6%.
 :::
 
 ::: notes
-*[cuttable - if time is short, open only the third tab]*
+*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
+
+*[if you do show it - open only the third tab, on money market funds]*
 
 Three tabs, and only the third contains something they must leave with.
 
@@ -417,6 +433,8 @@ fraud concerns, and hedge funds reached the average investor through
 ::::
 
 ::: notes
+*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
+
 Keep this short and resist the glamour.
 
 The five differences are all one difference: hedge funds are sold to people the
@@ -856,7 +874,9 @@ credit** for buying equity with borrowed funds.
 ::::
 
 ::: notes
-*[cuttable - they met brokers and dealers in session 3; this is revision]*
+*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
+
+*[if you do show it - they met brokers and dealers in session 3]*
 
 If you are running late this is the slide to drop. If you keep it, keep it to
 two points.
@@ -903,7 +923,9 @@ withdrawing.
 ::::
 
 ::: notes
-*[cuttable - the returns table is the droppable half]*
+*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
+
+*[if you do show it - the structure matters, the returns table does not]*
 
 Two things, and the second is the interesting one.
 
@@ -1069,6 +1091,8 @@ decades.
 :::
 
 ::: notes
+*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
+
 The content here is thin; the change over time is the interesting part, so lead
 with that.
 
@@ -1171,7 +1195,9 @@ $$ROE = ROA \times EM \qquad EM = \frac{\text{assets}}{\text{equity capital}}$$
 ::::
 
 ::: notes
-*[cuttable - the previous slide carries the idea; this is the mechanics]*
+*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
+
+*[if you do show it - the previous slide carries the idea]*
 
 Six levers, three each way, and they are mirror images. Do not read all six.
 
@@ -1258,6 +1284,8 @@ mutual funds, and developed expertise.
 :::
 
 ::: notes
+*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
+
 Four facts, revealed one at a time, and each one is a clue. Tell them that:
 these are the observations any theory of financial structure has to explain.
 
@@ -1590,6 +1618,8 @@ serving one is detrimental to another.
 :::
 
 ::: notes
+*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
+
 Lead with the classification, because it is the thing they get wrong in the
 exam: a conflict of interest is a species of moral hazard, not a third category
 beside it.
@@ -1671,15 +1701,65 @@ common error in the exam.
 selection · 4 principal-agent · 5 conflict of interest · 6 conflict of interest.
 :::
 
-## Next session {.center}
+## Group presentations {.center}
 
-That completes **Financial Institutions and Firms**. What remains is the group
-work and the exam.
+Five groups, **twelve minutes each**, one security per group.
+
+:::: columns
+::: {.column width="52%"}
+**What is being marked**
+
+-   An **analysis**, not a company profile
+-   Real **data**, named and dated
+-   A **conclusion** you are willing to defend
+:::
+
+::: {.column width="48%"}
+**Order and timing**
+
+Twelve minutes, then three for questions. I will stop you at twelve.
+
+Everyone presents; everyone is in the room for all five.
+:::
+::::
+
+::: notes
+Set the rules before the first group plugs in, not during it.
+
+Twelve minutes and you will stop them at twelve. Say it once, then do it on the
+first group - otherwise the fifth group pays for the first four overrunning, and
+that is the unfairness they will remember.
+
+Three minutes of questions each. If the room is silent, you ask: what would
+change your conclusion?
+
+*[what you are listening for]*
+
+An analysis, not a profile. We have spent two sessions on what analysing a
+security means - a return, a risk, a comparison, a judgement. A history of the
+company with a share price chart at the end is not that.
+
+Data that is named and dated. Where it came from and what period it covers.
+
+And a conclusion they will defend. Hedged non-answers are the common failure,
+so push once on every group: so would you buy it, or not?
+
+*[housekeeping]*
+
+Everyone stays for all five. Say why - the comparisons across groups are half
+the learning, and a room that empties after its own slot is a room that learned
+one security.
+:::
+
+## What remains {.center}
+
+That completes **Financial Institutions and Firms** — and with the
+presentations, the taught part of the course.
 
 ::: keyidea
-**Group presentations** next session: one security, twelve minutes, maximum five
-per group. Bring the data you are presenting from — not slides about a company,
-an analysis of a security.
+What is left is the **exam**. The four problems from today are the kind of thing
+it asks; so is the before-and-after distinction between adverse selection and
+moral hazard.
 :::
 
 ::: {.source}
@@ -1699,9 +1779,8 @@ a conflict attached.
 
 *[then the practical items]*
 
-Group presentations next session. Five per group, twelve minutes, one security.
-Remind them that the analysis is the deliverable - we have spent two sessions on
-what an analysis of a security looks like, and a company profile is not one.
+Point them at the nine skipped slides in the deck and say plainly that skipped
+is not the same as not examinable.
 
 Tell them what the exam covers, if you have settled it.
 :::
