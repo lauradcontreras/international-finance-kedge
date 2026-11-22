@@ -60,8 +60,8 @@ for an overview. A PDF version is available next to each session.
 :::
 
 ::: {.session}
-[7 · Regulation]{.title}
-[Individual assignment]{.soon}
+[7 · Financial regulation — crises, capital and the regulatory response]{.title}
+[[Slides](07-financial-regulation/07-financial-regulation.html) · [PDF](07-financial-regulation/07-financial-regulation.pdf)]{.links}
 :::
 
 ::: {.session}

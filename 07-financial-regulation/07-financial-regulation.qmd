@@ -1,0 +1,1484 @@
+---
+title: "International Finance"
+subtitle: "Session 7 — Financial Regulation"
+author: "Laura Contreras-Portela"
+institute: "KEDGE Business School"
+date: today
+date-format: "MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_theme/theme.scss]
+    width: 1600
+    height: 900
+    title-slide-attributes:
+      data-background-color: "#FAF7F2"
+    slide-number: c/t
+    show-slide-number: all
+    progress: true
+    history: true
+    hash: true
+    controls: true
+    navigation-mode: linear      # right arrow always goes to the next slide
+    preview-links: auto
+    highlight-style: github
+    code-line-numbers: true
+    html-math-method: katex
+    chalkboard:                     # C = draw on the slide, B = blank board
+      buttons: true
+      theme: whiteboard
+      chalk-effect: 0
+    footer: "International Finance · Session 7 · KEDGE"
+    embed-resources: false          # true -> one portable file, no wifi needed
+  beamer:                           # same source -> a real LaTeX PDF handout
+    aspectratio: 169
+    theme: metropolis
+    incremental: false
+    header-includes: |
+      \definecolor{ifteal}{HTML}{0E5250}
+      \definecolor{ifclay}{HTML}{B4573C}
+      \setbeamercolor{frametitle}{bg=ifteal}
+      \setbeamercolor{progress bar}{fg=ifteal}
+      \setbeamercolor{title separator}{fg=ifteal}
+      \setbeamercolor{structure}{fg=ifteal}
+      \setbeamercolor{alerted text}{fg=ifclay}
+execute:
+  echo: false
+  warning: false
+  message: false
+  fig-align: center
+  fig-width: 8
+  fig-height: 4.2
+knitr:
+  opts_chunk:
+    dev: png
+    dpi: 300
+---
+
+```{r setup}
+source("../_R/setup.R")
+```
+
+## When information stops flowing {.hook background-color="#FAF7F2"}
+
+In 1932 the spread between risky and safe borrowing went from **2%** to nearly
+**8%**. In late 2008 it passed **500 basis points**.
+
+::: incremental
+-   In neither case was anything physical destroyed. The factories, the workers
+    and the ideas were all still there the following morning.
+-   What broke was the ability to tell a good borrower from a bad one — the
+    exact problem we named last session.
+-   A financial crisis is an **information** event. That is why this chapter
+    follows directly from the last one, and why regulation takes the shape it
+    does.
+:::
+
+::: notes
+Open on the two numbers and let them sit before explaining anything.
+
+Two per cent to eight in 1932. Over five hundred basis points in 2008. Those are
+the prices of borrowing for anyone who was not unimpeachable.
+
+*[reveal the first bullet]*
+
+Nothing was destroyed. No factory burned down. The same people turned up to work
+with the same skills and the same machines.
+
+*[ask]* So what exactly was the problem?
+
+Let them try. Steer towards: nobody could tell who was solvent.
+
+*[reveal the second and third bullets]*
+
+Last session we called that adverse selection and moral hazard, and treated it
+as a reason intermediaries exist. This session it is the engine of collapse -
+the same mechanism, turned up until the system stops.
+
+Say the through-line for the whole chapter now, because everything hangs on it:
+every piece of regulation in this session is an attempt to fix an information
+problem, and every one of them creates a new incentive problem of its own.
+:::
+
+## Where we are {.center}
+
+The last two sessions built the institutions. This one asks what happens when
+they fail, and what is done about it.
+
+:::: columns
+::: {.column width="50%"}
+**The crises**
+
+1. Anatomy of a financial crisis · 2. The Great Depression · 3. The Global
+Financial Crisis · 4. The European sovereign debt crisis
+:::
+
+::: {.column width="50%"}
+**The response**
+
+5. Asymmetric information and bank capital · 6. Banking regulation ·
+7. The Dodd-Frank Act
+:::
+::::
+
+::: keyidea
+Sections 1 to 4 are the same mechanism four times. Sections 5 to 7 are what
+regulators did about it — and what each remedy cost.
+:::
+
+::: notes
+Two minutes on the map, and make the structure do the work.
+
+Four crises then three sections of response. Tell them the four crises are not
+four stories to memorise: they are one mechanism, appearing four times with
+different clothes. If they can state the mechanism they do not need to memorise
+the narratives.
+
+*[Timing - three hours]*
+
+Hook and roadmap 8 · anatomy of a crisis 20 · the Great Depression 15 · the
+global financial crisis 35 · the European sovereign debt crisis 15 · asymmetric
+information and capital 35 · banking regulation 35 · Dodd-Frank 15. That is 178
+of 180.
+
+The rule for cutting is the same as always: **the theory and the exercises
+survive; the narrative goes.** The crises are the narrative. Problems 4.1 and
+4.2, the three stages, and the capital ratios are the examinable spine.
+
+First to cut, in order: e-finance · the European crisis detail · the Fed and the
+housing bubble · restrictions on competition. Each is flagged on its slide.
+
+Do not cut Problem 4.2. It is the only piece of arithmetic in the chapter and it
+is the obvious exam question.
+:::
+
+# 1 · Anatomy of a financial crisis {.divider .center background-color="#06302F"}
+
+## 1 · What a financial crisis is
+
+A functioning financial system is critical to a robust economy, and **agency
+theory** — the study of moral hazard and adverse selection — is the basis for
+defining what goes wrong.
+
+::: incremental
+-   Asymmetric information creates barriers between savers and firms with
+    productive investment opportunities.
+-   A financial crisis occurs when information flows in financial markets
+    experience a **particularly large disruption**.
+-   Financial markets may then stop functioning completely. Crises usually
+    proceed in **two or three stages**.
+:::
+
+::: notes
+This is the definition the whole chapter runs on, so make them say it rather
+than read it.
+
+*[ask]* Last session, what stood between a saver and a firm with a good idea?
+
+Asymmetric information. The saver cannot tell a good borrower from a bad one, so
+they will not lend, or will not lend cheaply.
+
+*[reveal the second bullet]*
+
+Now the definition. A financial crisis is not a fall in prices, and it is not a
+recession. It is a particularly large disruption to information flows.
+
+*[ask]* Why does that definition matter more than a definition about prices?
+
+Because it tells you where to look for the cause and what a remedy has to do.
+Prices falling is a symptom. If the problem were prices, the cure would be to
+support prices; since the problem is information, the cure has to restore the
+ability to tell who is solvent. That is the logic behind every regulation in
+sections five to seven.
+:::
+
+## 1 · The sequence
+
+::: {.content-visible unless-format="beamer"}
+
+```{=html}
+<div class="crisisflow">
+<svg viewBox="0 0 1340 430" role="img" aria-labelledby="csT csD"
+     style="width:100%;height:auto;max-height:390px;display:block;margin:0 auto;font-family:inherit" preserveAspectRatio="xMidYMid meet">
+<title id="csT">How a financial crisis proceeds</title>
+<desc id="csD">Three possible triggers - mismanaged liberalisation or innovation, an asset-price boom and bust, or a rise in uncertainty - all lead to stage one, initiation. That leads to stage two, a banking crisis, and if prices fall sharply, to stage three, debt deflation. At every stage adverse selection and moral hazard worsen and lending falls.</desc>
+<style>
+.rg-box{fill:#FFFFFF;stroke:#63716E;stroke-width:1.6}
+.rg-box2{fill:#EAF2F1;stroke:#0E5250;stroke-width:1.8}
+.rg-name{fill:#0E5250;font-size:20px;font-weight:700;text-anchor:middle}
+.rg-small{fill:#63716E;font-size:16px;text-anchor:middle}
+.rg-ptitle{fill:#0E5250;font-size:19px;font-weight:700}
+.rg-arr{fill:none;stroke:#40607D;stroke-width:2.2}
+.rg-note{fill:#63716E;font-size:15px}
+.rg-lab{fill:#B4573C;font-size:16px;font-weight:600}
+</style>
+<defs><marker id="rga" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#40607D"/></marker><marker id="rgc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B4573C"/></marker></defs>
+<text class="rg-ptitle" x="30" y="30">Any of three triggers, then the same sequence</text>
+<rect class="rg-box" x="20.0" y="79.0" width="280" height="62" rx="6"/>
+<text class="rg-name" x="160" y="106">Mismanaged liberalisation</text>
+<text class="rg-small" x="160" y="130">or innovation</text>
+<path class="rg-arr" d="M302 110 L408 200" marker-end="url(#rga)"/>
+<rect class="rg-box" x="20.0" y="164.0" width="280" height="62" rx="6"/>
+<text class="rg-name" x="160" y="191">An asset-price boom</text>
+<text class="rg-small" x="160" y="215">and bust</text>
+<path class="rg-arr" d="M302 195 L408 200" marker-end="url(#rga)"/>
+<rect class="rg-box" x="20.0" y="249.0" width="280" height="62" rx="6"/>
+<text class="rg-name" x="160" y="276">A rise</text>
+<text class="rg-small" x="160" y="300">in uncertainty</text>
+<path class="rg-arr" d="M302 280 L408 200" marker-end="url(#rga)"/>
+<rect class="rg-box2" x="405.0" y="157.0" width="270" height="86" rx="6"/>
+<text class="rg-name" x="540" y="196">Stage one</text>
+<text class="rg-small" x="540" y="220">Initiation</text>
+<text class="rg-small" x="540" y="278">credit boom, weak risk management</text>
+<text class="rg-small" x="540" y="302">loan losses, capital falls</text>
+<text class="rg-small" x="540" y="326">deleveraging: lending is cut</text>
+<path class="rg-arr" d="M680 200 L710 200" marker-end="url(#rga)"/>
+<rect class="rg-box2" x="715.0" y="157.0" width="270" height="86" rx="6"/>
+<text class="rg-name" x="850" y="196">Stage two</text>
+<text class="rg-small" x="850" y="220">Banking crisis</text>
+<text class="rg-small" x="850" y="278">balance sheets push firms into insolvency</text>
+<text class="rg-small" x="850" y="302">depositors cannot tell who is solvent</text>
+<text class="rg-small" x="850" y="326">panic, then assets sold at any price</text>
+<path class="rg-arr" d="M990 200 L1020 200" marker-end="url(#rga)"/>
+<rect class="rg-box2" x="1025.0" y="157.0" width="270" height="86" rx="6"/>
+<text class="rg-name" x="1160" y="196">Stage three</text>
+<text class="rg-small" x="1160" y="220">Debt deflation</text>
+<text class="rg-small" x="1160" y="278">prices fall, debt does not adjust</text>
+<text class="rg-small" x="1160" y="302">real debt burdens rise</text>
+<text class="rg-small" x="1160" y="326">activity stays depressed for years</text>
+<text class="rg-note" x="30" y="408">At every stage the same thing worsens: adverse selection and moral hazard rise, so lending falls. Stage three needs a sharp fall in the price level and does not always occur.</text>
+</svg></div>
+```
+
+:::
+
+::: {.content-visible when-format="beamer"}
+
+**Three triggers:** mismanaged liberalisation or innovation; an asset-price boom
+and bust; a rise in uncertainty.
+
+**Stage one — initiation.** A credit boom with weak risk management; loan losses
+accrue and capital falls; institutions deleverage and cut lending, so nobody is
+left to evaluate firms.
+
+**Stage two — banking crisis.** Deteriorating balance sheets push institutions
+into insolvency; depositors cannot tell who is solvent, so they withdraw from
+all; assets are sold at any price.
+
+**Stage three — debt deflation.** Prices fall, debt does not adjust, real debt
+burdens rise, and activity stays depressed for years.
+
+At every stage adverse selection and moral hazard rise, so lending falls.
+
+:::
+
+::: notes
+Walk the picture left to right, and do not let them write while you do it.
+
+*[the three triggers, briefly]*
+
+Mismanaged liberalisation or innovation: restrictions lifted or new products
+introduced, and a credit boom follows that nobody is managing the risk of.
+
+An asset-price boom and bust: a bubble, then a fall, and corporate net worth
+falls with it.
+
+A rise in uncertainty: a stock market crash or a big failure. Ohio Life
+Insurance and Trust in 1857; AIG, Bear Stearns and Lehman in 2008.
+
+*[stage one]*
+
+Loan losses accrue, asset values fall, capital falls, and institutions cut back
+lending - deleveraging. Then the sentence that matters: as they cut back, nobody
+is left to evaluate firms. The system loses its primary institution for
+addressing adverse selection and moral hazard.
+
+*[stage two]*
+
+Deteriorating balance sheets push institutions into insolvency, and if it is bad
+enough, panic. Depositors cannot tell which banks are insolvent, so they
+withdraw from all of them. Cash falls, assets are sold quickly, balance sheets
+deteriorate further.
+
+*[ask]* Why does a panic hit good banks as well as bad ones?
+
+Because the depositor cannot tell them apart. That is adverse selection, in a
+queue outside a branch.
+
+*[stage three]*
+
+Debt deflation, which needs a sharp fall in the price level: asset prices fall
+but debt does not adjust, so real debt burdens rise. Activity stays depressed
+for a long time.
+
+*[the caption]*
+
+Point at the bottom line. The same thing worsens at every stage - adverse
+selection and moral hazard rise, lending falls. One mechanism, three stages.
+:::
+
+# 2 · The Great Depression {.divider .center background-color="#06302F"}
+
+## 2 · Monetary policy, then agriculture
+
+::: incremental
+-   Stock prices **doubled** in 1928–29. The Fed tightened to curb the
+    speculation, and the market fell more than **20%** in October 1929, and
+    another 20% by the year's end.
+-   Severe droughts in the Midwest in 1930 cut agricultural production sharply.
+    Between 1930 and 1933, **one-third of US banks** went out of business.
+-   For more than two years the Fed sat by through one bank panic after another.
+    Adverse selection and moral hazard became severe, and firms with productive
+    uses of funds could not get financing.
+-   Credit spreads rose from **2%** to nearly **8%** at the height of the
+    Depression in 1932.
+:::
+
+::: notes
+Two shocks, and the second is the one they will not expect.
+
+*[first bullet]*
+
+Prices doubled in two years. The Fed tightened deliberately to stop the
+speculation, and the market fell by more than forty per cent across the autumn.
+
+*[ask]* Was tightening a mistake?
+
+Keep it short and honest: it was aimed at a real problem and it worked far
+better than intended. What turned a bad recession into the worst crisis in
+American history was what came next.
+
+*[second bullet]*
+
+Drought. An agricultural shock, in an economy where banks lent to farmers. One
+third of American banks went out of business in three years.
+
+*[third and fourth bullets]*
+
+And the Fed did nothing for two years. Connect it back to the sequence: the
+system lost the institution that evaluates borrowers, so good firms could not
+borrow. The spread from two per cent to eight is that sentence with a number
+attached - it is the price of not being able to tell who is good.
+:::
+
+## 2 · What it cost
+
+::: incremental
+-   Deflation of **25%** in the price level — the stage three we just drew.
+-   Unemployment around **25%**, in the longest contraction on record.
+-   Bank panics spread from the US to the rest of the world, and the contraction
+    cut demand for foreign goods.
+-   The worldwide depression caused great hardship, and the resulting discontent
+    contributed to the rise of fascism and the Second World War.
+:::
+
+::: notes
+Short, and do not rush the last line.
+
+Twenty-five per cent deflation - that is stage three, debt deflation, in the
+data. Debts were fixed in nominal terms and everything else fell, so real
+burdens rose by a quarter.
+
+Twenty-five per cent unemployment.
+
+*[the international bullet]*
+
+The panic was American and the depression was global, through two channels:
+banking contagion, and the collapse in American demand for everyone else's
+exports.
+
+*[the last bullet - deliver it plainly and stop]*
+
+The textbook says it and it is right to say it: the discontent that followed
+contributed to the rise of fascism and the war. Do not editorialise. Let it land
+and move to the next section.
+
+This is also the answer to anyone who asks why financial regulation gets the
+attention it does.
+:::
+
+# 3 · The Global Financial Crisis {.divider .center background-color="#06302F"}
+
+## Who was supposed to be checking? {.hook background-color="#FAF7F2"}
+
+A mortgage originator who sells the loan the week after writing it is paid for
+**volume**, not for **quality**.
+
+::: incremental
+-   So who, in that chain, had a reason to find out whether the borrower could
+    pay?
+-   And the agencies that rated the resulting securities were paid by the firms
+    whose securities they rated — and advised them on how to structure them.
+:::
+
+::: notes
+This is the conflicts-of-interest slide from last session, arriving as history.
+
+Set up the chain: a borrower, an originator, a bank that buys the note, a
+special purpose vehicle, a rating agency, and an investor.
+
+*[reveal the first bullet and ask it properly]*
+
+*[ask]* Go along that chain. Who loses money if the borrower cannot pay?
+
+The investor at the end - and nobody else, at least not quickly. The originator
+has been paid and has moved on.
+
+*[reveal the second bullet]*
+
+And the one party who was supposed to be checking on the investor's behalf, the
+rating agency, was paid by the issuer and also advised on how to get the rating
+up.
+
+They met that exact structure last session as a conflict of interest. Say so,
+and say that this is what it looks like at scale.
+:::
+
+## 3 · Three central factors
+
+:::: columns
+::: {.column width="34%"}
+**Financial innovation**
+
+Subprime lending let less-than-creditworthy borrowers buy homes — almost
+nonexistent until the 2000s.
+
+Financial engineering built new products to enhance and distribute the risk.
+:::
+
+::: {.column width="33%"}
+**Agency problems**
+
+Originators did not hold the mortgage; they sold the note in the secondary
+market.
+
+They earned fees on the **volume** of loans, not the quality. In the extreme,
+unqualified borrowers bought through creative products or outright fraud.
+:::
+
+::: {.column width="33%"}
+**Rating agencies**
+
+Agencies consulted on structuring products to achieve the highest rating — a
+clear conflict.
+
+The system was not designed for the complexity of structured debt, and the
+result was ratings that meant little.
+:::
+::::
+
+::: notes
+Three columns, one point each, and the middle one is the heart of it.
+
+*[innovation]*
+
+Subprime barely existed before the 2000s. Financial engineering then sliced and
+redistributed the risk - which is the next slide.
+
+*[agency problems - spend the time here]*
+
+The originator sells the note. They are paid on volume. So the person closest to
+the borrower, the one who could actually verify anything, has no stake in
+whether the loan is repaid.
+
+*[ask]* What would you expect to happen to lending standards?
+
+Exactly what did. In the extreme, outright fraud - inflated income on the
+application, and nobody downstream checking.
+
+*[rating agencies]*
+
+Paid by the issuer, advising on structure, rating the result. And the models
+were not built for the instruments. Ratings that investors relied on and that
+meant almost nothing.
+:::
+
+## 3 · Problem 4.1 — collateralised debt obligations
+
+::: {.content-visible unless-format="beamer"}
+
+```{=html}
+<div class="cdostack">
+<svg viewBox="0 0 1340 440" role="img" aria-labelledby="cdT cdD"
+     style="width:100%;height:auto;max-height:400px;display:block;margin:0 auto;font-family:inherit" preserveAspectRatio="xMidYMid meet">
+<title id="cdT">How a collateralised debt obligation allocates losses</title>
+<desc id="cdD">A special purpose vehicle buys assets and issues tranches. Losses are absorbed from the bottom up, starting with the equity tranche, then mezzanine, senior and super senior. Interest paid falls as you move up, because the risk of loss falls.</desc>
+<style>
+.rg-box{fill:#FFFFFF;stroke:#63716E;stroke-width:1.6}
+.rg-box2{fill:#EAF2F1;stroke:#0E5250;stroke-width:1.8}
+.rg-name{fill:#0E5250;font-size:20px;font-weight:700;text-anchor:middle}
+.rg-small{fill:#63716E;font-size:16px;text-anchor:middle}
+.rg-ptitle{fill:#0E5250;font-size:19px;font-weight:700}
+.rg-arr{fill:none;stroke:#40607D;stroke-width:2.2}
+.rg-note{fill:#63716E;font-size:15px}
+.rg-lab{fill:#B4573C;font-size:16px;font-weight:600}
+</style>
+<defs><marker id="rga" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#40607D"/></marker><marker id="rgc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B4573C"/></marker></defs>
+<text class="rg-ptitle" x="30" y="30">The same pool of assets, cut into tranches</text>
+<rect class="rg-box" x="60.0" y="145.0" width="250" height="140" rx="6"/>
+<text class="rg-small" x="185" y="189">A pool of mortgages</text>
+<text class="rg-small" x="185" y="213">or other assets,</text>
+<text class="rg-small" x="185" y="237">bought by a special</text>
+<text class="rg-small" x="185" y="261">purpose vehicle</text>
+<path class="rg-arr" d="M315 215 L452 215" marker-end="url(#rga)"/>
+<rect class="rg-box" x="512" y="78" width="498" height="70" rx="4"/>
+<text class="rg-name" x="534" y="108" style="text-anchor:start">Super senior</text>
+<text class="rg-small" x="534" y="130" style="text-anchor:start">last to suffer any loss</text>
+<rect class="rg-box" x="512" y="154" width="498" height="70" rx="4"/>
+<text class="rg-name" x="534" y="184" style="text-anchor:start">Senior</text>
+<text class="rg-small" x="534" y="206" style="text-anchor:start">a little more risk, higher interest</text>
+<rect class="rg-box" x="512" y="230" width="498" height="70" rx="4"/>
+<text class="rg-name" x="534" y="260" style="text-anchor:start">Mezzanine</text>
+<text class="rg-small" x="534" y="282" style="text-anchor:start">more risk again, higher interest still</text>
+<rect class="rg-box" x="512" y="306" width="498" height="70" rx="4"/>
+<text class="rg-name" x="534" y="336" style="text-anchor:start">Equity</text>
+<text class="rg-small" x="534" y="358" style="text-anchor:start">takes the first loss of all</text>
+<path class="rg-arr" d="M482 358 L482 92" marker-end="url(#rgc)" style="stroke:#B4573C"/>
+<text class="rg-lab" x="442" y="227.0" transform="rotate(-90 442 227.0)" text-anchor="middle">losses fill upwards</text>
+<path class="rg-arr" d="M1052 92 L1052 358" marker-end="url(#rga)"/>
+<text class="rg-lab" x="1098" y="227.0" transform="rotate(90 1098 227.0)" text-anchor="middle">interest paid falls</text>
+<text class="rg-note" x="30" y="420">The top tranches were rated as if they were safe, because they only take losses once almost everything below them is gone. That held while defaults were uncorrelated.</text>
+</svg></div>
+```
+
+:::
+
+::: {.content-visible when-format="beamer"}
+
+A special purpose vehicle buys a pool of assets and issues tranches defined by
+default priority. From the bottom: the **equity** tranche takes the first loss;
+then **mezzanine**, with more risk and higher interest; then **senior**; then
+**super senior**, last to suffer any loss. Losses fill upwards; the interest
+paid falls as you move up.
+
+The top tranches were rated as if they were safe, because they take losses only
+once almost everything below them is gone — which held while defaults were
+uncorrelated.
+
+:::
+
+::: ask
+What are the **risks** linked to CDOs?
+:::
+
+::: notes
+Five minutes in pairs after you have walked the picture, then collect.
+
+*[walk the diagram first]*
+
+A special purpose vehicle buys assets, creates securities from them, and sells
+those securities. The securities are tranches, defined by default priority. The
+first defaults hit the lowest tranche; the highest tranches suffer only if most
+of the assets default.
+
+From the bottom: equity takes the first loss; mezzanine next, with more risk and
+higher interest; then senior; then super senior.
+
+*[then collect the risks - expect three and push for the fourth]*
+
+Correlation. The whole structure assumes defaults are largely independent. If
+they are correlated - and in a national housing downturn they are - losses do
+not stay in the bottom tranches, and the senior tranches fail too. That is the
+risk the ratings missed.
+
+Opacity and valuation. Nobody could value these in a hurry, which is what froze
+the market: not that they were worthless, but that nobody could show they were
+not.
+
+Model and rating risk. The rating was produced by the agency that helped
+structure the deal, using models not built for the product.
+
+Liquidity. They were held with short-term funding, so a fall in value forced
+sales, which forced the value down further.
+
+*[and the structural one, if they get there]*
+
+Tranching does not reduce the total risk of the pool. It redistributes it. The
+pool is exactly as risky as it was; what changed is who holds which part - and
+how safe the top part was allowed to look.
+
+**Worked.** Correlation of defaults breaks the tranching; opacity makes
+valuation impossible; ratings were conflicted and model-driven; short-term
+funding forced fire sales. Tranching redistributes risk, it does not reduce it.
+:::
+
+## 3 · The housing market
+
+::: incremental
+-   The housing boom was initially **lauded** by economists and politicians, and
+    it stimulated growth in the subprime market.
+-   Underwriting standards fell, and people were buying houses they could not
+    afford — except through the ability to sell at a higher price.
+-   Lending standards allowed near **100% financing**, so owners had little to
+    lose by defaulting when the bubble burst.
+-   Because of the fall in house prices, the number of defaults continued to
+    plague the US banking system.
+:::
+
+::: notes
+The third bullet is the one to dwell on, because it is moral hazard with a
+number.
+
+*[first two bullets, briskly]*
+
+Rising homeownership was a policy success before it was a crisis, which is worth
+saying - nobody set out to cause this.
+
+Underwriting standards fell. The loan only worked if the house kept rising,
+which is not lending, it is a bet on an asset price.
+
+*[third bullet - stop here]*
+
+Near one hundred per cent financing means the buyer has almost no equity.
+
+*[ask]* You put in nothing and the house falls twenty per cent. What do you
+lose by walking away?
+
+Almost nothing. That is moral hazard in debt, exactly as we drew it last
+session: the borrower keeps the upside and the lender takes the downside. The
+down payment was never about affordability - it was the borrower's stake in not
+defaulting.
+:::
+
+## 3 · Was the Fed to blame?
+
+:::: columns
+::: {.column width="50%"}
+**The charge**
+
+Low interest rates from **2003 to 2006** fuelled the housing bubble — rates were
+held below what the **Taylor rule** would have implied.
+:::
+
+::: {.column width="50%"}
+**The rebuttal**
+
+In early 2010 Bernanke argued the rates were appropriate, and pointed instead to
+new mortgage products, relaxed lending standards and capital inflows as the
+likelier causes.
+:::
+::::
+
+::: {.source}
+The debate over whether monetary policy was to blame for the housing bubble
+continues.
+:::
+
+::: notes
+*[first to cut if you are behind]*
+
+Two minutes, presented as an open question, because it is one.
+
+The charge: rates were too low for too long, by the standard of a simple rule,
+and cheap money inflated house prices.
+
+The rebuttal, from the chairman at the time: rates were appropriate, and the
+causes were the products, the standards and the global capital inflows.
+
+*[ask]* How would you tell which is right?
+
+That is the useful part of this slide. You would want countries with different
+monetary policies and similar housing booms, or the reverse. Several European
+countries had booms without the Fed's rates. It does not settle it, but it tells
+them what evidence would look like - which is worth more than the answer.
+:::
+
+## 3 · From mortgages to the system
+
+::: incremental
+-   As defaults rose, banks saw asset values fall — made worse by the complexity
+    of mortgages, CDOs and swaps that were **difficult to value**.
+-   Banks began **deleveraging**, selling assets and restricting credit, further
+    depressing the economy.
+-   The **shadow banking system** — hedge funds, investment banks, other
+    liquidity providers — experienced a run. When short-term debt markets seized,
+    so did credit to that system, forcing fire sales.
+-   Falling stock prices and rising credit spreads weakened firm and household
+    balance sheets. Consumption and real investment fell sharply.
+:::
+
+::: notes
+This is stage one turning into stage two, so name the stages as you go.
+
+*[first two bullets]*
+
+Asset values fall and cannot be verified, capital falls, lending is cut. That is
+stage one, exactly as drawn.
+
+*[third bullet - the one that needs explaining]*
+
+The shadow banking system. Institutions doing what banks do - borrowing short
+and lending long - without being banks.
+
+*[ask]* If they are not banks, who guarantees their funding?
+
+Nobody. No deposit insurance, no central bank window as of right. So when
+short-term markets froze, they had to sell assets into a falling market.
+
+That is a bank run, in a system with no deposits and no depositors. Say that
+plainly: it is the single most useful idea on this slide.
+:::
+
+## 3 · The collapse, in sequence
+
+::: incremental
+-   **Europe first.** A downgrade of $10 billion of mortgage products froze
+    short-term money markets, and in August 2007 a French investment house
+    suspended redemptions on some money market funds. Banks and firms hoarded
+    cash.
+-   **Northern Rock**, reliant on short-term credit markets for funding, was one
+    of the first failures. By most standards Europe's downturn was more severe
+    than the US one.
+-   **March 2008:** Bear Stearns fails and is sold to JP Morgan for 5% of its
+    value a year earlier. **September 2008:** Fannie and Freddie into
+    conservatorship; **Lehman Brothers** files for bankruptcy; Merrill Lynch sold
+    to Bank of America; AIG hits a liquidity crisis.
+:::
+
+::: notes
+Chronology, delivered briskly. Do not let this become a war story.
+
+*[Europe first - this is the detail worth having]*
+
+The alarm was European, not American, and it was a money market event: a
+downgrade, then a French house suspending redemptions on funds people thought
+were cash. That is the money market fund problem from last session, in the wild.
+
+*[Northern Rock]*
+
+Funded in short-term markets rather than by deposits. When the funding stopped,
+the bank stopped. Same mechanism as the shadow banking run.
+
+*[the autumn of 2008]*
+
+Read the list without dramatising it. The point is the speed and the fact that
+each failure made the next more likely, because every failure increased
+uncertainty about who else was exposed.
+
+*[ask]* Which of the three triggers does that look like?
+
+A rise in uncertainty - trigger three, feeding stage two.
+:::
+
+## 3 · What it cost
+
+::: incremental
+-   The worst economic contraction since the Second World War, peaking in
+    September 2008. Congress passed a bailout, the market kept falling, and
+    credit spreads passed **500 basis points**.
+-   Real GDP fell and unemployment rose above **10%** in 2009. The recession
+    that began in December 2007 is now called the **Great Recession**.
+-   From March 2009 a bull market began and spreads fell — but the recovery was
+    slow.
+:::
+
+::: notes
+Short. The numbers are the content.
+
+Five hundred basis points - that is the hook slide, closing.
+
+*[ask]* Compare it with 1932: eight per cent spreads, twenty-five per cent
+unemployment, twenty-five per cent deflation. Why was 2008 so much less severe
+in the end?
+
+The honest answer, and it sets up the second half of the session: because this
+time the central bank and the government acted, and because deposit insurance
+meant there was no queue outside the branch. The regulation in sections five to
+seven is why 2008 was not 1932.
+
+That is the bridge. Use it.
+:::
+
+# 4 · The European sovereign debt crisis {.divider .center background-color="#06302F"}
+
+## 4 · Convergence, then divergence
+
+::: incremental
+-   Up to 2007, every country that adopted the euro found its interest rates
+    converging to **very low** levels.
+-   Then several were hit hard at once: lower tax revenue from the contraction,
+    high costs of bailing out financial institutions, and fear of government
+    default pushing rates up.
+-   **Greece** was the first domino. September 2008: a projected 6% deficit and
+    100% debt-to-GDP. October: with new officials, the numbers proved far worse.
+    Rates on Greek debt peaked near **40%** and debt-to-GDP reached **160%** in
+    2012. Greece was forced into a partial default, and civil unrest followed.
+-   **Ireland, Portugal, Spain and Italy** followed: austerity, double-digit
+    interest rates, severe recessions, and unemployment reaching **25%** in
+    Spain.
+:::
+
+::: notes
+*[first to cut if you are behind - the Greek detail is the droppable half]*
+
+The shape of this one is a sentence: a currency union removed exchange rate risk
+and markets priced the debt of very different governments as if it were the
+same.
+
+*[first bullet]*
+
+Rates converged. Greek and German borrowing costs were nearly identical, which
+with hindsight was an extraordinary thing for a market to believe.
+
+*[ask]* What had actually been removed, and what had not?
+
+Exchange rate risk was removed. Default risk was not - and in fact it was made
+worse, because a country inside the union cannot devalue or print its own way
+out.
+
+*[second and third bullets]*
+
+Then the three shocks together, and Greece as the first to break. The detail
+that matters: the numbers changed when the officials changed. This was partly an
+information crisis about the state of public accounts, which is the chapter's
+theme in a different market.
+
+*[fourth bullet]*
+
+Four more countries, austerity, and a quarter of Spain unemployed. Say that last
+number slowly.
+:::
+
+# 5 · Asymmetric information and bank capital {.divider .center background-color="#06302F"}
+
+## 5 · Deposit insurance
+
+Asymmetric information, moral hazard and adverse selection explain the whole
+regulatory environment in banking.
+
+::: incremental
+-   Before the **FDIC**, a bank failure meant depositors lost money, and good
+    banks needed to separate themselves from bad ones.
+-   Depositors cannot assess the quality of a bank's assets, and that inability
+    is what produces panics — in **1819, 1837, 1857, 1873, 1884, 1893, 1907** and
+    **1930–33**.
+-   With a government safety net, depositors do not flee at the first sign of
+    trouble. Between **1934 and 1981**, fewer than **15** banks failed each year.
+-   Up to the 1960s only **six** countries had deposit insurance. By the 1990s
+    the number topped **70**.
+:::
+
+::: notes
+This is the best-designed piece of regulation in the chapter, so give it its due
+before the next slide takes it apart.
+
+*[the list of panic years]*
+
+Read them out. Eight panics in just over a century, roughly one every fifteen
+years. Then: after 1934, fewer than fifteen bank failures a year for nearly half
+a century.
+
+*[ask]* What exactly did deposit insurance change?
+
+Push past "it protected depositors". It removed the depositor's reason to run.
+And since the run was what turned one bad bank into a system-wide panic, it cut
+the link between an individual failure and a general collapse.
+
+Tie it to the mechanism: the depositor could never tell a good bank from a bad
+one. Insurance makes that ignorance harmless, instead of trying to cure it.
+That is a different kind of solution from anything in section six, and it is why
+it worked so well.
+:::
+
+## 5 · What deposit insurance costs
+
+::: incremental
+-   Explicit government insurance is associated with **less** banking stability
+    and more crises — though mainly in countries with ineffective laws,
+    regulation and high corruption. For emerging markets it may be the wrong
+    medicine.
+-   It creates **moral hazard**: an insured bank can take greater risk, because
+    the depositor no longer cares.
+-   It creates **adverse selection**: those most likely to abuse the insurance
+    are the ones most attracted to running a bank.
+-   **Too big to fail.** Regulators are reluctant to let the largest banks fail.
+    When Continental Illinois failed, all deposits were insured, and so were the
+    bondholders — so even creditors stopped caring about a bank's health.
+:::
+
+::: notes
+Now take it apart, and make the symmetry with the previous slide explicit.
+
+The cure works by making the depositor indifferent. That is exactly the problem.
+
+*[second bullet]*
+
+Nobody is left watching the bank. The depositor was a terrible monitor, but they
+were a monitor, and now they have been switched off.
+
+*[ask]* Who is left to discipline a bank that is taking too much risk?
+
+The regulator - which is why the rest of this section exists. Capital
+requirements and supervision are the replacement for the monitoring that deposit
+insurance destroyed.
+
+*[third bullet]*
+
+And it selects for the wrong people. The person who most wants a licence to lend
+other people's insured money is precisely the person you would least like to
+have one.
+
+*[fourth bullet - Continental Illinois]*
+
+Bondholders were protected too. So the last remaining private monitors, the
+creditors, also stopped looking. Consolidation has made this worse, and banks
+now do more than banking, which extends the guarantee further than was ever
+intended.
+:::
+
+## 5 · Restrictions on asset holdings
+
+Regulations limit the type of assets a bank may hold — for instance, banks may
+not hold common equity.
+
+::: keyidea
+Even with these restrictions in place, the 2007–2009 crisis still happened.
+:::
+
+::: notes
+Thirty seconds, and the key idea is the whole point.
+
+The restriction is simple: a bank may not hold common equity, because equity is
+volatile and the bank is holding other people's money.
+
+*[the key idea]*
+
+And it did not prevent the crisis. Say that plainly rather than hurrying past
+it - the restrictions were real, they were enforced, and the losses came through
+assets that were permitted and highly rated. Rules bind the things you thought
+of.
+:::
+
+## 5 · Capital requirements
+
+Banks must hold a level of capital — book equity — that depends on the assets
+they hold.
+
+:::: columns
+::: {.column width="52%"}
+| Ratio | Definition | Minimum |
+|:---|:---|---:|
+| Leverage | capital ÷ total assets | **4%** |
+| Core capital | core capital ÷ RWA | **8.5%** |
+| Capital requirement | capital ÷ RWA | **10.5%** |
+
+::: {.smaller}
+RWA = total risk-weighted assets, including off-balance-sheet activities.
+:::
+:::
+
+::: {.column width="48%"}
+-   Banks engage in **regulatory arbitrage**: within a given risk category, seek
+    the riskiest assets.
+-   An undercapitalised bank is more likely to fail *and* more likely to take
+    risk — so the **FDIC Improvement Act of 1991** requires the FDIC to act
+    quickly.
+-   Well capitalised banks are permitted some underwriting risk;
+    undercapitalised banks face greater reporting and oversight.
+:::
+::::
+
+::: notes
+The three ratios are the examinable content. Get the difference between them
+straight before the problem.
+
+Leverage ratio: capital over total assets. It does not care what the assets are.
+
+The other two are over risk-weighted assets, where each asset is multiplied by a
+weight reflecting its risk. Capital over risk-weighted assets, and a stricter
+version using only core capital.
+
+*[ask]* Why have both a leverage ratio and a risk-weighted one?
+
+Because each catches what the other misses. The leverage ratio is blind to risk,
+so a bank can satisfy it while holding nothing but risky assets. The
+risk-weighted ratio depends on the weights being right - and the crisis showed
+they were not.
+
+*[regulatory arbitrage - the key idea of the slide]*
+
+Within a weight category, every asset counts the same. So pick the riskiest one
+in the bucket. You are not breaking the rule; you are being paid to find its
+edges. Every quantitative rule has this property and it is worth naming.
+:::
+
+## 5 · Problem 4.2 — First National Bank {.smaller}
+
+:::: columns
+::: {.column width="56%"}
+| Assets | | Liabilities | |
+|:---|---:|:---|---:|
+| Reserves | $3m | Checkable deposits | $27m |
+| Treasury securities | $10m | Nontransactions deposits | $65m |
+| Government agency securities | $7m | Borrowings | $19m |
+| Municipal bonds | $10m | Loan loss reserves | $2m |
+| Residential mortgages | $10m | Bank capital | $7m |
+| Real estate loans | $20m | | |
+| Commercial & industrial loans | $35m | | |
+| Fixed assets | $5m | | |
+| Letters of credit | $20m | | |
+:::
+
+::: {.column width="44%"}
+**Risk weights**
+
+-   **0** — reserves, Treasury securities
+-   **0.2** — government agency securities
+-   **0.5** — municipal bonds, residential mortgages
+-   **1.0** — real estate loans, C&I loans, fixed assets, letters of credit
+
+::: ask
+1.  Is the **leverage ratio** respected?
+2.  Are the **core capital** and **capital requirement** ratios respected?
+:::
+:::
+::::
+
+::: notes
+Ten minutes in pairs. This is the only arithmetic in the chapter and it is the
+obvious exam question, so do not cut it and do not rush it.
+
+*[step one - total assets]*
+
+Add the asset column: 3 + 10 + 7 + 10 + 10 + 20 + 35 + 5 + 20 = 120 million.
+Check it against the other side: 27 + 65 + 19 + 2 + 7 = 120. It balances.
+
+*[step two - the leverage ratio]*
+
+Capital over total assets: 7 over 120 = 5.83 per cent. The minimum is 4.
+
+Passed.
+
+*[step three - risk-weighted assets, and make them do this line by line]*
+
+Reserves 3 times 0 is nothing. Treasuries 10 times 0, nothing.
+Agencies 7 times 0.2 = 1.4.
+Municipals 10 times 0.5 = 5. Residential mortgages 10 times 0.5 = 5.
+Then everything at full weight: real estate 20, C&I 35, fixed assets 5, letters
+of credit 20 - that is 80.
+
+Total: 1.4 + 5 + 5 + 80 = 91.4 million.
+
+*[step four - the two risk-weighted ratios]*
+
+Core capital is the bank capital, 7. Over 91.4 that is 7.66 per cent, against a
+minimum of 8.5. Failed.
+
+Total capital adds the loan loss reserves: 7 + 2 = 9. Over 91.4 that is 9.85 per
+cent, against a minimum of 10.5. Failed.
+
+*[the point of the problem - this is what you are really teaching]*
+
+*[ask]* The bank passes one test and fails two. How?
+
+Because the leverage ratio does not look at what the assets are, and three
+quarters of this bank's assets carry a full risk weight. A bank of Treasuries
+with the same capital would pass everything.
+
+*[ask]* How much capital does it actually need?
+
+For the core ratio, 8.5 per cent of 91.4 is 7.77 - so about 0.77 million short.
+For the total ratio, 10.5 per cent of 91.4 is 9.60 - about 0.60 short. Small
+numbers, and they are still a breach.
+
+**Worked.** Total assets 120, RWA 91.4. Leverage 7/120 = 5.83% against 4% -
+passed. Core 7/91.4 = 7.66% against 8.5% - failed. Total capital 9/91.4 = 9.85%
+against 10.5% - failed. Shortfalls of about 0.77m and 0.60m.
+:::
+
+# 6 · Banking regulation {.divider .center background-color="#06302F"}
+
+## 6 · The Basel Accord
+
+In June 1999 the Basel Committee proposed reforms to the original accord:
+
+::: incremental
+-   Linking capital requirements to **actual risk** for large international banks
+-   Steps to strengthen the **supervisory** process
+-   Increased **market discipline** mechanisms
+:::
+
+::: {.source}
+Quite complex, and implementation was delayed by years. Only the largest US
+banks were subject to Basel 2; others followed a simplified standard.
+:::
+
+::: notes
+Keep this to the three pillars and the one honest observation.
+
+Risk-based capital, supervision, market discipline. Those are the three legs,
+and they map onto the three things a regulator can do: set a rule, look at the
+bank, or make the bank tell everyone else what it is doing.
+
+*[the source line - say it rather than skipping it]*
+
+Complex, and delayed by years. Only the largest US banks ever came under Basel
+2. That is worth saying because it is the pattern: international agreements take
+so long to implement that the crisis they were designed for has often already
+happened.
+:::
+
+## 6 · Basel 3
+
+:::: columns
+::: {.column width="50%"}
+**What the crisis revealed**
+
+-   The capital required was **not enough** to weather it
+-   The weights relied on **credit ratings**, which were unreliable
+-   Standards were **procyclical**, restricting credit exactly when it was needed
+:::
+
+::: {.column width="50%"}
+**Basel 3**, implemented by 2019
+
+-   Quality of capital
+-   Less procyclical
+-   New credit rating rules
+:::
+::::
+
+::: notes
+The left column is the examinable half, and the third item is the deepest.
+
+*[first two]*
+
+Not enough capital, and the weights depended on ratings that turned out to be
+worthless. Both are failures of calibration rather than of principle.
+
+*[procyclicality - stop here]*
+
+This one is a failure of design, and they met it last session.
+
+*[ask]* A downturn starts, losses arrive, capital falls. What does the rule
+require the bank to do?
+
+Rebuild capital - which means raising equity in a falling market, or shrinking
+lending. Every bank does it at the same time, so credit is withdrawn from the
+economy precisely when the economy most needs it.
+
+The rule designed to make each bank safe makes the system more fragile.
+Individually prudent, collectively destructive - the same sentence as the
+capital position slide last session.
+:::
+
+## 6 · Supervision and risk management
+
+:::: columns
+::: {.column width="50%"}
+**Financial supervision** reduces the adverse selection problem of attracting
+risk-takers.
+
+Examinations assign a **rating** used to justify cease orders on risky
+activities. There is periodic reporting and frequent examination, and a bank can
+be declared a **problem bank** and examined more often.
+:::
+
+::: {.column width="50%"}
+**Assessment of risk management.** Examinations used to focus on asset quality;
+the trend is towards whether the bank may take excessive risk in future.
+
+-   Quality of board and senior management oversight
+-   Adequacy of policies limiting risk activity
+-   Quality of risk measurement and monitoring
+-   Adequacy of internal controls to prevent fraud
+
+**Stress testing** is particularly important.
+:::
+::::
+
+::: notes
+The shift in the right-hand column is the thing to notice.
+
+*[left column, briskly]*
+
+Supervision is the regulator doing what the depositor can no longer be bothered
+to do: look at the bank and form a view.
+
+*[right column - the change of focus]*
+
+Examinations used to ask whether the assets were good. Now they ask whether the
+bank is the kind of institution that will take excessive risk next year.
+
+*[ask]* Why the change?
+
+Because asset quality is backward-looking. By the time the assets are visibly
+bad it is too late. The four elements are all about process and people rather
+than holdings, and stress testing is the formal version: not what are you worth
+today, but what would you be worth if things went badly.
+:::
+
+## 6 · Disclosure and mark-to-market
+
+::: incremental
+-   Better information reduces **both** moral hazard and adverse selection, which
+    is why disclosure is a regulatory tool at all. **Sarbanes-Oxley** increased
+    requirements for accurate accounting and limited conflicts of interest.
+-   In theory, market prices are the best basis for estimating the true value of
+    assets, and so of capital.
+-   But **mark-to-market** has a flaw: the price of an asset in a time of
+    financial distress does not reflect its fundamental value. A bank may appear
+    undercapitalised when prices are simply wrong.
+-   The criticism was made when asset values were **falling**, in 2007–2009 —
+    not when they were booming and balance sheets looked very good.
+:::
+
+::: notes
+The last bullet is the one worth the slide.
+
+*[first three bullets]*
+
+Disclosure is the purest information remedy in the chapter: it attacks the
+problem directly rather than working around it.
+
+Mark-to-market is the same idea applied to the balance sheet - value things at
+what they would fetch. And the flaw is real: in a fire sale, the price is not
+the value, so a solvent bank can look insolvent.
+
+*[fourth bullet - deliver it as the observation it is]*
+
+Notice when the objection was raised. In the boom, when market prices flattered
+every balance sheet, nobody argued that market prices were unreliable.
+
+*[ask]* Does the asymmetry mean the criticism is wrong?
+
+No - and that is the subtle part. The argument is sound and the people making it
+were not disinterested. Both can be true, and recognising it is what separates
+an analyst from an advocate.
+:::
+
+## 6 · Consumer protection
+
+::: incremental
+-   Interest rates are **standardised** — the APR — which makes offers
+    comparable and helps prevent discrimination.
+-   During the housing boom, originators had little incentive to ensure subprime
+    borrowers could repay. One mortgage became known as the **NINJA** loan: no
+    income, no job, no assets.
+-   In July 2008 the Federal Reserve required mortgages to consider ability to
+    repay, banned no-doc loans, banned prepayment penalties, and required escrow
+    accounts.
+-   A new consumer financial protection agency took responsibility for most
+    financial products used by a typical consumer.
+:::
+
+::: notes
+Begin with why standardisation is regulation at all, because it looks trivial.
+
+*[first bullet]*
+
+The APR exists so that two offers can be compared. Without a common definition
+the consumer cannot compare, and if they cannot compare they cannot choose - so
+competition does not discipline anybody. A disclosure rule is a competition
+policy.
+
+*[second bullet]*
+
+NINJA. No income, no job, no assets. Say it once, let them laugh, and then ask
+the serious question.
+
+*[ask]* Who, in that transaction, was behaving irrationally?
+
+Arguably nobody. The borrower got a house with no money down. The originator got
+a fee and sold the note. The buyer of the note held a rated security. Each link
+behaved sensibly; the chain was insane. That is what an incentive failure looks
+like, as against a stupidity failure.
+
+*[third and fourth bullets, briskly]*
+
+The 2008 rules are all one idea: put the obligation to check back on the person
+making the loan.
+:::
+
+## 6 · Competition, and the macroprudential turn
+
+:::: columns
+::: {.column width="50%"}
+**Restrictions on competition**
+
+Branching restrictions reduced competition between banks. The separation of
+banking and securities prevented nonbanks from competing — repealed in **1999**.
+
+Less competition can mean higher fees and less innovation.
+:::
+
+::: {.column width="50%"}
+**Micro against macro**
+
+Micro regulation looks at the individual bank, and is not enough in a crisis.
+
+Macro regulation looks at the **system**: damping the leverage cycle that feeds
+asset bubbles, and raising the **net stable funding ratio**.
+
+International banking shifts business between countries, so it needs coordinated
+regulators — which is what Basel attempts, imperfectly.
+:::
+::::
+
+::: notes
+*[the left column is first to cut if you are behind]*
+
+Left column in one line: restricting competition makes banks safer and makes
+banking worse, and most of those restrictions have gone.
+
+*[right column - this is the important half]*
+
+Micro-prudential regulation asks whether this bank is sound. Macro-prudential
+asks whether the system is sound.
+
+*[ask]* Can every bank be individually safe and the system still be unsafe?
+
+Yes, and they have now seen it twice today: the procyclical capital rule, and
+the fire sale where every bank selling a sound asset makes it unsound. The
+fallacy of composition is the whole case for macroprudential regulation.
+
+The leverage cycle and the net stable funding ratio are the two tools named
+here: damp the credit boom, and make banks fund themselves with money that
+cannot run.
+:::
+
+## 6 · Electronic banking
+
+::: incremental
+-   Electronic banking created new regulatory issues, particularly **security**
+    and **privacy**.
+-   In 1995 a computer programmer in Russia moved millions from Citibank
+    accounts to personal accounts.
+-   Regulators must now assess the **technical** competence of banks to handle
+    transactions safely, and electronic signatures had to be given legal effect.
+-   Privacy law restricts the sharing of customer information, and is likely to
+    keep evolving.
+:::
+
+::: notes
+*[first to cut - this is the most droppable slide in the deck]*
+
+Two minutes if you have them, nothing if you do not.
+
+The one idea worth leaving: a regulator supervising an electronic bank needs
+technical competence, not just financial competence. The question is no longer
+only whether the assets are sound but whether the systems are.
+
+*[if the room is lively]*
+
+*[ask]* Your bank's data is sold to an insurer who then prices your policy using
+it. Which of this session's problems is that?
+
+A conflict of interest and an information problem at once - and it is the live
+regulatory question in this area now.
+:::
+
+# 7 · The Dodd-Frank Act {.divider .center background-color="#06302F"}
+
+## 7 · Five categories, July 2010
+
+::: incremental
+-   **Consumer protection.** A Consumer Financial Protection Bureau to examine
+    and enforce regulation of financial products marketed to poor people.
+-   **Resolution authority.** Government authority over financial firms posing a
+    risk to the overall system.
+-   **Systemic risk regulation.** A Financial Stability Oversight Council to
+    monitor for asset price bubbles and systemic risk, liquidity requirements and
+    the liquidation of troubled firms.
+-   **The Volcker rule.** Banks limited in trading with their own money, and
+    allowed only a small percentage of hedge and private equity funds.
+-   **Derivatives.** Standardised products on exchanges, higher capital
+    requirements for custom products, some bank dealing operations banned, and
+    more disclosure.
+:::
+
+::: notes
+Five categories, and each one maps onto something they have already seen today.
+Make that mapping explicit as you go - it is what turns a list into an argument.
+
+Consumer protection: the NINJA loan.
+
+Resolution authority: the answer to Lehman, where there was no orderly way to
+close a large firm.
+
+Systemic risk: the macroprudential turn, given an institution.
+
+The Volcker rule: deposit insurance subsidises the bank's funding, so the bank
+should not use that funding to speculate for its own account. That is the
+too-big-to-fail subsidy being fenced off.
+
+Derivatives: moving them onto exchanges makes positions visible, which is the
+information remedy again - the AIG problem was that nobody knew who was exposed.
+
+*[ask]* Which of the five would you expect the industry to have fought hardest?
+
+The Volcker rule, and it is worth knowing it was substantially narrowed later.
+:::
+
+## 7 · What it leaves open
+
+::: incremental
+-   **Too big to fail** is not resolved. Breaking up large institutions — or
+    restricting asset size — is opposed on the grounds that it eliminates
+    synergies and may reduce efficiency.
+-   **Compensation.** Bonuses paid out over years and only if the firm stays
+    healthy; such **clawbacks** may encourage less risky behaviour.
+-   **Government-sponsored enterprises.** The fate of Fannie Mae and Freddie Mac
+    is unaddressed, with several routes available and each with drawbacks.
+-   **Credit rating agencies.** Regulation has been strengthened against
+    conflicts of interest, and more is likely.
+:::
+
+::: keyidea
+More regulation is needed to prevent another crisis — yet too much, or poorly
+designed, regulation could hamper the efficiency of the financial system.
+:::
+
+::: notes
+Close the session on the key idea, not on the list.
+
+*[the four open items, briskly]*
+
+Too big to fail: still there, and the argument against breaking banks up is an
+efficiency argument, not a lobbying one - large institutions genuinely do some
+things more cheaply.
+
+Compensation: clawbacks tie the bonus to the long-run health of the firm, which
+is the principal-agent problem from last session with a contractual fix.
+
+The GSEs and the rating agencies: both unfinished.
+
+*[the key idea - this is the sentence to leave them with]*
+
+Read it out. Then say what it really means: there is no setting of the dial that
+is simply correct. Every rule in this session fixed an information problem and
+created an incentive problem. Deposit insurance stopped the runs and switched
+off the monitors. Capital rules made banks safer and made downturns deeper.
+Mark-to-market told the truth and told it at the worst moment.
+
+*[ask]* So is the right amount of regulation more, or less, than we have?
+
+Do not answer it. Tell them that is the question the whole chapter has been
+preparing them to argue, and that an answer which does not acknowledge the
+trade-off is not an answer.
+:::
+
+## Next session {.center}
+
+That completes the taught material.
+
+::: keyidea
+What remains is the **exam**. Problem 4.2 is the kind of calculation it asks;
+the three stages of a crisis and the trade-off behind every regulation are the
+kind of argument it asks.
+:::
+
+::: {.source}
+Press **`O`** for the slide overview · **`C`** to draw · **`S`** for speaker notes · **`F`** for fullscreen · **`E`** then print for a PDF of the slides.
+:::
+
+::: notes
+Pull the course together rather than listing what is next.
+
+Four sessions ago we were pricing a bond. Then building a portfolio, then asking
+why institutions exist, and today why they are regulated. The thread through all
+of it is the same: finance is about valuing claims under uncertainty, and the
+hard part is never the arithmetic - it is who knows what, and who has a reason
+to tell you.
+
+Tell them what the exam covers, if you have settled it.
+:::
