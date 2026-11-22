@@ -159,28 +159,24 @@ names it.
 195 minutes in total: 110 of lecture, a 10-minute break, then 75 for five
 presentations - twelve minutes each plus changeover and questions.
 
-Lecture first, while attention is fresh. The reading discussion sits before the
-break.
+The Muñoz discussion has moved to next session, which gives the lecture its 25
+minutes back and means nothing has to be skipped today.
 
-Lecture: hook and roadmap 5 · mutual funds 16 · Muñoz discussion 25 · insurance
-10 · investment firms 9 · bank management 22 · economic efficiency 23.
+Lecture: hook and roadmap 5 · mutual funds 24 · insurance 11 · investment firms
+15 · bank management 24 · economic efficiency 31.
 
-That is 68 minutes less than this deck was built for, so nine slides are being
-skipped rather than hurried. Each says so on its first line of notes: the four
-classes · composition of the classes · hedge funds · brokers and dealers ·
-private equity and venture capital · asset and liability management · managing
-the capital position · facts about financial structure · conflicts of interest.
+Every slide in the deck is in play, but the margins are thin, so if you do fall
+behind these are the four to lose, in order: composition of the classes · the
+four classes · brokers and dealers · managing the capital position. Each is
+flagged on its own slide.
 
-All nine are in the handout, so nothing is lost for the exam - only for the
-hour. Say that out loud, once, so nobody thinks skipped means not examinable.
+Do not cut the NAV problem, either bank management problem, or the six cases.
+Those are the examinable parts.
 
-What survives is everything assessed or examinable: the NAV problem, both bank
-management problems, the six cases, and the reading discussion.
+Say at the end that the reading discussion is next session and assessed, so they
+must come having read Muñoz. Moving it is not dropping it, and they will assume
+otherwise unless you say so.
 
-One consequence to watch. Conflicts of interest no longer has a slide of its
-own, so make the point while doing cases one, five and six: a conflict of
-interest is a species of moral hazard, not a third category. That is the
-sentence they lose marks for not knowing.
 :::
 
 # 2 · Mutual funds {.divider .center background-color="#06302F"}
@@ -301,9 +297,9 @@ active manager.
 :::
 
 ::: notes
-*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
+*[first to cut if you are behind]*
 
-*[if you do show it - the four numbers matter, the sub-classes do not]*
+*[the four numbers matter, the sub-classes do not]*
 
 Do not read the table. Make two points from it and move.
 
@@ -361,9 +357,9 @@ securities 12.6%.
 :::
 
 ::: notes
-*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
+*[first to cut if you are behind]*
 
-*[if you do show it - open only the third tab, on money market funds]*
+*[the third tab is the one they must leave with]*
 
 Three tabs, and only the third contains something they must leave with.
 
@@ -453,8 +449,6 @@ fraud concerns, and hedge funds reached the average investor through
 ::::
 
 ::: notes
-*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
-
 Keep this short and resist the glamour.
 
 The five differences are all one difference: hedge funds are sold to people the
@@ -479,7 +473,7 @@ longer than your funding lasts. That is Long-Term Capital Management in two
 sentences, if anyone asks.
 :::
 
-# 3 · Reading discussion {.divider .center background-color="#06302F"}
+# 3 · Reading discussion — next session {.divider .center background-color="#06302F"}
 
 ## Who is watching the manager? {.hook background-color="#FAF7F2"}
 
@@ -494,6 +488,8 @@ dismiss it.
 :::
 
 ::: notes
+*[MOVED to next session - these two slides are not delivered today. Show the questions tab for one minute at the close so they know what to prepare.]*
+
 Open the discussion with the structure, not with the paper.
 
 Restate the formal position from the first mutual funds slide: investors are
@@ -544,6 +540,8 @@ Come with an answer to each. I will ask.
 :::
 
 ::: notes
+*[MOVED to next session - these two slides are not delivered today. Show the questions tab for one minute at the close so they know what to prepare.]*
+
 This is assessed, so protect the time and do not let the institutions sections
 eat it. Run it as a discussion - if you are talking for more than two minutes at
 a stretch, stop.
@@ -894,9 +892,9 @@ credit** for buying equity with borrowed funds.
 ::::
 
 ::: notes
-*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
+*[first to cut if you are behind]*
 
-*[if you do show it - they met brokers and dealers in session 3]*
+*[they met brokers and dealers in session 3, so this is revision]*
 
 If you are running late this is the slide to drop. If you keep it, keep it to
 two points.
@@ -943,9 +941,7 @@ withdrawing.
 ::::
 
 ::: notes
-*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
-
-*[if you do show it - the structure matters, the returns table does not]*
+*[the structure matters more than the returns table]*
 
 Two things, and the second is the interesting one.
 
@@ -1111,8 +1107,6 @@ decades.
 :::
 
 ::: notes
-*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
-
 The content here is thin; the change over time is the interesting part, so lead
 with that.
 
@@ -1215,9 +1209,9 @@ $$ROE = ROA \times EM \qquad EM = \frac{\text{assets}}{\text{equity capital}}$$
 ::::
 
 ::: notes
-*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
+*[first to cut if you are behind]*
 
-*[if you do show it - the previous slide carries the idea]*
+*[the previous slide carries the idea; this is the mechanics]*
 
 Six levers, three each way, and they are mirror images. Do not read all six.
 
@@ -1304,8 +1298,6 @@ mutual funds, and developed expertise.
 :::
 
 ::: notes
-*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
-
 Four facts, revealed one at a time, and each one is a clue. Tell them that:
 these are the observations any theory of financial structure has to explain.
 
@@ -1638,8 +1630,6 @@ serving one is detrimental to another.
 :::
 
 ::: notes
-*[SKIPPED in the combined session - see the run sheet on the roadmap slide]*
-
 Lead with the classification, because it is the thing they get wrong in the
 exam: a conflict of interest is a species of moral hazard, not a third category
 beside it.
@@ -1777,9 +1767,10 @@ That completes **Financial Institutions and Firms** — and with the
 presentations, the taught part of the course.
 
 ::: keyidea
-What is left is the **exam**. The four problems from today are the kind of thing
-it asks; so is the before-and-after distinction between adverse selection and
-moral hazard.
+Next session: the **Muñoz (2020)** discussion, which is **assessed** — come
+having read it. After that, the **exam**. The problems from today are the kind
+of thing it asks, and so is the before-and-after distinction between adverse
+selection and moral hazard.
 :::
 
 ::: {.source}
@@ -1799,8 +1790,9 @@ a conflict attached.
 
 *[then the practical items]*
 
-Point them at the nine skipped slides in the deck and say plainly that skipped
-is not the same as not examinable.
+Then the item they will otherwise miss: the reading discussion is next session
+and it is assessed. Open the questions tab from section 3 for a minute so they
+leave knowing what to prepare, and say that moving it is not dropping it.
 
 Tell them what the exam covers, if you have settled it.
 :::
