@@ -95,7 +95,9 @@ Please read each paper **before the corresponding session**.
 | Group work — security analysis | 40% | Session 8 | Groups of five, 12-minute presentation |
 | Final examination | 40% | Session 10 | Individual, written, documents allowed |
 
-**A calculator is required for most sessions.** Not your phone.
+**A calculator is required for most sessions.** Not your phone — and for the
+examination it must be a **CASIO FX 92**, the only model the administration
+allows.
 
 ### The group work
 
@@ -111,11 +113,44 @@ Choose something you can find real data on. Groups that pick an exotic
 derivative spend the whole presentation explaining the instrument and never
 reach questions 2 to 4.
 
+## The final examination
+
+::: {.note}
+**Bring a CASIO FX 92.** It is the only calculator the administration allows in
+the examination room — not another model, and not your phone.
+:::
+
+Individual and written, **documents allowed**: the course and your own notes.
+
+The paper is always in the same format as the mock examination.
+
+::: {.session}
+[Two texts to analyse]{.title}
+[Three questions on each. Every answer must justify itself by developing the reasoning **and** using the article — a figure, a number, a date, a named source.]{.soon}
+:::
+
+::: {.session}
+[Two exercises]{.title}
+[Based on those seen in class — the numbered **Problems** in the slides, with the numbers changed.]{.soon}
+:::
+
+::: {.small}
+Note the weighting: **fourteen of the twenty points are on the two texts**, and
+six on the exercises. The exercises are what everybody revises, and they are the
+smaller half of the paper.
+:::
+
+::: {.session}
+[Mock examination]{.title}
+[[The paper](exam/mock-exam.pdf) · [How to answer it](exam/how-to-answer.pdf)]{.links}
+[Work the paper yourself first, then read the method guide and go back over what you wrote.]{.soon}
+:::
+
 ## Announcements
 
 ::: {.session}
 [Before session 2]{.title}
-[Read Monasterolo (2020). Bring a calculator. Start thinking about a security for the group work — a specific one, with a ticker.]{.soon}
+[Read Monasterolo (2020). Bring a calculator — a CASIO FX 92 if you are buying one, since that is the only model allowed in the examination. Start thinking about a security for the group work — a specific one, with a ticker.]{.soon}
 :::
 
 ## Contact

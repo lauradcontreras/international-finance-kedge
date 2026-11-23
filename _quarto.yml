@@ -7,6 +7,7 @@ project:
   resources:
     - "_theme/fonts/**"
     - "07-financial-regulation/07-financial-regulation-handout.pdf"
+    - "exam/**"
 
 website:
   title: "International Finance"
@@ -33,6 +34,8 @@ website:
         href: 06-financial-institutions-ii/06-financial-institutions-ii.html
       - text: "Session 7"
         href: 07-financial-regulation/07-financial-regulation.html
+      - text: "Exam"
+        href: index.qmd#the-final-examination
     right:
       - text: "Laura Contreras-Portela"
         href: "https://lauradcontreras.github.io"
