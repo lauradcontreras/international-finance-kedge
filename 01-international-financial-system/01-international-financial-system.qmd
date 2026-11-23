@@ -128,7 +128,7 @@ Read the paper **before** the session and bring a calculator!
 | | Assignment | Group work | Final exam |
 |:---|:--:|:--:|:--:|
 | **Weight** | **20%** | **40%** | **40%** |
-| **When** | Session 7 (20 min) | Session 8 | Session 10 |
+| **When** | Session 7 (20 min) | Session 7 | Session 9 |
 | **Documents** | Not allowed | Presentation | Allowed |
 
 :::

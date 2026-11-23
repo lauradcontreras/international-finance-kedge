@@ -60,23 +60,18 @@ for an overview. A PDF version is available next to each session.
 :::
 
 ::: {.session}
-[7 · Financial regulation — crises, capital and the regulatory response]{.title}
-[[Slides](07-financial-regulation/07-financial-regulation.html) · [PDF](07-financial-regulation/07-financial-regulation.pdf) · [Handout](07-financial-regulation/07-financial-regulation-handout.pdf)]{.links}
-[The handout covers the whole chapter in writing, with both problems worked in full.]{.soon}
-:::
-
-::: {.session}
-[8 · Security analysis]{.title}
+[7 · Security analysis]{.title}
 [Group presentations, in groups of five]{.soon}
 :::
 
 ::: {.session}
-[9 · Regulation]{.title}
-[To come]{.soon}
+[8 · Financial regulation — crises, capital and the regulatory response]{.title}
+[[Slides](07-financial-regulation/07-financial-regulation.html) · [PDF](07-financial-regulation/07-financial-regulation.pdf) · [Handout](07-financial-regulation/07-financial-regulation-handout.pdf)]{.links}
+[5 December. The handout covers the whole chapter in writing, with both problems worked in full.]{.soon}
 :::
 
 ::: {.session}
-[10 · Final examination]{.title}
+[9 · Final examination]{.title}
 :::
 
 ## Readings
@@ -92,8 +87,8 @@ Please read each paper **before the corresponding session**.
 | | Weight | When | Conditions |
 |:---|:--:|:---|:---|
 | Individual assignment | 20% | Session 7 | 20 minutes, no documents |
-| Group work — security analysis | 40% | Session 8 | Groups of five, 12-minute presentation |
-| Final examination | 40% | Session 10 | Individual, written, documents allowed |
+| Group work — security analysis | 40% | Session 7 | Groups of five, 12-minute presentation |
+| Final examination | 40% | Session 9 | Individual, written, documents allowed |
 
 **A calculator is required for most sessions.** Not your phone — and for the
 examination it must be a **CASIO FX 92**, the only model the administration

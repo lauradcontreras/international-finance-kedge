@@ -26,13 +26,11 @@ Hi! Welcome to the International Finance course website :wave:
 
 - [Session 6: Financial institutions — funds, insurance, banks and information](https://lauradcontreras.github.io/international-finance-kedge/06-financial-institutions-ii/06-financial-institutions-ii.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/06-financial-institutions-ii/06-financial-institutions-ii.pdf)]
 
-- [Session 7: Financial regulation — crises, capital and the regulatory response](https://lauradcontreras.github.io/international-finance-kedge/07-financial-regulation/07-financial-regulation.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/07-financial-regulation/07-financial-regulation.pdf)]
+- Session 7: Security analysis — **group presentations**
 
-- Session 8: Security analysis — **group presentations** *(to come)*
+- [Session 8: Financial regulation — crises, capital and the regulatory response](https://lauradcontreras.github.io/international-finance-kedge/07-financial-regulation/07-financial-regulation.html) [[pdf](https://lauradcontreras.github.io/international-finance-kedge/07-financial-regulation/07-financial-regulation.pdf)] [[handout](https://lauradcontreras.github.io/international-finance-kedge/07-financial-regulation/07-financial-regulation-handout.pdf)] — 5 December
 
-- Session 9: Regulation *(to come)*
-
-- Session 10: **Final examination**
+- Session 9: **Final examination**
 
 ---
 
@@ -42,7 +40,7 @@ Hi! Welcome to the International Finance course website :wave:
 - Sessions 3–4 — Sartzetakis, E.S. (2021), *Green bonds as an instrument to finance low carbon transition*, **Economic Change and Restructuring** 54
 - Sessions 5–6 — Muñoz, F. (2020), *How do the size and independence of the board of trustees affect the financial and sustainable performance of socially responsible mutual funds?*, **Corporate Social Responsibility and Environmental Management** 27(4)
 
-:trophy: **Assessment.** 20% individual assignment (session 7) · 40% group work, security analysis in groups of 5 (session 8) · 40% final exam (session 10). A calculator is required for most sessions.
+:trophy: **Assessment.** 20% individual assignment · 40% group work, security analysis in groups of 5 (session 7) · 40% final exam (session 9). A calculator is required for most sessions.
 
 :mag: **Using the slides.** They open in any browser. `→` and `←` move between slides, `O` gives you the overview, `F` is fullscreen, and `E` then print produces a PDF. The PDF handout of each session is linked next to it above.
 

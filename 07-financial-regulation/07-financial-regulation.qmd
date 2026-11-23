@@ -1,6 +1,6 @@
 ---
 title: "International Finance"
-subtitle: "Session 7 — Financial Regulation"
+subtitle: "Session 8 — Financial Regulation"
 author: "Laura Contreras-Portela"
 institute: "KEDGE Business School"
 date: today
@@ -27,7 +27,7 @@ format:
       buttons: true
       theme: whiteboard
       chalk-effect: 0
-    footer: "International Finance · Session 7 · KEDGE"
+    footer: "International Finance · Session 8 · KEDGE"
     embed-resources: false          # true -> one portable file, no wifi needed
   beamer:                           # same source -> a real LaTeX PDF handout
     aspectratio: 169
