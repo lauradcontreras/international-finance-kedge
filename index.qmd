@@ -152,6 +152,14 @@ smaller half of the paper.
 [What each session covered, how to approach every Problem — steps, not solutions — and all the formulas, tagged by chapter.]{.soon}
 :::
 
+::: {.note}
+**Please check the equations against the slides.** The revision guide was typed
+out by hand from seven sessions of material, and I make mistakes like everyone
+else. Where a formula in the guide and a formula in the slides disagree, take
+the slides as correct — then email me, so I can fix it for everybody rather
+than for you alone.
+:::
+
 ## Announcements
 
 ::: {.session}
