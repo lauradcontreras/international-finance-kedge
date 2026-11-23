@@ -61,7 +61,8 @@ for an overview. A PDF version is available next to each session.
 
 ::: {.session}
 [7 · Financial regulation — crises, capital and the regulatory response]{.title}
-[[Slides](07-financial-regulation/07-financial-regulation.html) · [PDF](07-financial-regulation/07-financial-regulation.pdf)]{.links}
+[[Slides](07-financial-regulation/07-financial-regulation.html) · [PDF](07-financial-regulation/07-financial-regulation.pdf) · [Handout](07-financial-regulation/07-financial-regulation-handout.pdf)]{.links}
+[The handout covers the whole chapter in writing, with both problems worked in full.]{.soon}
 :::
 
 ::: {.session}

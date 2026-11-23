@@ -6,6 +6,7 @@ project:
     - "[0-9][0-9]-*/*.qmd"
   resources:
     - "_theme/fonts/**"
+    - "07-financial-regulation/07-financial-regulation-handout.pdf"
 
 website:
   title: "International Finance"
