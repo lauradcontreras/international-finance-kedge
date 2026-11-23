@@ -146,6 +146,12 @@ smaller half of the paper.
 [Work the paper yourself first, then read the method guide and go back over what you wrote.]{.soon}
 :::
 
+::: {.session}
+[Revision guide]{.title}
+[[The whole course, session by session](exam/revision-guide.pdf)]{.links}
+[What each session covered, how to approach every Problem — steps, not solutions — and all the formulas, tagged by chapter.]{.soon}
+:::
+
 ## Announcements
 
 ::: {.session}
